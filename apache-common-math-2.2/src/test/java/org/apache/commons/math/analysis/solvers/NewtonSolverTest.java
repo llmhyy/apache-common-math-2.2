@@ -106,4 +106,13 @@ public final class NewtonSolverTest extends TestCase {
         assertEquals(result, 1.0, solver.getAbsoluteAccuracy());
     }
 
+    public static void main(String[] args){
+    	NewtonSolverTest test = new NewtonSolverTest();
+    	try {
+			test.testQuinticZero();
+		} catch (MathException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 }
