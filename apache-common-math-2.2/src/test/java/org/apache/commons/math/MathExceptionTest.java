@@ -141,6 +141,7 @@ public class MathExceptionTest extends TestCase {
     }
     
     public static void main(String[] args){
+    	System.currentTimeMillis();
     	MathExceptionTest test = new MathExceptionTest();
     	test.testPrintStackTrace();
     }
