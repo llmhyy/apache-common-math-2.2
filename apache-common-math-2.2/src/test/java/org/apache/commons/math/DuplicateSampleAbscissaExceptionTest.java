@@ -34,5 +34,9 @@ public class DuplicateSampleAbscissaExceptionTest extends TestCase {
         assertEquals(1.2, ex.getDuplicateAbscissa(), 0);
         assertFalse(ex.getMessage().equals(ex.getMessage(Locale.FRENCH)));
     }
-
+    
+    public static void main(String[] args){
+    	DuplicateSampleAbscissaExceptionTest test = new DuplicateSampleAbscissaExceptionTest();
+    	test.testConstructor();
+    }
 }
