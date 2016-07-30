@@ -142,6 +142,6 @@ public class MathExceptionTest extends TestCase {
     
     public static void main(String[] args){
     	MathExceptionTest test = new MathExceptionTest();
-    	test.testSerialization();
+    	test.testPrintStackTrace();
     }
 }
