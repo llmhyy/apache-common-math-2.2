@@ -137,4 +137,8 @@ public class FunctionEvaluationExceptionTest extends TestCase {
         assertEquals(2.0, ex.getArgument()[2], 0);
     }
 
+    public static void main(String[] args){
+    	FunctionEvaluationExceptionTest test = new FunctionEvaluationExceptionTest();
+    	test.testConstructorArray();
+    }
 }
