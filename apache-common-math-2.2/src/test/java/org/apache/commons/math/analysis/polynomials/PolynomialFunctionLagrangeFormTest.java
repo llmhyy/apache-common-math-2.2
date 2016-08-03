@@ -147,4 +147,13 @@ public final class PolynomialFunctionLagrangeFormTest extends TestCase {
             // expected
         }
     }
+    
+    public static void main(String[] args){
+    	PolynomialFunctionLagrangeFormTest test = new PolynomialFunctionLagrangeFormTest();
+    	try {
+			test.testLinearFunction();
+		} catch (FunctionEvaluationException e) {
+			e.printStackTrace();
+		}
+    }
 }
