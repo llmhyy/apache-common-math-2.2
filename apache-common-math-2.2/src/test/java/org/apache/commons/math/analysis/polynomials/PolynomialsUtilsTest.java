@@ -214,5 +214,10 @@ public class PolynomialsUtilsTest extends TestCase {
             assertEquals(0.0, coefficient, 1.0e-13);
         }
     }
+    
+    public static void main(String[] args){
+    	PolynomialsUtilsTest test = new PolynomialsUtilsTest();
+    	test.testFirstChebyshevPolynomials();
+    }
 
 }
