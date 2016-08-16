@@ -77,7 +77,7 @@ public class BinaryFunctionTest {
     public static void main(String[] args){
     	BinaryFunctionTest test = new BinaryFunctionTest();
     	try {
-			test.testAtan2();
+			test.testPow();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
