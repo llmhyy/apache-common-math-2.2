@@ -720,5 +720,10 @@ public class GaussNewtonEstimatorTest
     private ArrayList<PointModel> points;
 
   }
+  
+  public static void main(String[] args){
+	  GaussNewtonEstimatorTest test = new GaussNewtonEstimatorTest("test");
+	  test.testMoreEstimatedParametersUnsorted();
+  }
 
 }
