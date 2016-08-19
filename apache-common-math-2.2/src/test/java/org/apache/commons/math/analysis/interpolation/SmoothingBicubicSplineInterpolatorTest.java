@@ -176,4 +176,13 @@ public final class SmoothingBicubicSplineInterpolatorTest {
         result = p.value(x, y);
         Assert.assertEquals("half-way between sample points (border of the patch)", expected, result, 0.2);
     }
+    
+    public static void main(String[] args){
+    	SmoothingBicubicSplineInterpolatorTest test = new SmoothingBicubicSplineInterpolatorTest();
+    	try {
+			test.testPreconditions();
+		} catch (MathException e) {
+			e.printStackTrace();
+		}
+    }
 }
