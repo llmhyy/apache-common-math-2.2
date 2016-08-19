@@ -85,8 +85,7 @@ public class SimpsonIntegrator extends UnivariateRealIntegratorImpl {
             final double s = (4 * t - oldt) / 3.0;
             if (i >= minimalIterationCount) {
                 final double delta = FastMath.abs(s - olds);
-                final double rLimit =
-                    relativeAccuracy * (FastMath.abs(olds) + FastMath.abs(s)) * 0.5;
+                final double rLimit = relativeAccuracy * (FastMath.abs(olds) + FastMath.abs(s)) * 0.5;
                 if ((delta <= rLimit) || (delta <= absoluteAccuracy)) {
                     setResult(s, i);
                     return result;
