@@ -217,5 +217,14 @@ public class SplineInterpolatorTest {
                                 polynomials[i + 1].polynomialDerivative().derivative().value(0), 0.5);
         }
     }
+    
+    public static void main(String[] args){
+    	SplineInterpolatorTest test = new SplineInterpolatorTest();
+    	try {
+			test.testInterpolateLinearDegenerateTwoSegment();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    }
 
 }
