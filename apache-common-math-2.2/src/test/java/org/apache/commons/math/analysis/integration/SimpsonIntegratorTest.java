@@ -110,4 +110,13 @@ public final class SimpsonIntegratorTest extends TestCase {
             // expected
         }
     }
+    
+    public static void main(String[] args){
+    	SimpsonIntegratorTest test = new SimpsonIntegratorTest();
+    	try {
+			test.testSinFunction();
+		} catch (MathException e) {
+			e.printStackTrace();
+		}
+    }
 }
