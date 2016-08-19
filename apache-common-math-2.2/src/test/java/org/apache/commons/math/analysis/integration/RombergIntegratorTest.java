@@ -111,4 +111,13 @@ public final class RombergIntegratorTest extends TestCase {
             // expected
         }
     }
+    
+    public static void main(String[] args){
+    	RombergIntegratorTest test = new RombergIntegratorTest();
+    	try {
+			test.testSinFunction();
+		} catch (MathException e) {
+			e.printStackTrace();
+		}
+    }
 }
