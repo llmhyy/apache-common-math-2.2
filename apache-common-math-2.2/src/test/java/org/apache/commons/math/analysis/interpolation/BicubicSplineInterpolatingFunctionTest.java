@@ -449,7 +449,7 @@ public final class BicubicSplineInterpolatingFunctionTest {
     public static void main(String[] args){
     	BicubicSplineInterpolatingFunctionTest test = new BicubicSplineInterpolatingFunctionTest();
     	try {
-			test.testPreconditions();
+			test.testPlane();
 		} catch (MathException e) {
 			e.printStackTrace();
 		}
