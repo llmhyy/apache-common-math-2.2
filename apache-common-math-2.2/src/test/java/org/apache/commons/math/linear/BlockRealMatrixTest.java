@@ -1200,5 +1200,9 @@ public final class BlockRealMatrixTest extends TestCase {
         return m;
     }
 
+    public static void main(String[] args){
+    	BlockRealMatrixTest test = new BlockRealMatrixTest("test");
+    	test.testMultiply2();
+    }
 }
 
