@@ -167,4 +167,14 @@ public final class BicubicSplineInterpolatorTest {
         result = p.value(x, y);
         Assert.assertEquals("half-way between sample points (border of the patch)", expected, result, 0.2);
     }
+    
+    public static void main(String[] args){
+    	BicubicSplineInterpolatorTest test = new BicubicSplineInterpolatorTest();
+    	try {
+			test.testPreconditions();
+		} catch (MathException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 }
