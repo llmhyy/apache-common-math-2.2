@@ -157,4 +157,13 @@ public final class RiddersSolverTest extends TestCase {
             // expected
         }
     }
+    
+    public static void main(String[] args){
+    	RiddersSolverTest test = new RiddersSolverTest();
+    	try {
+			test.testDeprecated();
+		} catch (MathException e) {
+			e.printStackTrace();
+		}
+    }
 }
