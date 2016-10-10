@@ -219,4 +219,16 @@ public class NormalDistributionTest extends ContinuousDistributionAbstractTest  
         dist.setStandardDeviation(10.4);
         assertEquals(dist.getNumericalVariance(), 10.4 * 10.4, tol);
     }
+    
+    public static void main(String[] args){
+    	NormalDistributionTest test = new NormalDistributionTest("normal distribution");
+    	try {
+    		test.setUp();
+			test.testSetMean();
+			test.tearDown();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+    			
+    }
 }
