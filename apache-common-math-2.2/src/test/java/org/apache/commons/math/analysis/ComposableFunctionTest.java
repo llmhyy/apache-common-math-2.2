@@ -147,7 +147,7 @@ public class ComposableFunctionTest {
     public static void main(String[] args){
     	ComposableFunctionTest test = new ComposableFunctionTest();
     	try {
-			test.testSignum();
+			test.testCollector();;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
