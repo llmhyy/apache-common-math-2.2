@@ -217,7 +217,7 @@ public class PolynomialsUtilsTest extends TestCase {
     
     public static void main(String[] args){
     	PolynomialsUtilsTest test = new PolynomialsUtilsTest();
-    	test.testFirstLaguerrePolynomials();
+    	test.testFirstChebyshevPolynomials();
     }
 
 }
