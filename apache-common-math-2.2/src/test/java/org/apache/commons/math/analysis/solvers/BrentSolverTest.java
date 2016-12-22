@@ -386,4 +386,12 @@ public final class BrentSolverTest extends TestCase {
 
     }
 
+    public static void main(String[] args){
+    	BrentSolverTest test = new BrentSolverTest("test");
+    	try {
+			test.testSinZero();
+		} catch (MathException e) {
+			e.printStackTrace();
+		}
+    }
 }
