@@ -681,4 +681,8 @@ public class SparseFieldMatrixTest extends TestCase {
         return matrix;
     }
 
+    public static void main(String[] args){
+    	SparseFieldMatrixTest test = new SparseFieldMatrixTest("t");
+    	test.testScalarAdd();
+    }
 }
