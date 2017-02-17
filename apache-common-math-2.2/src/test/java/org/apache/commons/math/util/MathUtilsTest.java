@@ -445,8 +445,8 @@ public final class MathUtilsTest extends TestCase {
         assertTrue(MathUtils.equals(1.0, 1 + FastMath.ulp(1d), 1));
         assertFalse(MathUtils.equals(1.0, 1 + 2 * FastMath.ulp(1d), 1));
 
-        final double nUp1 = FastMath.nextAfter(1d, Double.POSITIVE_INFINITY);
-        final double nnUp1 = FastMath.nextAfter(nUp1, Double.POSITIVE_INFINITY);
+        final double nUp1 = FastMath.nextAfter1(1d, Double.POSITIVE_INFINITY);
+        final double nnUp1 = FastMath.nextAfter1(nUp1, Double.POSITIVE_INFINITY);
         assertTrue(MathUtils.equals(1.0, nUp1, 1));
         assertTrue(MathUtils.equals(nUp1, nnUp1, 1));
         assertFalse(MathUtils.equals(1.0, nnUp1, 1));
@@ -483,8 +483,8 @@ public final class MathUtilsTest extends TestCase {
         assertTrue(MathUtils.equalsIncludingNaN(1.0, 1 + FastMath.ulp(1d), 1));
         assertFalse(MathUtils.equalsIncludingNaN(1.0, 1 + 2 * FastMath.ulp(1d), 1));
 
-        final double nUp1 = FastMath.nextAfter(1d, Double.POSITIVE_INFINITY);
-        final double nnUp1 = FastMath.nextAfter(nUp1, Double.POSITIVE_INFINITY);
+        final double nUp1 = FastMath.nextAfter1(1d, Double.POSITIVE_INFINITY);
+        final double nnUp1 = FastMath.nextAfter1(nUp1, Double.POSITIVE_INFINITY);
         assertTrue(MathUtils.equalsIncludingNaN(1.0, nUp1, 1));
         assertTrue(MathUtils.equalsIncludingNaN(nUp1, nnUp1, 1));
         assertFalse(MathUtils.equalsIncludingNaN(1.0, nnUp1, 1));
@@ -533,7 +533,7 @@ public final class MathUtilsTest extends TestCase {
         assertFalse(MathUtils.equals(new double[] { Double.POSITIVE_INFINITY },
                                      new double[] { Double.NEGATIVE_INFINITY }));
         assertFalse(MathUtils.equals(new double[] { 1d },
-                                     new double[] { FastMath.nextAfter(1d, 2d) }));
+                                     new double[] { FastMath.nextAfter1(1d, 2d) }));
 
     }
 
@@ -554,7 +554,7 @@ public final class MathUtilsTest extends TestCase {
         assertFalse(MathUtils.equalsIncludingNaN(new double[] { Double.POSITIVE_INFINITY },
                                                  new double[] { Double.NEGATIVE_INFINITY }));
         assertFalse(MathUtils.equalsIncludingNaN(new double[] { 1d },
-                                                 new double[] { FastMath.nextAfter(FastMath.nextAfter(1d, 2d), 2d) }));
+                                                 new double[] { FastMath.nextAfter1(FastMath.nextAfter1(1d, 2d), 2d) }));
     }
 
     public void testFloatArrayEqualsIncludingNaN() {
@@ -777,7 +777,7 @@ public final class MathUtilsTest extends TestCase {
                                       Double.NEGATIVE_INFINITY, 1d, 0d
                                     }));
         assertFalse(MathUtils.hash(new double[] { 1d }) ==
-                    MathUtils.hash(new double[] { FastMath.nextAfter(1d, 2d) }));
+                    MathUtils.hash(new double[] { FastMath.nextAfter1(1d, 2d) }));
         assertFalse(MathUtils.hash(new double[] { 1d }) ==
                     MathUtils.hash(new double[] { 1d, 1d }));
     }

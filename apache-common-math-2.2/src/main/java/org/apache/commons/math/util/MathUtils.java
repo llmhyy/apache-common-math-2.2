@@ -1315,7 +1315,7 @@ public final class MathUtils {
      * direction is greater or smaller than d)
      * @return the next machine representable number in the specified direction
      * @since 1.2
-     * @deprecated as of 2.2, replaced by {@link FastMath#nextAfter(double, double)}
+     * @deprecated as of 2.2, replaced by {@link FastMath#nextAfter1(double, double)}
      * which handles Infinities differently, and returns direction if d and direction compare equal.
      */
     @Deprecated

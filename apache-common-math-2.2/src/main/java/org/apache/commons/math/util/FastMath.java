@@ -29,12 +29,12 @@ package org.apache.commons.math.util;
  * <ul>
  * <li>{@link #copySign(double, double)}</li>
  * <li>{@link #getExponent(double)}</li>
- * <li>{@link #nextAfter(double,double)}</li>
+ * <li>{@link #nextAfter1(double,double)}</li>
  * <li>{@link #nextUp(double)}</li>
  * <li>{@link #scalb1(double, int)}</li>
  * <li>{@link #copySign(float, float)}</li>
  * <li>{@link #getExponent(float)}</li>
- * <li>{@link #nextAfter(float,double)}</li>
+ * <li>{@link #nextAfter2(float,double)}</li>
  * <li>{@link #nextUp(float)}</li>
  * <li>{@link #scalb2(float, int)}</li>
  * </ul>
@@ -654,7 +654,7 @@ public class FastMath {
      * @return neighbor of a towards positive infinity
      */
     public static double nextUp(final double a) {
-        return nextAfter(a, Double.POSITIVE_INFINITY);
+        return nextAfter1(a, Double.POSITIVE_INFINITY);
     }
 
     /** Compute next number towards positive infinity.
@@ -662,7 +662,7 @@ public class FastMath {
      * @return neighbor of a towards positive infinity
      */
     public static float nextUp(final float a) {
-        return nextAfter(a, Float.POSITIVE_INFINITY);
+        return nextAfter2(a, Float.POSITIVE_INFINITY);
     }
 
     /** Returns a pseudo-random number between 0.0 and 1.0.
@@ -3603,7 +3603,7 @@ public class FastMath {
      * {@code direction} is greater or smaller than {@code d})
      * @return the next machine representable number in the specified direction
      */
-    public static double nextAfter(double d, double direction) {
+    public static double nextAfter1(double d, double direction) {
 
         // handling of some important special cases
         if (Double.isNaN(d) || Double.isNaN(direction)) {
@@ -3659,7 +3659,7 @@ public class FastMath {
      * {@code direction} is greater or smaller than {@code f})
      * @return the next machine representable number in the specified direction
      */
-    public static float nextAfter(final float f, final double direction) {
+    public static float nextAfter2(final float f, final double direction) {
 
         // handling of some important special cases
         if (Double.isNaN(f) || Double.isNaN(direction)) {
