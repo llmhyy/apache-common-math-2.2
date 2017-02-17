@@ -114,20 +114,6 @@ public class Gamma {
         return ret;
     }
 
-    /**
-     * Returns the regularized gamma function P(a, x).
-     *
-     * @param a the a parameter.
-     * @param x the value.
-     * @return the regularized gamma function P(a, x)
-     * @throws MathException if the algorithm fails to converge.
-     */
-    public static double regularizedGammaP(double a, double x)
-        throws MathException
-    {
-        return regularizedGammaP(a, x, DEFAULT_EPSILON, Integer.MAX_VALUE);
-    }
-
 
     /**
      * Returns the regularized gamma function P(a, x).
@@ -195,21 +181,21 @@ public class Gamma {
 
         return ret;
     }
-
+    
     /**
-     * Returns the regularized gamma function Q(a, x) = 1 - P(a, x).
+     * Returns the regularized gamma function P(a, x).
      *
      * @param a the a parameter.
      * @param x the value.
-     * @return the regularized gamma function Q(a, x)
+     * @return the regularized gamma function P(a, x)
      * @throws MathException if the algorithm fails to converge.
      */
-    public static double regularizedGammaQ(double a, double x)
+    public static double regularizedGammaP(double a, double x)
         throws MathException
     {
-        return regularizedGammaQ(a, x, DEFAULT_EPSILON, Integer.MAX_VALUE);
+        return regularizedGammaP(a, x, DEFAULT_EPSILON, Integer.MAX_VALUE);
     }
-
+    
     /**
      * Returns the regularized gamma function Q(a, x) = 1 - P(a, x).
      *
@@ -269,6 +255,22 @@ public class Gamma {
 
         return ret;
     }
+
+    /**
+     * Returns the regularized gamma function Q(a, x) = 1 - P(a, x).
+     *
+     * @param a the a parameter.
+     * @param x the value.
+     * @return the regularized gamma function Q(a, x)
+     * @throws MathException if the algorithm fails to converge.
+     */
+    public static double regularizedGammaQ(double a, double x)
+        throws MathException
+    {
+        return regularizedGammaQ(a, x, DEFAULT_EPSILON, Integer.MAX_VALUE);
+    }
+
+    
 
 
     /**
