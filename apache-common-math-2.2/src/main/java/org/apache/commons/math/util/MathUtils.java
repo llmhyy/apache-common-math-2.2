@@ -1366,11 +1366,11 @@ public final class MathUtils {
      * @param scaleFactor power of two by which d should be multiplied
      * @return d &times; 2<sup>scaleFactor</sup>
      * @since 2.0
-     * @deprecated as of 2.2, replaced by {@link FastMath#scalb(double, int)}
+     * @deprecated as of 2.2, replaced by {@link FastMath#scalb1(double, int)}
      */
     @Deprecated
     public static double scalb(final double d, final int scaleFactor) {
-        return FastMath.scalb(d, scaleFactor);
+        return FastMath.scalb1(d, scaleFactor);
     }
 
     /**

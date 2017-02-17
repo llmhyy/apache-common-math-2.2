@@ -31,12 +31,12 @@ package org.apache.commons.math.util;
  * <li>{@link #getExponent(double)}</li>
  * <li>{@link #nextAfter(double,double)}</li>
  * <li>{@link #nextUp(double)}</li>
- * <li>{@link #scalb(double, int)}</li>
+ * <li>{@link #scalb1(double, int)}</li>
  * <li>{@link #copySign(float, float)}</li>
  * <li>{@link #getExponent(float)}</li>
  * <li>{@link #nextAfter(float,double)}</li>
  * <li>{@link #nextUp(float)}</li>
- * <li>{@link #scalb(float, int)}</li>
+ * <li>{@link #scalb2(float, int)}</li>
  * </ul>
  * @version $Revision: 1074294 $ $Date: 2011-02-24 22:18:59 +0100 (jeu. 24 févr. 2011) $
  * @since 2.2
@@ -3410,7 +3410,7 @@ public class FastMath {
      * @param n power of 2
      * @return d &times; 2<sup>n</sup>
      */
-    public static double scalb(final double d, final int n) {
+    public static double scalb1(final double d, final int n) {
 
         // first simple and fast handling when 2^n can be represented using normal numbers
         if ((n > -1023) && (n < 1024)) {
@@ -3494,7 +3494,7 @@ public class FastMath {
      * @param n power of 2
      * @return f &times; 2<sup>n</sup>
      */
-    public static float scalb(final float f, final int n) {
+    public static float scalb2(final float f, final int n) {
 
         // first simple and fast handling when 2^n can be represented using normal numbers
         if ((n > -127) && (n < 128)) {
@@ -3946,14 +3946,14 @@ public class FastMath {
                 final int middleExp = (expX + expY) / 2;
 
                 // scale parameters without losing precision
-                final double scaledX = scalb(x, -middleExp);
-                final double scaledY = scalb(y, -middleExp);
+                final double scaledX = scalb1(x, -middleExp);
+                final double scaledY = scalb1(y, -middleExp);
 
                 // compute scaled hypotenuse
                 final double scaledH = sqrt(scaledX * scaledX + scaledY * scaledY);
 
                 // remove scaling
-                return scalb(scaledH, middleExp);
+                return scalb1(scaledH, middleExp);
 
             }
 
