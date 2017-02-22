@@ -895,7 +895,7 @@ public class TTestImpl implements TTest  {
      * @param n2 second sample n
      * @return approximate degrees of freedom
      */
-    protected double df(double v1, double v2, double n1, double n2) {
+    public double df(double v1, double v2, double n1, double n2) {
         return (((v1 / n1) + (v2 / n2)) * ((v1 / n1) + (v2 / n2))) /
         ((v1 * v1) / (n1 * n1 * (n1 - 1d)) + (v2 * v2) /
                 (n2 * n2 * (n2 - 1d)));
@@ -910,7 +910,7 @@ public class TTestImpl implements TTest  {
      * @param n sample n
      * @return t test statistic
      */
-    protected double t(double m, double mu, double v, double n) {
+    public double t(double m, double mu, double v, double n) {
         return (m - mu) / FastMath.sqrt(v / n);
     }
 
@@ -927,7 +927,7 @@ public class TTestImpl implements TTest  {
      * @param n2 second sample n
      * @return t test statistic
      */
-    protected double t(double m1, double m2,  double v1, double v2, double n1,
+    public double t(double m1, double m2,  double v1, double v2, double n1,
             double n2)  {
             return (m1 - m2) / FastMath.sqrt((v1 / n1) + (v2 / n2));
     }
@@ -944,7 +944,7 @@ public class TTestImpl implements TTest  {
      * @param n2 second sample n
      * @return t test statistic
      */
-    protected double homoscedasticT(double m1, double m2,  double v1,
+    public double homoscedasticT(double m1, double m2,  double v1,
             double v2, double n1, double n2)  {
             double pooledVariance = ((n1  - 1) * v1 + (n2 -1) * v2 ) / (n1 + n2 - 2);
             return (m1 - m2) / FastMath.sqrt(pooledVariance * (1d / n1 + 1d / n2));
@@ -960,7 +960,7 @@ public class TTestImpl implements TTest  {
      * @return p-value
      * @throws MathException if an error occurs computing the p-value
      */
-    protected double tTest(double m, double mu, double v, double n)
+    public double tTest(double m, double mu, double v, double n)
     throws MathException {
         double t = FastMath.abs(t(m, mu, v, n));
         distribution.setDegreesOfFreedom(n - 1);
@@ -982,7 +982,7 @@ public class TTestImpl implements TTest  {
      * @return p-value
      * @throws MathException if an error occurs computing the p-value
      */
-    protected double tTest(double m1, double m2, double v1, double v2,
+    public double tTest(double m1, double m2, double v1, double v2,
             double n1, double n2)
     throws MathException {
         double t = FastMath.abs(t(m1, m2, v1, v2, n1, n2));
@@ -1007,7 +1007,7 @@ public class TTestImpl implements TTest  {
      * @return p-value
      * @throws MathException if an error occurs computing the p-value
      */
-    protected double homoscedasticTTest(double m1, double m2, double v1,
+    public double homoscedasticTTest(double m1, double m2, double v1,
             double v2, double n1, double n2)
     throws MathException {
         double t = FastMath.abs(homoscedasticT(m1, m2, v1, v2, n1, n2));
@@ -1031,7 +1031,7 @@ public class TTestImpl implements TTest  {
      * @param alpha significance level
      * @exception IllegalArgumentException if significance level is out of bounds
      */
-    private void checkSignificanceLevel(final double alpha)
+    public void checkSignificanceLevel(final double alpha)
         throws IllegalArgumentException {
         if ((alpha <= 0) || (alpha > 0.5)) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -1044,7 +1044,7 @@ public class TTestImpl implements TTest  {
      * @param data sample data
      * @exception IllegalArgumentException if there is not enough sample data
      */
-    private void checkSampleData(final double[] data)
+    public void checkSampleData(final double[] data)
         throws IllegalArgumentException {
         if ((data == null) || (data.length < 2)) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -1057,7 +1057,7 @@ public class TTestImpl implements TTest  {
      * @param stat statistical summary
      * @exception IllegalArgumentException if there is not enough sample data
      */
-    private void checkSampleData(final StatisticalSummary stat)
+    public void checkSampleData(final StatisticalSummary stat)
         throws IllegalArgumentException {
         if ((stat == null) || (stat.getN() < 2)) {
             throw MathRuntimeException.createIllegalArgumentException(

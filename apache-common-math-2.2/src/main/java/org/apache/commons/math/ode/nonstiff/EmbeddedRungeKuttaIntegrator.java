@@ -106,7 +106,7 @@ public abstract class EmbeddedRungeKuttaIntegrator
    * @param scalAbsoluteTolerance allowed absolute error
    * @param scalRelativeTolerance allowed relative error
    */
-  protected EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,
+  public EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,
                                          final double[] c, final double[][] a, final double[] b,
                                          final RungeKuttaStepInterpolator prototype,
                                          final double minStep, final double maxStep,
@@ -144,7 +144,7 @@ public abstract class EmbeddedRungeKuttaIntegrator
    * @param vecAbsoluteTolerance allowed absolute error
    * @param vecRelativeTolerance allowed relative error
    */
-  protected EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,
+  public EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,
                                          final double[] c, final double[][] a, final double[] b,
                                          final RungeKuttaStepInterpolator prototype,
                                          final double   minStep, final double maxStep,
@@ -372,7 +372,7 @@ public abstract class EmbeddedRungeKuttaIntegrator
    * @param h  current step
    * @return error ratio, greater than 1 if step should be rejected
    */
-  protected abstract double estimateError(double[][] yDotK,
+  public abstract double estimateError(double[][] yDotK,
                                           double[] y0, double[] y1,
                                           double h);
 

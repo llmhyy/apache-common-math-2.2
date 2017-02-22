@@ -31,12 +31,12 @@ public abstract class Vector3DFormatAbstractTest extends TestCase {
     Vector3DFormat vector3DFormat = null;
     Vector3DFormat vector3DFormatSquare = null;
 
-    protected abstract Locale getLocale();
+    public abstract Locale getLocale();
 
-    protected abstract char getDecimalCharacter();
+    public abstract char getDecimalCharacter();
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         vector3DFormat = Vector3DFormat.getInstance(getLocale());
         final NumberFormat nf = NumberFormat.getInstance(getLocale());
         nf.setMaximumFractionDigits(2);

@@ -82,7 +82,7 @@ public class OnePointCrossover<T> implements CrossoverPolicy {
      * @param second the second chromosome.
      * @return the pair of new chromosomes that resulted from the crossover.
      */
-    private ChromosomePair crossover(AbstractListChromosome<T> first, AbstractListChromosome<T> second) {
+    public ChromosomePair crossover(AbstractListChromosome<T> first, AbstractListChromosome<T> second) {
         int length = first.getLength();
         if (length != second.getLength())
             throw new IllegalArgumentException("Both chromosomes must have same lengths.");

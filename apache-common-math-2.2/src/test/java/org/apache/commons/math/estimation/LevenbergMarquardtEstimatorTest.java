@@ -467,7 +467,7 @@ public class LevenbergMarquardtEstimatorTest
       checkEstimate(circle, 0.1, 20, 1.0e-18, 1.0e-16, 1.0e-10, true);
   }
 
-  private void checkEstimate(EstimationProblem problem,
+  public void checkEstimate(EstimationProblem problem,
                              double initialStepBoundFactor, int maxCostEval,
                              double costRelativeTolerance, double parRelativeTolerance,
                              double orthoTolerance, boolean shouldFail) {
@@ -793,7 +793,7 @@ public class LevenbergMarquardtEstimatorTest
           return ( (a.getEstimate() * x + b.getEstimate() ) * x + c.getEstimate());
       }
 
-      private double partial(double x, EstimatedParameter parameter) {
+      public double partial(double x, EstimatedParameter parameter) {
           if (parameter == a) {
               return x * x;
           } else if (parameter == b) {

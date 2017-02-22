@@ -607,7 +607,7 @@ public class SimpleRegression implements Serializable {
     * @param slope current slope
     * @return the intercept of the regression line
     */
-    private double getIntercept(double slope) {
+    public double getIntercept(double slope) {
         return (sumY - slope * sumX) / n;
     }
 
@@ -617,7 +617,7 @@ public class SimpleRegression implements Serializable {
      * @param slope regression slope estimate
      * @return sum of squared deviations of predicted y values
      */
-    private double getRegressionSumSquares(double slope) {
+    public double getRegressionSumSquares(double slope) {
         return slope * slope * sumXX;
     }
 

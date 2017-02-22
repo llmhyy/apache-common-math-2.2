@@ -36,7 +36,7 @@ public abstract class AbstractDistribution
     /**
      * Default constructor.
      */
-    protected AbstractDistribution() {
+    public AbstractDistribution() {
         super();
     }
 

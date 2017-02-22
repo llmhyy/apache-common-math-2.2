@@ -274,7 +274,7 @@ public class PearsonsCorrelationTest extends TestCase {
                 new PearsonsCorrelation().computeCorrelationMatrix(data), Double.MIN_VALUE);
     }
 
-    protected RealMatrix createRealMatrix(double[] data, int nRows, int nCols) {
+    public RealMatrix createRealMatrix(double[] data, int nRows, int nCols) {
         double[][] matrixData = new double[nRows][nCols];
         int ptr = 0;
         for (int i = 0; i < nRows; i++) {
@@ -284,7 +284,7 @@ public class PearsonsCorrelationTest extends TestCase {
         return new BlockRealMatrix(matrixData);
     }
 
-    protected RealMatrix createLowerTriangularRealMatrix(double[] data, int dimension) {
+    public RealMatrix createLowerTriangularRealMatrix(double[] data, int dimension) {
         int ptr = 0;
         RealMatrix result = new BlockRealMatrix(dimension, dimension);
         for (int i = 1; i < dimension; i++) {
@@ -296,7 +296,7 @@ public class PearsonsCorrelationTest extends TestCase {
         return result;
     }
 
-    protected void fillUpper(RealMatrix matrix, double diagonalValue) {
+    public void fillUpper(RealMatrix matrix, double diagonalValue) {
         int dimension = matrix.getColumnDimension();
         for (int i = 0; i < dimension; i++) {
             matrix.setEntry(i, i, diagonalValue);

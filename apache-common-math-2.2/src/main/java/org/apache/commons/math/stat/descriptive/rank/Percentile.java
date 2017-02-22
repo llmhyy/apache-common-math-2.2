@@ -306,7 +306,7 @@ public class Percentile extends AbstractUnivariateStatistic implements Serializa
      * @param k index of the desired element
      * @return k<sup>th</sup> smallest element
      */
-    private double select(final double[] work, final int[] pivotsHeap, final int k) {
+    public double select(final double[] work, final int[] pivotsHeap, final int k) {
 
         int begin = 0;
         int end   = work.length;
@@ -393,7 +393,7 @@ public class Percentile extends AbstractUnivariateStatistic implements Serializa
      * @param pivot initial index of the pivot
      * @return index of the pivot after partition
      */
-    private int partition(final double[] work, final int begin, final int end, final int pivot) {
+    public int partition(final double[] work, final int begin, final int end, final int pivot) {
 
         final double value = work[pivot];
         work[pivot] = work[begin];
@@ -430,7 +430,7 @@ public class Percentile extends AbstractUnivariateStatistic implements Serializa
      * @param begin index of the first element of the slice to sort
      * @param end index after the last element of the slice to sort
      */
-    private void insertionSort(final double[] work, final int begin, final int end) {
+    public void insertionSort(final double[] work, final int begin, final int end) {
         for (int j = begin + 1; j < end; j++) {
             final double saved = work[j];
             int i = j - 1;

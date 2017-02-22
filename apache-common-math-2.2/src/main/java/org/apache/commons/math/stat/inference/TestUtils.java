@@ -52,7 +52,7 @@ public class TestUtils  {
     /**
      * Prevent instantiation.
      */
-    protected TestUtils() {
+    public TestUtils() {
         super();
     }
 

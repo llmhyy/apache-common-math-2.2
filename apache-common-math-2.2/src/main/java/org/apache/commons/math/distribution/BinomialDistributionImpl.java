@@ -92,7 +92,7 @@ public class BinomialDistributionImpl extends AbstractIntegerDistribution
      * @throws IllegalArgumentException if <code>trials</code> is not a valid
      *             number of trials.
      */
-    private void setNumberOfTrialsInternal(int trials) {
+    public void setNumberOfTrialsInternal(int trials) {
         if (trials < 0) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.NEGATIVE_NUMBER_OF_TRIALS, trials);
@@ -120,7 +120,7 @@ public class BinomialDistributionImpl extends AbstractIntegerDistribution
      * @throws IllegalArgumentException if <code>p</code> is not a valid
      *             probability.
      */
-    private void setProbabilityOfSuccessInternal(double p) {
+    public void setProbabilityOfSuccessInternal(double p) {
         if (p < 0.0 || p > 1.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.OUT_OF_RANGE_SIMPLE, p, 0.0, 1.0);
@@ -137,7 +137,7 @@ public class BinomialDistributionImpl extends AbstractIntegerDistribution
      *         <code>p</code>
      */
     @Override
-    protected int getDomainLowerBound(double p) {
+    public int getDomainLowerBound(double p) {
         return -1;
     }
 
@@ -150,7 +150,7 @@ public class BinomialDistributionImpl extends AbstractIntegerDistribution
      *         <code>p</code>
      */
     @Override
-    protected int getDomainUpperBound(double p) {
+    public int getDomainUpperBound(double p) {
         return numberOfTrials;
     }
 

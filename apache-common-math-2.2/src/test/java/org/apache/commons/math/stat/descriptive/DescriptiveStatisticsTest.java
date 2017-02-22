@@ -32,7 +32,7 @@ public class DescriptiveStatisticsTest extends TestCase {
         super(name);
     }
 
-    protected DescriptiveStatistics createDescriptiveStatistics() {
+    public DescriptiveStatistics createDescriptiveStatistics() {
         return new DescriptiveStatistics();
     }
 

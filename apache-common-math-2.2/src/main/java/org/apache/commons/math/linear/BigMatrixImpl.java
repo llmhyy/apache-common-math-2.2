@@ -1407,7 +1407,7 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
      * @return LU decomposition matrix
      * @throws InvalidMatrixException if the matrix is non-square or singular.
      */
-    protected BigMatrix getLUMatrix() throws InvalidMatrixException {
+    public BigMatrix getLUMatrix() throws InvalidMatrixException {
         if (lu == null) {
             luDecompose();
         }
@@ -1426,7 +1426,7 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
      *
      * @return the permutation
      */
-    protected int[] getPermutation() {
+    public int[] getPermutation() {
         final int[] out = new int[permutation.length];
         System.arraycopy(permutation, 0, out, 0, permutation.length);
         return out;
@@ -1439,7 +1439,7 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
      *
      * @return a copy of the underlying data array.
      */
-    private BigDecimal[][] copyOut() {
+    public BigDecimal[][] copyOut() {
         final int nRows = this.getRowDimension();
         final BigDecimal[][] out = new BigDecimal[nRows][this.getColumnDimension()];
         // can't copy 2-d array in one shot, otherwise get row references
@@ -1459,7 +1459,7 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
      *    rectangular
      * @throws NullPointerException if input array is null
      */
-    private void copyIn(BigDecimal[][] in) {
+    public void copyIn(BigDecimal[][] in) {
         setSubMatrix(in,0,0);
     }
 
@@ -1468,7 +1468,7 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
      *
      * @param in data to copy in
      */
-    private void copyIn(double[][] in) {
+    public void copyIn(double[][] in) {
         final int nRows = in.length;
         final int nCols = in[0].length;
         data = new BigDecimal[nRows][nCols];
@@ -1488,7 +1488,7 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
      *
      * @param in data to copy in
      */
-    private void copyIn(String[][] in) {
+    public void copyIn(String[][] in) {
         final int nRows = in.length;
         final int nCols = in[0].length;
         data = new BigDecimal[nRows][nCols];

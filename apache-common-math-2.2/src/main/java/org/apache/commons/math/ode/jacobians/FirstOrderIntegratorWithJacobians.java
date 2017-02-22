@@ -265,7 +265,7 @@ public class FirstOrderIntegratorWithJacobians {
      * @param dydy0 jacobian array to fill
      * @param dydp jacobian array to fill
      */
-    private static void dispatchCompoundState(final double[] z, final double[] y,
+    public static void dispatchCompoundState(final double[] z, final double[] y,
                                               final double[][] dydy0, final double[][] dydp) {
 
         final int n = y.length;
@@ -347,7 +347,7 @@ public class FirstOrderIntegratorWithJacobians {
      * @param array (may be null if expected is 0)
      * @throws IllegalArgumentException if the array dimension does not match the expected one
      */
-    private void checkDimension(final int expected, final Object array)
+    public void checkDimension(final int expected, final Object array)
         throws IllegalArgumentException {
         int arrayDimension = (array == null) ? 0 : Array.getLength(array);
         if (arrayDimension != expected) {
@@ -774,7 +774,7 @@ public class FirstOrderIntegratorWithJacobians {
          * @param src source array
          * @param dest destination array
          */
-        private static void copyArray(final double[] src, final double[] dest) {
+        public static void copyArray(final double[] src, final double[] dest) {
             System.arraycopy(src, 0, dest, 0, src.length);
         }
 
@@ -782,7 +782,7 @@ public class FirstOrderIntegratorWithJacobians {
          * @param src source array
          * @param dest destination array
          */
-        private static void copyArray(final double[][] src, final double[][] dest) {
+        public static void copyArray(final double[][] src, final double[][] dest) {
             for (int i = 0; i < src.length; ++i) {
                 copyArray(src[i], dest[i]);
             }
@@ -793,7 +793,7 @@ public class FirstOrderIntegratorWithJacobians {
          * @param array array to write
          * @exception IOException if array cannot be read
          */
-        private static void writeArray(final ObjectOutput out, final double[] array)
+        public static void writeArray(final ObjectOutput out, final double[] array)
             throws IOException {
             for (int i = 0; i < array.length; ++i) {
                 out.writeDouble(array[i]);
@@ -805,7 +805,7 @@ public class FirstOrderIntegratorWithJacobians {
          * @param array array to write
          * @exception IOException if array cannot be read
          */
-        private static void writeArray(final ObjectOutput out, final double[][] array)
+        public static void writeArray(final ObjectOutput out, final double[][] array)
             throws IOException {
             for (int i = 0; i < array.length; ++i) {
                 writeArray(out, array[i]);
@@ -817,7 +817,7 @@ public class FirstOrderIntegratorWithJacobians {
          * @param array array to read
          * @exception IOException if array cannot be read
          */
-        private static void readArray(final ObjectInput in, final double[] array)
+        public static void readArray(final ObjectInput in, final double[] array)
             throws IOException {
             for (int i = 0; i < array.length; ++i) {
                 array[i] = in.readDouble();
@@ -829,7 +829,7 @@ public class FirstOrderIntegratorWithJacobians {
          * @param array array to read
          * @exception IOException if array cannot be read
          */
-        private static void readArray(final ObjectInput in, final double[][] array)
+        public static void readArray(final ObjectInput in, final double[][] array)
             throws IOException {
             for (int i = 0; i < array.length; ++i) {
                 readArray(in, array[i]);

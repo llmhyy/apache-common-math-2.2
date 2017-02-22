@@ -72,7 +72,7 @@ public abstract class Chromosome implements Comparable<Chromosome>,Fitness {
      * @param another chromosome to compare
      * @return true if <code>another</code> is equivalent to this chromosome
      */
-    protected boolean isSame(Chromosome another) {
+    public boolean isSame(Chromosome another) {
         return false;
     }
 
@@ -86,7 +86,7 @@ public abstract class Chromosome implements Comparable<Chromosome>,Fitness {
      * @return Chromosome with the same representation, or <code>null</code> if
      *         no such chromosome exists.
      */
-    protected Chromosome findSameChromosome(Population population) {
+    public Chromosome findSameChromosome(Population population) {
         for (Chromosome anotherChr : population) {
             if (this.isSame(anotherChr))
                 return anotherChr;

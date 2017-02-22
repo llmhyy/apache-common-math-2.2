@@ -127,7 +127,7 @@ public final class DividedDifferenceInterpolatorTest extends TestCase {
     /**
      * Returns the partial error term (z-x[0])(z-x[1])...(z-x[n-1])/n!
      */
-    protected double partialerror(double x[], double z) throws
+    public double partialerror(double x[], double z) throws
         IllegalArgumentException {
 
         if (x.length < 1) {

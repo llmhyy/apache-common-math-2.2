@@ -62,14 +62,14 @@ class HighamHall54StepInterpolator
 
   /** {@inheritDoc} */
   @Override
-  protected StepInterpolator doCopy() {
+  public StepInterpolator doCopy() {
     return new HighamHall54StepInterpolator(this);
   }
 
 
   /** {@inheritDoc} */
   @Override
-  protected void computeInterpolatedStateAndDerivatives(final double theta,
+  public void computeInterpolatedStateAndDerivatives(final double theta,
                                           final double oneMinusThetaH)
     throws DerivativeException {
 

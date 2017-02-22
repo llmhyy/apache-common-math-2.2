@@ -67,7 +67,7 @@ public class EstimatedParameterTest
 
   }
 
-  private void checkValue(double value, double expected) {
+  public void checkValue(double value, double expected) {
     assertTrue(FastMath.abs(value - expected) < 1.0e-10);
   }
 

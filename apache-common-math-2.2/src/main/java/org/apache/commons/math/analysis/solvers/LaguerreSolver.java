@@ -262,7 +262,7 @@ public class LaguerreSolver extends UnivariateRealSolverImpl {
      * @param z the complex root
      * @return true iff z is the sought-after real zero
      */
-    protected boolean isRootOK(double min, double max, Complex z) {
+    public boolean isRootOK(double min, double max, Complex z) {
         double tolerance = FastMath.max(relativeAccuracy * z.abs(), absoluteAccuracy);
         return (isSequence(min, z.getReal(), max)) &&
                (FastMath.abs(z.getImaginary()) <= tolerance ||

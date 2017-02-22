@@ -163,7 +163,7 @@ public class CauchyDistributionImpl extends AbstractContinuousDistribution
      * Modify the median.
      * @param newMedian for this distribution
      */
-    private void setMedianInternal(double newMedian) {
+    public void setMedianInternal(double newMedian) {
         this.median = newMedian;
     }
 
@@ -183,7 +183,7 @@ public class CauchyDistributionImpl extends AbstractContinuousDistribution
      * @param s scale parameter for this distribution
      * @throws IllegalArgumentException if <code>sd</code> is not positive.
      */
-    private void setScaleInternal(double s) {
+    public void setScaleInternal(double s) {
         if (s <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_SCALE, s);
@@ -201,7 +201,7 @@ public class CauchyDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         double ret;
 
         if (p < .5) {
@@ -223,7 +223,7 @@ public class CauchyDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         double ret;
 
         if (p < .5) {
@@ -244,7 +244,7 @@ public class CauchyDistributionImpl extends AbstractContinuousDistribution
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         double ret;
 
         if (p < .5) {
@@ -266,7 +266,7 @@ public class CauchyDistributionImpl extends AbstractContinuousDistribution
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

@@ -58,7 +58,7 @@ public abstract class AbstractContinuousDistribution
     /**
      * Default constructor.
      */
-    protected AbstractContinuousDistribution() {
+    public AbstractContinuousDistribution() {
         super();
     }
 
@@ -194,7 +194,7 @@ public abstract class AbstractContinuousDistribution
      * @param p the desired probability for the critical value
      * @return initial domain value
      */
-    protected abstract double getInitialDomain(double p);
+    public abstract double getInitialDomain(double p);
 
     /**
      * Access the domain value lower bound, based on <code>p</code>, used to
@@ -205,7 +205,7 @@ public abstract class AbstractContinuousDistribution
      * @return domain value lower bound, i.e.
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
-    protected abstract double getDomainLowerBound(double p);
+    public abstract double getDomainLowerBound(double p);
 
     /**
      * Access the domain value upper bound, based on <code>p</code>, used to
@@ -216,7 +216,7 @@ public abstract class AbstractContinuousDistribution
      * @return domain value upper bound, i.e.
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
-    protected abstract double getDomainUpperBound(double p);
+    public abstract double getDomainUpperBound(double p);
 
     /**
      * Returns the solver absolute accuracy for inverse cumulative computation.
@@ -224,7 +224,7 @@ public abstract class AbstractContinuousDistribution
      * @return the maximum absolute error in inverse cumulative probability estimates
      * @since 2.1
      */
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

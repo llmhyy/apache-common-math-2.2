@@ -265,7 +265,7 @@ public class BigFraction
      * @throws FractionConversionException
      *             if the continued fraction failed to converge.
      */
-    private BigFraction(final double value, final double epsilon,
+    public BigFraction(final double value, final double epsilon,
                         final int maxDenominator, int maxIterations)
         throws FractionConversionException {
         long overflow = Integer.MAX_VALUE;

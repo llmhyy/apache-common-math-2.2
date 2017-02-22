@@ -38,7 +38,7 @@ public class OpenIntToFieldTest extends TestCase {
     private FractionField field = FractionField.getInstance();
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         javaMap.put(50, new Fraction(100.0));
         javaMap.put(75, new Fraction(75.0));
         javaMap.put(25, new Fraction(500.0));
@@ -57,7 +57,7 @@ public class OpenIntToFieldTest extends TestCase {
 
     }
 
-    private Map<Integer, Fraction> generate() {
+    public Map<Integer, Fraction> generate() {
         Map<Integer, Fraction> map = new HashMap<Integer, Fraction>();
         Random r = new Random();
         double dd=0;
@@ -71,7 +71,7 @@ public class OpenIntToFieldTest extends TestCase {
         return map;
     }
 
-    private OpenIntToFieldHashMap<Fraction> createFromJavaMap(Field<Fraction> field) {
+    public OpenIntToFieldHashMap<Fraction> createFromJavaMap(Field<Fraction> field) {
         OpenIntToFieldHashMap<Fraction> map = new OpenIntToFieldHashMap<Fraction>(field);
         for (Map.Entry<Integer, Fraction> mapEntry : javaMap.entrySet()) {
             map.put(mapEntry.getKey(), mapEntry.getValue());
@@ -94,11 +94,11 @@ public class OpenIntToFieldTest extends TestCase {
         assertPutAndGet(map);
     }
 
-    private void assertPutAndGet(OpenIntToFieldHashMap<Fraction> map) {
+    public void assertPutAndGet(OpenIntToFieldHashMap<Fraction> map) {
         assertPutAndGet(map, 0, new HashSet<Integer>());
     }
 
-    private void assertPutAndGet(OpenIntToFieldHashMap<Fraction> map, int mapSize,
+    public void assertPutAndGet(OpenIntToFieldHashMap<Fraction> map, int mapSize,
             Set<Integer> keysInMap) {
         assertEquals(mapSize, map.size());
         for (Map.Entry<Integer, Fraction> mapEntry : javaMap.entrySet()) {
@@ -198,7 +198,7 @@ public class OpenIntToFieldTest extends TestCase {
     /**
      * Returns a map with at least 100 elements where each element is absent from javaMap.
      */
-    private Map<Integer, Fraction> generateAbsent() {
+    public Map<Integer, Fraction> generateAbsent() {
         Map<Integer, Fraction> generated = new HashMap<Integer, Fraction>();
         do {
             generated.putAll(generate());

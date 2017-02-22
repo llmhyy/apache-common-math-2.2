@@ -130,7 +130,7 @@ public class TrapezoidIntegrator extends UnivariateRealIntegratorImpl {
 
     /** {@inheritDoc} */
     @Override
-    protected void verifyIterationCount() throws IllegalArgumentException {
+    public void verifyIterationCount() throws IllegalArgumentException {
         super.verifyIterationCount();
         // at most 64 bisection refinements
         if (maximalIterationCount > 64) {

@@ -262,7 +262,7 @@ public final class PolynomialFunctionTest extends TestCase {
         assertEquals(reference, p.toString());
     }
 
-    private void checkNullPolynomial(PolynomialFunction p) {
+    public void checkNullPolynomial(PolynomialFunction p) {
         for (double coefficient : p.getCoefficients()) {
             assertEquals(0.0, coefficient, 1.0e-15);
         }

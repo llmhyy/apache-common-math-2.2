@@ -386,7 +386,7 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      * @throws IllegalArgumentException if the contractionCriteria is less than
      *         the expansionCriteria.
      */
-    protected void checkContractExpand(float contraction, float expansion) {
+    public void checkContractExpand(float contraction, float expansion) {
 
         if (contraction < expansion) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -486,7 +486,7 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      * @throws IllegalArgumentException if i is greater than numElements.
      * @since 2.0
      */
-    private synchronized void discardExtremeElements(int i,boolean front) {
+    public synchronized void discardExtremeElements(int i,boolean front) {
         if (i > numElements) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.TOO_MANY_ELEMENTS_TO_DISCARD_FROM_ARRAY,
@@ -514,7 +514,7 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      * after expansion will be <code>internalArray.length + expansionFactor</code>
      * </p>
      */
-    protected synchronized void expand() {
+    public synchronized void expand() {
 
         // notice the use of FastMath.ceil(), this guarantees that we will always
         // have an array of at least currentSize + 1.   Assume that the
@@ -539,7 +539,7 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      *
      * @param size Size of the new internal storage array
      */
-    private synchronized void expandTo(int size) {
+    public synchronized void expandTo(int size) {
         double[] tempArray = new double[size];
         // Copy and swap
         System.arraycopy(internalArray, 0, tempArray, 0, internalArray.length);
@@ -766,7 +766,7 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      * @throws IllegalArgumentException if <code>initialCapacity</code> is not
      *         positive.
      */
-    protected void setInitialCapacity(int initialCapacity) {
+    public void setInitialCapacity(int initialCapacity) {
         if (initialCapacity > 0) {
             synchronized(this) {
                 this.initialCapacity = initialCapacity;
@@ -811,7 +811,7 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      *
      * @return true if array satisfies the contraction criteria
      */
-    private synchronized boolean shouldContract() {
+    public synchronized boolean shouldContract() {
         if (expansionMode == MULTIPLICATIVE_MODE) {
             return (internalArray.length / ((float) numElements)) > contractionCriteria;
         } else {

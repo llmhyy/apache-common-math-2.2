@@ -149,7 +149,7 @@ public class ParametricGaussianFunctionTest {
      * @param fitter fitter to which the points in <code>points</code> should be
      *        added as observed points
      */
-    protected static void addDatasetToCurveFitter(double[][] points,
+    public static void addDatasetToCurveFitter(double[][] points,
                                                   CurveFitter fitter) {
         for (int i = 0; i < points.length; i++) {
             fitter.addObservedPoint(points[i][0], points[i][1]);

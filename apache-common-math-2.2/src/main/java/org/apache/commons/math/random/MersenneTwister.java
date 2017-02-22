@@ -220,7 +220,7 @@ public class MersenneTwister extends BitsStreamGenerator implements Serializable
      * @return random bits generated
      */
     @Override
-    protected int next(int bits) {
+    public int next(int bits) {
 
         int y;
 

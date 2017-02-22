@@ -40,7 +40,7 @@ public class DummyStepHandler implements StepHandler {
      * The constructor is private to prevent users from creating
      * instances (Singleton design-pattern).
      */
-    private DummyStepHandler() {
+    public DummyStepHandler() {
     }
 
     /** Get the only instance.
@@ -93,7 +93,7 @@ public class DummyStepHandler implements StepHandler {
     /** Handle deserialization of the singleton.
      * @return the singleton instance
      */
-    private Object readResolve() {
+    public Object readResolve() {
         // return the singleton instance
         return LazyHolder.INSTANCE;
     }

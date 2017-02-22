@@ -106,7 +106,7 @@ public class SparseFieldMatrixTest extends TestCase {
         setupFractionArrays();
     }
 
-    private void setupFractionArrays() {
+    public void setupFractionArrays() {
         try {
             testDataLU = new Fraction[][]{ { new Fraction(2), new Fraction(5), new Fraction(3) }, { new Fraction(.5d), new Fraction(-2.5d), new Fraction(6.5d) },
                     { new Fraction(0.5d), new Fraction(0.2d), new Fraction(.2d) } };
@@ -536,7 +536,7 @@ public class SparseFieldMatrixTest extends TestCase {
         }
     }
 
-    private FieldVector<Fraction> columnToVector(Fraction[][] column) {
+    public FieldVector<Fraction> columnToVector(Fraction[][] column) {
         Fraction[] data = new Fraction[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -649,7 +649,7 @@ public class SparseFieldMatrixTest extends TestCase {
     // --------------- -----------------Protected methods
 
     /** verifies that two matrices are close (1-norm) */
-    protected void assertClose(String msg, FieldMatrix<Fraction> m, FieldMatrix<Fraction> n,
+    public void assertClose(String msg, FieldMatrix<Fraction> m, FieldMatrix<Fraction> n,
             double tolerance) {
         for(int i=0; i < m.getRowDimension(); i++){
             for(int j=0; j < m.getColumnDimension(); j++){
@@ -660,7 +660,7 @@ public class SparseFieldMatrixTest extends TestCase {
     }
 
     /** verifies that two vectors are close (sup norm) */
-    protected void assertClose(String msg, Fraction[] m, Fraction[] n,
+    public void assertClose(String msg, Fraction[] m, Fraction[] n,
             double tolerance) {
         if (m.length != n.length) {
             fail("vectors not same length");
@@ -671,7 +671,7 @@ public class SparseFieldMatrixTest extends TestCase {
         }
     }
 
-    private SparseFieldMatrix<Fraction> createSparseMatrix(Fraction[][] data) {
+    public SparseFieldMatrix<Fraction> createSparseMatrix(Fraction[][] data) {
         SparseFieldMatrix<Fraction> matrix = new SparseFieldMatrix<Fraction>(field, data.length, data[0].length);
         for (int row = 0; row < data.length; row++) {
             for (int col = 0; col < data[row].length; col++) {

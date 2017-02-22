@@ -31,13 +31,13 @@ public class ResizableDoubleArrayTest extends DoubleArrayAbstractTest {
     }
 
     @Override
-    protected void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         da = null;
         ra = null;
     }
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         da = new ResizableDoubleArray();
         ra = new ResizableDoubleArray();
     }
@@ -525,13 +525,13 @@ public class ResizableDoubleArrayTest extends DoubleArrayAbstractTest {
 
     }
 
-    private void verifyEquality(ResizableDoubleArray a, ResizableDoubleArray b) {
+    public void verifyEquality(ResizableDoubleArray a, ResizableDoubleArray b) {
         assertTrue(b.equals(a));
         assertTrue(a.equals(b));
         assertEquals(a.hashCode(), b.hashCode());
     }
 
-    private void verifyInequality(ResizableDoubleArray a, ResizableDoubleArray b) {
+    public void verifyInequality(ResizableDoubleArray a, ResizableDoubleArray b) {
         assertFalse(b.equals(a));
         assertFalse(a.equals(b));
         assertFalse(a.hashCode() == b.hashCode());

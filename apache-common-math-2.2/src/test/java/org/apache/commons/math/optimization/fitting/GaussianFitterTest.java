@@ -312,7 +312,7 @@ public class GaussianFitterTest {
      * @param fitter fitter to which the points in <code>points</code> should be
      *        added as observed points
      */
-    protected static void addDatasetToGaussianFitter(double[][] points,
+    public static void addDatasetToGaussianFitter(double[][] points,
                                                      GaussianFitter fitter) {
         for (int i = 0; i < points.length; i++) {
             fitter.addObservedPoint(points[i][0], points[i][1]);

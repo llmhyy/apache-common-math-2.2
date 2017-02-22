@@ -114,7 +114,7 @@ public abstract class DirectSearchOptimizer implements MultivariateRealOptimizer
 
     /** Simple constructor.
      */
-    protected DirectSearchOptimizer() {
+    public DirectSearchOptimizer() {
         setConvergenceChecker(new SimpleScalarValueChecker());
         setMaxIterations(Integer.MAX_VALUE);
         setMaxEvaluations(Integer.MAX_VALUE);
@@ -312,7 +312,7 @@ public abstract class DirectSearchOptimizer implements MultivariateRealOptimizer
      * @exception OptimizationException if the maximal number
      * of iterations is exceeded
      */
-    protected void incrementIterationsCounter()
+    public void incrementIterationsCounter()
         throws OptimizationException {
         if (++iterations > maxIterations) {
             throw new OptimizationException(new MaxIterationsExceededException(maxIterations));
@@ -326,7 +326,7 @@ public abstract class DirectSearchOptimizer implements MultivariateRealOptimizer
      * @exception OptimizationException if the algorithm fails to converge
      * @exception IllegalArgumentException if the start point dimension is wrong
      */
-    protected abstract void iterateSimplex(final Comparator<RealPointValuePair> comparator)
+    public abstract void iterateSimplex(final Comparator<RealPointValuePair> comparator)
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException;
 
     /** Evaluate the objective function on one point.
@@ -338,7 +338,7 @@ public abstract class DirectSearchOptimizer implements MultivariateRealOptimizer
      * parameters or if the maximal number of evaluations is exceeded
      * @exception IllegalArgumentException if the start point dimension is wrong
      */
-    protected double evaluate(final double[] x)
+    public double evaluate(final double[] x)
         throws FunctionEvaluationException, IllegalArgumentException {
         if (++evaluations > maxEvaluations) {
             throw new FunctionEvaluationException(new MaxEvaluationsExceededException(maxEvaluations), x);
@@ -351,7 +351,7 @@ public abstract class DirectSearchOptimizer implements MultivariateRealOptimizer
      * @exception IllegalArgumentException if the start point does not match
      * simplex dimension
      */
-    private void buildSimplex(final double[] startPoint)
+    public void buildSimplex(final double[] startPoint)
         throws IllegalArgumentException {
 
         final int n = startPoint.length;
@@ -381,7 +381,7 @@ public abstract class DirectSearchOptimizer implements MultivariateRealOptimizer
      * @exception FunctionEvaluationException if no value can be computed for the parameters
      * @exception OptimizationException if the maximal number of evaluations is exceeded
      */
-    protected void evaluateSimplex(final Comparator<RealPointValuePair> comparator)
+    public void evaluateSimplex(final Comparator<RealPointValuePair> comparator)
         throws FunctionEvaluationException, OptimizationException {
 
         // evaluate the objective function at all non-evaluated simplex points
@@ -402,7 +402,7 @@ public abstract class DirectSearchOptimizer implements MultivariateRealOptimizer
      * @param pointValuePair point to insert
      * @param comparator comparator to use to sort simplex vertices from best to worst
      */
-    protected void replaceWorstPoint(RealPointValuePair pointValuePair,
+    public void replaceWorstPoint(RealPointValuePair pointValuePair,
                                      final Comparator<RealPointValuePair> comparator) {
         int n = simplex.length - 1;
         for (int i = 0; i < n; ++i) {

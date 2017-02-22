@@ -47,7 +47,7 @@ public class DfpDecTest {
     // Generic test function.  Takes params x and y and tests them for 
     // equality.  Then checks the status flags against the flags argument.
     // If the test fail, it prints the desc string
-    private void test(Dfp x, Dfp y, int flags, String desc) {
+    public void test(Dfp x, Dfp y, int flags, String desc) {
         boolean b = x.equals(y);
 
         if (!x.equals(y) && !x.unequal(y))  // NaNs involved 

@@ -43,7 +43,7 @@ public abstract class AbstractRealMatrix implements RealMatrix {
     /**
      * Creates a matrix with no data
      */
-    protected AbstractRealMatrix() {
+    public AbstractRealMatrix() {
         lu = null;
     }
 
@@ -54,7 +54,7 @@ public abstract class AbstractRealMatrix implements RealMatrix {
      * @param columnDimension  the number of columns in the new matrix
      * @throws IllegalArgumentException if row or column dimension is not positive
      */
-    protected AbstractRealMatrix(final int rowDimension, final int columnDimension)
+    public AbstractRealMatrix(final int rowDimension, final int columnDimension)
         throws IllegalArgumentException {
         if (rowDimension < 1 ) {
             throw MathRuntimeException.createIllegalArgumentException(

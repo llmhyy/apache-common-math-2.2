@@ -224,7 +224,7 @@ public class CovarianceTest extends TestCase {
                 new Covariance().covariance(x, y, true), Double.MIN_VALUE);
     }
 
-    protected RealMatrix createRealMatrix(double[] data, int nRows, int nCols) {
+    public RealMatrix createRealMatrix(double[] data, int nRows, int nCols) {
         double[][] matrixData = new double[nRows][nCols];
         int ptr = 0;
         for (int i = 0; i < nRows; i++) {

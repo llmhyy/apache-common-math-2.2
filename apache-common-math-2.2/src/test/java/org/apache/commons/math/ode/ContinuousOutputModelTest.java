@@ -152,7 +152,7 @@ public class ContinuousOutputModelTest
 
   }
 
-  private boolean checkAppendError(ContinuousOutputModel cm,
+  public boolean checkAppendError(ContinuousOutputModel cm,
                                    double t0, double[] y0, double t1)
   throws DerivativeException {
       try {
@@ -165,7 +165,7 @@ public class ContinuousOutputModelTest
       return false; // no allowable error
   }
 
-  private StepInterpolator buildInterpolator(double t0, double[] y0, double t1) {
+  public StepInterpolator buildInterpolator(double t0, double[] y0, double t1) {
       DummyStepInterpolator interpolator  = new DummyStepInterpolator(y0, new double[y0.length], t1 >= t0);
       interpolator.storeTime(t0);
       interpolator.shift();

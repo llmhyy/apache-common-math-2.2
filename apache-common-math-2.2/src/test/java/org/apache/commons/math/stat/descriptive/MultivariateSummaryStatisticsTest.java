@@ -38,7 +38,7 @@ public class MultivariateSummaryStatisticsTest extends TestCase {
         super(name);
     }
 
-    protected MultivariateSummaryStatistics createMultivariateSummaryStatistics(int k, boolean isCovarianceBiasCorrected) {
+    public MultivariateSummaryStatistics createMultivariateSummaryStatistics(int k, boolean isCovarianceBiasCorrected) {
         return new MultivariateSummaryStatistics(k, isCovarianceBiasCorrected);
     }
 

@@ -120,7 +120,7 @@ public abstract class AbstractLeastSquaresOptimizer implements DifferentiableMul
      * <p>The convergence check is set to a {@link SimpleVectorialValueChecker}
      * and the maximal number of evaluation is set to its default value.</p>
      */
-    protected AbstractLeastSquaresOptimizer() {
+    public AbstractLeastSquaresOptimizer() {
         setConvergenceChecker(new SimpleVectorialValueChecker());
         setMaxIterations(DEFAULT_MAX_ITERATIONS);
         setMaxEvaluations(Integer.MAX_VALUE);
@@ -175,7 +175,7 @@ public abstract class AbstractLeastSquaresOptimizer implements DifferentiableMul
      * @exception OptimizationException if the maximal number
      * of iterations is exceeded
      */
-    protected void incrementIterationsCounter()
+    public void incrementIterationsCounter()
         throws OptimizationException {
         if (++iterations > maxIterations) {
             throw new OptimizationException(new MaxIterationsExceededException(maxIterations));
@@ -187,7 +187,7 @@ public abstract class AbstractLeastSquaresOptimizer implements DifferentiableMul
      * @exception FunctionEvaluationException if the function jacobian
      * cannot be evaluated or its dimension doesn't match problem dimension
      */
-    protected void updateJacobian() throws FunctionEvaluationException {
+    public void updateJacobian() throws FunctionEvaluationException {
         ++jacobianEvaluations;
         jacobian = jF.value(point);
         if (jacobian.length != rows) {
@@ -210,7 +210,7 @@ public abstract class AbstractLeastSquaresOptimizer implements DifferentiableMul
      * or its dimension doesn't match problem dimension or maximal number of
      * of evaluations is exceeded
      */
-    protected void updateResidualsAndCost()
+    public void updateResidualsAndCost()
         throws FunctionEvaluationException {
 
         if (++objectiveEvaluations > maxEvaluations) {
@@ -367,7 +367,7 @@ public abstract class AbstractLeastSquaresOptimizer implements DifferentiableMul
      * @exception OptimizationException if the algorithm failed to converge
      * @exception IllegalArgumentException if the start point dimension is wrong
      */
-    protected abstract VectorialPointValuePair doOptimize()
+    public abstract VectorialPointValuePair doOptimize()
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException;
 
 

@@ -71,7 +71,7 @@ public class Gamma {
     /**
      * Default constructor.  Prohibit instantiation.
      */
-    private Gamma() {
+    public Gamma() {
         super();
     }
 
@@ -239,12 +239,12 @@ public class Gamma {
             ContinuedFraction cf = new ContinuedFraction() {
 
                 @Override
-                protected double getA(int n, double x) {
+                public double getA(int n, double x) {
                     return ((2.0 * n) + 1.0) - a + x;
                 }
 
                 @Override
-                protected double getB(int n, double x) {
+                public double getB(int n, double x) {
                     return n * (a - n);
                 }
             };

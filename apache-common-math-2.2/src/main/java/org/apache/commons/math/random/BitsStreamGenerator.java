@@ -54,7 +54,7 @@ public abstract class BitsStreamGenerator implements RandomGenerator {
      * @param bits number of random bits to produce
      * @return random bits generated
      */
-    protected abstract int next(int bits);
+    public abstract int next(int bits);
 
     /** {@inheritDoc} */
     public boolean nextBoolean() {

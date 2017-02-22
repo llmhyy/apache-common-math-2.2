@@ -494,7 +494,7 @@ public class LevenbergMarquardtEstimator extends AbstractEstimator implements Se
    * @param work2 work array
    * @param work3 work array
    */
-  private void determineLMParameter(double[] qy, double delta, double[] diag,
+  public void determineLMParameter(double[] qy, double delta, double[] diag,
                                     double[] work1, double[] work2, double[] work3) {
 
     // compute and store in x the gauss-newton direction, if the
@@ -669,7 +669,7 @@ public class LevenbergMarquardtEstimator extends AbstractEstimator implements Se
    * @param lmDiag diagonal elements associated with lmDir
    * @param work work array
    */
-  private void determineLMDirection(double[] qy, double[] diag,
+  public void determineLMDirection(double[] qy, double[] diag,
                                     double[] lmDiag, double[] work) {
 
     // copy R and Qty to preserve input and initialize s
@@ -796,7 +796,7 @@ public class LevenbergMarquardtEstimator extends AbstractEstimator implements Se
    * non-increasing absolute values order.</p>
    * @exception EstimationException if the decomposition cannot be performed
    */
-  private void qrDecomposition() throws EstimationException {
+  public void qrDecomposition() throws EstimationException {
 
     // initializations
     for (int k = 0; k < cols; ++k) {
@@ -875,7 +875,7 @@ public class LevenbergMarquardtEstimator extends AbstractEstimator implements Se
    *
    * @param y vector to multiply (will be overwritten with the result)
    */
-  private void qTy(double[] y) {
+  public void qTy(double[] y) {
     for (int k = 0; k < cols; ++k) {
       int pk = permutation[k];
       int kDiag = k * cols + pk;

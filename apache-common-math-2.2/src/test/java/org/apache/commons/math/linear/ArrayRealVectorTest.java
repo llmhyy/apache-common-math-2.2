@@ -62,7 +62,7 @@ public class ArrayRealVectorTest extends TestCase {
             data = d.clone();
         }
 
-        private MatrixVisitorException unsupported() {
+        public MatrixVisitorException unsupported() {
             return new MatrixVisitorException("Not supported, unneeded for test purposes", new Object[0]);
         }
 
@@ -1297,7 +1297,7 @@ public class ArrayRealVectorTest extends TestCase {
 
 
     /** verifies that two vectors are close (sup norm) */
-    protected void assertClose(String msg, double[] m, double[] n,
+    public void assertClose(String msg, double[] m, double[] n,
             double tolerance) {
         if (m.length != n.length) {
             fail("vectors have different lengths");

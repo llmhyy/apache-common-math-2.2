@@ -70,14 +70,14 @@ public class NormalDistributionTest extends ContinuousDistributionAbstractTest  
     // --------------------- Override tolerance  --------------
     protected double defaultTolerance = NormalDistributionImpl.DEFAULT_INVERSE_ABSOLUTE_ACCURACY;
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         setTolerance(defaultTolerance);
     }
 
     //---------------------------- Additional test cases -------------------------
 
-    private void verifyQuantiles() throws Exception {
+    public void verifyQuantiles() throws Exception {
         NormalDistribution distribution = (NormalDistribution) getDistribution();
         double mu = distribution.getMean();
         double sigma = distribution.getStandardDeviation();
@@ -155,7 +155,7 @@ public class NormalDistributionTest extends ContinuousDistributionAbstractTest  
         checkDensity(1.1, 1, x, new double[]{0.003266819056,0.043983595980,0.217852177033,0.396952547477,0.266085249899});
     }
 
-    private void checkDensity(double mean, double sd, double[] x, double[] expected) {
+    public void checkDensity(double mean, double sd, double[] x, double[] expected) {
         NormalDistribution d = new NormalDistributionImpl(mean, sd);
         for (int i = 0; i < x.length; i++) {
             assertEquals(expected[i], d.density(x[i]), 1e-9);

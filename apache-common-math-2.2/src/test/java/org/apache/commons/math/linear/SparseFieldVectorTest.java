@@ -194,7 +194,7 @@ public class SparseFieldVectorTest extends TestCase {
     }
 
     /** verifies that two vectors are close (sup norm) */
-    protected void assertEquals(String msg, Fraction[] m, Fraction[] n) {
+    public void assertEquals(String msg, Fraction[] m, Fraction[] n) {
         if (m.length != n.length) {
             fail("vectors have different lengths");
         }
@@ -204,7 +204,7 @@ public class SparseFieldVectorTest extends TestCase {
     }
 
     /** verifies that two vectors are close (sup norm) */
-    protected void assertClose(String msg, Fraction[] m, Fraction[] n, double tolerance) {
+    public void assertClose(String msg, Fraction[] m, Fraction[] n, double tolerance) {
         if (m.length != n.length) {
             fail("vectors have different lengths");
         }

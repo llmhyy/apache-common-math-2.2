@@ -58,7 +58,7 @@ public class SimplexSolver extends AbstractLinearOptimizer {
      * @param tableau simple tableau for the problem
      * @return column with the most negative coefficient
      */
-    private Integer getPivotColumn(SimplexTableau tableau) {
+    public Integer getPivotColumn(SimplexTableau tableau) {
         double minValue = 0;
         Integer minPos = null;
         for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getWidth() - 1; i++) {
@@ -76,7 +76,7 @@ public class SimplexSolver extends AbstractLinearOptimizer {
      * @param col the column to test the ratio of.  See {@link #getPivotColumn(SimplexTableau)}
      * @return row with the minimum ratio
      */
-    private Integer getPivotRow(SimplexTableau tableau, final int col) {
+    public Integer getPivotRow(SimplexTableau tableau, final int col) {
         // create a list of all the rows that tie for the lowest score in the minimum ratio test
         List<Integer> minRatioPositions = new ArrayList<Integer>();
         double minRatio = Double.MAX_VALUE;
@@ -119,7 +119,7 @@ public class SimplexSolver extends AbstractLinearOptimizer {
      * @throws OptimizationException if the maximal iteration count has been
      * exceeded or if the model is found not to have a bounded solution
      */
-    protected void doIteration(final SimplexTableau tableau)
+    public void doIteration(final SimplexTableau tableau)
         throws OptimizationException {
 
         incrementIterationsCounter();
@@ -150,7 +150,7 @@ public class SimplexSolver extends AbstractLinearOptimizer {
      * exceeded, or if the problem is found not to have a bounded solution, or
      * if there is no feasible solution
      */
-    protected void solvePhase1(final SimplexTableau tableau) throws OptimizationException {
+    public void solvePhase1(final SimplexTableau tableau) throws OptimizationException {
 
         // make sure we're in Phase 1
         if (tableau.getNumArtificialVariables() == 0) {

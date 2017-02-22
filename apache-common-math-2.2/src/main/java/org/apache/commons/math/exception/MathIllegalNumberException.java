@@ -43,7 +43,7 @@ public class MathIllegalNumberException extends MathIllegalArgumentException {
      * @param wrong wrong number
      * @param arguments Arguments.
      */
-    protected MathIllegalNumberException(Localizable specific,
+    public MathIllegalNumberException(Localizable specific,
                                          Localizable general,
                                          Number wrong,
                                          Object ... arguments) {
@@ -58,7 +58,7 @@ public class MathIllegalNumberException extends MathIllegalArgumentException {
      * @param wrong wrong number
      * @param arguments Arguments.
      */
-    protected MathIllegalNumberException(Localizable general,
+    public MathIllegalNumberException(Localizable general,
                                          Number wrong,
                                          Object ... arguments) {
         super(general, wrong, arguments);

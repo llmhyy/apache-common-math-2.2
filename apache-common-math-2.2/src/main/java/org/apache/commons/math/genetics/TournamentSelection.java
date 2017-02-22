@@ -69,7 +69,7 @@ public class TournamentSelection implements SelectionPolicy {
      *            the population from which the chromosomes are choosen.
      * @return the selected chromosome.
      */
-    private Chromosome tournament(ListPopulation population) {
+    public Chromosome tournament(ListPopulation population) {
         if (population.getPopulationSize() < this.arity)
             throw new IllegalArgumentException("Tournament arity cannot be bigger than population size.");
         // auxiliary population

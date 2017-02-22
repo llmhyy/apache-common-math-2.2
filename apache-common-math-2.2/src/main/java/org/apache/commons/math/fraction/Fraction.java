@@ -172,7 +172,7 @@ public class Fraction
      * @throws FractionConversionException if the continued fraction failed to
      *         converge.
      */
-    private Fraction(double value, double epsilon, int maxDenominator, int maxIterations)
+    public Fraction(double value, double epsilon, int maxDenominator, int maxIterations)
         throws FractionConversionException
     {
         long overflow = Integer.MAX_VALUE;
@@ -473,7 +473,7 @@ public class Fraction
      * @throws ArithmeticException if the resulting numerator or denominator
      *   cannot be represented in an <code>int</code>.
      */
-    private Fraction addSub(Fraction fraction, boolean isAdd) {
+    public Fraction addSub(Fraction fraction, boolean isAdd) {
         if (fraction == null) {
             throw new NullArgumentException(LocalizedFormats.FRACTION);
         }

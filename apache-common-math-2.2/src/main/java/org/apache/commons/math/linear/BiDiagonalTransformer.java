@@ -254,7 +254,7 @@ class BiDiagonalTransformer {
      * <p>Transformation is done using alternate Householder transforms
      * on columns and rows.</p>
      */
-    private void transformToUpperBiDiagonal() {
+    public void transformToUpperBiDiagonal() {
 
         final int m = householderVectors.length;
         final int n = householderVectors[0].length;
@@ -318,7 +318,7 @@ class BiDiagonalTransformer {
      * <p>Transformation is done using alternate Householder transforms
      * on rows and columns.</p>
      */
-    private void transformToLowerBiDiagonal() {
+    public void transformToLowerBiDiagonal() {
 
         final int m = householderVectors.length;
         final int n = householderVectors[0].length;

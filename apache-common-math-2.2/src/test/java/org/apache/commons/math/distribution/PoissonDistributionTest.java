@@ -187,7 +187,7 @@ public class PoissonDistributionTest extends IntegerDistributionAbstractTest {
         checkProbability(dist, 6950);
     }
 
-    private void checkProbability(PoissonDistribution dist, double x) throws Exception {
+    public void checkProbability(PoissonDistribution dist, double x) throws Exception {
         double p = dist.cumulativeProbability(x);
         assertFalse("NaN cumulative probability returned for mean = " +
                 dist.getMean() + " x = " + x, Double.isNaN(p));

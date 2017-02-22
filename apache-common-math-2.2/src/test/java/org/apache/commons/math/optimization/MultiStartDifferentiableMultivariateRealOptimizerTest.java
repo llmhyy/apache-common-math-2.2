@@ -101,7 +101,7 @@ public class MultiStartDifferentiableMultivariateRealOptimizerTest {
             return r / points.size();
         }
 
-        private double[] gradient(double[] point) {
+        public double[] gradient(double[] point) {
 
             // optimal radius
             Point2D.Double center = new Point2D.Double(point[0], point[1]);

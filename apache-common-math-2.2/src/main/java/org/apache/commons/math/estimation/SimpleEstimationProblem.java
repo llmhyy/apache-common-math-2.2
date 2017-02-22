@@ -96,7 +96,7 @@ public class SimpleEstimationProblem implements EstimationProblem {
     /** Add a parameter to the problem.
      * @param p parameter to add
      */
-    protected void addParameter(EstimatedParameter p) {
+    public void addParameter(EstimatedParameter p) {
         parameters.add(p);
     }
 
@@ -104,7 +104,7 @@ public class SimpleEstimationProblem implements EstimationProblem {
      * Add a new measurement to the set.
      * @param m measurement to add
      */
-    protected void addMeasurement(WeightedMeasurement m) {
+    public void addMeasurement(WeightedMeasurement m) {
         measurements.add(m);
     }
 

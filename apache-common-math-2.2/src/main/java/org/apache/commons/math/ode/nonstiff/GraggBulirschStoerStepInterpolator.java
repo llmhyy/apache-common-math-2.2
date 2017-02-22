@@ -182,7 +182,7 @@ class GraggBulirschStoerStepInterpolator
    * interpolation polynoms up to the given degree
    * @param maxDegree maximal degree to handle
    */
-  private void resetTables(final int maxDegree) {
+  public void resetTables(final int maxDegree) {
 
     if (maxDegree < 0) {
       polynoms      = null;
@@ -226,7 +226,7 @@ class GraggBulirschStoerStepInterpolator
 
   /** {@inheritDoc} */
   @Override
-  protected StepInterpolator doCopy() {
+  public StepInterpolator doCopy() {
     return new GraggBulirschStoerStepInterpolator(this);
   }
 
@@ -308,7 +308,7 @@ class GraggBulirschStoerStepInterpolator
 
   /** {@inheritDoc} */
   @Override
-  protected void computeInterpolatedStateAndDerivatives(final double theta,
+  public void computeInterpolatedStateAndDerivatives(final double theta,
                                           final double oneMinusThetaH) {
 
     final int dimension = currentState.length;

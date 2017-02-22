@@ -750,13 +750,13 @@ public final class BigMatrixImplTest extends TestCase {
     //--------------- -----------------Protected methods
 
     /** verifies that two matrices are close (1-norm) */
-    protected void assertClose(String msg, BigMatrix m, BigMatrix n,
+    public void assertClose(String msg, BigMatrix m, BigMatrix n,
         double tolerance) {
         assertTrue(msg,m.subtract(n).getNorm().doubleValue() < tolerance);
     }
 
     /** verifies that two vectors are close (sup norm) */
-    protected void assertClose(String msg, double[] m, double[] n,
+    public void assertClose(String msg, double[] m, double[] n,
         double tolerance) {
         if (m.length != n.length) {
             fail("vectors not same length");
@@ -768,7 +768,7 @@ public final class BigMatrixImplTest extends TestCase {
     }
 
     /** extracts the l  and u matrices from compact lu representation */
-    protected void splitLU(BigMatrix lu, BigDecimal[][] lowerData, BigDecimal[][] upperData) throws InvalidMatrixException {
+    public void splitLU(BigMatrix lu, BigDecimal[][] lowerData, BigDecimal[][] upperData) throws InvalidMatrixException {
         if (!lu.isSquare() || lowerData.length != lowerData[0].length || upperData.length != upperData[0].length ||
                 lowerData.length != upperData.length
                 || lowerData.length != lu.getRowDimension()) {
@@ -792,7 +792,7 @@ public final class BigMatrixImplTest extends TestCase {
     }
 
     /** Returns the result of applying the given row permutation to the matrix */
-    protected BigMatrix permuteRows(BigMatrix matrix, int[] permutation) {
+    public BigMatrix permuteRows(BigMatrix matrix, int[] permutation) {
         if (!matrix.isSquare() || matrix.getRowDimension() != permutation.length) {
             throw new IllegalArgumentException("dimension mismatch");
         }
@@ -808,7 +808,7 @@ public final class BigMatrixImplTest extends TestCase {
     }
 
     /** Extracts l and u matrices from lu and verifies that matrix = l times u modulo permutation */
-    protected void verifyDecomposition(BigMatrix matrix, BigMatrix lu) throws Exception{
+    public void verifyDecomposition(BigMatrix matrix, BigMatrix lu) throws Exception{
         int n = matrix.getRowDimension();
         BigDecimal[][] lowerData = new BigDecimal[n][n];
         BigDecimal[][] upperData = new BigDecimal[n][n];

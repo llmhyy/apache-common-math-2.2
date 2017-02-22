@@ -47,7 +47,7 @@ public class Decimal10 extends DfpDec {
         super(factory, s);
     }
 
-    protected Decimal10(final DfpField factory, final byte sign, final byte nans) {
+    public Decimal10(final DfpField factory, final byte sign, final byte nans) {
         super(factory, sign, nans);
     }
 
@@ -92,7 +92,7 @@ public class Decimal10 extends DfpDec {
     }
 
     @Override
-    protected int getDecimalDigits() {
+    public int getDecimalDigits() {
         return 10;
     }
 

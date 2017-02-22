@@ -1107,7 +1107,7 @@ public class ArrayRealVector extends AbstractRealVector implements Serializable 
      * have the same dimension
      */
     @Override
-    protected void checkVectorDimensions(RealVector v)
+    public void checkVectorDimensions(RealVector v)
         throws IllegalArgumentException {
         checkVectorDimensions(v.getDimension());
     }
@@ -1120,7 +1120,7 @@ public class ArrayRealVector extends AbstractRealVector implements Serializable 
      * inconsistent with vector size
      */
     @Override
-    protected void checkVectorDimensions(int n)
+    public void checkVectorDimensions(int n)
         throws IllegalArgumentException {
         if (data.length != n) {
             throw MathRuntimeException.createIllegalArgumentException(

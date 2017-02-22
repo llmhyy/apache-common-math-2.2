@@ -91,7 +91,7 @@ public abstract class AbstractStepInterpolator
    * interpolators by cloning an uninitialized model and latter
    * initializing the copy.
    */
-  protected AbstractStepInterpolator() {
+  public AbstractStepInterpolator() {
     globalPreviousTime      = Double.NaN;
     globalCurrentTime       = Double.NaN;
     softPreviousTime        = Double.NaN;
@@ -111,7 +111,7 @@ public abstract class AbstractStepInterpolator
    * the end of the step
    * @param forward integration direction indicator
    */
-  protected AbstractStepInterpolator(final double[] y, final boolean forward) {
+  public AbstractStepInterpolator(final double[] y, final boolean forward) {
 
     globalPreviousTime = Double.NaN;
     globalCurrentTime  = Double.NaN;
@@ -147,7 +147,7 @@ public abstract class AbstractStepInterpolator
    * @param interpolator interpolator to copy from.
    *
    */
-  protected AbstractStepInterpolator(final AbstractStepInterpolator interpolator) {
+  public AbstractStepInterpolator(final AbstractStepInterpolator interpolator) {
 
     globalPreviousTime = interpolator.globalPreviousTime;
     globalCurrentTime  = interpolator.globalCurrentTime;
@@ -177,7 +177,7 @@ public abstract class AbstractStepInterpolator
    * the end of the step
    * @param isForward integration direction indicator
    */
-  protected void reinitialize(final double[] y, final boolean isForward) {
+  public void reinitialize(final double[] y, final boolean isForward) {
 
     globalPreviousTime = Double.NaN;
     globalCurrentTime  = Double.NaN;
@@ -214,7 +214,7 @@ public abstract class AbstractStepInterpolator
     * original instance.
     * @return a copy of the finalized instance
     */
-   protected abstract StepInterpolator doCopy();
+   public abstract StepInterpolator doCopy();
 
   /** Shift one step forward.
    * Copy the current time into the previous time, hence preparing the
@@ -331,7 +331,7 @@ public abstract class AbstractStepInterpolator
    * @throws DerivativeException this exception is propagated to the caller if the
    * underlying user function triggers one
    */
-  protected abstract void computeInterpolatedStateAndDerivatives(double theta,
+  public abstract void computeInterpolatedStateAndDerivatives(double theta,
                                                                  double oneMinusThetaH)
     throws DerivativeException;
 
@@ -420,7 +420,7 @@ public abstract class AbstractStepInterpolator
    * @throws DerivativeException this exception is propagated to the
    * caller if the underlying user function triggers one
    */
-  protected void doFinalize()
+  public void doFinalize()
     throws DerivativeException {
   }
 
@@ -438,7 +438,7 @@ public abstract class AbstractStepInterpolator
    * @param out stream where to save the state
    * @exception IOException in case of write error
    */
-  protected void writeBaseExternal(final ObjectOutput out)
+  public void writeBaseExternal(final ObjectOutput out)
     throws IOException {
 
     if (currentState == null) {
@@ -484,7 +484,7 @@ public abstract class AbstractStepInterpolator
    * @return interpolated time be set later by the caller
    * @exception IOException in case of read error
    */
-  protected double readBaseExternal(final ObjectInput in)
+  public double readBaseExternal(final ObjectInput in)
     throws IOException {
 
     final int dimension = in.readInt();

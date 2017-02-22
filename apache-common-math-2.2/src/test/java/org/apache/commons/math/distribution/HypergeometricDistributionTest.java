@@ -167,7 +167,7 @@ public class HypergeometricDistributionTest extends IntegerDistributionAbstractT
         testHypergeometricDistributionProbabilities(populationSize, sampleSize, numberOfSucceses, data);
     }
 
-    private void testHypergeometricDistributionProbabilities(int populationSize, int sampleSize, int numberOfSucceses, double[][] data) {
+    public void testHypergeometricDistributionProbabilities(int populationSize, int sampleSize, int numberOfSucceses, double[][] data) {
         HypergeometricDistributionImpl dist = new HypergeometricDistributionImpl(populationSize, numberOfSucceses, sampleSize);
         for (int i = 0; i < data.length; ++i) {
             int x = (int)data[i][0];

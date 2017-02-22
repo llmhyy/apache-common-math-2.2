@@ -111,7 +111,7 @@ public class GaussianFitter {
      *
      * @return new <code>GaussianParametersGuesser</code> instance
      */
-    protected GaussianParametersGuesser createParametersGuesser(WeightedObservedPoint[] observations) {
+    public GaussianParametersGuesser createParametersGuesser(WeightedObservedPoint[] observations) {
         return new GaussianParametersGuesser(observations);
     }
 }

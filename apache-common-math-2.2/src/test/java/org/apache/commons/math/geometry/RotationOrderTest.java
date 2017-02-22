@@ -45,7 +45,7 @@ public class RotationOrderTest
 
   }
 
-  private String getFieldName(RotationOrder order) {
+  public String getFieldName(RotationOrder order) {
     try {
       Field[] fields = RotationOrder.class.getFields();
       for (int i = 0; i < fields.length; ++i) {

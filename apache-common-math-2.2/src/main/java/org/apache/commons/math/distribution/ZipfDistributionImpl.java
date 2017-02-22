@@ -85,7 +85,7 @@ public class ZipfDistributionImpl extends AbstractIntegerDistribution
      * @param n the number of elements
      * @exception IllegalArgumentException if n &le; 0
      */
-    private void setNumberOfElementsInternal(final int n)
+    public void setNumberOfElementsInternal(final int n)
         throws IllegalArgumentException {
         if (n <= 0) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -125,7 +125,7 @@ public class ZipfDistributionImpl extends AbstractIntegerDistribution
      * @param s the exponent
      * @exception IllegalArgumentException if s &le; 0.0
      */
-    private void setExponentInternal(final double s)
+    public void setExponentInternal(final double s)
         throws IllegalArgumentException {
         if (s <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -177,7 +177,7 @@ public class ZipfDistributionImpl extends AbstractIntegerDistribution
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected int getDomainLowerBound(final double p) {
+    public int getDomainLowerBound(final double p) {
         return 0;
     }
 
@@ -190,7 +190,7 @@ public class ZipfDistributionImpl extends AbstractIntegerDistribution
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected int getDomainUpperBound(final double p) {
+    public int getDomainUpperBound(final double p) {
         return numberOfElements;
     }
 
@@ -204,7 +204,7 @@ public class ZipfDistributionImpl extends AbstractIntegerDistribution
      * @param m the exponent; special case m == 1.0 is the harmonic series
      * @return the nth generalized harmonic number
      */
-    private double generalizedHarmonic(final int n, final double m) {
+    public double generalizedHarmonic(final int n, final double m) {
         double value = 0;
         for (int k = n; k > 0; --k) {
             value += 1.0 / FastMath.pow(k, m);
@@ -249,7 +249,7 @@ public class ZipfDistributionImpl extends AbstractIntegerDistribution
      * @return the mean
      * @since 2.2
      */
-    protected double getNumericalMean() {
+    public double getNumericalMean() {
         final int N = getNumberOfElements();
         final double s = getExponent();
 
@@ -273,7 +273,7 @@ public class ZipfDistributionImpl extends AbstractIntegerDistribution
      * @return the variance
      * @since 2.2
      */
-    protected double getNumericalVariance() {
+    public double getNumericalVariance() {
         final int N = getNumberOfElements();
         final double s = getExponent();
 

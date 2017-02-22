@@ -53,7 +53,7 @@ abstract class RungeKuttaStepInterpolator
    * pattern to create the step interpolators by cloning an
    * uninitialized model and latter initializing the copy.
    */
-  protected RungeKuttaStepInterpolator() {
+  public RungeKuttaStepInterpolator() {
     super();
     yDotK      = null;
     integrator = null;

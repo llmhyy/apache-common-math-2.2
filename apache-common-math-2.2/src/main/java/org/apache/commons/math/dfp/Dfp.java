@@ -178,7 +178,7 @@ public class Dfp implements FieldElement<Dfp> {
     /** Makes an instance with a value of zero.
      * @param field field to which this instance belongs
      */
-    protected Dfp(final DfpField field) {
+    public Dfp(final DfpField field) {
         mant = new int[field.getRadixDigits()];
         sign = 1;
         exp = 0;
@@ -190,7 +190,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param field field to which this instance belongs
      * @param x value to convert to an instance
      */
-    protected Dfp(final DfpField field, byte x) {
+    public Dfp(final DfpField field, byte x) {
         this(field, (long) x);
     }
 
@@ -198,7 +198,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param field field to which this instance belongs
      * @param x value to convert to an instance
      */
-    protected Dfp(final DfpField field, int x) {
+    public Dfp(final DfpField field, int x) {
         this(field, (long) x);
     }
 
@@ -206,7 +206,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param field field to which this instance belongs
      * @param x value to convert to an instance
      */
-    protected Dfp(final DfpField field, long x) {
+    public Dfp(final DfpField field, long x) {
 
         // initialize as if 0
         mant = new int[field.getRadixDigits()];
@@ -253,7 +253,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param field field to which this instance belongs
      * @param x value to convert to an instance
      */
-    protected Dfp(final DfpField field, double x) {
+    public Dfp(final DfpField field, double x) {
 
         // initialize as if 0
         mant = new int[field.getRadixDigits()];
@@ -327,7 +327,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param field field to which this instance belongs
      * @param s string representation of the instance
      */
-    protected Dfp(final DfpField field, final String s) {
+    public Dfp(final DfpField field, final String s) {
 
         // initialize as if 0
         mant = new int[field.getRadixDigits()];
@@ -535,7 +535,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param nans code of the value, must be one of {@link #INFINITE},
      * {@link #SNAN},  {@link #QNAN}
      */
-    protected Dfp(final DfpField field, final byte sign, final byte nans) {
+    public Dfp(final DfpField field, final byte sign, final byte nans) {
         this.field = field;
         this.mant    = new int[field.getRadixDigits()];
         this.sign    = sign;
@@ -662,7 +662,7 @@ public class Dfp implements FieldElement<Dfp> {
 
     /** Shift the mantissa left, and adjust the exponent to compensate.
      */
-    protected void shiftLeft() {
+    public void shiftLeft() {
         for (int i = mant.length - 1; i > 0; i--) {
             mant[i] = mant[i-1];
         }
@@ -674,7 +674,7 @@ public class Dfp implements FieldElement<Dfp> {
      uses shiftRight() */
     /** Shift the mantissa right, and adjust the exponent to compensate.
      */
-    protected void shiftRight() {
+    public void shiftRight() {
         for (int i = 0; i < mant.length - 1; i++) {
             mant[i] = mant[i+1];
         }
@@ -690,7 +690,7 @@ public class Dfp implements FieldElement<Dfp> {
      *  @param e desired exponent
      *  @return last digit destroyed by shifting right
      */
-    protected int align(int e) {
+    public int align(int e) {
         int lostdigit = 0;
         boolean inexact = false;
 
@@ -854,7 +854,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @return -1 if a<b, 1 if a>b and 0 if a==b
      *  Note this method does not properly handle NaNs or numbers with different precision.
      */
-    private static int compare(final Dfp a, final Dfp b) {
+    public static int compare(final Dfp a, final Dfp b) {
         // Ignore the sign of zero
         if (a.mant[a.mant.length - 1] == 0 && b.mant[b.mant.length - 1] == 0 &&
             a.nans == FINITE && b.nans == FINITE) {
@@ -954,7 +954,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param rmode rounding mode to use
      * @return truncated value
      */
-    protected Dfp trunc(final DfpField.RoundingMode rmode) {
+    public Dfp trunc(final DfpField.RoundingMode rmode) {
         boolean changed = false;
 
         if (isNaN()) {
@@ -1139,7 +1139,7 @@ public class Dfp implements FieldElement<Dfp> {
      *  @param extra ???
      *  @return ???
      */
-    protected int complement(int extra) {
+    public int complement(int extra) {
 
         extra = RADIX-extra;
         for (int i = 0; i < mant.length; i++) {
@@ -1327,7 +1327,7 @@ public class Dfp implements FieldElement<Dfp> {
      * @param n ???
      * @return the IEEE flag if an exception occurred
      */
-    protected int round(int n) {
+    public int round(int n) {
         boolean inc = false;
         switch (field.getRoundingMode()) {
             case ROUND_DOWN:
@@ -1971,7 +1971,7 @@ public class Dfp implements FieldElement<Dfp> {
     /** Convert an instance to a string using scientific notation.
      * @return string representation of the instance in scientific notation
      */
-    protected String dfp2sci() {
+    public String dfp2sci() {
         char rawdigits[]    = new char[mant.length * 4];
         char outputbuffer[] = new char[mant.length * 4 + 20];
         int p;
@@ -2052,7 +2052,7 @@ public class Dfp implements FieldElement<Dfp> {
     /** Convert an instance to a string using normal notation.
      * @return string representation of the instance in normal notation
      */
-    protected String dfp2string() {
+    public String dfp2string() {
         char buffer[] = new char[mant.length*4 + 20];
         int p = 1;
         int q;
@@ -2199,7 +2199,7 @@ public class Dfp implements FieldElement<Dfp> {
      *                   IEEE 854, if any
      *  @return the value that should be return by the operation triggering the trap
      */
-    protected Dfp trap(int type, String what, Dfp oper, Dfp def, Dfp result) {
+    public Dfp trap(int type, String what, Dfp oper, Dfp def, Dfp result) {
         return def;
     }
 

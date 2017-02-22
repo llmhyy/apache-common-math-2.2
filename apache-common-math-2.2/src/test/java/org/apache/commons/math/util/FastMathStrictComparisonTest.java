@@ -87,15 +87,15 @@ public class FastMathStrictComparisonTest {
     public void test1() throws Exception{
         setupMethodCall(mathMethod, fastMethod, types, valueArrays);
     }
-    private static boolean isNumber(Double d) {
+    public static boolean isNumber(Double d) {
         return !(d.isInfinite() || d.isNaN());
     }
 
-    private static boolean isNumber(Float f) {
+    public static boolean isNumber(Float f) {
         return !(f.isInfinite() || f.isNaN());
     }
 
-    private static void reportFailedResults(Method mathMethod, Object[] params, Object expected, Object actual, int[] entries){
+    public static void reportFailedResults(Method mathMethod, Object[] params, Object expected, Object actual, int[] entries){
         final String methodName = mathMethod.getName();
         String format = null;
         long actL=0;
@@ -157,7 +157,7 @@ public class FastMathStrictComparisonTest {
         }
     }
 
-    private static void callMethods(Method mathMethod, Method fastMethod,
+    public static void callMethods(Method mathMethod, Method fastMethod,
             Object[] params, int[] entries) throws IllegalAccessException,
             InvocationTargetException {
         try {
@@ -171,7 +171,7 @@ public class FastMathStrictComparisonTest {
         }
     }
 
-    private static void setupMethodCall(Method mathMethod, Method fastMethod,
+    public static void setupMethodCall(Method mathMethod, Method fastMethod,
             Type[] types, Object[][] valueArrays) throws Exception {
         Object[] params = new Object[types.length];
         int entry1 = 0;

@@ -27,7 +27,7 @@ import junit.framework.TestCase;
  */
 public class FractionTest extends TestCase {
 
-    private void assertFraction(int expectedNumerator, int expectedDenominator, Fraction actual) {
+    public void assertFraction(int expectedNumerator, int expectedDenominator, Fraction actual) {
         assertEquals(expectedNumerator, actual.getNumerator());
         assertEquals(expectedDenominator, actual.getDenominator());
     }
@@ -138,7 +138,7 @@ public class FractionTest extends TestCase {
         checkIntegerOverflow(1.0e10);
     }
 
-    private void checkIntegerOverflow(double a) {
+    public void checkIntegerOverflow(double a) {
         try {
             new Fraction(a, 1.0e-12, 1000);
             fail("an exception should have been thrown");

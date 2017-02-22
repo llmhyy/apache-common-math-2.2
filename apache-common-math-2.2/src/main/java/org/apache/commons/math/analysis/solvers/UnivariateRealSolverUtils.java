@@ -34,7 +34,7 @@ public class UnivariateRealSolverUtils {
     /**
      * Default constructor.
      */
-    private UnivariateRealSolverUtils() {
+    public UnivariateRealSolverUtils() {
         super();
     }
 
@@ -221,7 +221,7 @@ public class UnivariateRealSolverUtils {
      * @param f  input function
      * @throws IllegalArgumentException if f is null
      */
-    private static void setup(UnivariateRealFunction f) {
+    public static void setup(UnivariateRealFunction f) {
         if (f == null) {
             throw new NullArgumentException(LocalizedFormats.FUNCTION);
         }

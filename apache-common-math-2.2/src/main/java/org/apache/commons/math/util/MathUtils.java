@@ -87,7 +87,7 @@ public final class MathUtils {
     /**
      * Private Constructor
      */
-    private MathUtils() {
+    public MathUtils() {
         super();
     }
 
@@ -134,7 +134,7 @@ public final class MathUtils {
      *         long
      * @since 1.2
      */
-    private static long addAndCheck(long a, long b, Localizable pattern) {
+    public static long addAndCheck(long a, long b, Localizable pattern) {
         long ret;
         if (a > b) {
             // use symmetry to reduce boundary cases
@@ -364,7 +364,7 @@ public final class MathUtils {
      * @param k the size of the subsets to be counted
      * @exception IllegalArgumentException if preconditions are not met.
      */
-    private static void checkBinomial(final int n, final int k)
+    public static void checkBinomial(final int n, final int k)
         throws IllegalArgumentException {
         if (n < k) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -1535,7 +1535,7 @@ public final class MathUtils {
      * @return the rounded value.
      * @since 1.1
      */
-    private static double roundUnscaled(double unscaled, double sign,
+    public static double roundUnscaled(double unscaled, double sign,
         int roundingMethod) {
         switch (roundingMethod) {
         case BigDecimal.ROUND_CEILING :

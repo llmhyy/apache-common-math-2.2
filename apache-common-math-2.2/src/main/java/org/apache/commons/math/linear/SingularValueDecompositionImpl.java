@@ -289,7 +289,7 @@ public class SingularValueDecompositionImpl implements
          * @param nonSingular
          *            singularity indicator
          */
-        private Solver(final double[] singularValues, final RealMatrix uT,
+        public Solver(final double[] singularValues, final RealMatrix uT,
                 final RealMatrix v, final boolean nonSingular) {
             double[][] suT = uT.getData();
             for (int i = 0; i < singularValues.length; ++i) {

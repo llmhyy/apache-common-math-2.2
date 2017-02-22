@@ -34,11 +34,11 @@ public abstract class MultipleLinearRegressionAbstractTest {
         regression = createRegression();
     }
 
-    protected abstract AbstractMultipleLinearRegression createRegression();
+    public abstract AbstractMultipleLinearRegression createRegression();
 
-    protected abstract int getNumberOfRegressors();
+    public abstract int getNumberOfRegressors();
 
-    protected abstract int getSampleSize();
+    public abstract int getSampleSize();
 
     @Test
     public void canEstimateRegressionParameters(){

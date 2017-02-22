@@ -307,7 +307,7 @@ public class MultidimensionalCounter implements Iterable<Integer> {
      * @param newLen the length of the copy to be returned
      * @return the copied array, truncated or padded as necessary.
      */
-     private int[] copyOf(int[] source, int newLen) {
+     public int[] copyOf(int[] source, int newLen) {
          int[] output = new int[newLen];
          System.arraycopy(source, 0, output, 0, Math.min(source.length, newLen));
          return output;

@@ -213,7 +213,7 @@ public class PolynomialSplineFunction
      * @return <code>true</code> if the elements in <code>x</code> are ordered
      * in a stricly increasing manner.  <code>false</code>, otherwise.
      */
-    private static boolean isStrictlyIncreasing(double[] x) {
+    public static boolean isStrictlyIncreasing(double[] x) {
         for (int i = 1; i < x.length; ++i) {
             if (x[i - 1] >= x[i]) {
                 return false;

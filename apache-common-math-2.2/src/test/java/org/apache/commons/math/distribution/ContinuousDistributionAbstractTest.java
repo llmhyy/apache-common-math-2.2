@@ -121,7 +121,7 @@ public abstract class ContinuousDistributionAbstractTest extends TestCase {
      * Setup sets all test instance data to default values
      */
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         distribution = makeDistribution();
         cumulativeTestPoints = makeCumulativeTestPoints();
@@ -135,7 +135,7 @@ public abstract class ContinuousDistributionAbstractTest extends TestCase {
      * Cleans up test instance data
      */
     @Override
-    protected void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         super.tearDown();
         distribution = null;
         cumulativeTestPoints = null;
@@ -151,7 +151,7 @@ public abstract class ContinuousDistributionAbstractTest extends TestCase {
      * Verifies that cumulative probability density calculations match expected values
      * using current test instance data
      */
-    protected void verifyCumulativeProbabilities() throws Exception {
+    public void verifyCumulativeProbabilities() throws Exception {
         for (int i = 0; i < cumulativeTestPoints.length; i++) {
             TestUtils.assertEquals("Incorrect cumulative probability value returned for "
                 + cumulativeTestPoints[i], cumulativeTestValues[i],
@@ -164,7 +164,7 @@ public abstract class ContinuousDistributionAbstractTest extends TestCase {
      * Verifies that inverse cumulative probability density calculations match expected values
      * using current test instance data
      */
-    protected void verifyInverseCumulativeProbabilities() throws Exception {
+    public void verifyInverseCumulativeProbabilities() throws Exception {
         for (int i = 0; i < inverseCumulativeTestPoints.length; i++) {
             TestUtils.assertEquals("Incorrect inverse cumulative probability value returned for "
                 + inverseCumulativeTestPoints[i], inverseCumulativeTestValues[i],
@@ -176,7 +176,7 @@ public abstract class ContinuousDistributionAbstractTest extends TestCase {
     /**
      * Verifies that density calculations match expected values
      */
-    protected void verifyDensities() throws Exception {
+    public void verifyDensities() throws Exception {
         for (int i = 0; i < cumulativeTestPoints.length; i++) {
             TestUtils.assertEquals("Incorrect probability density value returned for "
                 + cumulativeTestPoints[i], densityTestValues[i],
@@ -279,92 +279,92 @@ public abstract class ContinuousDistributionAbstractTest extends TestCase {
     /**
      * @return Returns the cumulativeTestPoints.
      */
-    protected double[] getCumulativeTestPoints() {
+    public double[] getCumulativeTestPoints() {
         return cumulativeTestPoints;
     }
 
     /**
      * @param cumulativeTestPoints The cumulativeTestPoints to set.
      */
-    protected void setCumulativeTestPoints(double[] cumulativeTestPoints) {
+    public void setCumulativeTestPoints(double[] cumulativeTestPoints) {
         this.cumulativeTestPoints = cumulativeTestPoints;
     }
 
     /**
      * @return Returns the cumulativeTestValues.
      */
-    protected double[] getCumulativeTestValues() {
+    public double[] getCumulativeTestValues() {
         return cumulativeTestValues;
     }
 
     /**
      * @param cumulativeTestValues The cumulativeTestValues to set.
      */
-    protected void setCumulativeTestValues(double[] cumulativeTestValues) {
+    public void setCumulativeTestValues(double[] cumulativeTestValues) {
         this.cumulativeTestValues = cumulativeTestValues;
     }
 
-    protected double[] getDensityTestValues() {
+    public double[] getDensityTestValues() {
         return densityTestValues;
     }
 
-    protected void setDensityTestValues(double[] densityTestValues) {
+    public void setDensityTestValues(double[] densityTestValues) {
         this.densityTestValues = densityTestValues;
     }
 
     /**
      * @return Returns the distribution.
      */
-    protected ContinuousDistribution getDistribution() {
+    public ContinuousDistribution getDistribution() {
         return distribution;
     }
 
     /**
      * @param distribution The distribution to set.
      */
-    protected void setDistribution(AbstractContinuousDistribution distribution) {
+    public void setDistribution(AbstractContinuousDistribution distribution) {
         this.distribution = distribution;
     }
 
     /**
      * @return Returns the inverseCumulativeTestPoints.
      */
-    protected double[] getInverseCumulativeTestPoints() {
+    public double[] getInverseCumulativeTestPoints() {
         return inverseCumulativeTestPoints;
     }
 
     /**
      * @param inverseCumulativeTestPoints The inverseCumulativeTestPoints to set.
      */
-    protected void setInverseCumulativeTestPoints(double[] inverseCumulativeTestPoints) {
+    public void setInverseCumulativeTestPoints(double[] inverseCumulativeTestPoints) {
         this.inverseCumulativeTestPoints = inverseCumulativeTestPoints;
     }
 
     /**
      * @return Returns the inverseCumulativeTestValues.
      */
-    protected double[] getInverseCumulativeTestValues() {
+    public double[] getInverseCumulativeTestValues() {
         return inverseCumulativeTestValues;
     }
 
     /**
      * @param inverseCumulativeTestValues The inverseCumulativeTestValues to set.
      */
-    protected void setInverseCumulativeTestValues(double[] inverseCumulativeTestValues) {
+    public void setInverseCumulativeTestValues(double[] inverseCumulativeTestValues) {
         this.inverseCumulativeTestValues = inverseCumulativeTestValues;
     }
 
     /**
      * @return Returns the tolerance.
      */
-    protected double getTolerance() {
+    public double getTolerance() {
         return tolerance;
     }
 
     /**
      * @param tolerance The tolerance to set.
      */
-    protected void setTolerance(double tolerance) {
+    public void setTolerance(double tolerance) {
         this.tolerance = tolerance;
     }
 

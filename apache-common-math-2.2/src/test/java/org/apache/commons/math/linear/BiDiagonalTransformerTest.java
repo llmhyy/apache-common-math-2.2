@@ -45,7 +45,7 @@ public class BiDiagonalTransformerTest {
         checkdimensions(MatrixUtils.createRealMatrix(testNonSquare).transpose());
     }
 
-    private void checkdimensions(RealMatrix matrix) {
+    public void checkdimensions(RealMatrix matrix) {
         final int m = matrix.getRowDimension();
         final int n = matrix.getColumnDimension();
         BiDiagonalTransformer transformer = new BiDiagonalTransformer(matrix);
@@ -65,7 +65,7 @@ public class BiDiagonalTransformerTest {
         checkAEqualUSVt(MatrixUtils.createRealMatrix(testNonSquare).transpose());
     }
 
-    private void checkAEqualUSVt(RealMatrix matrix) {
+    public void checkAEqualUSVt(RealMatrix matrix) {
         BiDiagonalTransformer transformer = new BiDiagonalTransformer(matrix);
         RealMatrix u = transformer.getU();
         RealMatrix b = transformer.getB();
@@ -88,7 +88,7 @@ public class BiDiagonalTransformerTest {
         checkOrthogonal(new BiDiagonalTransformer(MatrixUtils.createRealMatrix(testNonSquare).transpose()).getV());
     }
 
-    private void checkOrthogonal(RealMatrix m) {
+    public void checkOrthogonal(RealMatrix m) {
         RealMatrix mTm = m.transpose().multiply(m);
         RealMatrix id  = MatrixUtils.createRealIdentityMatrix(mTm.getRowDimension());
         Assert.assertEquals(0, mTm.subtract(id).getNorm(), 1.0e-14);
@@ -101,7 +101,7 @@ public class BiDiagonalTransformerTest {
         checkBiDiagonal(new BiDiagonalTransformer(MatrixUtils.createRealMatrix(testNonSquare).transpose()).getB());
     }
 
-    private void checkBiDiagonal(RealMatrix m) {
+    public void checkBiDiagonal(RealMatrix m) {
         final int rows = m.getRowDimension();
         final int cols = m.getColumnDimension();
         for (int i = 0; i < rows; ++i) {

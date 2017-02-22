@@ -48,7 +48,7 @@ public abstract class BinaryChromosome extends AbstractListChromosome<Integer> {
      * {@inheritDoc}
      */
     @Override
-    protected void checkValidity(List<Integer> chromosomeRepresentation) throws InvalidRepresentationException {
+    public void checkValidity(List<Integer> chromosomeRepresentation) throws InvalidRepresentationException {
         for (int i : chromosomeRepresentation) {
             if (i < 0 || i >1)
                 throw new InvalidRepresentationException("Elements can be only 0 or 1.");
@@ -73,7 +73,7 @@ public abstract class BinaryChromosome extends AbstractListChromosome<Integer> {
      * {@inheritDoc}
      */
     @Override
-    protected boolean isSame(Chromosome another) {
+    public boolean isSame(Chromosome another) {
         // type check
         if (! (another instanceof BinaryChromosome))
             return false;

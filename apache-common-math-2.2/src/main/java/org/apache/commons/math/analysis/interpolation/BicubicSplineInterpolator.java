@@ -127,7 +127,7 @@ public class BicubicSplineInterpolator
      * @param max Upper limit of the array
      * @return the next index
      */
-    private int nextIndex(int i, int max) {
+    public int nextIndex(int i, int max) {
         final int index = i + 1;
         return index < max ? index : index - 1;
     }
@@ -138,7 +138,7 @@ public class BicubicSplineInterpolator
      * @param i Index
      * @return the previous index
      */
-    private int previousIndex(int i) {
+    public int previousIndex(int i) {
         final int index = i - 1;
         return index >= 0 ? index : 0;
     }

@@ -43,7 +43,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
     /**
      * Constructor for use with Serializable
      */
-    protected AbstractFieldMatrix() {
+    public AbstractFieldMatrix() {
         field = null;
     }
 
@@ -51,7 +51,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * Creates a matrix with no data
      * @param field field to which the elements belong
      */
-    protected AbstractFieldMatrix(final Field<T> field) {
+    public AbstractFieldMatrix(final Field<T> field) {
         this.field = field;
     }
 
@@ -63,7 +63,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param columnDimension  the number of columns in the new matrix
      * @throws IllegalArgumentException if row or column dimension is not positive
      */
-    protected AbstractFieldMatrix(final Field<T> field,
+    public AbstractFieldMatrix(final Field<T> field,
                                   final int rowDimension, final int columnDimension)
         throws IllegalArgumentException {
         if (rowDimension < 1 ) {
@@ -84,7 +84,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @return field to which array elements belong
      * @exception IllegalArgumentException if array is empty
      */
-    protected static <T extends FieldElement<T>> Field<T> extractField(final T[][] d)
+    public static <T extends FieldElement<T>> Field<T> extractField(final T[][] d)
         throws IllegalArgumentException {
         if (d.length == 0) {
             throw MathRuntimeException.createIllegalArgumentException(LocalizedFormats.AT_LEAST_ONE_ROW);
@@ -102,7 +102,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @return field to which array elements belong
      * @exception IllegalArgumentException if array is empty
      */
-    protected static <T extends FieldElement<T>> Field<T> extractField(final T[] d)
+    public static <T extends FieldElement<T>> Field<T> extractField(final T[] d)
         throws IllegalArgumentException {
         if (d.length == 0) {
             throw MathRuntimeException.createIllegalArgumentException(LocalizedFormats.AT_LEAST_ONE_ROW);
@@ -122,7 +122,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @return a new array
      */
     @SuppressWarnings("unchecked")
-    protected static <T extends FieldElement<T>> T[][] buildArray(final Field<T> field,
+    public static <T extends FieldElement<T>> T[][] buildArray(final Field<T> field,
                                                                   final int rows,
                                                                   final int columns) {
         if (columns < 0) {
@@ -146,7 +146,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param length of the array
      * @return a new array
      */
-    protected static <T extends FieldElement<T>> T[] buildArray(final Field<T> field,
+    public static <T extends FieldElement<T>> T[] buildArray(final Field<T> field,
                                                                 final int length) {
         @SuppressWarnings("unchecked") // OK because field must be correct class
         T[] array = (T[]) Array.newInstance(field.getZero().getClass(), length);
@@ -1019,7 +1019,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param row row index to check
      * @exception MatrixIndexException if index is not valid
      */
-    protected void checkRowIndex(final int row) {
+    public void checkRowIndex(final int row) {
         if (row < 0 || row >= getRowDimension()) {
             throw new MatrixIndexException(LocalizedFormats.ROW_INDEX_OUT_OF_RANGE,
                                            row, 0, getRowDimension() - 1);
@@ -1031,7 +1031,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param column column index to check
      * @exception MatrixIndexException if index is not valid
      */
-    protected void checkColumnIndex(final int column)
+    public void checkColumnIndex(final int column)
         throws MatrixIndexException {
         if (column < 0 || column >= getColumnDimension()) {
             throw new MatrixIndexException(LocalizedFormats.COLUMN_INDEX_OUT_OF_RANGE,
@@ -1049,7 +1049,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param endColumn Final column index
      * @exception MatrixIndexException  if the indices are not valid
      */
-    protected void checkSubMatrixIndex(final int startRow, final int endRow,
+    public void checkSubMatrixIndex(final int startRow, final int endRow,
                                        final int startColumn, final int endColumn) {
         checkRowIndex(startRow);
         checkRowIndex(endRow);
@@ -1076,7 +1076,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param selectedColumns Array of column indices.
      * @exception MatrixIndexException if row or column selections are not valid
      */
-    protected void checkSubMatrixIndex(final int[] selectedRows, final int[] selectedColumns) {
+    public void checkSubMatrixIndex(final int[] selectedRows, final int[] selectedColumns) {
         if (selectedRows.length * selectedColumns.length == 0) {
             if (selectedRows.length == 0) {
                 throw new MatrixIndexException(LocalizedFormats.EMPTY_SELECTED_ROW_INDEX_ARRAY);
@@ -1097,7 +1097,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param m matrix to check
      * @exception IllegalArgumentException if matrix is not addition compatible with instance
      */
-    protected void checkAdditionCompatible(final FieldMatrix<T> m) {
+    public void checkAdditionCompatible(final FieldMatrix<T> m) {
         if ((getRowDimension()    != m.getRowDimension()) ||
             (getColumnDimension() != m.getColumnDimension())) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -1112,7 +1112,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param m matrix to check
      * @exception IllegalArgumentException if matrix is not subtraction compatible with instance
      */
-    protected void checkSubtractionCompatible(final FieldMatrix<T> m) {
+    public void checkSubtractionCompatible(final FieldMatrix<T> m) {
         if ((getRowDimension()    != m.getRowDimension()) ||
             (getColumnDimension() != m.getColumnDimension())) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -1127,7 +1127,7 @@ public abstract class AbstractFieldMatrix<T extends FieldElement<T>> implements 
      * @param m matrix to check
      * @exception IllegalArgumentException if matrix is not multiplication compatible with instance
      */
-    protected void checkMultiplicationCompatible(final FieldMatrix<T> m) {
+    public void checkMultiplicationCompatible(final FieldMatrix<T> m) {
         if (getColumnDimension() != m.getRowDimension()) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.NOT_MULTIPLICATION_COMPATIBLE_MATRICES,

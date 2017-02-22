@@ -70,7 +70,7 @@ public abstract class AbstractLinearOptimizer implements LinearOptimizer {
     /** Simple constructor with default settings.
      * <p>The maximal number of evaluation is set to its default value.</p>
      */
-    protected AbstractLinearOptimizer() {
+    public AbstractLinearOptimizer() {
         setMaxIterations(DEFAULT_MAX_ITERATIONS);
     }
 
@@ -93,7 +93,7 @@ public abstract class AbstractLinearOptimizer implements LinearOptimizer {
      * @exception OptimizationException if the maximal number
      * of iterations is exceeded
      */
-    protected void incrementIterationsCounter()
+    public void incrementIterationsCounter()
         throws OptimizationException {
         if (++iterations > maxIterations) {
             throw new OptimizationException(new MaxIterationsExceededException(maxIterations));
@@ -124,7 +124,7 @@ public abstract class AbstractLinearOptimizer implements LinearOptimizer {
      * @exception OptimizationException if no solution fulfilling the constraints
      * can be found in the allowed number of iterations
      */
-    protected abstract RealPointValuePair doOptimize()
+    public abstract RealPointValuePair doOptimize()
         throws OptimizationException;
 
 }

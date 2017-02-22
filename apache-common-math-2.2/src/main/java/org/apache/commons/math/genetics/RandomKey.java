@@ -116,7 +116,7 @@ public abstract class RandomKey<T> extends AbstractListChromosome<Double> implem
      * @param sortedRepr sorted <code>representation</code>
      * @return list with the sequence values permuted according to the representation
      */
-    private static <S> List<S> decodeGeneric(List<S> sequence, List<Double> representation, List<Double> sortedRepr) {
+    public static <S> List<S> decodeGeneric(List<S> sequence, List<Double> representation, List<Double> sortedRepr) {
         int l = sequence.size();
 
         if (representation.size() != l) {
@@ -146,7 +146,7 @@ public abstract class RandomKey<T> extends AbstractListChromosome<Double> implem
      * @return true iff chromosomes encode the same permutation
      */
     @Override
-    protected boolean isSame(Chromosome another) {
+    public boolean isSame(Chromosome another) {
         // type check
         if (! (another instanceof RandomKey<?>))
             return false;
@@ -172,7 +172,7 @@ public abstract class RandomKey<T> extends AbstractListChromosome<Double> implem
      * {@inheritDoc}
      */
     @Override
-    protected void checkValidity(java.util.List<Double> chromosomeRepresentation) throws InvalidRepresentationException {
+    public void checkValidity(java.util.List<Double> chromosomeRepresentation) throws InvalidRepresentationException {
         for (double val : chromosomeRepresentation) {
             if (val < 0 || val > 1) {
                 throw new InvalidRepresentationException("Values of representation must be in [0,1] interval");
@@ -280,7 +280,7 @@ public abstract class RandomKey<T> extends AbstractListChromosome<Double> implem
      * @param l length of list to generate
      * @return list of integers from 0 to l-1
      */
-    private static List<Integer> baseSequence(int l) {
+    public static List<Integer> baseSequence(int l) {
         List<Integer> baseSequence = new ArrayList<Integer> (l);
         for (int i=0; i<l; i++) {
             baseSequence.add(i);

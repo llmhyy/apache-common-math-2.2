@@ -334,7 +334,7 @@ public class TricubicSplineInterpolatingFunction
      * containing {@code c}, or {@code -1} if {@code c} is out of the
      * range defined by the end values of {@code val}.
      */
-    private int searchIndex(double c, double[] val) {
+    public int searchIndex(double c, double[] val) {
         if (c < val[0]) {
             return -1;
         }
@@ -398,7 +398,7 @@ public class TricubicSplineInterpolatingFunction
      * values.
      * @return the spline coefficients.
      */
-    private double[] computeSplineCoefficients(double[] beta) {
+    public double[] computeSplineCoefficients(double[] beta) {
         final int sz = 64;
         final double[] a = new double[sz];
 

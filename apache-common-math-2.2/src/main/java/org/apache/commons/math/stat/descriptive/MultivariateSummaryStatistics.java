@@ -181,7 +181,7 @@ public class MultivariateSummaryStatistics
      * @param stats univariate statistic array
      * @return results array
      */
-    private double[] getResults(StorelessUnivariateStatistic[] stats) {
+    public double[] getResults(StorelessUnivariateStatistic[] stats) {
         double[] results = new double[stats.length];
         for (int i = 0; i < results.length; ++i) {
             results[i] = stats[i].getResult();
@@ -329,7 +329,7 @@ public class MultivariateSummaryStatistics
      * @param separator elements separator
      * @param suffix text suffix
      */
-    private void append(StringBuilder buffer, double[] data,
+    public void append(StringBuilder buffer, double[] data,
                         String prefix, String separator, String suffix) {
         buffer.append(prefix);
         for (int i = 0; i < data.length; ++i) {
@@ -414,7 +414,7 @@ public class MultivariateSummaryStatistics
      * @throws IllegalStateException if data has already been added
      *  (i.e if n > 0)
      */
-    private void setImpl(StorelessUnivariateStatistic[] newImpl,
+    public void setImpl(StorelessUnivariateStatistic[] newImpl,
                          StorelessUnivariateStatistic[] oldImpl)
        throws DimensionMismatchException, IllegalStateException {
         checkEmpty();
@@ -614,7 +614,7 @@ public class MultivariateSummaryStatistics
     /**
      * Throws IllegalStateException if n > 0.
      */
-    private void checkEmpty() {
+    public void checkEmpty() {
         if (n > 0) {
             throw MathRuntimeException.createIllegalStateException(
                     LocalizedFormats.VALUES_ADDED_BEFORE_CONFIGURING_STATISTIC,
@@ -627,7 +627,7 @@ public class MultivariateSummaryStatistics
      * @param dimension dimension to check
      * @throws DimensionMismatchException if dimension != k
      */
-    private void checkDimension(int dimension)
+    public void checkDimension(int dimension)
       throws DimensionMismatchException {
         if (dimension != k) {
             throw new DimensionMismatchException(dimension, k);

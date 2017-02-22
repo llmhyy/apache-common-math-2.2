@@ -30,7 +30,7 @@ public class Erf {
     /**
      * Default constructor.  Prohibit instantiation.
      */
-    private Erf() {
+    public Erf() {
         super();
     }
 

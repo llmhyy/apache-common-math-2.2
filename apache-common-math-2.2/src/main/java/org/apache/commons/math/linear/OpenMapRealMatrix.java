@@ -284,7 +284,7 @@ public class OpenMapRealMatrix extends AbstractRealMatrix implements SparseRealM
      * @param column column index of the matrix element
      * @return key within the map to access the matrix element
      */
-    private int computeKey(int row, int column) {
+    public int computeKey(int row, int column) {
         return row * columns + column;
     }
 

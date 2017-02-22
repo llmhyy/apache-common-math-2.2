@@ -56,7 +56,7 @@ public class DfpTest {
     // Generic test function.  Takes params x and y and tests them for 
     // equality.  Then checks the status flags against the flags argument.
     // If the test fail, it prints the desc string
-    private void test(Dfp x, Dfp y, int flags, String desc)
+    public void test(Dfp x, Dfp y, int flags, String desc)
     {
         boolean b = x.equals(y);
 
@@ -363,7 +363,7 @@ public class DfpTest {
     // Test comparisons
 
     // utility function to help test comparisons
-    private void cmptst(Dfp a, Dfp b, String op, boolean result, double num)
+    public void cmptst(Dfp a, Dfp b, String op, boolean result, double num)
     {
         if (op == "equal")
             if (a.equals(b) != result)

@@ -76,7 +76,7 @@ public class GaussianParametersGuesser {
      *
      * @return guessed parameters array <code>{a, b, c, d}</code>
      */
-    private double[] basicGuess(WeightedObservedPoint[] points) {
+    public double[] basicGuess(WeightedObservedPoint[] points) {
         Arrays.sort(points, createWeightedObservedPointComparator());
         double[] params = new double[4];
 
@@ -108,7 +108,7 @@ public class GaussianParametersGuesser {
      *
      * @return index in specified points array
      */
-    private int findMinY(WeightedObservedPoint[] points) {
+    public int findMinY(WeightedObservedPoint[] points) {
         int minYIdx = 0;
         for (int i = 1; i < points.length; i++) {
             if (points[i].getY() < points[minYIdx].getY()) {
@@ -125,7 +125,7 @@ public class GaussianParametersGuesser {
      *
      * @return index in specified points array
      */
-    private int findMaxY(WeightedObservedPoint[] points) {
+    public int findMaxY(WeightedObservedPoint[] points) {
         int maxYIdx = 0;
         for (int i = 1; i < points.length; i++) {
             if (points[i].getY() > points[maxYIdx].getY()) {
@@ -151,7 +151,7 @@ public class GaussianParametersGuesser {
      * @throws OutOfRangeException if specified <code>y</code> is not within the
      *         range of the specified <code>points</code>
      */
-    private double interpolateXAtY(WeightedObservedPoint[] points,
+    public double interpolateXAtY(WeightedObservedPoint[] points,
                                    int startIdx, int idxStep, double y) throws OutOfRangeException {
         if (idxStep == 0) {
             throw new ZeroException();
@@ -186,7 +186,7 @@ public class GaussianParametersGuesser {
      * @throws OutOfRangeException if specified <code>y</code> is not within the
      *         range of the specified <code>points</code>
      */
-    private WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points,
+    public WeightedObservedPoint[] getInterpolationPointsForY(WeightedObservedPoint[] points,
                                                                int startIdx, int idxStep, double y)
         throws OutOfRangeException {
         if (idxStep == 0) {
@@ -223,7 +223,7 @@ public class GaussianParametersGuesser {
      * @return true if <code>value</code> is between <code>boundary1</code> and
      *         <code>boundary2</code> (inclusive); false otherwise
      */
-    private boolean isBetween(double value, double boundary1, double boundary2) {
+    public boolean isBetween(double value, double boundary1, double boundary2) {
         return (value >= boundary1 && value <= boundary2) ||
                (value >= boundary2 && value <= boundary1);
     }
@@ -234,7 +234,7 @@ public class GaussianParametersGuesser {
      *
      * @return new <code>Comparator</code> instance
      */
-    private Comparator<WeightedObservedPoint> createWeightedObservedPointComparator() {
+    public Comparator<WeightedObservedPoint> createWeightedObservedPointComparator() {
         return new Comparator<WeightedObservedPoint>() {
             public int compare(WeightedObservedPoint p1, WeightedObservedPoint p2) {
                 if (p1 == null && p2 == null) {

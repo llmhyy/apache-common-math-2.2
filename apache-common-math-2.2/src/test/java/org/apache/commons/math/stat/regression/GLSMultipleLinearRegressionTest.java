@@ -134,19 +134,19 @@ public class GLSMultipleLinearRegressionTest extends MultipleLinearRegressionAbs
     }
 
     @Override
-    protected GLSMultipleLinearRegression createRegression() {
+    public GLSMultipleLinearRegression createRegression() {
         GLSMultipleLinearRegression regression = new GLSMultipleLinearRegression();
         regression.newSampleData(y, x, omega);
         return regression;
     }
 
     @Override
-    protected int getNumberOfRegressors() {
+    public int getNumberOfRegressors() {
         return x[0].length + 1;
     }
 
     @Override
-    protected int getSampleSize() {
+    public int getSampleSize() {
         return y.length;
     }
 

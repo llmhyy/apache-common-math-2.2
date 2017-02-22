@@ -95,7 +95,7 @@ public class NordsieckStepInterpolator extends AbstractStepInterpolator {
 
     /** {@inheritDoc} */
     @Override
-    protected StepInterpolator doCopy() {
+    public StepInterpolator doCopy() {
         return new NordsieckStepInterpolator(this);
     }
 
@@ -184,7 +184,7 @@ public class NordsieckStepInterpolator extends AbstractStepInterpolator {
 
     /** {@inheritDoc} */
     @Override
-    protected void computeInterpolatedStateAndDerivatives(final double theta, final double oneMinusThetaH) {
+    public void computeInterpolatedStateAndDerivatives(final double theta, final double oneMinusThetaH) {
 
         final double x = interpolatedTime - referenceTime;
         final double normalizedAbscissa = x / scalingH;

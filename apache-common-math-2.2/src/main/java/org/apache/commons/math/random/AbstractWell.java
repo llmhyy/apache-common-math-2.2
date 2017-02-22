@@ -68,7 +68,7 @@ public abstract class AbstractWell extends BitsStreamGenerator implements Serial
      * @param m2 second parameter of the algorithm
      * @param m3 third parameter of the algorithm
      */
-    protected AbstractWell(final int k, final int m1, final int m2, final int m3) {
+    public AbstractWell(final int k, final int m1, final int m2, final int m3) {
         this(k, m1, m2, m3, System.currentTimeMillis());
     }
 
@@ -79,7 +79,7 @@ public abstract class AbstractWell extends BitsStreamGenerator implements Serial
      * @param m3 third parameter of the algorithm
      * @param seed the initial seed (32 bits integer)
      */
-    protected AbstractWell(final int k, final int m1, final int m2, final int m3, final int seed) {
+    public AbstractWell(final int k, final int m1, final int m2, final int m3, final int seed) {
         this(k, m1, m2, m3, new int[] { seed });
     }
 
@@ -91,7 +91,7 @@ public abstract class AbstractWell extends BitsStreamGenerator implements Serial
      * @param seed the initial seed (32 bits integers array), if null
      * the seed of the generator will be related to the current time
      */
-    protected AbstractWell(final int k, final int m1, final int m2, final int m3, final int[] seed) {
+    public AbstractWell(final int k, final int m1, final int m2, final int m3, final int[] seed) {
 
         // the bits pool contains k bits, k = r w - p where r is the number
         // of w bits blocks, w is the block size (always 32 in the original paper)
@@ -128,7 +128,7 @@ public abstract class AbstractWell extends BitsStreamGenerator implements Serial
      * @param m3 third parameter of the algorithm
      * @param seed the initial seed (64 bits integer)
      */
-    protected AbstractWell(final int k, final int m1, final int m2, final int m3, final long seed) {
+    public AbstractWell(final int k, final int m1, final int m2, final int m3, final long seed) {
         this(k, m1, m2, m3, new int[] { (int) (seed >>> 32), (int) (seed & 0xffffffffl) });
     }
 
@@ -181,6 +181,6 @@ public abstract class AbstractWell extends BitsStreamGenerator implements Serial
 
     /** {@inheritDoc} */
     @Override
-    protected abstract int next(final int bits);
+    public abstract int next(final int bits);
 
 }

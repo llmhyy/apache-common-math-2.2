@@ -34,7 +34,7 @@ public class OpenIntToDoubleHashMapTest extends TestCase {
     private Map<Integer, Double> javaMap = new HashMap<Integer, Double>();
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         javaMap.put(50, 100.0);
         javaMap.put(75, 75.0);
         javaMap.put(25, 500.0);
@@ -53,7 +53,7 @@ public class OpenIntToDoubleHashMapTest extends TestCase {
 
     }
 
-    private Map<Integer, Double> generate() {
+    public Map<Integer, Double> generate() {
         Map<Integer, Double> map = new HashMap<Integer, Double>();
         Random r = new Random();
         for (int i = 0; i < 2000; ++i)
@@ -61,7 +61,7 @@ public class OpenIntToDoubleHashMapTest extends TestCase {
         return map;
     }
 
-    private OpenIntToDoubleHashMap createFromJavaMap() {
+    public OpenIntToDoubleHashMap createFromJavaMap() {
         OpenIntToDoubleHashMap map = new OpenIntToDoubleHashMap();
         for (Map.Entry<Integer, Double> mapEntry : javaMap.entrySet()) {
             map.put(mapEntry.getKey(), mapEntry.getValue());
@@ -84,11 +84,11 @@ public class OpenIntToDoubleHashMapTest extends TestCase {
         assertPutAndGet(map);
     }
 
-    private void assertPutAndGet(OpenIntToDoubleHashMap map) {
+    public void assertPutAndGet(OpenIntToDoubleHashMap map) {
         assertPutAndGet(map, 0, new HashSet<Integer>());
     }
 
-    private void assertPutAndGet(OpenIntToDoubleHashMap map, int mapSize,
+    public void assertPutAndGet(OpenIntToDoubleHashMap map, int mapSize,
             Set<Integer> keysInMap) {
         assertEquals(mapSize, map.size());
         for (Map.Entry<Integer, Double> mapEntry : javaMap.entrySet()) {
@@ -188,7 +188,7 @@ public class OpenIntToDoubleHashMapTest extends TestCase {
     /**
      * Returns a map with at least 100 elements where each element is absent from javaMap.
      */
-    private Map<Integer, Double> generateAbsent() {
+    public Map<Integer, Double> generateAbsent() {
         Map<Integer, Double> generated = new HashMap<Integer, Double>();
         do {
             generated.putAll(generate());

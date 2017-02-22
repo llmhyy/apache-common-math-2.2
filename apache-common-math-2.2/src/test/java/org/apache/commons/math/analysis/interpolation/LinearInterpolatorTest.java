@@ -138,7 +138,7 @@ public class LinearInterpolatorTest {
     /**
      * verifies that f(x[i]) = y[i] for i = 0..n-1 where n is common length.
      */
-    protected void verifyInterpolation(UnivariateRealFunction f, double x[], double y[])
+    public void verifyInterpolation(UnivariateRealFunction f, double x[], double y[])
         throws Exception{
         for (int i = 0; i < x.length; i++) {
             Assert.assertEquals(f.value(x[i]), y[i], knotTolerance);

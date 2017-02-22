@@ -236,7 +236,7 @@ public class SingularValueDecompositionImplTest extends TestCase {
         assertEquals(3.0, svd.getConditionNumber(), 1.5e-15);
     }
 
-    private RealMatrix createTestMatrix(final Random r, final int rows, final int columns,
+    public RealMatrix createTestMatrix(final Random r, final int rows, final int columns,
                                         final double[] singularValues) {
         final RealMatrix u =
             EigenDecompositionImplTest.createOrthogonalMatrix(r, rows);

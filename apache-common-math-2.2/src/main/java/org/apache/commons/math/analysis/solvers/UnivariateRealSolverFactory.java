@@ -41,7 +41,7 @@ public abstract class UnivariateRealSolverFactory {
     /**
      * Default constructor.
      */
-    protected UnivariateRealSolverFactory() {
+    public UnivariateRealSolverFactory() {
     }
 
     /**

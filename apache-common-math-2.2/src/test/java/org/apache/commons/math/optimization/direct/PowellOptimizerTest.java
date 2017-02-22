@@ -142,7 +142,7 @@ public class PowellOptimizerTest {
      * "Powell" algorithm.
      * @param pointTol Tolerance for checking that the optimum is correct.
      */
-    private void doTest(DifferentiableMultivariateRealFunction func,
+    public void doTest(DifferentiableMultivariateRealFunction func,
                         double[] optimum,
                         double[] init,
                         GoalType goal,

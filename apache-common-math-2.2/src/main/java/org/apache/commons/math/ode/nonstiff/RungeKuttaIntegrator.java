@@ -79,7 +79,7 @@ public abstract class RungeKuttaIntegrator extends AbstractIntegrator {
    * @param prototype prototype of the step interpolator to use
    * @param step integration step
    */
-  protected RungeKuttaIntegrator(final String name,
+  public RungeKuttaIntegrator(final String name,
                                  final double[] c, final double[][] a, final double[] b,
                                  final RungeKuttaStepInterpolator prototype,
                                  final double step) {

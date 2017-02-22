@@ -200,7 +200,7 @@ public class QRSolverTest extends TestCase {
 
     }
 
-    private RealMatrix createTestMatrix(final Random r, final int rows, final int columns) throws MatrixVisitorException {
+    public RealMatrix createTestMatrix(final Random r, final int rows, final int columns) throws MatrixVisitorException {
         RealMatrix m = MatrixUtils.createRealMatrix(rows, columns);
         m.walkInOptimizedOrder(new DefaultRealMatrixChangingVisitor(){
             @Override

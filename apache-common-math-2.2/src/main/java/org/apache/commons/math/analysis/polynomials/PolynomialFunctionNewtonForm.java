@@ -174,7 +174,7 @@ public class PolynomialFunctionNewtonForm implements UnivariateRealFunction {
      * Calculate the normal polynomial coefficients given the Newton form.
      * It also uses nested multiplication but takes O(N^2) time.
      */
-    protected void computeCoefficients() {
+    public void computeCoefficients() {
         final int n = degree();
 
         coefficients = new double[n+1];
@@ -205,7 +205,7 @@ public class PolynomialFunctionNewtonForm implements UnivariateRealFunction {
      * @see org.apache.commons.math.analysis.interpolation.DividedDifferenceInterpolator#computeDividedDifference(double[],
      * double[])
      */
-    protected static void verifyInputArray(double a[], double c[]) throws
+    public static void verifyInputArray(double a[], double c[]) throws
         IllegalArgumentException {
 
         if (a.length < 1 || c.length < 1) {

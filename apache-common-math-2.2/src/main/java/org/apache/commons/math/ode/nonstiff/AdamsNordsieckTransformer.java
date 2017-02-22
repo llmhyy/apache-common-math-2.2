@@ -149,7 +149,7 @@ public class AdamsNordsieckTransformer {
      * @param nSteps number of steps of the multistep method
      * (excluding the one being computed)
      */
-    private AdamsNordsieckTransformer(final int nSteps) {
+    public AdamsNordsieckTransformer(final int nSteps) {
 
         // compute exact coefficients
         FieldMatrix<BigFraction> bigP = buildP(nSteps);
@@ -232,7 +232,7 @@ public class AdamsNordsieckTransformer {
      * (excluding the one being computed)
      * @return P matrix
      */
-    private FieldMatrix<BigFraction> buildP(final int nSteps) {
+    public FieldMatrix<BigFraction> buildP(final int nSteps) {
 
         final BigFraction[][] pData = new BigFraction[nSteps][nSteps];
 

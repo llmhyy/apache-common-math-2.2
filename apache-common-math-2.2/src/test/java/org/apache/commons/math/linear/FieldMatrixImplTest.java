@@ -373,7 +373,7 @@ public final class FieldMatrixImplTest extends TestCase {
         checkGetSubMatrix(m, null, new int[] { 0 }, new int[] { 4 });
     }
 
-    private void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
                                    int startRow, int endRow, int startColumn, int endColumn) {
         try {
             FieldMatrix<Fraction> sub = m.getSubMatrix(startRow, endRow, startColumn, endColumn);
@@ -389,7 +389,7 @@ public final class FieldMatrixImplTest extends TestCase {
         }
     }
 
-    private void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
                                    int[] selectedRows, int[] selectedColumns) {
         try {
             FieldMatrix<Fraction> sub = m.getSubMatrix(selectedRows, selectedColumns);
@@ -425,7 +425,7 @@ public final class FieldMatrixImplTest extends TestCase {
         checkCopy(m, null, new int[] { 0 }, new int[] { 4 });
     }
 
-    private void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
                            int startRow, int endRow, int startColumn, int endColumn) {
         try {
             Fraction[][] sub = (reference == null) ?
@@ -444,7 +444,7 @@ public final class FieldMatrixImplTest extends TestCase {
         }
     }
 
-    private void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
                            int[] selectedRows, int[] selectedColumns) {
         try {
             Fraction[][] sub = (reference == null) ?
@@ -627,7 +627,7 @@ public final class FieldMatrixImplTest extends TestCase {
         }
     }
 
-    private FieldVector<Fraction> columnToVector(Fraction[][] column) {
+    public FieldVector<Fraction> columnToVector(Fraction[][] column) {
         Fraction[] data = new Fraction[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -712,7 +712,7 @@ public final class FieldMatrixImplTest extends TestCase {
         }
     }
 
-    private Fraction[] columnToArray(Fraction[][] column) {
+    public Fraction[] columnToArray(Fraction[][] column) {
         Fraction[] data = new Fraction[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -720,7 +720,7 @@ public final class FieldMatrixImplTest extends TestCase {
         return data;
     }
 
-    private void checkArrays(Fraction[] expected, Fraction[] actual) {
+    public void checkArrays(Fraction[] expected, Fraction[] actual) {
         assertEquals(expected.length, actual.length);
         for (int i = 0; i < expected.length; ++i) {
             assertEquals(expected[i], actual[i]);
@@ -957,7 +957,7 @@ public final class FieldMatrixImplTest extends TestCase {
     //--------------- -----------------Protected methods
 
     /** extracts the l  and u matrices from compact lu representation */
-    protected void splitLU(FieldMatrix<Fraction> lu,
+    public void splitLU(FieldMatrix<Fraction> lu,
                            Fraction[][] lowerData,
                            Fraction[][] upperData)
         throws InvalidMatrixException {
@@ -986,7 +986,7 @@ public final class FieldMatrixImplTest extends TestCase {
     }
 
     /** Returns the result of applying the given row permutation to the matrix */
-    protected FieldMatrix<Fraction> permuteRows(FieldMatrix<Fraction> matrix, int[] permutation) {
+    public FieldMatrix<Fraction> permuteRows(FieldMatrix<Fraction> matrix, int[] permutation) {
         if (!matrix.isSquare() || matrix.getRowDimension() != permutation.length) {
             throw new IllegalArgumentException("dimension mismatch");
         }

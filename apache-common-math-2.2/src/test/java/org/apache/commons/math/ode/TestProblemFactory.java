@@ -36,7 +36,7 @@ public class TestProblemFactory {
    * Private constructor.
    * This is a utility class, so there are no instance at all.
    */
-  private TestProblemFactory() {
+  public TestProblemFactory() {
   }
 
   /**

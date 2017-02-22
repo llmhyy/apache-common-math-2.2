@@ -292,7 +292,7 @@ public class ArrayFieldVector<T extends FieldElement<T>> implements FieldVector<
      * @return a new array
      */
     @SuppressWarnings("unchecked") // field is of type T
-    private T[] buildArray(final int length) {
+    public T[] buildArray(final int length) {
         return (T[]) Array.newInstance(field.getZero().getClass(), length);
     }
 
@@ -767,7 +767,7 @@ public class ArrayFieldVector<T extends FieldElement<T>> implements FieldVector<
      * @exception IllegalArgumentException if the vectors do not
      * have the same dimension
      */
-    protected void checkVectorDimensions(FieldVector<T> v)
+    public void checkVectorDimensions(FieldVector<T> v)
         throws IllegalArgumentException {
         checkVectorDimensions(v.getDimension());
     }
@@ -779,7 +779,7 @@ public class ArrayFieldVector<T extends FieldElement<T>> implements FieldVector<
      * @exception IllegalArgumentException if the dimension is
      * inconsistent with vector size
      */
-    protected void checkVectorDimensions(int n)
+    public void checkVectorDimensions(int n)
         throws IllegalArgumentException {
         if (data.length != n) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -858,7 +858,7 @@ public class ArrayFieldVector<T extends FieldElement<T>> implements FieldVector<
      * @param index index to check
      * @exception MatrixIndexException if index is not valid
      */
-    private void checkIndex(final int index)
+    public void checkIndex(final int index)
         throws MatrixIndexException {
         if (index < 0 || index >= getDimension()) {
             throw new MatrixIndexException(LocalizedFormats.INDEX_OUT_OF_RANGE,

@@ -141,7 +141,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param clusters the {@link Cluster}s to add the points to
      * @param points the points to add to the given {@link Cluster}s
      */
-    private static <T extends Clusterable<T>> void
+    public static <T extends Clusterable<T>> void
         assignPointsToClusters(final Collection<Cluster<T>> clusters, final Collection<T> points) {
         for (final T p : points) {
             Cluster<T> cluster = getNearestCluster(clusters, p);
@@ -158,7 +158,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param random random generator to use
      * @return the initial centers
      */
-    private static <T extends Clusterable<T>> List<Cluster<T>>
+    public static <T extends Clusterable<T>> List<Cluster<T>>
         chooseInitialCenters(final Collection<T> points, final int k, final Random random) {
 
         final List<T> pointSet = new ArrayList<T>(points);
@@ -203,7 +203,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param clusters the {@link Cluster}s to search
      * @return a random point from the selected cluster
      */
-    private T getPointFromLargestVarianceCluster(final Collection<Cluster<T>> clusters) {
+    public T getPointFromLargestVarianceCluster(final Collection<Cluster<T>> clusters) {
 
         double maxVariance = Double.NEGATIVE_INFINITY;
         Cluster<T> selected = null;
@@ -244,7 +244,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param clusters the {@link Cluster}s to search
      * @return a random point from the selected cluster
      */
-    private T getPointFromLargestNumberCluster(final Collection<Cluster<T>> clusters) {
+    public T getPointFromLargestNumberCluster(final Collection<Cluster<T>> clusters) {
 
         int maxNumber = 0;
         Cluster<T> selected = null;
@@ -278,7 +278,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param clusters the {@link Cluster}s to search
      * @return point farthest to its cluster center
      */
-    private T getFarthestPoint(final Collection<Cluster<T>> clusters) {
+    public T getFarthestPoint(final Collection<Cluster<T>> clusters) {
 
         double maxDistance = Double.NEGATIVE_INFINITY;
         Cluster<T> selectedCluster = null;
@@ -316,7 +316,7 @@ public class KMeansPlusPlusClusterer<T extends Clusterable<T>> {
      * @param point the point to find the nearest {@link Cluster} for
      * @return the nearest {@link Cluster} to the given point
      */
-    private static <T extends Clusterable<T>> Cluster<T>
+    public static <T extends Clusterable<T>> Cluster<T>
         getNearestCluster(final Collection<Cluster<T>> clusters, final T point) {
         double minDistance = Double.MAX_VALUE;
         Cluster<T> minCluster = null;

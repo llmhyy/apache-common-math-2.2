@@ -89,7 +89,7 @@ public abstract class AdamsIntegrator extends MultistepIntegrator {
 
     /** {@inheritDoc} */
     @Override
-    protected Array2DRowRealMatrix initializeHighOrderDerivatives(final double[] first,
+    public Array2DRowRealMatrix initializeHighOrderDerivatives(final double[] first,
                                                         final double[][] multistep) {
         return transformer.initializeHighOrderDerivatives(first, multistep);
     }

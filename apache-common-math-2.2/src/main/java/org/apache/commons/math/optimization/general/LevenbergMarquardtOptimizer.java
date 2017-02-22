@@ -240,7 +240,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
 
     /** {@inheritDoc} */
     @Override
-    protected VectorialPointValuePair doOptimize()
+    public VectorialPointValuePair doOptimize()
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException {
 
         // arrays shared with the other private methods
@@ -501,7 +501,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
      * @param work2 work array
      * @param work3 work array
      */
-    private void determineLMParameter(double[] qy, double delta, double[] diag,
+    public void determineLMParameter(double[] qy, double delta, double[] diag,
             double[] work1, double[] work2, double[] work3) {
 
         // compute and store in x the gauss-newton direction, if the
@@ -670,7 +670,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
      * @param lmDiag diagonal elements associated with lmDir
      * @param work work array
      */
-    private void determineLMDirection(double[] qy, double[] diag,
+    public void determineLMDirection(double[] qy, double[] diag,
             double[] lmDiag, double[] work) {
 
         // copy R and Qty to preserve input and initialize s
@@ -796,7 +796,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
      * non-increasing absolute values order.</p>
      * @exception OptimizationException if the decomposition cannot be performed
      */
-    private void qrDecomposition() throws OptimizationException {
+    public void qrDecomposition() throws OptimizationException {
 
         // initializations
         for (int k = 0; k < cols; ++k) {
@@ -871,7 +871,7 @@ public class LevenbergMarquardtOptimizer extends AbstractLeastSquaresOptimizer {
      *
      * @param y vector to multiply (will be overwritten with the result)
      */
-    private void qTy(double[] y) {
+    public void qTy(double[] y) {
         for (int k = 0; k < cols; ++k) {
             int pk = permutation[k];
             double gamma = 0;

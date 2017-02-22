@@ -150,7 +150,7 @@ public class ParametricGaussianFunction implements ParametricRealFunction, Seria
      * @throws ZeroException if <code>parameters[3]</code>
      *         (<tt>d</tt>) is 0
      */
-    private void validateParameters(double[] parameters) throws ZeroException {
+    public void validateParameters(double[] parameters) throws ZeroException {
         if (parameters == null) {
             throw new NullArgumentException(LocalizedFormats.INPUT_ARRAY);
         }

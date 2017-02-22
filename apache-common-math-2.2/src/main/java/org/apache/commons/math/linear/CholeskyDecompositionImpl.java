@@ -197,7 +197,7 @@ public class CholeskyDecompositionImpl implements CholeskyDecomposition {
          * Build a solver from decomposed matrix.
          * @param lTData row-oriented storage for L<sup>T</sup> matrix data
          */
-        private Solver(final double[][] lTData) {
+        public Solver(final double[][] lTData) {
             this.lTData = lTData;
         }
 

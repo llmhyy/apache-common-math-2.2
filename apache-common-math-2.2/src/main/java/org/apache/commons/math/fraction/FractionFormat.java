@@ -127,7 +127,7 @@ public class FractionFormat extends AbstractFormat {
      * customizing is the maximum number of fraction digits, which is set to 0.
      * @return the default number format.
      */
-    protected static NumberFormat getDefaultNumberFormat() {
+    public static NumberFormat getDefaultNumberFormat() {
         return getDefaultNumberFormat(Locale.getDefault());
     }
 

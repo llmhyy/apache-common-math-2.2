@@ -559,7 +559,7 @@ public final class BlockFieldMatrixTest extends TestCase {
         checkGetSubMatrix(m, null, new int[] { 0 }, new int[] { 4 });
     }
 
-    private void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
                                    int startRow, int endRow, int startColumn, int endColumn) {
         try {
             FieldMatrix<Fraction> sub = m.getSubMatrix(startRow, endRow, startColumn, endColumn);
@@ -575,7 +575,7 @@ public final class BlockFieldMatrixTest extends TestCase {
         }
     }
 
-    private void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkGetSubMatrix(FieldMatrix<Fraction> m, Fraction[][] reference,
                                    int[] selectedRows, int[] selectedColumns) {
         try {
             FieldMatrix<Fraction> sub = m.getSubMatrix(selectedRows, selectedColumns);
@@ -632,7 +632,7 @@ public final class BlockFieldMatrixTest extends TestCase {
         checkCopy(m, null, new int[] { 0 }, new int[] { 4 });
     }
 
-    private void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
                            int startRow, int endRow, int startColumn, int endColumn) {
         try {
             Fraction[][] sub = (reference == null) ?
@@ -651,7 +651,7 @@ public final class BlockFieldMatrixTest extends TestCase {
         }
     }
 
-    private void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
+    public void checkCopy(FieldMatrix<Fraction> m, Fraction[][] reference,
                            int[] selectedRows, int[] selectedColumns) {
         try {
             Fraction[][] sub = (reference == null) ?
@@ -910,7 +910,7 @@ public final class BlockFieldMatrixTest extends TestCase {
 
     }
 
-    private FieldVector<Fraction> columnToVector(Fraction[][] column) {
+    public FieldVector<Fraction> columnToVector(Fraction[][] column) {
         Fraction[] data = new Fraction[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -1035,7 +1035,7 @@ public final class BlockFieldMatrixTest extends TestCase {
 
     }
 
-    private Fraction[] columnToArray(Fraction[][] column) {
+    public Fraction[] columnToArray(Fraction[][] column) {
         Fraction[] data = new Fraction[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -1043,7 +1043,7 @@ public final class BlockFieldMatrixTest extends TestCase {
         return data;
     }
 
-    private void checkArrays(Fraction[] expected, Fraction[] actual) {
+    public void checkArrays(Fraction[] expected, Fraction[] actual) {
         assertEquals(expected.length, actual.length);
         for (int i = 0; i < expected.length; ++i) {
             assertEquals(expected[i], actual[i]);
@@ -1268,7 +1268,7 @@ public final class BlockFieldMatrixTest extends TestCase {
         }
     }
 
-    private BlockFieldMatrix<Fraction> createRandomMatrix(Random r, int rows, int columns) {
+    public BlockFieldMatrix<Fraction> createRandomMatrix(Random r, int rows, int columns) {
         BlockFieldMatrix<Fraction> m =
             new BlockFieldMatrix<Fraction>(FractionField.getInstance(), rows, columns);
         for (int i = 0; i < rows; ++i) {

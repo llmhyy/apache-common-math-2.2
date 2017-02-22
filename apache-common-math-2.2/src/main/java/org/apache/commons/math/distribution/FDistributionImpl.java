@@ -162,7 +162,7 @@ public class FDistributionImpl
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         return 0.0;
     }
 
@@ -176,7 +176,7 @@ public class FDistributionImpl
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         return Double.MAX_VALUE;
     }
 
@@ -189,7 +189,7 @@ public class FDistributionImpl
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         double ret = 1.0;
         double d = denominatorDegreesOfFreedom;
         if (d > 2.0) {
@@ -217,7 +217,7 @@ public class FDistributionImpl
      * @throws IllegalArgumentException if <code>degreesOfFreedom</code> is not
      *         positive.
      */
-    private void setNumeratorDegreesOfFreedomInternal(double degreesOfFreedom) {
+    public void setNumeratorDegreesOfFreedomInternal(double degreesOfFreedom) {
         if (degreesOfFreedom <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_DEGREES_OF_FREEDOM, degreesOfFreedom);
@@ -251,7 +251,7 @@ public class FDistributionImpl
      * @throws IllegalArgumentException if <code>degreesOfFreedom</code> is not
      *         positive.
      */
-    private void setDenominatorDegreesOfFreedomInternal(double degreesOfFreedom) {
+    public void setDenominatorDegreesOfFreedomInternal(double degreesOfFreedom) {
         if (degreesOfFreedom <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_DEGREES_OF_FREEDOM, degreesOfFreedom);
@@ -275,7 +275,7 @@ public class FDistributionImpl
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

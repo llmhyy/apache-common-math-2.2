@@ -38,7 +38,7 @@ public class RandomAdaptorTest extends RandomDataTest {
         checkConstant(randomAdaptor);
     }
 
-    private void checkConstant(Random random) {
+    public void checkConstant(Random random) {
         byte[] bytes = new byte[] {0};
         random.nextBytes(bytes);
         assertEquals(0, bytes[0]);

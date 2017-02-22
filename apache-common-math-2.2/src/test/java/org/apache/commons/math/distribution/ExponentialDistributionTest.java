@@ -37,7 +37,7 @@ public class ExponentialDistributionTest extends ContinuousDistributionAbstractT
 
     // --------------------- Override tolerance  --------------
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         setTolerance(1E-9);
     }

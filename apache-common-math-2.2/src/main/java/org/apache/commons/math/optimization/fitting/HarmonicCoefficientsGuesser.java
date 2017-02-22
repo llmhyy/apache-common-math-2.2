@@ -160,7 +160,7 @@ public class HarmonicCoefficientsGuesser {
 
     /** Sort the observations with respect to the abscissa.
      */
-    private void sortObservations() {
+    public void sortObservations() {
 
         // Since the samples are almost always already sorted, this
         // method is implemented as an insertion sort that reorders the
@@ -191,7 +191,7 @@ public class HarmonicCoefficientsGuesser {
      * the first guess cannot be computed (when the elements under the
      * square roots are negative).
      */
-    private void guessAOmega() throws OptimizationException {
+    public void guessAOmega() throws OptimizationException {
 
         // initialize the sums for the linear model between the two integrals
         double sx2 = 0.0;
@@ -247,7 +247,7 @@ public class HarmonicCoefficientsGuesser {
 
     /** Estimate a first guess of the &phi; coefficient.
      */
-    private void guessPhi() {
+    public void guessPhi() {
 
         // initialize the means
         double fcMean = 0.0;

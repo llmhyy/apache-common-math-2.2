@@ -196,7 +196,7 @@ public class OLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * once it is successfully loaded.</p>
      */
     @Override
-    protected void newXSampleData(double[][] x) {
+    public void newXSampleData(double[][] x) {
         super.newXSampleData(x);
         qr = new QRDecompositionImpl(X);
     }
@@ -207,7 +207,7 @@ public class OLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * @return beta
      */
     @Override
-    protected RealVector calculateBeta() {
+    public RealVector calculateBeta() {
         return qr.getSolver().solve(Y);
     }
 
@@ -223,7 +223,7 @@ public class OLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * @return The beta variance-covariance matrix
      */
     @Override
-    protected RealMatrix calculateBetaVariance() {
+    public RealMatrix calculateBetaVariance() {
         int p = X.getColumnDimension();
         RealMatrix Raug = qr.getR().getSubMatrix(0, p - 1 , 0, p - 1);
         RealMatrix Rinv = new LUDecompositionImpl(Raug).getSolver().getInverse();

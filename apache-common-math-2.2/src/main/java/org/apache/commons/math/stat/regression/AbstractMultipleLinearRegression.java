@@ -125,7 +125,7 @@ public abstract class AbstractMultipleLinearRegression implements
      * @param y the array representing the y sample
      * @throws IllegalArgumentException if y is null or empty
      */
-    protected void newYSampleData(double[] y) {
+    public void newYSampleData(double[] y) {
         if (y == null) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.NULL_NOT_ALLOWED);
@@ -160,7 +160,7 @@ public abstract class AbstractMultipleLinearRegression implements
      * @param x the rectangular array representing the x sample
      * @throws IllegalArgumentException if x is null, empty or not rectangular
      */
-    protected void newXSampleData(double[][] x) {
+    public void newXSampleData(double[][] x) {
         if (x == null) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.NULL_NOT_ALLOWED);
@@ -201,7 +201,7 @@ public abstract class AbstractMultipleLinearRegression implements
      * @throws IllegalArgumentException if any of the checks fail
      *
      */
-    protected void validateSampleData(double[][] x, double[] y) {
+    public void validateSampleData(double[][] x, double[] y) {
         if ((x == null) || (y == null) || (x.length != y.length)) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.DIMENSIONS_MISMATCH_SIMPLE,
@@ -228,7 +228,7 @@ public abstract class AbstractMultipleLinearRegression implements
      * @throws IllegalArgumentException if the number of rows in x is not equal
      * to the number of rows in covariance or covariance is not square.
      */
-    protected void validateCovarianceData(double[][] x, double[][] covariance) {
+    public void validateCovarianceData(double[][] x, double[][] covariance) {
         if (x.length != covariance.length) {
             throw MathRuntimeException.createIllegalArgumentException(
                  LocalizedFormats.DIMENSIONS_MISMATCH_SIMPLE, x.length, covariance.length);
@@ -311,7 +311,7 @@ public abstract class AbstractMultipleLinearRegression implements
      *
      * @return beta
      */
-    protected abstract RealVector calculateBeta();
+    public abstract RealVector calculateBeta();
 
     /**
      * Calculates the beta variance of multiple linear regression in matrix
@@ -319,7 +319,7 @@ public abstract class AbstractMultipleLinearRegression implements
      *
      * @return beta variance
      */
-    protected abstract RealMatrix calculateBetaVariance();
+    public abstract RealMatrix calculateBetaVariance();
 
 
     /**
@@ -327,7 +327,7 @@ public abstract class AbstractMultipleLinearRegression implements
      *
      * @return Y variance
      */
-    protected double calculateYVariance() {
+    public double calculateYVariance() {
         return new Variance().evaluate(Y.getData());
     }
 
@@ -342,7 +342,7 @@ public abstract class AbstractMultipleLinearRegression implements
      * @return error variance estimate
      * @since 2.2
      */
-    protected double calculateErrorVariance() {
+    public double calculateErrorVariance() {
         RealVector residuals = calculateResiduals();
         return residuals.dotProduct(residuals) /
                (X.getRowDimension() - X.getColumnDimension());
@@ -358,7 +358,7 @@ public abstract class AbstractMultipleLinearRegression implements
      *
      * @return The residuals [n,1] matrix
      */
-    protected RealVector calculateResiduals() {
+    public RealVector calculateResiduals() {
         RealVector b = calculateBeta();
         return Y.subtract(X.operate(b));
     }

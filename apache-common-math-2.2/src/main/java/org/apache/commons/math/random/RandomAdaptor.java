@@ -37,7 +37,7 @@ public class RandomAdaptor extends Random implements RandomGenerator {
      * Prevent instantiation without a generator argument
      */
     @SuppressWarnings("unused")
-    private RandomAdaptor() { randomGenerator = null; }
+    public RandomAdaptor() { randomGenerator = null; }
 
     /**
      * Construct a RandomAdaptor wrapping the supplied RandomGenerator.

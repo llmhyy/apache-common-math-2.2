@@ -116,7 +116,7 @@ public class BetaDistributionImpl
     /**
      * Recompute the normalization factor.
      */
-    private void recomputeZ() {
+    public void recomputeZ() {
         if (Double.isNaN(z)) {
             z = Gamma.logGamma(alpha) + Gamma.logGamma(beta) - Gamma.logGamma(alpha + beta);
         }
@@ -179,19 +179,19 @@ public class BetaDistributionImpl
 
     /** {@inheritDoc} */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         return p;
     }
 
     /** {@inheritDoc} */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         return 0;
     }
 
     /** {@inheritDoc} */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         return 1;
     }
 
@@ -220,7 +220,7 @@ public class BetaDistributionImpl
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

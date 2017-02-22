@@ -79,15 +79,15 @@ public class WeightedMeasurementTest
     p2 = null;
   }
 
-  private void checkValue(double value, double expected) {
+  public void checkValue(double value, double expected) {
    assertTrue(FastMath.abs(value - expected) < 1.0e-10);
   }
 
-  private double theoretical() {
+  public double theoretical() {
    return 3 * p1.getEstimate() - p2.getEstimate();
   }
 
-  private double partial(EstimatedParameter p) {
+  public double partial(EstimatedParameter p) {
     if (p == p1) {
       return 3.0;
     } else if (p == p2) {

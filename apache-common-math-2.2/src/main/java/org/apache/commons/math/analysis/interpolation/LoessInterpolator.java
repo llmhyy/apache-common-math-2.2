@@ -383,7 +383,7 @@ public class LoessInterpolator
      * <tt>(right==xval.length-1 or xval[right+1] - xval[i] > xval[i] - xval[left])</tt>.
      * The array will be updated.
      */
-    private static void updateBandwidthInterval(final double[] xval, final double[] weights,
+    public static void updateBandwidthInterval(final double[] xval, final double[] weights,
                                                 final int i,
                                                 final int[] bandwidthInterval) {
         final int left = bandwidthInterval[0];
@@ -405,7 +405,7 @@ public class LoessInterpolator
      * @param i the index from which to start search; must be < weights.length
      * @return the smallest index j such that j > i && (j==weights.length || weights[j] != 0)
      */
-    private static int nextNonzero(final double[] weights, final int i) {
+    public static int nextNonzero(final double[] weights, final int i) {
         int j = i + 1;
         while(j < weights.length && weights[j] == 0) {
             j++;
@@ -421,7 +421,7 @@ public class LoessInterpolator
      * @param x the argument
      * @return (1-|x|^3)^3
      */
-    private static double tricube(final double x) {
+    public static double tricube(final double x) {
         final double tmp = 1 - x * x * x;
         return tmp * tmp * tmp;
     }
@@ -433,7 +433,7 @@ public class LoessInterpolator
      * @param pattern pattern of the error message
      * @throws MathException if one of the values is not a finite real number
      */
-    private static void checkAllFiniteReal(final double[] values, final Localizable pattern)
+    public static void checkAllFiniteReal(final double[] values, final Localizable pattern)
         throws MathException {
         for (int i = 0; i < values.length; i++) {
             final double x = values[i];
@@ -451,7 +451,7 @@ public class LoessInterpolator
      * @throws MathException if the abscissae array
      * is not in a strictly increasing order
      */
-    private static void checkStrictlyIncreasing(final double[] xval)
+    public static void checkStrictlyIncreasing(final double[] xval)
         throws MathException {
         for (int i = 0; i < xval.length; ++i) {
             if (i >= 1 && xval[i - 1] >= xval[i]) {

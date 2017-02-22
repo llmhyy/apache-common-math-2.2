@@ -86,11 +86,11 @@ public class SimplexTableauTest {
         Assert.assertEquals(tableau, TestUtils.serializeAndRecover(tableau));
     }
 
-    private LinearObjectiveFunction createFunction() {
+    public LinearObjectiveFunction createFunction() {
         return new LinearObjectiveFunction(new double[] {15, 10}, 0);
     }
 
-    private Collection<LinearConstraint> createConstraints() {
+    public Collection<LinearConstraint> createConstraints() {
         Collection<LinearConstraint> constraints = new ArrayList<LinearConstraint>();
         constraints.add(new LinearConstraint(new double[] {1, 0}, Relationship.LEQ, 2));
         constraints.add(new LinearConstraint(new double[] {0, 1}, Relationship.LEQ, 3));
@@ -98,7 +98,7 @@ public class SimplexTableauTest {
         return constraints;
     }
 
-    private void assertMatrixEquals(double[][] expected, double[][] result) {
+    public void assertMatrixEquals(double[][] expected, double[][] result) {
         Assert.assertEquals("Wrong number of rows.", expected.length, result.length);
         for (int i = 0; i < expected.length; i++) {
             Assert.assertEquals("Wrong number of columns.", expected[i].length, result[i].length);

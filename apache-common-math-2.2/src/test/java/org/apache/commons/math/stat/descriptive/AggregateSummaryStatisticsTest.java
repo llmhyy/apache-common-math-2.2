@@ -220,7 +220,7 @@ public class AggregateSummaryStatisticsTest extends TestCase {
      * to delta, with NaNs, infinities returned in the same spots. For max, min, n, values
      * have to agree exactly, delta is used only for sum, mean, variance, std dev.
      */
-    protected static void assertEquals(StatisticalSummary expected, StatisticalSummary observed, double delta) {
+    public static void assertEquals(StatisticalSummary expected, StatisticalSummary observed, double delta) {
         TestUtils.assertEquals(expected.getMax(), observed.getMax(), 0);
         TestUtils.assertEquals(expected.getMin(), observed.getMin(), 0);
         assertEquals(expected.getN(), observed.getN());
@@ -238,7 +238,7 @@ public class AggregateSummaryStatisticsTest extends TestCase {
      *
      * @return array of random double values
      */
-    private double[] generateSample() {
+    public double[] generateSample() {
         final RandomData randomData = new RandomDataImpl();
         final int sampleSize = randomData.nextInt(10,100);
         double[] out = new double[sampleSize];
@@ -255,7 +255,7 @@ public class AggregateSummaryStatisticsTest extends TestCase {
      * @param sample array to partition
      * @return rectangular array with rows = subsamples
      */
-    private double[][] generatePartition(double[] sample) {
+    public double[][] generatePartition(double[] sample) {
         final int length = sample.length;
         final double[][] out = new double[5][];
         final RandomData randomData = new RandomDataImpl();

@@ -73,7 +73,7 @@ public class ArrayFieldVectorTest extends TestCase {
          * @return a new array
          */
         @SuppressWarnings("unchecked") // field is of type T
-        private T[] buildArray(final int length) {
+        public T[] buildArray(final int length) {
             return (T[]) Array.newInstance(field.getZero().getClass(), length);
         }
 
@@ -86,7 +86,7 @@ public class ArrayFieldVectorTest extends TestCase {
             return field;
         }
 
-        private UnsupportedOperationException unsupported() {
+        public UnsupportedOperationException unsupported() {
             return new UnsupportedOperationException("Not supported, unneeded for test purposes");
         }
 
@@ -620,7 +620,7 @@ public class ArrayFieldVectorTest extends TestCase {
     }
 
     /** verifies that two vectors are equals */
-    protected void checkArray(String msg, Fraction[] m, Fraction[] n) {
+    public void checkArray(String msg, Fraction[] m, Fraction[] n) {
         if (m.length != n.length) {
             fail("vectors have different lengths");
         }

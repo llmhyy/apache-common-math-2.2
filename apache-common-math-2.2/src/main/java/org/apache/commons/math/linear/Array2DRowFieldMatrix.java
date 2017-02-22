@@ -586,7 +586,7 @@ public class Array2DRowFieldMatrix<T extends FieldElement<T>> extends AbstractFi
      *
      * @return a copy of the underlying data array.
      */
-    private T[][] copyOut() {
+    public T[][] copyOut() {
         final int nRows = this.getRowDimension();
         final T[][] out = buildArray(getField(), nRows, getColumnDimension());
         // can't copy 2-d array in one shot, otherwise get row references
@@ -606,7 +606,7 @@ public class Array2DRowFieldMatrix<T extends FieldElement<T>> extends AbstractFi
      *    rectangular
      * @throws NullPointerException if input array is null
      */
-    private void copyIn(final T[][] in) {
+    public void copyIn(final T[][] in) {
         setSubMatrix(in, 0, 0);
     }
 

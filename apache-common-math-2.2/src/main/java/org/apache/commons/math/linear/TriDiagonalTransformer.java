@@ -201,7 +201,7 @@ class TriDiagonalTransformer {
      * Transform original matrix to tridiagonal form.
      * <p>Transformation is done using Householder transforms.</p>
      */
-    private void transform() {
+    public void transform() {
 
         final int m = householderVectors.length;
         final double[] z = new double[m];

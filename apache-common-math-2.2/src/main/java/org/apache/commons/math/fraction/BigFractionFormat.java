@@ -267,7 +267,7 @@ public class BigFractionFormat extends AbstractFormat implements Serializable {
      * @return a parsed <code>BigInteger</code> or null if string does not
      * contain a BigInteger at the specified position
      */
-    protected BigInteger parseNextBigInteger(final String source,
+    public BigInteger parseNextBigInteger(final String source,
                                              final ParsePosition pos) {
 
         final int start = pos.getIndex();

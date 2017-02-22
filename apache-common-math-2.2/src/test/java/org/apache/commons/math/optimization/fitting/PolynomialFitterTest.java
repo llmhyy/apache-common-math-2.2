@@ -97,7 +97,7 @@ public class PolynomialFitterTest {
         checkUnsolvableProblem(optimizer, false);
     }
 
-    private void checkUnsolvableProblem(DifferentiableMultivariateVectorialOptimizer optimizer,
+    public void checkUnsolvableProblem(DifferentiableMultivariateVectorialOptimizer optimizer,
                                         boolean solvable) {
         Random randomizer = new Random(1248788532l);
         for (int degree = 0; degree < 10; ++degree) {
@@ -124,7 +124,7 @@ public class PolynomialFitterTest {
 
     }
 
-    private PolynomialFunction buildRandomPolynomial(int degree, Random randomizer) {
+    public PolynomialFunction buildRandomPolynomial(int degree, Random randomizer) {
         final double[] coefficients = new double[degree + 1];
         for (int i = 0; i <= degree; ++i) {
             coefficients[i] = randomizer.nextGaussian();

@@ -88,7 +88,7 @@ public abstract class AbstractEstimator implements Estimator {
      * <p>The maximal number of cost evaluations allowed is set
      * to its default value {@link #DEFAULT_MAX_COST_EVALUATIONS}.</p>
      */
-    protected AbstractEstimator() {
+    public AbstractEstimator() {
         setMaxCostEval(DEFAULT_MAX_COST_EVALUATIONS);
     }
 
@@ -123,7 +123,7 @@ public abstract class AbstractEstimator implements Estimator {
     /**
      * Update the jacobian matrix.
      */
-    protected void updateJacobian() {
+    public void updateJacobian() {
         incrementJacobianEvaluationsCounter();
         Arrays.fill(jacobian, 0);
         int index = 0;
@@ -139,7 +139,7 @@ public abstract class AbstractEstimator implements Estimator {
     /**
      * Increment the jacobian evaluations counter.
      */
-    protected final void incrementJacobianEvaluationsCounter() {
+    public final void incrementJacobianEvaluationsCounter() {
       ++jacobianEvaluations;
     }
 
@@ -148,7 +148,7 @@ public abstract class AbstractEstimator implements Estimator {
      * @exception EstimationException if the number of cost evaluations
      * exceeds the maximum allowed
      */
-    protected void updateResidualsAndCost()
+    public void updateResidualsAndCost()
     throws EstimationException {
 
         if (++costEvaluations > maxCostEval) {
@@ -278,7 +278,7 @@ public abstract class AbstractEstimator implements Estimator {
      * method.</p>
      * @param problem estimation problem to solve
      */
-    protected void initializeEstimate(EstimationProblem problem) {
+    public void initializeEstimate(EstimationProblem problem) {
 
         // reset counters
         costEvaluations     = 0;

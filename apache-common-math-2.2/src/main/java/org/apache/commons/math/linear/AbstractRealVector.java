@@ -43,7 +43,7 @@ public abstract class AbstractRealVector implements RealVector {
      * @exception DimensionMismatchException if the vectors do not
      * have the same dimension
      */
-    protected void checkVectorDimensions(RealVector v) {
+    public void checkVectorDimensions(RealVector v) {
         checkVectorDimensions(v.getDimension());
     }
 
@@ -54,7 +54,7 @@ public abstract class AbstractRealVector implements RealVector {
      * @exception DimensionMismatchException if the dimension is
      * inconsistent with vector size
      */
-    protected void checkVectorDimensions(int n)
+    public void checkVectorDimensions(int n)
         throws DimensionMismatchException {
         int d = getDimension();
         if (d != n) {
@@ -67,7 +67,7 @@ public abstract class AbstractRealVector implements RealVector {
      * @param index index to check
      * @exception MatrixIndexException if index is not valid
      */
-    protected void checkIndex(final int index)
+    public void checkIndex(final int index)
         throws MatrixIndexException {
         if (index < 0 || index >= getDimension()) {
             throw new MatrixIndexException(LocalizedFormats.INDEX_OUT_OF_RANGE,
@@ -883,7 +883,7 @@ public abstract class AbstractRealVector implements RealVector {
         private EntryImpl next;
 
         /** Simple constructor. */
-        protected SparseEntryIterator() {
+        public SparseEntryIterator() {
             dim = getDimension();
             current = new EntryImpl();
             next = new EntryImpl();
@@ -895,7 +895,7 @@ public abstract class AbstractRealVector implements RealVector {
         /** Advance an entry up to the next nonzero one.
          * @param e entry to advance
          */
-        protected void advance(EntryImpl e) {
+        public void advance(EntryImpl e) {
             if (e == null) {
                 return;
             }

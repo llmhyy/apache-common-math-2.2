@@ -29,7 +29,7 @@ public class DfpDec extends Dfp {
     /** Makes an instance with a value of zero.
      * @param factory factory linked to this instance
      */
-    protected DfpDec(final DfpField factory) {
+    public DfpDec(final DfpField factory) {
         super(factory);
     }
 
@@ -37,7 +37,7 @@ public class DfpDec extends Dfp {
      * @param factory factory linked to this instance
      * @param x value to convert to an instance
      */
-    protected DfpDec(final DfpField factory, byte x) {
+    public DfpDec(final DfpField factory, byte x) {
         super(factory, x);
     }
 
@@ -45,7 +45,7 @@ public class DfpDec extends Dfp {
      * @param factory factory linked to this instance
      * @param x value to convert to an instance
      */
-    protected DfpDec(final DfpField factory, int x) {
+    public DfpDec(final DfpField factory, int x) {
         super(factory, x);
     }
 
@@ -53,7 +53,7 @@ public class DfpDec extends Dfp {
      * @param factory factory linked to this instance
      * @param x value to convert to an instance
      */
-    protected DfpDec(final DfpField factory, long x) {
+    public DfpDec(final DfpField factory, long x) {
         super(factory, x);
     }
 
@@ -61,7 +61,7 @@ public class DfpDec extends Dfp {
      * @param factory factory linked to this instance
      * @param x value to convert to an instance
      */
-    protected DfpDec(final DfpField factory, double x) {
+    public DfpDec(final DfpField factory, double x) {
         super(factory, x);
         round(0);
     }
@@ -78,7 +78,7 @@ public class DfpDec extends Dfp {
      * @param factory factory linked to this instance
      * @param s string representation of the instance
      */
-    protected DfpDec(final DfpField factory, final String s) {
+    public DfpDec(final DfpField factory, final String s) {
         super(factory, s);
         round(0);
     }
@@ -89,7 +89,7 @@ public class DfpDec extends Dfp {
      * @param nans code of the value, must be one of {@link #INFINITE},
      * {@link #SNAN},  {@link #QNAN}
      */
-    protected DfpDec(final DfpField factory, final byte sign, final byte nans) {
+    public DfpDec(final DfpField factory, final byte sign, final byte nans) {
         super(factory, sign, nans);
     }
 
@@ -156,13 +156,13 @@ public class DfpDec extends Dfp {
      * override this to return something less.
      * @return number of decimal digits this class is going to represent
      */
-    protected int getDecimalDigits() {
+    public int getDecimalDigits() {
         return getRadixDigits() * 4 - 3;
     }
 
     /** {@inheritDoc} */
     @Override
-    protected int round(int in) {
+    public int round(int in) {
 
         int msb = mant[mant.length-1];
         if (msb == 0) {

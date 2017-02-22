@@ -157,7 +157,7 @@ public class Covariance {
      * @param biasCorrected determines whether or not covariance estimates are bias-corrected
      * @return covariance matrix
      */
-    protected RealMatrix computeCovarianceMatrix(RealMatrix matrix, boolean biasCorrected) {
+    public RealMatrix computeCovarianceMatrix(RealMatrix matrix, boolean biasCorrected) {
         int dimension = matrix.getColumnDimension();
         Variance variance = new Variance(biasCorrected);
         RealMatrix outMatrix = new BlockRealMatrix(dimension, dimension);
@@ -179,7 +179,7 @@ public class Covariance {
      * @return covariance matrix
      * @see #Covariance
      */
-    protected RealMatrix computeCovarianceMatrix(RealMatrix matrix) {
+    public RealMatrix computeCovarianceMatrix(RealMatrix matrix) {
         return computeCovarianceMatrix(matrix, true);
     }
 
@@ -190,7 +190,7 @@ public class Covariance {
      * @param biasCorrected determines whether or not covariance estimates are bias-corrected
      * @return covariance matrix
      */
-    protected RealMatrix computeCovarianceMatrix(double[][] data, boolean biasCorrected) {
+    public RealMatrix computeCovarianceMatrix(double[][] data, boolean biasCorrected) {
         return computeCovarianceMatrix(new BlockRealMatrix(data), biasCorrected);
     }
 
@@ -201,7 +201,7 @@ public class Covariance {
      * @return covariance matrix
      * @see #Covariance
      */
-    protected RealMatrix computeCovarianceMatrix(double[][] data) {
+    public RealMatrix computeCovarianceMatrix(double[][] data) {
         return computeCovarianceMatrix(data, true);
     }
 
@@ -262,7 +262,7 @@ public class Covariance {
      * two columns and two rows
      * @param matrix matrix to check
      */
-    private void checkSufficientData(final RealMatrix matrix) {
+    public void checkSufficientData(final RealMatrix matrix) {
         int nRows = matrix.getRowDimension();
         int nCols = matrix.getColumnDimension();
         if (nRows < 2 || nCols < 2) {

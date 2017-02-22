@@ -120,7 +120,7 @@ public class OneWayAnovaImpl implements OneWayAnova  {
      * preconditions specified in the interface definition
      * @throws MathException if an error occurs computing the Anova stats
      */
-    private AnovaStats anovaStats(Collection<double[]> categoryData)
+    public AnovaStats anovaStats(Collection<double[]> categoryData)
         throws IllegalArgumentException, MathException {
 
         // check if we have enough categories
@@ -200,7 +200,7 @@ public class OneWayAnovaImpl implements OneWayAnova  {
          * @param dfwg degrees of freedom in denominator (within groups)
          * @param F statistic
          */
-        private AnovaStats(int dfbg, int dfwg, double F) {
+        public AnovaStats(int dfbg, int dfwg, double F) {
             this.dfbg = dfbg;
             this.dfwg = dfwg;
             this.F = F;

@@ -41,7 +41,7 @@ public class MatrixUtils {
     /**
      * Private constructor.
      */
-    private MatrixUtils() {
+    public MatrixUtils() {
         super();
     }
 

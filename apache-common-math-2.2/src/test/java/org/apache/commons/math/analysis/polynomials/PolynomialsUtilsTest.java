@@ -200,16 +200,16 @@ public class PolynomialsUtilsTest extends TestCase {
         }
     }
 
-    private void checkPolynomial(PolynomialFunction p, long denominator, String reference) {
+    public void checkPolynomial(PolynomialFunction p, long denominator, String reference) {
         PolynomialFunction q = new PolynomialFunction(new double[] { denominator});
         assertEquals(reference, p.multiply(q).toString());
     }
 
-    private void checkPolynomial(PolynomialFunction p, String reference) {
+    public void checkPolynomial(PolynomialFunction p, String reference) {
         assertEquals(reference, p.toString());
     }
 
-    private void checkNullPolynomial(PolynomialFunction p) {
+    public void checkNullPolynomial(PolynomialFunction p) {
         for (double coefficient : p.getCoefficients()) {
             assertEquals(0.0, coefficient, 1.0e-13);
         }

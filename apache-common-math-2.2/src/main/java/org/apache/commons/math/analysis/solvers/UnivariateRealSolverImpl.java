@@ -73,7 +73,7 @@ public abstract class UnivariateRealSolverImpl
      * method.
      */
     @Deprecated
-    protected UnivariateRealSolverImpl(final UnivariateRealFunction f,
+    public UnivariateRealSolverImpl(final UnivariateRealFunction f,
                                        final int defaultMaximalIterationCount,
                                        final double defaultAbsoluteAccuracy) {
         super(defaultMaximalIterationCount, defaultAbsoluteAccuracy);
@@ -93,7 +93,7 @@ public abstract class UnivariateRealSolverImpl
      * @throws IllegalArgumentException if f is null or the
      * defaultAbsoluteAccuracy is not valid
      */
-    protected UnivariateRealSolverImpl(final int defaultMaximalIterationCount,
+    public UnivariateRealSolverImpl(final int defaultMaximalIterationCount,
                                        final double defaultAbsoluteAccuracy) {
         super(defaultMaximalIterationCount, defaultAbsoluteAccuracy);
         this.defaultFunctionValueAccuracy = 1.0e-15;
@@ -103,7 +103,7 @@ public abstract class UnivariateRealSolverImpl
     /** Check if a result has been computed.
      * @exception IllegalStateException if no result has been computed
      */
-    protected void checkResultComputed() throws IllegalStateException {
+    public void checkResultComputed() throws IllegalStateException {
         if (!resultComputed) {
             throw MathRuntimeException.createIllegalStateException(LocalizedFormats.NO_RESULT_AVAILABLE);
         }
@@ -189,7 +189,7 @@ public abstract class UnivariateRealSolverImpl
      * @param newResult the result to set
      * @param iterationCount the iteration count to set
      */
-    protected final void setResult(final double newResult, final int iterationCount) {
+    public final void setResult(final double newResult, final int iterationCount) {
         this.result         = newResult;
         this.iterationCount = iterationCount;
         this.resultComputed = true;
@@ -202,7 +202,7 @@ public abstract class UnivariateRealSolverImpl
      * @param fx the result to set
      * @param iterationCount the iteration count to set
      */
-    protected final void setResult(final double x, final double fx,
+    public final void setResult(final double x, final double fx,
                                    final int iterationCount) {
         this.result         = x;
         this.functionValue  = fx;
@@ -213,7 +213,7 @@ public abstract class UnivariateRealSolverImpl
     /**
      * Convenience function for implementations.
      */
-    protected final void clearResult() {
+    public final void clearResult() {
         this.iterationCount = 0;
         this.resultComputed = false;
     }
@@ -227,7 +227,7 @@ public abstract class UnivariateRealSolverImpl
      * @return true if f(lower) * f(upper) < 0
      * @throws FunctionEvaluationException if an error occurs evaluating the function at the endpoints
      */
-    protected boolean isBracketing(final double lower, final double upper,
+    public boolean isBracketing(final double lower, final double upper,
                                    final UnivariateRealFunction function)
         throws FunctionEvaluationException {
         final double f1 = function.value(lower);
@@ -243,7 +243,7 @@ public abstract class UnivariateRealSolverImpl
      * @param end  third number
      * @return true if the arguments form an increasing sequence
      */
-    protected boolean isSequence(final double start, final double mid, final double end) {
+    public boolean isSequence(final double start, final double mid, final double end) {
         return (start < mid) && (mid < end);
     }
 
@@ -255,7 +255,7 @@ public abstract class UnivariateRealSolverImpl
      * @param upper upper endpoint
      * @throws IllegalArgumentException
      */
-    protected void verifyInterval(final double lower, final double upper) {
+    public void verifyInterval(final double lower, final double upper) {
         if (lower >= upper) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.ENDPOINTS_NOT_AN_INTERVAL,
@@ -272,7 +272,7 @@ public abstract class UnivariateRealSolverImpl
      * @param upper upper endpoint
      * @throws IllegalArgumentException
      */
-    protected void verifySequence(final double lower, final double initial, final double upper) {
+    public void verifySequence(final double lower, final double initial, final double upper) {
         if (!isSequence(lower, initial, upper)) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.INVALID_INTERVAL_INITIAL_VALUE_PARAMETERS,
@@ -290,7 +290,7 @@ public abstract class UnivariateRealSolverImpl
      * @throws IllegalArgumentException
      * @throws FunctionEvaluationException if an error occurs evaluating the function at the endpoints
      */
-    protected void verifyBracketing(final double lower, final double upper,
+    public void verifyBracketing(final double lower, final double upper,
                                     final UnivariateRealFunction function)
         throws FunctionEvaluationException {
 

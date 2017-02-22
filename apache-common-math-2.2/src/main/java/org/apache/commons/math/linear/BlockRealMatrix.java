@@ -815,7 +815,7 @@ public class BlockRealMatrix extends AbstractRealMatrix implements Serializable 
      * @param dstStartRow start row in the destination block
      * @param dstStartColumn start column in the destination block
      */
-    private void copyBlockPart(final double[] srcBlock, final int srcWidth,
+    public void copyBlockPart(final double[] srcBlock, final int srcWidth,
                                final int srcStartRow, final int srcEndRow,
                                final int srcStartColumn, final int srcEndColumn,
                                final double[] dstBlock, final int dstWidth,
@@ -1674,7 +1674,7 @@ public class BlockRealMatrix extends AbstractRealMatrix implements Serializable 
      * @param blockRow row index (in block sense) of the block
      * @return height (number of rows) of the block
      */
-    private int blockHeight(final int blockRow) {
+    public int blockHeight(final int blockRow) {
         return (blockRow == blockRows - 1) ? rows - blockRow * BLOCK_SIZE : BLOCK_SIZE;
     }
 
@@ -1683,7 +1683,7 @@ public class BlockRealMatrix extends AbstractRealMatrix implements Serializable 
      * @param blockColumn column index (in block sense) of the block
      * @return width (number of columns) of the block
      */
-    private int blockWidth(final int blockColumn) {
+    public int blockWidth(final int blockColumn) {
         return (blockColumn == blockColumns - 1) ? columns - blockColumn * BLOCK_SIZE : BLOCK_SIZE;
     }
 

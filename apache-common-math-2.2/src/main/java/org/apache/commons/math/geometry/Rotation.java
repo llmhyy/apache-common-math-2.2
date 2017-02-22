@@ -953,7 +953,7 @@ public class Rotation implements Serializable {
    * @exception NotARotationMatrixException if the matrix cannot be
    * orthogonalized with the given threshold after 10 iterations
    */
-  private double[][] orthogonalizeMatrix(double[][] m, double threshold)
+  public double[][] orthogonalizeMatrix(double[][] m, double threshold)
     throws NotARotationMatrixException {
     double[] m0 = m[0];
     double[] m1 = m[1];

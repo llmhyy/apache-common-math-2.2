@@ -59,7 +59,7 @@ public abstract class ConvergingAlgorithmImpl implements ConvergingAlgorithm {
      * in order to assign meaningful values to all the instances variables.
      */
     @Deprecated
-    protected ConvergingAlgorithmImpl(final int defaultMaximalIterationCount,
+    public ConvergingAlgorithmImpl(final int defaultMaximalIterationCount,
                                       final double defaultAbsoluteAccuracy) {
         this.defaultAbsoluteAccuracy = defaultAbsoluteAccuracy;
         this.defaultRelativeAccuracy = 1.0e-14;
@@ -78,7 +78,7 @@ public abstract class ConvergingAlgorithmImpl implements ConvergingAlgorithm {
      * has been removed).
      */
     @Deprecated
-    protected ConvergingAlgorithmImpl() {}
+    public ConvergingAlgorithmImpl() {}
 
     /** {@inheritDoc} */
     public int getIterationCount() {
@@ -135,7 +135,7 @@ public abstract class ConvergingAlgorithmImpl implements ConvergingAlgorithm {
      *
      * @since 2.2
      */
-    protected void resetIterationsCounter() {
+    public void resetIterationsCounter() {
         iterationCount = 0;
     }
 
@@ -146,7 +146,7 @@ public abstract class ConvergingAlgorithmImpl implements ConvergingAlgorithm {
      * of iterations is exceeded.
      * @since 2.2
      */
-    protected void incrementIterationsCounter()
+    public void incrementIterationsCounter()
         throws MaxIterationsExceededException {
         if (++iterationCount > maximalIterationCount) {
             throw new MaxIterationsExceededException(maximalIterationCount);

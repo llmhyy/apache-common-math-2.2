@@ -43,7 +43,7 @@ public abstract class ContinuedFraction {
     /**
      * Default constructor.
      */
-    protected ContinuedFraction() {
+    public ContinuedFraction() {
         super();
     }
 
@@ -54,7 +54,7 @@ public abstract class ContinuedFraction {
      * @param x the evaluation point.
      * @return the n-th a coefficient.
      */
-    protected abstract double getA(int n, double x);
+    public abstract double getA(int n, double x);
 
     /**
      * Access the n-th b coefficient of the continued fraction.  Since b can be
@@ -63,7 +63,7 @@ public abstract class ContinuedFraction {
      * @param x the evaluation point.
      * @return the n-th b coefficient.
      */
-    protected abstract double getB(int n, double x);
+    public abstract double getB(int n, double x);
 
     /**
      * Evaluates the continued fraction at the value x.

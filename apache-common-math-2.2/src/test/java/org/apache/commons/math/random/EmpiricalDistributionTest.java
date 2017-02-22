@@ -223,7 +223,7 @@ public final class EmpiricalDistributionTest extends RetryTestCase {
         TestUtils.assertEquals(expectedGeneratorUpperBounds, dist.getGeneratorUpperBounds(), tol);
     }
 
-    private void verifySame(EmpiricalDistribution d1, EmpiricalDistribution d2) {
+    public void verifySame(EmpiricalDistribution d1, EmpiricalDistribution d2) {
         assertEquals(d1.isLoaded(), d2.isLoaded());
         assertEquals(d1.getBinCount(), d2.getBinCount());
         assertEquals(d1.getSampleStats(), d2.getSampleStats());
@@ -235,7 +235,7 @@ public final class EmpiricalDistributionTest extends RetryTestCase {
         }
     }
 
-    private void tstGen(double tolerance)throws Exception {
+    public void tstGen(double tolerance)throws Exception {
         empiricalDistribution.load(url);
         SummaryStatistics stats = new SummaryStatistics();
         for (int i = 1; i < 1000; i++) {
@@ -246,7 +246,7 @@ public final class EmpiricalDistributionTest extends RetryTestCase {
          ("std dev", stats.getStandardDeviation(),1.0173699343977738,tolerance);
     }
 
-    private void tstDoubleGen(double tolerance)throws Exception {
+    public void tstDoubleGen(double tolerance)throws Exception {
         empiricalDistribution2.load(dataArray);
         SummaryStatistics stats = new SummaryStatistics();
         for (int i = 1; i < 1000; i++) {

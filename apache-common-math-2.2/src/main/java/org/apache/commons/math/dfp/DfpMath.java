@@ -30,7 +30,7 @@ public class DfpMath {
     /**
      * Private Constructor.
      */
-    private DfpMath() {
+    public DfpMath() {
     }
 
     /** Breaks a string representation up into two dfp's.
@@ -42,7 +42,7 @@ public class DfpMath {
      * @param a string representation to split
      * @return an array of two {@link Dfp} which sum is a
      */
-    protected static Dfp[] split(final DfpField field, final String a) {
+    public static Dfp[] split(final DfpField field, final String a) {
         Dfp result[] = new Dfp[2];
         char[] buf;
         boolean leading = true;
@@ -91,7 +91,7 @@ public class DfpMath {
      * @param a number to split
      * @return two elements array containing the split number
      */
-    protected static Dfp[] split(final Dfp a) {
+    public static Dfp[] split(final Dfp a) {
         final Dfp[] result = new Dfp[2];
         final Dfp shift = a.multiply(a.power10K(a.getRadixDigits() / 2));
         result[0] = a.add(shift).subtract(shift);
@@ -107,7 +107,7 @@ public class DfpMath {
      *  @param b second factor of the multiplication, in split form
      *  @return a &times; b, in split form
      */
-    protected static Dfp[] splitMult(final Dfp[] a, final Dfp[] b) {
+    public static Dfp[] splitMult(final Dfp[] a, final Dfp[] b) {
         final Dfp[] result = new Dfp[2];
 
         result[1] = a[0].getZero();
@@ -133,7 +133,7 @@ public class DfpMath {
      *  @param b divisor, in split form
      *  @return a / b, in split form
      */
-    protected static Dfp[] splitDiv(final Dfp[] a, final Dfp[] b) {
+    public static Dfp[] splitDiv(final Dfp[] a, final Dfp[] b) {
         final Dfp[] result;
 
         result = new Dfp[2];
@@ -150,7 +150,7 @@ public class DfpMath {
      * @param a power
      * @return base<sup>a</sup>
      */
-    protected static Dfp splitPow(final Dfp[] base, int a) {
+    public static Dfp splitPow(final Dfp[] base, int a) {
         boolean invert = false;
 
         Dfp[] r = new Dfp[2];
@@ -288,7 +288,7 @@ public class DfpMath {
      * @param a power at which e should be raised
      * @return e<sup>a</sup>
      */
-    protected static Dfp expInternal(final Dfp a) {
+    public static Dfp expInternal(final Dfp a) {
         Dfp y = a.getOne();
         Dfp x = a.getOne();
         Dfp fact = a.getOne();
@@ -432,7 +432,7 @@ public class DfpMath {
      * @param a number from which logarithm is requested, in split form
      * @return log(a)
      */
-    protected static Dfp[] logInternal(final Dfp a[]) {
+    public static Dfp[] logInternal(final Dfp a[]) {
 
         /* Now we want to compute x = (a-1)/(a+1) but this is prone to
          * loss of precision.  So instead, compute x = (a/4 - 1/4) / (a/4 + 1/4)
@@ -669,7 +669,7 @@ public class DfpMath {
      * @param a number from which sine is desired, in split form
      * @return sin(a)
      */
-    protected static Dfp sinInternal(Dfp a[]) {
+    public static Dfp sinInternal(Dfp a[]) {
 
         Dfp c = a[0].add(a[1]);
         Dfp y = c;
@@ -698,7 +698,7 @@ public class DfpMath {
      * @param a number from which cosine is desired, in split form
      * @return cos(a)
      */
-    protected static Dfp cosInternal(Dfp a[]) {
+    public static Dfp cosInternal(Dfp a[]) {
         final Dfp one = a[0].getOne();
 
 
@@ -840,7 +840,7 @@ public class DfpMath {
      * @param a number from which arc-tangent is desired
      * @return atan(a)
      */
-    protected static Dfp atanInternal(final Dfp a) {
+    public static Dfp atanInternal(final Dfp a) {
 
         Dfp y = new Dfp(a);
         Dfp x = new Dfp(y);

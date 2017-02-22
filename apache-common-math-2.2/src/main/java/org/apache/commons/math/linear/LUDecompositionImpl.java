@@ -246,7 +246,7 @@ public class LUDecompositionImpl implements LUDecomposition {
          * @param pivot pivot permutation associated with LU decomposition
          * @param singular singularity indicator
          */
-        private Solver(final double[][] lu, final int[] pivot, final boolean singular) {
+        public Solver(final double[][] lu, final int[] pivot, final boolean singular) {
             this.lu       = lu;
             this.pivot    = pivot;
             this.singular = singular;

@@ -43,7 +43,7 @@ public final class MathUtilsTest extends TestCase {
     /**
      * Exact (caching) recursive implementation to test against
      */
-    private long binomialCoefficient(int n, int k) throws ArithmeticException {
+    public long binomialCoefficient(int n, int k) throws ArithmeticException {
         if (binomialCache.size() > n) {
             Long cachedResult = binomialCache.get(n).get(Integer.valueOf(k));
             if (cachedResult != null) {
@@ -80,7 +80,7 @@ public final class MathUtilsTest extends TestCase {
     /**
      * Exact direct multiplication implementation to test against
      */
-    private long factorial(int n) {
+    public long factorial(int n) {
         long result = 1;
         for (int i = 2; i <= n; i++) {
             result *= i;
@@ -128,7 +128,7 @@ public final class MathUtilsTest extends TestCase {
         testAddAndCheckLongFailure(-1L, min);
     }
 
-    private void testAddAndCheckLongFailure(long a, long b) {
+    public void testAddAndCheckLongFailure(long a, long b) {
         try {
             MathUtils.addAndCheck(a, b);
             fail("Expecting ArithmeticException");
@@ -993,7 +993,7 @@ public final class MathUtilsTest extends TestCase {
         testMulAndCheckLongFailure(-1L, min);
     }
 
-    private void testMulAndCheckLongFailure(long a, long b) {
+    public void testMulAndCheckLongFailure(long a, long b) {
         try {
             MathUtils.mulAndCheck(a, b);
             fail("Expecting ArithmeticException");
@@ -1444,7 +1444,7 @@ public final class MathUtilsTest extends TestCase {
         testSubAndCheckLongFailure(min, 1L);
     }
 
-    private void testSubAndCheckLongFailure(long a, long b) {
+    public void testSubAndCheckLongFailure(long a, long b) {
         try {
             MathUtils.subAndCheck(a, b);
             fail("Expecting ArithmeticException");

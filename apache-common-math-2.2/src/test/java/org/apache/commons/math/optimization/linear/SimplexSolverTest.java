@@ -429,7 +429,7 @@ public class SimplexSolverTest {
      * Converts a test string to a {@link LinearConstraint}.
      * Ex: x0 + x1 + x2 + x3 - x12 = 0
      */
-    private LinearConstraint equationFromString(int numCoefficients, String s) {
+    public LinearConstraint equationFromString(int numCoefficients, String s) {
         Relationship relationship;
         if (s.contains(">=")) {
             relationship = Relationship.GEQ;

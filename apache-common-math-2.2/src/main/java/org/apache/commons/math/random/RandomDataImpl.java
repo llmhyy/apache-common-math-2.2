@@ -697,7 +697,7 @@ public class RandomDataImpl implements RandomData, Serializable {
      * @return the Random used to generate random data
      * @since 1.1
      */
-    private RandomGenerator getRan() {
+    public RandomGenerator getRan() {
         if (rand == null) {
             rand = new JDKRandomGenerator();
             rand.setSeed(System.currentTimeMillis());
@@ -713,7 +713,7 @@ public class RandomDataImpl implements RandomData, Serializable {
      *
      * @return the SecureRandom used to generate secure random data
      */
-    private SecureRandom getSecRan() {
+    public SecureRandom getSecRan() {
         if (secRand == null) {
             secRand = new SecureRandom();
             secRand.setSeed(System.currentTimeMillis());
@@ -934,7 +934,7 @@ public class RandomDataImpl implements RandomData, Serializable {
      * @param end
      *            element past which shuffling begins
      */
-    private void shuffle(int[] list, int end) {
+    public void shuffle(int[] list, int end) {
         int target = 0;
         for (int i = list.length - 1; i >= end; i--) {
             if (i == 0) {
@@ -955,7 +955,7 @@ public class RandomDataImpl implements RandomData, Serializable {
      *            the natural number to represent
      * @return array with entries = elements of n
      */
-    private int[] getNatural(int n) {
+    public int[] getNatural(int n) {
         int[] natural = new int[n];
         for (int i = 0; i < n; i++) {
             natural[i] = i;

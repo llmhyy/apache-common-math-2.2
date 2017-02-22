@@ -488,7 +488,7 @@ public class MinpackTest extends TestCase {
                                      }), false);
   }
 
-  private void minpackTest(MinpackFunction function, boolean exceptionExpected) {
+  public void minpackTest(MinpackFunction function, boolean exceptionExpected) {
       LevenbergMarquardtOptimizer optimizer = new LevenbergMarquardtOptimizer();
       optimizer.setMaxIterations(100 * (function.getN() + 1));
       optimizer.setCostRelativeTolerance(FastMath.sqrt(2.22044604926e-16));
@@ -522,7 +522,7 @@ public class MinpackTest extends TestCase {
       protected double   costAccuracy;
       protected double   paramsAccuracy;
 
-      protected MinpackFunction(int m, double[] startParams,
+      public MinpackFunction(int m, double[] startParams,
                                 double theoreticalMinCost, double[] theoreticalMinParams) {
           this.m = m;
           this.n = startParams.length;
@@ -533,7 +533,7 @@ public class MinpackTest extends TestCase {
           this.paramsAccuracy       = 1.0e-5;
       }
 
-      protected static double[] buildArray(int n, double x) {
+      public static double[] buildArray(int n, double x) {
           double[] array = new double[n];
           Arrays.fill(array, x);
           return array;
@@ -551,11 +551,11 @@ public class MinpackTest extends TestCase {
           return startParams.clone();
       }
 
-      protected void setCostAccuracy(double costAccuracy) {
+      public void setCostAccuracy(double costAccuracy) {
           this.costAccuracy = costAccuracy;
       }
 
-      protected void setParamsAccuracy(double paramsAccuracy) {
+      public void setParamsAccuracy(double paramsAccuracy) {
           this.paramsAccuracy = paramsAccuracy;
       }
 
@@ -1237,7 +1237,7 @@ public class MinpackTest extends TestCase {
 
     private static final long serialVersionUID = -2394877275028008594L;
 
-    private static double[] buildChebyquadArray(int n, double factor) {
+    public static double[] buildChebyquadArray(int n, double factor) {
       double[] array = new double[n];
       double inv = factor / (n + 1);
       for (int i = 0; i < n; ++i) {

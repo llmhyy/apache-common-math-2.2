@@ -23,12 +23,12 @@ import java.util.Locale;
 public class Vector3DFormatTest extends Vector3DFormatAbstractTest {
 
     @Override
-    protected char getDecimalCharacter() {
+    public char getDecimalCharacter() {
         return '.';
     }
 
     @Override
-    protected Locale getLocale() {
+    public Locale getLocale() {
         return Locale.US;
     }
 }

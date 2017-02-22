@@ -76,7 +76,7 @@ public class PolynomialsUtils {
     /**
      * Private constructor, to prevent instantiation.
      */
-    private PolynomialsUtils() {
+    public PolynomialsUtils() {
     }
 
     /**
@@ -190,7 +190,7 @@ public class PolynomialsUtils {
      * @param generator recurrence coefficients generator
      * @return coefficients array
      */
-    private static PolynomialFunction buildPolynomial(final int degree,
+    public static PolynomialFunction buildPolynomial(final int degree,
                                                       final ArrayList<BigFraction> coefficients,
                                                       final RecurrenceCoefficientsGenerator generator) {
 
@@ -227,7 +227,7 @@ public class PolynomialsUtils {
      * @param generator recurrence coefficients generator
      * @param coefficients list where the computed coefficients should be appended
      */
-    private static void computeUpToDegree(final int degree, final int maxDegree,
+    public static void computeUpToDegree(final int degree, final int maxDegree,
                                           final RecurrenceCoefficientsGenerator generator,
                                           final ArrayList<BigFraction> coefficients) {
 

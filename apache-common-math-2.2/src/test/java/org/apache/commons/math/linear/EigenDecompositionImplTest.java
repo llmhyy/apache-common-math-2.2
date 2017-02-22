@@ -390,7 +390,7 @@ public class EigenDecompositionImplTest extends TestCase {
      * the targetValues, ignoring the order of the values and allowing
      * values to differ by tolerance.
      */
-    protected void checkEigenValues(double[] targetValues,
+    public void checkEigenValues(double[] targetValues,
             EigenDecomposition ed, double tolerance) {
         double[] observed = ed.getRealEigenvalues();
         for (int i = 0; i < observed.length; i++) {
@@ -404,7 +404,7 @@ public class EigenDecompositionImplTest extends TestCase {
      * Returns true iff there is an entry within tolerance of value in
      * searchArray.
      */
-    private boolean isIncludedValue(double value, double[] searchArray,
+    public boolean isIncludedValue(double value, double[] searchArray,
             double tolerance) {
        boolean found = false;
        int i = 0;
@@ -422,7 +422,7 @@ public class EigenDecompositionImplTest extends TestCase {
      * of ed.getV().  Does not try linear combinations - i.e., should only be
      * used to find vectors in one-dimensional eigenspaces.
      */
-    protected void checkEigenVector(double[] eigenVector,
+    public void checkEigenVector(double[] eigenVector,
             EigenDecomposition ed, double tolerance) {
         assertTrue(isIncludedColumn(eigenVector, ed.getV(), tolerance));
     }
@@ -431,7 +431,7 @@ public class EigenDecompositionImplTest extends TestCase {
      * Returns true iff there is a column that is a scalar multiple of column
      * in searchMatrix (modulo tolerance)
      */
-    private boolean isIncludedColumn(double[] column, RealMatrix searchMatrix,
+    public boolean isIncludedColumn(double[] column, RealMatrix searchMatrix,
             double tolerance) {
         boolean found = false;
         int i = 0;

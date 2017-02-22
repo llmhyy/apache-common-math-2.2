@@ -987,7 +987,7 @@ public class ComplexTest extends TestCase {
         }
 
         @Override
-        protected TestComplex createComplex(double real, double imaginary){
+        public TestComplex createComplex(double real, double imaginary){
             return new TestComplex(real, imaginary);
         }
 

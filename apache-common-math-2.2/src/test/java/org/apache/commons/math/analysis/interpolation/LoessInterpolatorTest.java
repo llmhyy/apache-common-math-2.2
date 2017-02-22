@@ -242,7 +242,7 @@ public class LoessInterpolatorTest {
         }
     }
 
-    private void generateSineData(double[] xval, double[] yval, double xnoise, double ynoise) {
+    public void generateSineData(double[] xval, double[] yval, double xnoise, double ynoise) {
         double dx = 2 * FastMath.PI / xval.length;
         double x = 0;
         for(int i = 0; i < xval.length; ++i) {

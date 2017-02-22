@@ -267,7 +267,7 @@ public class QRDecompositionImpl implements QRDecomposition {
          * @param qrt packed TRANSPOSED representation of the QR decomposition
          * @param rDiag diagonal elements of R
          */
-        private Solver(final double[][] qrt, final double[] rDiag) {
+        public Solver(final double[][] qrt, final double[] rDiag) {
             this.qrt   = qrt;
             this.rDiag = rDiag;
         }

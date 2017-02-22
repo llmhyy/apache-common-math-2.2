@@ -49,7 +49,7 @@ public class BrentOptimizer extends AbstractUnivariateRealOptimizer {
 
     /** {@inheritDoc} */
     @Override
-    protected double doOptimize()
+    public double doOptimize()
         throws MaxIterationsExceededException, FunctionEvaluationException {
         return localMin(getGoalType() == GoalType.MINIMIZE,
                         getMin(), getStartValue(), getMax(),
@@ -79,7 +79,7 @@ public class BrentOptimizer extends AbstractUnivariateRealOptimizer {
      * is exceeded.
      * @throws FunctionEvaluationException if an error occurs evaluating the function.
      */
-    private double localMin(boolean isMinim,
+    public double localMin(boolean isMinim,
                             double lo, double mid, double hi,
                             double eps, double t)
         throws MaxIterationsExceededException, FunctionEvaluationException {

@@ -247,7 +247,7 @@ public class FastMath {
     /**
      * Private Constructor
      */
-    private FastMath() {
+    public FastMath() {
     }
 
     // Generic helper methods
@@ -259,7 +259,7 @@ public class FastMath {
      * @param d the value to split
      * @return the high order part of the mantissa
      */
-    private static double doubleHighPart(double d) {
+    public static double doubleHighPart(double d) {
         if (d > -MathUtils.SAFE_MIN && d < MathUtils.SAFE_MIN){
             return d; // These are un-normalised - don't try to convert
         }
@@ -704,7 +704,7 @@ public class FastMath {
      * @param hiPrec extra bits of precision on output (To Be Confirmed)
      * @return exp(x)
      */
-    private static double exp(double x, double extra, double[] hiPrec) {
+    public static double exp(double x, double extra, double[] hiPrec) {
         double intPartA;
         double intPartB;
         int intVal;
@@ -834,7 +834,7 @@ public class FastMath {
      * @param hiPrecOut receive high precision result for -1.0 < x < 1.0
      * @return exp(x) - 1
      */
-    private static double expm1(double x, double hiPrecOut[]) {
+    public static double expm1(double x, double hiPrecOut[]) {
         if (x != x || x == 0.0) { // NaN or zero
             return x;
         }
@@ -983,7 +983,7 @@ public class FastMath {
      *  for extra precision (i.e. exp(x) = result[0] ° result[1]
      *  @return exp(x)
      */
-    private static double slowexp(final double x, final double result[]) {
+    public static double slowexp(final double x, final double result[]) {
         final double xs[] = new double[2];
         final double ys[] = new double[2];
         final double facts[] = new double[2];
@@ -1017,7 +1017,7 @@ public class FastMath {
      * @param d number to split
      * @param split placeholder where to place the result
      */
-    private static void split(final double d, final double split[]) {
+    public static void split(final double d, final double split[]) {
         if (d < 8e298 && d > -8e298) {
             final double a = d * HEX_40000000;
             split[0] = (d + a) - a;
@@ -1033,7 +1033,7 @@ public class FastMath {
      * @param a input/out array containing the split, changed
      * on output
      */
-    private static void resplit(final double a[]) {
+    public static void resplit(final double a[]) {
         final double c = a[0] + a[1];
         final double d = -(c - a[0] - a[1]);
 
@@ -1053,7 +1053,7 @@ public class FastMath {
      * @param b second term of multiplication
      * @param ans placeholder where to put the result
      */
-    private static void splitMult(double a[], double b[], double ans[]) {
+    public static void splitMult(double a[], double b[], double ans[]) {
         ans[0] = a[0] * b[0];
         ans[1] = a[0] * b[1] + a[1] * b[0] + a[1] * b[1];
 
@@ -1066,7 +1066,7 @@ public class FastMath {
      * @param b second term of addition
      * @param ans placeholder where to put the result
      */
-    private static void splitAdd(final double a[], final double b[], final double ans[]) {
+    public static void splitAdd(final double a[], final double b[], final double ans[]) {
         ans[0] = a[0] + b[0];
         ans[1] = a[1] + b[1];
 
@@ -1091,7 +1091,7 @@ public class FastMath {
      *  @param in initial number, in split form
      *  @param result placeholder where to put the result
      */
-    private static void splitReciprocal(final double in[], final double result[]) {
+    public static void splitReciprocal(final double in[], final double result[]) {
         final double b = 1.0/4194304.0;
         final double a = 1.0 - b;
 
@@ -1126,7 +1126,7 @@ public class FastMath {
      * @param b second term of the multiplication
      * @param result placeholder where to put the result
      */
-    private static void quadMult(final double a[], final double b[], final double result[]) {
+    public static void quadMult(final double a[], final double b[], final double result[]) {
         final double xs[] = new double[2];
         final double ys[] = new double[2];
         final double zs[] = new double[2];
@@ -1180,7 +1180,7 @@ public class FastMath {
      * @param result placeholder where to put the result in extended precision
      * @return exp(p) in standard precision (equal to result[0] + result[1])
      */
-    private static double expint(int p, final double result[]) {
+    public static double expint(int p, final double result[]) {
         //double x = M_E;
         final double xs[] = new double[2];
         final double as[] = new double[2];
@@ -1237,7 +1237,7 @@ public class FastMath {
      * @param hiPrec extra bits of precision on output (To Be Confirmed)
      * @return log(x)
      */
-    private static double log(final double x, final double[] hiPrec) {
+    public static double log(final double x, final double[] hiPrec) {
         if (x==0) { // Handle special case of +0/-0
             return Double.NEGATIVE_INFINITY;
         }
@@ -1712,7 +1712,7 @@ public class FastMath {
      * @param xi number from which log is requested
      * @return log(xi)
      */
-    private static double[] slowLog(double xi) {
+    public static double[] slowLog(double xi) {
         double x[] = new double[2];
         double x2[] = new double[2];
         double y[] = new double[2];
@@ -1762,7 +1762,7 @@ public class FastMath {
      * @param result placeholder where to put the result in extended precision
      * @return sin(x)
      */
-    private static double slowSin(final double x, final double result[]) {
+    public static double slowSin(final double x, final double result[]) {
         final double xs[] = new double[2];
         final double ys[] = new double[2];
         final double facts[] = new double[2];
@@ -1804,7 +1804,7 @@ public class FastMath {
      * @param result placeholder where to put the result in extended precision
      * @return cos(x)
      */
-    private static double slowCos(final double x, final double result[]) {
+    public static double slowCos(final double x, final double result[]) {
 
         final double xs[] = new double[2];
         final double ys[] = new double[2];
@@ -1843,7 +1843,7 @@ public class FastMath {
 
     /** Build the sine and cosine tables.
      */
-    private static void buildSinCosTables() {
+    public static void buildSinCosTables() {
         final double result[] = new double[2];
 
         /* Use taylor series for 0 <= x <= 6/8 */
@@ -1943,7 +1943,7 @@ public class FastMath {
      *  @param x a number smaller than 1/16
      *  @return sin(x) - x
      */
-    private static double polySine(final double x)
+    public static double polySine(final double x)
     {
         double x2 = x*x;
 
@@ -1964,7 +1964,7 @@ public class FastMath {
      *  @param x a number smaller than 1/16
      *  @return cos(x) - 1
      */
-    private static double polyCosine(double x) {
+    public static double polyCosine(double x) {
         double x2 = x*x;
 
         double p = 2.479773539153719E-5;
@@ -1983,7 +1983,7 @@ public class FastMath {
      *  @param xb extra bits for x (may be 0.0)
      *  @return sin(xa + xb)
      */
-    private static double sinQ(double xa, double xb) {
+    public static double sinQ(double xa, double xb) {
         int idx = (int) ((xa * 8.0) + 0.5);
         final double epsilon = xa - EIGHTHS[idx]; //idx*0.125;
 
@@ -2107,7 +2107,7 @@ public class FastMath {
      *  @param xb extra bits for x (may be 0.0)
      *  @return cos(xa + xb)
      */
-    private static double cosQ(double xa, double xb) {
+    public static double cosQ(double xa, double xb) {
         final double pi2a = 1.5707963267948966;
         final double pi2b = 6.123233995736766E-17;
 
@@ -2126,7 +2126,7 @@ public class FastMath {
      *  @param cotanFlag if true, compute the cotangent instead of the tangent
      *  @return tan(xa+xb) (or cotangent, depending on cotanFlag)
      */
-    private static double tanQ(double xa, double xb, boolean cotanFlag) {
+    public static double tanQ(double xa, double xb, boolean cotanFlag) {
 
         int idx = (int) ((xa * 8.0) + 0.5);
         final double epsilon = xa - EIGHTHS[idx]; //idx*0.125;
@@ -2274,7 +2274,7 @@ public class FastMath {
      * @param x number to reduce
      * @param result placeholder where to put the result
      */
-    private static void reducePayneHanek(double x, double result[])
+    public static void reducePayneHanek(double x, double result[])
     {
         /* Convert input double to bits */
         long inbits = Double.doubleToLongBits(x);
@@ -2789,7 +2789,7 @@ public class FastMath {
      * @param leftPlane if true, result angle must be put in the left half plane
      * @return atan(xa + xb) (or angle shifted by {@code PI} if leftPlane is true)
      */
-    private static double atan(double xa, double xb, boolean leftPlane) {
+    public static double atan(double xa, double xb, boolean leftPlane) {
         boolean negate = false;
         int idx;
 

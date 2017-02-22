@@ -185,7 +185,7 @@ public class GraggBulirschStoerIntegratorTest
 
   }
 
-  private double getMaxError(FirstOrderIntegrator integrator, TestProblemAbstract pb)
+  public double getMaxError(FirstOrderIntegrator integrator, TestProblemAbstract pb)
     throws DerivativeException, IntegratorException {
       TestProblemHandler handler = new TestProblemHandler(pb, integrator);
       integrator.addStepHandler(handler);

@@ -37,7 +37,7 @@ public class BigRealField implements Field<BigReal>, Serializable  {
 
     /** Private constructor for the singleton.
      */
-    private BigRealField() {
+    public BigRealField() {
     }
 
     /** Get the unique instance.
@@ -70,7 +70,7 @@ public class BigRealField implements Field<BigReal>, Serializable  {
     /** Handle deserialization of the singleton.
      * @return the singleton instance
      */
-    private Object readResolve() {
+    public Object readResolve() {
         // return the singleton instance
         return LazyHolder.INSTANCE;
     }

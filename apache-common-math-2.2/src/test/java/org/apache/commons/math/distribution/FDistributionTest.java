@@ -65,7 +65,7 @@ public class FDistributionTest extends ContinuousDistributionAbstractTest {
 
     // --------------------- Override tolerance  --------------
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         setTolerance(1e-9);
     }

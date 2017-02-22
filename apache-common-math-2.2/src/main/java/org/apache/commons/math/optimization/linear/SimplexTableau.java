@@ -125,7 +125,7 @@ class SimplexTableau implements Serializable {
     /**
      * Initialize the labels for the columns.
      */
-    protected void initializeColumnLabels() {
+    public void initializeColumnLabels() {
       if (getNumObjectiveFunctions() == 2) {
         columnLabels.add("W");
       }
@@ -150,7 +150,7 @@ class SimplexTableau implements Serializable {
      * @param maximize if true, goal is to maximize the objective function
      * @return created tableau
      */
-    protected RealMatrix createTableau(final boolean maximize) {
+    public RealMatrix createTableau(final boolean maximize) {
 
         // create a matrix of the correct size
         int width = numDecisionVariables + numSlackVariables +
@@ -231,7 +231,7 @@ class SimplexTableau implements Serializable {
      * @param constraint reference constraint
      * @return new equation
      */
-    private LinearConstraint normalize(final LinearConstraint constraint) {
+    public LinearConstraint normalize(final LinearConstraint constraint) {
         if (constraint.getValue() < 0) {
             return new LinearConstraint(constraint.getCoefficients().mapMultiply(-1),
                                         constraint.getRelationship().oppositeRelationship(),
@@ -245,7 +245,7 @@ class SimplexTableau implements Serializable {
      * Get the number of objective functions in this tableau.
      * @return 2 for Phase 1.  1 for Phase 2.
      */
-    protected final int getNumObjectiveFunctions() {
+    public final int getNumObjectiveFunctions() {
         return this.numArtificialVariables > 0 ? 2 : 1;
     }
 
@@ -254,7 +254,7 @@ class SimplexTableau implements Serializable {
      * @param relationship relationship to count
      * @return number of constraint with the specified relationship
      */
-    private int getConstraintTypeCounts(final Relationship relationship) {
+    public int getConstraintTypeCounts(final Relationship relationship) {
         int count = 0;
         for (final LinearConstraint constraint : constraints) {
             if (constraint.getRelationship() == relationship) {
@@ -269,7 +269,7 @@ class SimplexTableau implements Serializable {
      * @param coefficients coefficients to sum
      * @return the -1 times the sum of all coefficients in the given array.
      */
-    protected static double getInvertedCoeffiecientSum(final RealVector coefficients) {
+    public static double getInvertedCoeffiecientSum(final RealVector coefficients) {
         double sum = 0;
         for (double coefficient : coefficients.getData()) {
             sum -= coefficient;
@@ -282,7 +282,7 @@ class SimplexTableau implements Serializable {
      * @param col index of the column to check
      * @return the row that the variable is basic in.  null if the column is not basic
      */
-    protected Integer getBasicRow(final int col) {
+    public Integer getBasicRow(final int col) {
         Integer row = null;
         for (int i = 0; i < getHeight(); i++) {
             if (MathUtils.equals(getEntry(i, col), 1.0, epsilon) && (row == null)) {
@@ -298,7 +298,7 @@ class SimplexTableau implements Serializable {
      * Removes the phase 1 objective function, positive cost non-artificial variables,
      * and the non-basic artificial variables from this tableau.
      */
-    protected void dropPhase1Objective() {
+    public void dropPhase1Objective() {
         if (getNumObjectiveFunctions() == 1) {
             return;
         }
@@ -343,7 +343,7 @@ class SimplexTableau implements Serializable {
      * @param src the source array
      * @param dest the destination array
      */
-    private void copyArray(final double[] src, final double[] dest) {
+    public void copyArray(final double[] src, final double[] dest) {
         System.arraycopy(src, 0, dest, getNumObjectiveFunctions(), src.length);
     }
 
@@ -365,7 +365,7 @@ class SimplexTableau implements Serializable {
      *
      * @return current solution
      */
-    protected RealPointValuePair getSolution() {
+    public RealPointValuePair getSolution() {
       int negativeVarColumn = columnLabels.indexOf(NEGATIVE_VAR_COLUMN_LABEL);
       Integer negativeVarBasicRow = negativeVarColumn > 0 ? getBasicRow(negativeVarColumn) : null;
       double mostNegative = negativeVarBasicRow == null ? 0 : getEntry(negativeVarBasicRow, getRhsOffset());
@@ -402,7 +402,7 @@ class SimplexTableau implements Serializable {
      * @param dividendRow index of the row
      * @param divisor value of the divisor
      */
-    protected void divideRow(final int dividendRow, final double divisor) {
+    public void divideRow(final int dividendRow, final double divisor) {
         for (int j = 0; j < getWidth(); j++) {
             tableau.setEntry(dividendRow, j, tableau.getEntry(dividendRow, j) / divisor);
         }
@@ -418,7 +418,7 @@ class SimplexTableau implements Serializable {
      * @param subtrahendRow row index
      * @param multiple multiplication factor
      */
-    protected void subtractRow(final int minuendRow, final int subtrahendRow,
+    public void subtractRow(final int minuendRow, final int subtrahendRow,
                                final double multiple) {
         tableau.setRowVector(minuendRow, tableau.getRowVector(minuendRow)
             .subtract(tableau.getRowVector(subtrahendRow).mapMultiply(multiple)));
@@ -428,7 +428,7 @@ class SimplexTableau implements Serializable {
      * Get the width of the tableau.
      * @return width of the tableau
      */
-    protected final int getWidth() {
+    public final int getWidth() {
         return tableau.getColumnDimension();
     }
 
@@ -436,7 +436,7 @@ class SimplexTableau implements Serializable {
      * Get the height of the tableau.
      * @return height of the tableau
      */
-    protected final int getHeight() {
+    public final int getHeight() {
         return tableau.getRowDimension();
     }
 
@@ -445,7 +445,7 @@ class SimplexTableau implements Serializable {
      * @param column column index
      * @return entry at (row, column)
      */
-    protected final double getEntry(final int row, final int column) {
+    public final double getEntry(final int row, final int column) {
         return tableau.getEntry(row, column);
     }
 
@@ -454,7 +454,7 @@ class SimplexTableau implements Serializable {
      * @param column column index
      * @param value for the entry
      */
-    protected final void setEntry(final int row, final int column,
+    public final void setEntry(final int row, final int column,
                                   final double value) {
         tableau.setEntry(row, column, value);
     }
@@ -463,7 +463,7 @@ class SimplexTableau implements Serializable {
      * Get the offset of the first slack variable.
      * @return offset of the first slack variable
      */
-    protected final int getSlackVariableOffset() {
+    public final int getSlackVariableOffset() {
         return getNumObjectiveFunctions() + numDecisionVariables;
     }
 
@@ -471,7 +471,7 @@ class SimplexTableau implements Serializable {
      * Get the offset of the first artificial variable.
      * @return offset of the first artificial variable
      */
-    protected final int getArtificialVariableOffset() {
+    public final int getArtificialVariableOffset() {
         return getNumObjectiveFunctions() + numDecisionVariables + numSlackVariables;
     }
 
@@ -479,7 +479,7 @@ class SimplexTableau implements Serializable {
      * Get the offset of the right hand side.
      * @return offset of the right hand side
      */
-    protected final int getRhsOffset() {
+    public final int getRhsOffset() {
         return getWidth() - 1;
     }
 
@@ -493,7 +493,7 @@ class SimplexTableau implements Serializable {
      * @return number of decision variables
      * @see #getOriginalNumDecisionVariables()
      */
-    protected final int getNumDecisionVariables() {
+    public final int getNumDecisionVariables() {
         return numDecisionVariables;
     }
 
@@ -502,7 +502,7 @@ class SimplexTableau implements Serializable {
      * @return original number of decision variables
      * @see #getNumDecisionVariables()
      */
-    protected final int getOriginalNumDecisionVariables() {
+    public final int getOriginalNumDecisionVariables() {
         return f.getCoefficients().getDimension();
     }
 
@@ -510,7 +510,7 @@ class SimplexTableau implements Serializable {
      * Get the number of slack variables.
      * @return number of slack variables
      */
-    protected final int getNumSlackVariables() {
+    public final int getNumSlackVariables() {
         return numSlackVariables;
     }
 
@@ -518,7 +518,7 @@ class SimplexTableau implements Serializable {
      * Get the number of artificial variables.
      * @return number of artificial variables
      */
-    protected final int getNumArtificialVariables() {
+    public final int getNumArtificialVariables() {
         return numArtificialVariables;
     }
 
@@ -526,7 +526,7 @@ class SimplexTableau implements Serializable {
      * Get the tableau data.
      * @return tableau data
      */
-    protected final double[][] getData() {
+    public final double[][] getData() {
         return tableau.getData();
     }
 
@@ -569,7 +569,7 @@ class SimplexTableau implements Serializable {
      * @param oos stream where object should be written
      * @throws IOException if object cannot be written to stream
      */
-    private void writeObject(ObjectOutputStream oos)
+    public void writeObject(ObjectOutputStream oos)
         throws IOException {
         oos.defaultWriteObject();
         MatrixUtils.serializeRealMatrix(tableau, oos);
@@ -580,7 +580,7 @@ class SimplexTableau implements Serializable {
      * @throws ClassNotFoundException if a class in the stream cannot be found
      * @throws IOException if object cannot be read from the stream
      */
-    private void readObject(ObjectInputStream ois)
+    public void readObject(ObjectInputStream ois)
       throws ClassNotFoundException, IOException {
         ois.defaultReadObject();
         MatrixUtils.deserializeRealMatrix(this, "tableau", ois);

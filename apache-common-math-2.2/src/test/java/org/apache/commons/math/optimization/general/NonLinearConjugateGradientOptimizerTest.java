@@ -368,7 +368,7 @@ extends TestCase {
             this.target  = target;
         }
 
-        private double[] gradient(double[] point) {
+        public double[] gradient(double[] point) {
             double[] r = factors.operate(point);
             for (int i = 0; i < r.length; ++i) {
                 r[i] -= target[i];
@@ -432,7 +432,7 @@ extends TestCase {
             return r / points.size();
         }
 
-        private double[] gradient(double[] point) {
+        public double[] gradient(double[] point) {
 
             // optimal radius
             Point2D.Double center = new Point2D.Double(point[0], point[1]);

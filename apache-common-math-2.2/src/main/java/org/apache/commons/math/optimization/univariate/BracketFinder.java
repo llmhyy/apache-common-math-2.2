@@ -278,7 +278,7 @@ public class BracketFinder {
      * @return {@code f(x)}
      * @throws FunctionEvaluationException if function cannot be evaluated at x
      */
-    private double eval(UnivariateRealFunction f, double x)
+    public double eval(UnivariateRealFunction f, double x)
         throws FunctionEvaluationException {
 
         ++evaluations;
@@ -288,7 +288,7 @@ public class BracketFinder {
     /**
      * Reset internal state.
      */
-    private void reset() {
+    public void reset() {
         iterations = 0;
         evaluations = 0;
     }

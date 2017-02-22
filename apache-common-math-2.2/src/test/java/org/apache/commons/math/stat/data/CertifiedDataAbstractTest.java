@@ -44,7 +44,7 @@ public abstract class CertifiedDataAbstractTest extends TestCase {
     private Map<String, Double> certifiedValues;
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         descriptives = new DescriptiveStatistics();
         summaries = new SummaryStatistics();
         certifiedValues = new HashMap<String, Double>();
@@ -52,7 +52,7 @@ public abstract class CertifiedDataAbstractTest extends TestCase {
         loadData();
     }
 
-    private void loadData() throws IOException {
+    public void loadData() throws IOException {
         BufferedReader in = null;
 
         try {
@@ -92,14 +92,14 @@ public abstract class CertifiedDataAbstractTest extends TestCase {
         }
     }
 
-    protected abstract String getResourceName();
+    public abstract String getResourceName();
 
-    protected double getMaximumAbsoluteError() {
+    public double getMaximumAbsoluteError() {
         return 1.0e-5;
     }
 
     @Override
-    protected void tearDown() throws Exception {
+    public void tearDown() throws Exception {
         descriptives.clear();
         descriptives = null;
 
@@ -131,7 +131,7 @@ public abstract class CertifiedDataAbstractTest extends TestCase {
     }
 
 
-    protected Double getProperty(Object bean, String name) {
+    public Double getProperty(Object bean, String name) {
         try {
             // Get the value of prop
             String prop = "get" + name.substring(0,1).toUpperCase() + name.substring(1);

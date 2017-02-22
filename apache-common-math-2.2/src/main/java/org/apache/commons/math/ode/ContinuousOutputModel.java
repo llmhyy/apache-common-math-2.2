@@ -357,7 +357,7 @@ public class ContinuousOutputModel
    * the interval, and +1 if it is after the interval, according to
    * the interval direction
    */
-  private int locatePoint(final double time, final StepInterpolator interval) {
+  public int locatePoint(final double time, final StepInterpolator interval) {
     if (forward) {
       if (time < interval.getPreviousTime()) {
         return -1;

@@ -32,12 +32,12 @@ public class BigFractionFormatTest extends TestCase {
     BigFractionFormat properFormat = null;
     BigFractionFormat improperFormat = null;
 
-    protected Locale getLocale() {
+    public Locale getLocale() {
         return Locale.getDefault();
     }
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         properFormat = BigFractionFormat.getProperInstance(getLocale());
         improperFormat = BigFractionFormat.getImproperInstance(getLocale());
     }

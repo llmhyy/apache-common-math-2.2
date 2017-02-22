@@ -112,7 +112,7 @@ public class CholeskySolverTest extends TestCase {
         assertEquals(7290000.0, getDeterminant(MatrixUtils.createRealMatrix(testData)), 1.0e-15);
     }
 
-    private double getDeterminant(RealMatrix m) throws MathException {
+    public double getDeterminant(RealMatrix m) throws MathException {
         return new CholeskyDecompositionImpl(m).getDeterminant();
     }
 

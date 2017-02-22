@@ -70,7 +70,7 @@ public class QRDecompositionImplTest extends TestCase {
 
     }
 
-    private void checkDimension(RealMatrix m) {
+    public void checkDimension(RealMatrix m) {
         int rows = m.getRowDimension();
         int columns = m.getColumnDimension();
         QRDecomposition qr = new QRDecompositionImpl(m);
@@ -100,7 +100,7 @@ public class QRDecompositionImplTest extends TestCase {
 
     }
 
-    private void checkAEqualQR(RealMatrix m) {
+    public void checkAEqualQR(RealMatrix m) {
         QRDecomposition qr = new QRDecompositionImpl(m);
         double norm = qr.getQ().multiply(qr.getR()).subtract(m).getNorm();
         assertEquals(0, norm, normTolerance);
@@ -126,7 +126,7 @@ public class QRDecompositionImplTest extends TestCase {
 
     }
 
-    private void checkQOrthogonal(RealMatrix m) {
+    public void checkQOrthogonal(RealMatrix m) {
         QRDecomposition qr = new QRDecompositionImpl(m);
         RealMatrix eye = MatrixUtils.createRealIdentityMatrix(m.getRowDimension());
         double norm = qr.getQT().multiply(qr.getQ()).subtract(eye).getNorm();
@@ -158,7 +158,7 @@ public class QRDecompositionImplTest extends TestCase {
 
     }
 
-    private void checkUpperTriangular(RealMatrix m) throws MatrixVisitorException {
+    public void checkUpperTriangular(RealMatrix m) throws MatrixVisitorException {
         m.walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor() {
             @Override
             public void visit(int row, int column, double value) {
@@ -195,7 +195,7 @@ public class QRDecompositionImplTest extends TestCase {
 
     }
 
-    private void checkTrapezoidal(RealMatrix m) throws MatrixVisitorException {
+    public void checkTrapezoidal(RealMatrix m) throws MatrixVisitorException {
         m.walkInOptimizedOrder(new DefaultRealMatrixPreservingVisitor() {
             @Override
             public void visit(int row, int column, double value) {
@@ -242,7 +242,7 @@ public class QRDecompositionImplTest extends TestCase {
 
     }
 
-    private RealMatrix createTestMatrix(final Random r, final int rows, final int columns) throws MatrixVisitorException {
+    public RealMatrix createTestMatrix(final Random r, final int rows, final int columns) throws MatrixVisitorException {
         RealMatrix m = MatrixUtils.createRealMatrix(rows, columns);
         m.walkInOptimizedOrder(new DefaultRealMatrixChangingVisitor(){
             @Override

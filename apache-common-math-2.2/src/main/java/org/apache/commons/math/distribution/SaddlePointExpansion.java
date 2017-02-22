@@ -85,7 +85,7 @@ final class SaddlePointExpansion {
     /**
      * Default constructor.
      */
-    private SaddlePointExpansion() {
+    public SaddlePointExpansion() {
         super();
     }
 

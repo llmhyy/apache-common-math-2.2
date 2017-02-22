@@ -515,7 +515,7 @@ extends TestCase {
             return r / points.size();
         }
 
-        private double[][] jacobian(double[] variables) {
+        public double[][] jacobian(double[] variables) {
 
             int n = points.size();
             Point2D.Double center = new Point2D.Double(variables[0], variables[1]);

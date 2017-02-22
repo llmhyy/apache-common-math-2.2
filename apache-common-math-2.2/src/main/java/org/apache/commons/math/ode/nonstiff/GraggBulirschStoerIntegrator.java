@@ -354,7 +354,7 @@ public class GraggBulirschStoerIntegrator extends AdaptiveStepsizeIntegrator {
   }
 
   /** Initialize the integrator internal arrays. */
-  private void initializeArrays() {
+  public void initializeArrays() {
 
     final int size = maxOrder / 2;
 
@@ -425,7 +425,7 @@ public class GraggBulirschStoerIntegrator extends AdaptiveStepsizeIntegrator {
    * @param y2 second state vector to use for scaling
    * @param scale scaling array to update (can be shorter than state)
    */
-  private void rescale(final double[] y1, final double[] y2, final double[] scale) {
+  public void rescale(final double[] y1, final double[] y2, final double[] scale) {
     if (vecAbsoluteTolerance == null) {
       for (int i = 0; i < scale.length; ++i) {
         final double yi = FastMath.max(FastMath.abs(y1[i]), FastMath.abs(y2[i]));
@@ -456,7 +456,7 @@ public class GraggBulirschStoerIntegrator extends AdaptiveStepsizeIntegrator {
    * @throws DerivativeException this exception is propagated to the caller if the
    * underlying user function triggers one
    */
-  private boolean tryStep(final double t0, final double[] y0, final double step, final int k,
+  public boolean tryStep(final double t0, final double[] y0, final double step, final int k,
                           final double[] scale, final double[][] f,
                           final double[] yMiddle, final double[] yEnd,
                           final double[] yTmp)
@@ -526,7 +526,7 @@ public class GraggBulirschStoerIntegrator extends AdaptiveStepsizeIntegrator {
    * triangle, without the last element
    * @param last last element
    */
-  private void extrapolate(final int offset, final int k,
+  public void extrapolate(final int offset, final int k,
                            final double[][] diag, final double[] last) {
 
     // update the diagonal

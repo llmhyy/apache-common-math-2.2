@@ -177,7 +177,7 @@ public abstract class AdaptiveStepsizeIntegrator
    * @exception IntegratorException if some inconsistency is detected
    */
   @Override
-  protected void sanityChecks(final FirstOrderDifferentialEquations equations,
+  public void sanityChecks(final FirstOrderDifferentialEquations equations,
                               final double t0, final double[] y0,
                               final double t, final double[] y)
       throws IntegratorException {
@@ -290,7 +290,7 @@ public abstract class AdaptiveStepsizeIntegrator
    * @return a bounded integration step (h if no bound is reach, or a bounded value)
    * @exception IntegratorException if the step is too small and acceptSmall is false
    */
-  protected double filterStep(final double h, final boolean forward, final boolean acceptSmall)
+  public double filterStep(final double h, final boolean forward, final boolean acceptSmall)
     throws IntegratorException {
 
       double filteredH = h;
@@ -327,7 +327,7 @@ public abstract class AdaptiveStepsizeIntegrator
   }
 
   /** Reset internal state to dummy values. */
-  protected void resetInternalState() {
+  public void resetInternalState() {
     stepStart = Double.NaN;
     stepSize  = FastMath.sqrt(minStep * maxStep);
   }

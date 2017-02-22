@@ -31,9 +31,9 @@ public abstract class RealVectorFormatAbstractTest extends TestCase {
     RealVectorFormat realVectorFormat = null;
     RealVectorFormat realVectorFormatSquare = null;
 
-    protected abstract Locale getLocale();
+    public abstract Locale getLocale();
 
-    protected abstract char getDecimalCharacter();
+    public abstract char getDecimalCharacter();
 
     @Override
     public void setUp() throws Exception {

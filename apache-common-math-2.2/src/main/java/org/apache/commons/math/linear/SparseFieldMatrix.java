@@ -183,7 +183,7 @@ public class SparseFieldMatrix<T extends FieldElement<T>> extends AbstractFieldM
      * @param column column index of the matrix element
      * @return key within the map to access the matrix element
      */
-    private int computeKey(int row, int column) {
+    public int computeKey(int row, int column) {
         return row * columns + column;
     }
 

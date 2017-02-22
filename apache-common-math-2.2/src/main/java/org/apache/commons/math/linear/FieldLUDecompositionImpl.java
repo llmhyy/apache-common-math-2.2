@@ -244,7 +244,7 @@ public class FieldLUDecompositionImpl<T extends FieldElement<T>> implements Fiel
          * @param pivot pivot permutation associated with LU decomposition
          * @param singular singularity indicator
          */
-        private Solver(final Field<T> field, final T[][] lu,
+        public Solver(final Field<T> field, final T[][] lu,
                        final int[] pivot, final boolean singular) {
             this.field    = field;
             this.lu       = lu;

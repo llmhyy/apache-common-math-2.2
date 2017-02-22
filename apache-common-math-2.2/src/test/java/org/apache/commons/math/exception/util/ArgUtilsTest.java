@@ -68,7 +68,7 @@ public class ArgUtilsTest {
      * @param list List to store to.
      * @return the stored object.
      */
-    private Object create(List<Object> list) {
+    public Object create(List<Object> list) {
         final Object o = new Object();
         list.add(o);
         return o;

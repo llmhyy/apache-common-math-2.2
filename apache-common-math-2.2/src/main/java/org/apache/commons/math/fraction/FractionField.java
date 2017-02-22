@@ -37,7 +37,7 @@ public class FractionField implements Field<Fraction>, Serializable  {
 
     /** Private constructor for the singleton.
      */
-    private FractionField() {
+    public FractionField() {
     }
 
     /** Get the unique instance.
@@ -70,7 +70,7 @@ public class FractionField implements Field<Fraction>, Serializable  {
     /** Handle deserialization of the singleton.
      * @return the singleton instance
      */
-    private Object readResolve() {
+    public Object readResolve() {
         // return the singleton instance
         return LazyHolder.INSTANCE;
     }

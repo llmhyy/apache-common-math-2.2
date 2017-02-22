@@ -255,7 +255,7 @@ public class NaturalRanking implements RankingAlgorithm {
      * @param ranks input array
      * @return array with NaN-valued entries removed
      */
-    private IntDoublePair[] removeNaNs(IntDoublePair[] ranks) {
+    public IntDoublePair[] removeNaNs(IntDoublePair[] ranks) {
         if (!containsNaNs(ranks)) {
             return ranks;
         }
@@ -285,7 +285,7 @@ public class NaturalRanking implements RankingAlgorithm {
      * @param ranks array to recode
      * @param value the value to replace NaNs with
      */
-    private void recodeNaNs(IntDoublePair[] ranks, double value) {
+    public void recodeNaNs(IntDoublePair[] ranks, double value) {
         for (int i = 0; i < ranks.length; i++) {
             if (Double.isNaN(ranks[i].getValue())) {
                 ranks[i] = new IntDoublePair(
@@ -300,7 +300,7 @@ public class NaturalRanking implements RankingAlgorithm {
      * @param ranks array to be searched for NaNs
      * @return true iff ranks contains one or more NaNs
      */
-    private boolean containsNaNs(IntDoublePair[] ranks) {
+    public boolean containsNaNs(IntDoublePair[] ranks) {
         for (int i = 0; i < ranks.length; i++) {
             if (Double.isNaN(ranks[i].getValue())) {
                 return true;
@@ -323,7 +323,7 @@ public class NaturalRanking implements RankingAlgorithm {
      * -- that is, for any i and j in TiesTrace, <code> ranks[i] == ranks[j]
      * </code>
      */
-    private void resolveTie(double[] ranks, List<Integer> tiesTrace) {
+    public void resolveTie(double[] ranks, List<Integer> tiesTrace) {
 
         // constant value of ranks over tiesTrace
         final double c = ranks[tiesTrace.get(0)];
@@ -370,7 +370,7 @@ public class NaturalRanking implements RankingAlgorithm {
      * @param tiesTrace list of index values to set
      * @param value value to set
      */
-    private void fill(double[] data, List<Integer> tiesTrace, double value) {
+    public void fill(double[] data, List<Integer> tiesTrace, double value) {
         Iterator<Integer> iterator = tiesTrace.iterator();
         while (iterator.hasNext()) {
             data[iterator.next()] = value;
@@ -383,7 +383,7 @@ public class NaturalRanking implements RankingAlgorithm {
      * @param ranks array to modify
      * @param nanPositions list of index values to set to <code>Double.NaN</code>
      */
-    private void restoreNaNs(double[] ranks, List<Integer> nanPositions) {
+    public void restoreNaNs(double[] ranks, List<Integer> nanPositions) {
         if (nanPositions.size() == 0) {
             return;
         }
@@ -400,7 +400,7 @@ public class NaturalRanking implements RankingAlgorithm {
      * @param ranks array to search for <code>NaNs</code>
      * @return list of indexes i such that <code>ranks[i] = NaN</code>
      */
-    private List<Integer> getNanPositions(IntDoublePair[] ranks) {
+    public List<Integer> getNanPositions(IntDoublePair[] ranks) {
         ArrayList<Integer> out = new ArrayList<Integer>();
         for (int i = 0; i < ranks.length; i++) {
             if (Double.isNaN(ranks[i].getValue())) {

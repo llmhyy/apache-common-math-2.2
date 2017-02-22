@@ -75,7 +75,7 @@ public class SparseFieldVector<T extends FieldElement<T>> implements FieldVector
      * @param v The original vector
      * @param resize The amount to resize it
      */
-    protected SparseFieldVector(SparseFieldVector<T> v, int resize) {
+    public SparseFieldVector(SparseFieldVector<T> v, int resize) {
         field = v.field;
         virtualSize = v.getDimension() + resize;
         entries = new OpenIntToFieldHashMap<T>(v.entries);
@@ -126,7 +126,7 @@ public class SparseFieldVector<T extends FieldElement<T>> implements FieldVector
      * Get the entries of this instance.
      * @return entries of this instance
      */
-    private OpenIntToFieldHashMap<T> getEntries() {
+    public OpenIntToFieldHashMap<T> getEntries() {
         return entries;
     }
 
@@ -547,7 +547,7 @@ public class SparseFieldVector<T extends FieldElement<T>> implements FieldVector
      * @exception MatrixIndexException
      *                if index is not valid
      */
-    private void checkIndex(final int index) throws MatrixIndexException {
+    public void checkIndex(final int index) throws MatrixIndexException {
         if (index < 0 || index >= getDimension()) {
             throw new MatrixIndexException(LocalizedFormats.INDEX_OUT_OF_RANGE,
                                            index, 0, getDimension() - 1);
@@ -562,7 +562,7 @@ public class SparseFieldVector<T extends FieldElement<T>> implements FieldVector
      * @exception IllegalArgumentException
      *                if the dimension is inconsistent with vector size
      */
-    protected void checkVectorDimensions(int n) throws IllegalArgumentException {
+    public void checkVectorDimensions(int n) throws IllegalArgumentException {
         if (getDimension() != n) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.VECTOR_LENGTH_MISMATCH,
@@ -585,7 +585,7 @@ public class SparseFieldVector<T extends FieldElement<T>> implements FieldVector
      * @return a new array
      */
     @SuppressWarnings("unchecked") // field is type T
-    private T[] buildArray(final int length) {
+    public T[] buildArray(final int length) {
         return (T[]) Array.newInstance(field.getZero().getClass(), length);
     }
 

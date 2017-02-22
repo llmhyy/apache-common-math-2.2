@@ -44,7 +44,7 @@ public abstract class RetryTestCase extends TestCase {
      *  Override runTest() to catch AssertionFailedError and retry
      */
     @Override
-    protected void runTest() throws Throwable {
+    public void runTest() throws Throwable {
         try {
             super.runTest();
         } catch (AssertionFailedError err) {

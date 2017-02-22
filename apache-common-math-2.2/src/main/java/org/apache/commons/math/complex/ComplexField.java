@@ -37,7 +37,7 @@ public class ComplexField implements Field<Complex>, Serializable  {
 
     /** Private constructor for the singleton.
      */
-    private ComplexField() {
+    public ComplexField() {
     }
 
     /** Get the unique instance.
@@ -70,7 +70,7 @@ public class ComplexField implements Field<Complex>, Serializable  {
     /** Handle deserialization of the singleton.
      * @return the singleton instance
      */
-    private Object readResolve() {
+    public Object readResolve() {
         // return the singleton instance
         return LazyHolder.INSTANCE;
     }

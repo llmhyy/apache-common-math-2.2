@@ -61,13 +61,13 @@ public abstract class AbstractListChromosome<T> extends Chromosome {
      * @throws InvalidRepresentationException iff the <code>representation</code> can not represent
      *         a valid chromosome
      */
-    protected abstract void checkValidity(List<T> chromosomeRepresentation) throws InvalidRepresentationException;
+    public abstract void checkValidity(List<T> chromosomeRepresentation) throws InvalidRepresentationException;
 
     /**
      * Returns the (immutable) inner representation of the chromosome.
      * @return the representation of the chromosome
      */
-    protected List<T> getRepresentation() {
+    public List<T> getRepresentation() {
         return representation;
     }
 

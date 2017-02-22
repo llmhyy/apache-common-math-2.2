@@ -189,7 +189,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      * Modify the shape parameter.
      * @param alpha the new shape parameter value.
      */
-    private void setShapeInternal(double alpha) {
+    public void setShapeInternal(double alpha) {
         if (alpha <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_SHAPE,
@@ -212,7 +212,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      * Modify the scale parameter.
      * @param beta the new scale parameter value.
      */
-    private void setScaleInternal(double beta) {
+    public void setScaleInternal(double beta) {
         if (beta <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_SCALE,
@@ -231,7 +231,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         return 0.0;
     }
 
@@ -245,7 +245,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         return Double.MAX_VALUE;
     }
 
@@ -258,7 +258,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         // use median
         return FastMath.pow(scale * FastMath.log(2.0), 1.0 / shape);
     }
@@ -271,7 +271,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 
@@ -309,7 +309,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      * @return the mean
      * @since 2.2
      */
-    protected double calculateNumericalMean() {
+    public double calculateNumericalMean() {
         final double sh = getShape();
         final double sc = getScale();
 
@@ -326,7 +326,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
      * @return the variance
      * @since 2.2
      */
-    private double calculateNumericalVariance() {
+    public double calculateNumericalVariance() {
         final double sh = getShape();
         final double sc = getScale();
         final double mn = getNumericalMean();
@@ -371,7 +371,7 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
     /**
      * Invalidates the cached mean and variance.
      */
-    private void invalidateParameterDependentMoments() {
+    public void invalidateParameterDependentMoments() {
         numericalMeanIsCalculated = false;
         numericalVarianceIsCalculated = false;
     }

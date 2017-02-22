@@ -110,7 +110,7 @@ public class NormalDistributionImpl extends AbstractContinuousDistribution
      * Modify the mean.
      * @param newMean for this distribution
      */
-    private void setMeanInternal(double newMean) {
+    public void setMeanInternal(double newMean) {
         this.mean = newMean;
     }
 
@@ -138,7 +138,7 @@ public class NormalDistributionImpl extends AbstractContinuousDistribution
      * @param sd standard deviation for this distribution
      * @throws IllegalArgumentException if <code>sd</code> is not positive.
      */
-    private void setStandardDeviationInternal(double sd) {
+    public void setStandardDeviationInternal(double sd) {
         if (sd <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_STANDARD_DEVIATION,
@@ -198,7 +198,7 @@ public class NormalDistributionImpl extends AbstractContinuousDistribution
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 
@@ -250,7 +250,7 @@ public class NormalDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         double ret;
 
         if (p < .5) {
@@ -272,7 +272,7 @@ public class NormalDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         double ret;
 
         if (p < .5) {
@@ -293,7 +293,7 @@ public class NormalDistributionImpl extends AbstractContinuousDistribution
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         double ret;
 
         if (p < .5) {

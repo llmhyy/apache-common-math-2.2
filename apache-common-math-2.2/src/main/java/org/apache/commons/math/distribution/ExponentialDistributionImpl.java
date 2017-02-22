@@ -82,7 +82,7 @@ public class ExponentialDistributionImpl extends AbstractContinuousDistribution
      * @param newMean the new mean.
      * @throws IllegalArgumentException if <code>newMean</code> is not positive.
      */
-    private void setMeanInternal(double newMean) {
+    public void setMeanInternal(double newMean) {
         if (newMean <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_MEAN, newMean);
@@ -204,7 +204,7 @@ public class ExponentialDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         return 0;
     }
 
@@ -217,7 +217,7 @@ public class ExponentialDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         // NOTE: exponential is skewed to the left
         // NOTE: therefore, P(X < &mu;) > .5
 
@@ -238,7 +238,7 @@ public class ExponentialDistributionImpl extends AbstractContinuousDistribution
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         // TODO: try to improve on this estimate
         // TODO: what should really happen here is not derive from AbstractContinuousDistribution
         // TODO: because the inverse cumulative distribution is simple.
@@ -260,7 +260,7 @@ public class ExponentialDistributionImpl extends AbstractContinuousDistribution
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

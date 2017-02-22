@@ -71,7 +71,7 @@ public class NelderMead extends DirectSearchOptimizer {
 
     /** {@inheritDoc} */
     @Override
-    protected void iterateSimplex(final Comparator<RealPointValuePair> comparator)
+    public void iterateSimplex(final Comparator<RealPointValuePair> comparator)
         throws FunctionEvaluationException, OptimizationException {
 
         incrementIterationsCounter();

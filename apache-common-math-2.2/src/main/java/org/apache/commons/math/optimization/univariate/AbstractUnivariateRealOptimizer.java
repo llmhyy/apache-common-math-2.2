@@ -69,7 +69,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * absolute and relative accuracy thresholds.
      */
     @Deprecated
-    protected AbstractUnivariateRealOptimizer(final int defaultMaximalIterationCount,
+    public AbstractUnivariateRealOptimizer(final int defaultMaximalIterationCount,
                                               final double defaultAbsoluteAccuracy) {
         super(defaultMaximalIterationCount, defaultAbsoluteAccuracy);
         resultComputed = false;
@@ -80,7 +80,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * Default constructor.
      * To be removed once the single non-default one has been removed.
      */
-    protected AbstractUnivariateRealOptimizer() {}
+    public AbstractUnivariateRealOptimizer() {}
 
     /**
      * Check whether a result has been computed.
@@ -88,7 +88,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * @deprecated in 2.2 (no alternative).
      */
     @Deprecated
-    protected void checkResultComputed() {
+    public void checkResultComputed() {
         if (!resultComputed) {
             throw new NoDataException();
         }
@@ -120,7 +120,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * @deprecated in 2.2 (no alternative).
      */
     @Deprecated
-    protected final void setResult(final double x, final double fx,
+    public final void setResult(final double x, final double fx,
                                    final int iterationCount) {
         this.result         = x;
         this.functionValue  = fx;
@@ -133,7 +133,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * @deprecated in 2.2 (no alternative).
      */
     @Deprecated
-    protected final void clearResult() {
+    public final void clearResult() {
         this.resultComputed = false;
     }
 
@@ -188,7 +188,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * replacement} instead.
      */
     @Deprecated
-    protected double computeObjectiveValue(final UnivariateRealFunction f,
+    public double computeObjectiveValue(final UnivariateRealFunction f,
                                            final double point)
         throws FunctionEvaluationException {
         if (++evaluations > maxEvaluations) {
@@ -205,7 +205,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * @exception FunctionEvaluationException if the function cannot be evaluated
      * or the maximal number of iterations is exceeded.
      */
-    protected double computeObjectiveValue(double point)
+    public double computeObjectiveValue(double point)
         throws FunctionEvaluationException {
         if (++evaluations > maxEvaluations) {
             resultComputed = false;
@@ -242,7 +242,7 @@ public abstract class AbstractUnivariateRealOptimizer
      *
      * @param functionValue Value of the objective function at the optimum.
      */
-    protected void setFunctionValue(double functionValue) {
+    public void setFunctionValue(double functionValue) {
         this.functionValue = functionValue;
     }
 
@@ -268,7 +268,7 @@ public abstract class AbstractUnivariateRealOptimizer
      * @throws FunctionEvaluationException if an error occurs evaluating
      * the function.
      */
-    protected double doOptimize()
+    public double doOptimize()
         throws MaxIterationsExceededException, FunctionEvaluationException {
         throw new MathUnsupportedOperationException(LocalizedFormats.NOT_OVERRIDEN);
     }

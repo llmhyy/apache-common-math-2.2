@@ -152,7 +152,7 @@ public class FastHadamardTransformer implements RealTransformer {
      * @return y output vector
      * @exception IllegalArgumentException if input array is not a power of 2
      */
-    protected double[] fht(double x[]) throws IllegalArgumentException {
+    public double[] fht(double x[]) throws IllegalArgumentException {
 
         // n is the row count of the input vector x
         final int n     = x.length;
@@ -203,7 +203,7 @@ public class FastHadamardTransformer implements RealTransformer {
      * @return y output vector
      * @exception IllegalArgumentException if input array is not a power of 2
      */
-    protected int[] fht(int x[]) throws IllegalArgumentException {
+    public int[] fht(int x[]) throws IllegalArgumentException {
 
         // n is the row count of the input vector x
         final int n     = x.length;

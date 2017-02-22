@@ -58,7 +58,7 @@ public final class StatisticalSummaryValuesTest extends TestCase {
                 (u.equals(t) ||t.equals(u)));
     }
 
-    private void verifyEquality(StatisticalSummaryValues s, StatisticalSummaryValues u) {
+    public void verifyEquality(StatisticalSummaryValues s, StatisticalSummaryValues u) {
         assertEquals("N",s.getN(),u.getN());
         TestUtils.assertEquals("sum",s.getSum(),u.getSum(), 0);
         TestUtils.assertEquals("var",s.getVariance(),u.getVariance(), 0);

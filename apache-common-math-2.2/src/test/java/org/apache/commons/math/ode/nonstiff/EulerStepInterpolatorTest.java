@@ -173,7 +173,7 @@ public class EulerStepInterpolatorTest {
   private static class DummyIntegrator extends RungeKuttaIntegrator {
 
 
-      protected DummyIntegrator(RungeKuttaStepInterpolator prototype) {
+      public DummyIntegrator(RungeKuttaStepInterpolator prototype) {
           super("dummy", new double[0], new double[0][0], new double[0], prototype, Double.NaN);
       }
 

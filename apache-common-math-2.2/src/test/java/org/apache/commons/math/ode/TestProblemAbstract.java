@@ -51,7 +51,7 @@ public abstract class TestProblemAbstract
   /**
    * Simple constructor.
    */
-  protected TestProblemAbstract() {
+  public TestProblemAbstract() {
     n          = 0;
     calls      = 0;
     t0         = 0;
@@ -64,7 +64,7 @@ public abstract class TestProblemAbstract
    * Copy constructor.
    * @param problem problem to copy
    */
-  protected TestProblemAbstract(TestProblemAbstract problem) {
+  public TestProblemAbstract(TestProblemAbstract problem) {
     n     = problem.n;
     calls = problem.calls;
     t0    = problem.t0;
@@ -92,7 +92,7 @@ public abstract class TestProblemAbstract
    * @param t0 initial time
    * @param y0 initial state vector
    */
-  protected void setInitialConditions(double t0, double[] y0) {
+  public void setInitialConditions(double t0, double[] y0) {
     calls     = 0;
     n         = y0.length;
     this.t0   = t0;
@@ -103,7 +103,7 @@ public abstract class TestProblemAbstract
    * Set the final conditions.
    * @param t1 final time
    */
-  protected void setFinalConditions(double t1) {
+  public void setFinalConditions(double t1) {
     this.t1 = t1;
   }
 
@@ -111,7 +111,7 @@ public abstract class TestProblemAbstract
    * Set the error scale
    * @param errorScale error scale
    */
-  protected void setErrorScale(double[] errorScale) {
+  public void setErrorScale(double[] errorScale) {
     this.errorScale = errorScale.clone();
   }
 

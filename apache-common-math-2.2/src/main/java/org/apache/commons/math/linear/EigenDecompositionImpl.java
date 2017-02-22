@@ -138,7 +138,7 @@ public class EigenDecompositionImpl implements EigenDecomposition {
      *            matrix to check
      * @return true if matrix is symmetric
      */
-    private boolean isSymmetric(final RealMatrix matrix) {
+    public boolean isSymmetric(final RealMatrix matrix) {
         final int rows = matrix.getRowDimension();
         final int columns = matrix.getColumnDimension();
         final double eps = 10 * rows * columns * MathUtils.EPSILON;
@@ -261,7 +261,7 @@ public class EigenDecompositionImpl implements EigenDecomposition {
          * @param eigenvectors
          *            eigenvectors
          */
-        private Solver(final double[] realEigenvalues,
+        public Solver(final double[] realEigenvalues,
                 final double[] imagEigenvalues,
                 final ArrayRealVector[] eigenvectors) {
             this.realEigenvalues = realEigenvalues;
@@ -454,7 +454,7 @@ public class EigenDecompositionImpl implements EigenDecomposition {
      * @param matrix
      *            matrix to transform
      */
-    private void transformToTridiagonal(final RealMatrix matrix) {
+    public void transformToTridiagonal(final RealMatrix matrix) {
 
         // transform the matrix to tridiagonal
         transformer = new TriDiagonalTransformer(matrix);
@@ -468,7 +468,7 @@ public class EigenDecompositionImpl implements EigenDecomposition {
      * @param householderMatrix Householder matrix of the transformation
      *  to tri-diagonal form.
      */
-    private void findEigenVectors(double[][] householderMatrix) {
+    public void findEigenVectors(double[][] householderMatrix) {
 
         double[][]z = householderMatrix.clone();
         final int n = main.length;

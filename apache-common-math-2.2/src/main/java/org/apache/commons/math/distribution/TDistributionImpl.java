@@ -87,7 +87,7 @@ public class TDistributionImpl
      * Modify the degrees of freedom.
      * @param newDegreesOfFreedom the new degrees of freedom.
      */
-    private void setDegreesOfFreedomInternal(double newDegreesOfFreedom) {
+    public void setDegreesOfFreedomInternal(double newDegreesOfFreedom) {
         if (newDegreesOfFreedom <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_DEGREES_OF_FREEDOM,
@@ -182,7 +182,7 @@ public class TDistributionImpl
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         return -Double.MAX_VALUE;
     }
 
@@ -196,7 +196,7 @@ public class TDistributionImpl
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         return Double.MAX_VALUE;
     }
 
@@ -209,7 +209,7 @@ public class TDistributionImpl
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         return 0.0;
     }
 
@@ -221,7 +221,7 @@ public class TDistributionImpl
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

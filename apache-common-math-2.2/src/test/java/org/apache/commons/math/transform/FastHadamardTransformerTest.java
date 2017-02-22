@@ -64,13 +64,13 @@ public final class FastHadamardTransformerTest extends TestCase {
         }
     }
 
-    private void checkAllTransforms(int[]x, int[] y) {
+    public void checkAllTransforms(int[]x, int[] y) {
         checkDoubleTransform(x, y);
         checkInverseDoubleTransform(x, y);
         checkIntTransform(x, y);
     }
 
-    private void checkDoubleTransform(int[]x, int[] y) {
+    public void checkDoubleTransform(int[]x, int[] y) {
         // Initiate the transformer
         FastHadamardTransformer transformer = new FastHadamardTransformer();
 
@@ -86,7 +86,7 @@ public final class FastHadamardTransformerTest extends TestCase {
         }
     }
 
-    private void checkIntTransform(int[]x, int[] y) {
+    public void checkIntTransform(int[]x, int[] y) {
         // Initiate the transformer
         FastHadamardTransformer transformer = new FastHadamardTransformer();
 
@@ -99,7 +99,7 @@ public final class FastHadamardTransformerTest extends TestCase {
 
     }
 
-    private void checkInverseDoubleTransform(int[]x, int[] y) {
+    public void checkInverseDoubleTransform(int[]x, int[] y) {
         // Initiate the transformer
         FastHadamardTransformer transformer = new FastHadamardTransformer();
 

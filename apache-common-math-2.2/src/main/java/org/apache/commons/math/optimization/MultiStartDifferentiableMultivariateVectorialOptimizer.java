@@ -213,7 +213,7 @@ public class MultiStartDifferentiableMultivariateVectorialOptimizer
                 }
                 return Double.compare(weightedResidual(o1), weightedResidual(o2));
             }
-            private double weightedResidual(final VectorialPointValuePair pv) {
+            public double weightedResidual(final VectorialPointValuePair pv) {
                 final double[] value = pv.getValueRef();
                 double sum = 0;
                 for (int i = 0; i < value.length; ++i) {

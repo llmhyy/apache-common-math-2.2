@@ -82,7 +82,7 @@ public abstract class AbstractScalarDifferentiableOptimizer
      * <p>The convergence check is set to a {@link SimpleScalarValueChecker}
      * and the maximal number of evaluation is set to its default value.</p>
      */
-    protected AbstractScalarDifferentiableOptimizer() {
+    public AbstractScalarDifferentiableOptimizer() {
         setConvergenceChecker(new SimpleScalarValueChecker());
         setMaxIterations(DEFAULT_MAX_ITERATIONS);
         setMaxEvaluations(Integer.MAX_VALUE);
@@ -137,7 +137,7 @@ public abstract class AbstractScalarDifferentiableOptimizer
      * @exception OptimizationException if the maximal number
      * of iterations is exceeded
      */
-    protected void incrementIterationsCounter()
+    public void incrementIterationsCounter()
         throws OptimizationException {
         if (++iterations > maxIterations) {
             throw new OptimizationException(new MaxIterationsExceededException(maxIterations));
@@ -150,7 +150,7 @@ public abstract class AbstractScalarDifferentiableOptimizer
      * @return gradient at the specified point
      * @exception FunctionEvaluationException if the function gradient
      */
-    protected double[] computeObjectiveGradient(final double[] evaluationPoint)
+    public double[] computeObjectiveGradient(final double[] evaluationPoint)
         throws FunctionEvaluationException {
         ++gradientEvaluations;
         return gradient.value(evaluationPoint);
@@ -164,7 +164,7 @@ public abstract class AbstractScalarDifferentiableOptimizer
      * or its dimension doesn't match problem dimension or the maximal number
      * of iterations is exceeded
      */
-    protected double computeObjectiveValue(final double[] evaluationPoint)
+    public double computeObjectiveValue(final double[] evaluationPoint)
         throws FunctionEvaluationException {
         if (++evaluations > maxEvaluations) {
             throw new FunctionEvaluationException(new MaxEvaluationsExceededException(maxEvaluations),
@@ -201,7 +201,7 @@ public abstract class AbstractScalarDifferentiableOptimizer
      * @exception OptimizationException if the algorithm failed to converge
      * @exception IllegalArgumentException if the start point dimension is wrong
      */
-    protected abstract RealPointValuePair doOptimize()
+    public abstract RealPointValuePair doOptimize()
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException;
 
 }

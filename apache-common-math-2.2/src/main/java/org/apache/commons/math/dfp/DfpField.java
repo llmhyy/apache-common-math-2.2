@@ -185,7 +185,7 @@ public class DfpField implements Field<Dfp> {
      * @param computeConstants if true, the transcendental constants for the given precision
      * must be computed (setting this flag to false is RESERVED for the internal recursive call)
      */
-    private DfpField(final int decimalDigits, final boolean computeConstants) {
+    public DfpField(final int decimalDigits, final boolean computeConstants) {
 
         this.radixDigits = (decimalDigits < 13) ? 4 : (decimalDigits + 3) / 4;
         this.rMode       = RoundingMode.ROUND_HALF_EVEN;
@@ -518,7 +518,7 @@ public class DfpField implements Field<Dfp> {
      * @param a string representation of the number to split
      * @return an array of two {@link Dfp Dfp} instances which sum equals a
      */
-    private Dfp[] split(final String a) {
+    public Dfp[] split(final String a) {
       Dfp result[] = new Dfp[2];
       boolean leading = true;
       int sp = 0;
@@ -566,7 +566,7 @@ public class DfpField implements Field<Dfp> {
     /** Recompute the high precision string constants.
      * @param highPrecisionDecimalDigits precision at which the string constants mus be computed
      */
-    private static void computeStringConstants(final int highPrecisionDecimalDigits) {
+    public static void computeStringConstants(final int highPrecisionDecimalDigits) {
         if (sqr2String == null || sqr2String.length() < highPrecisionDecimalDigits - 3) {
 
             // recompute the string representation of the transcendental constants
@@ -598,7 +598,7 @@ public class DfpField implements Field<Dfp> {
      * @param three constant with value 3 at desired precision
      * @return &pi;
      */
-    private static Dfp computePi(final Dfp one, final Dfp two, final Dfp three) {
+    public static Dfp computePi(final Dfp one, final Dfp two, final Dfp three) {
 
         Dfp sqrt2   = two.sqrt();
         Dfp yk      = sqrt2.subtract(one);

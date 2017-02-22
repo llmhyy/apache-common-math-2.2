@@ -274,7 +274,7 @@ class DormandPrince853StepInterpolator
 
   /** {@inheritDoc} */
   @Override
-  protected StepInterpolator doCopy() {
+  public StepInterpolator doCopy() {
     return new DormandPrince853StepInterpolator(this);
   }
 
@@ -310,7 +310,7 @@ class DormandPrince853StepInterpolator
 
   /** {@inheritDoc} */
   @Override
-  protected void computeInterpolatedStateAndDerivatives(final double theta,
+  public void computeInterpolatedStateAndDerivatives(final double theta,
                                           final double oneMinusThetaH)
     throws DerivativeException {
 
@@ -385,7 +385,7 @@ class DormandPrince853StepInterpolator
 
   /** {@inheritDoc} */
   @Override
-  protected void doFinalize()
+  public void doFinalize()
     throws DerivativeException {
 
     if (currentState == null) {

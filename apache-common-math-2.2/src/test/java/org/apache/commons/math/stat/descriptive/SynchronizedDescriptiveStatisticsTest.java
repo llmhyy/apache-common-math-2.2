@@ -26,7 +26,7 @@ public final class SynchronizedDescriptiveStatisticsTest extends DescriptiveStat
     }
 
     @Override
-    protected DescriptiveStatistics createDescriptiveStatistics() {
+    public DescriptiveStatistics createDescriptiveStatistics() {
         return new SynchronizedDescriptiveStatistics();
     }
 }

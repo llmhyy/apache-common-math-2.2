@@ -65,7 +65,7 @@ public class GammaDistributionTest extends ContinuousDistributionAbstractTest {
 
     // --------------------- Override tolerance  --------------
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         setTolerance(1e-9);
     }
@@ -108,13 +108,13 @@ public class GammaDistributionTest extends ContinuousDistributionAbstractTest {
         testValue(5.000, 2.0, 2.0, .7127);
     }
 
-    private void testProbability(double x, double a, double b, double expected) throws Exception {
+    public void testProbability(double x, double a, double b, double expected) throws Exception {
         GammaDistribution distribution = new GammaDistributionImpl( a, b );
         double actual = distribution.cumulativeProbability(x);
         assertEquals("probability for " + x, expected, actual, 10e-4);
     }
 
-    private void testValue(double expected, double a, double b, double p) throws Exception {
+    public void testValue(double expected, double a, double b, double p) throws Exception {
         GammaDistribution distribution = new GammaDistributionImpl( a, b );
         double actual = distribution.inverseCumulativeProbability(p);
         assertEquals("critical value for " + p, expected, actual, 10e-4);
@@ -140,7 +140,7 @@ public class GammaDistributionTest extends ContinuousDistributionAbstractTest {
         checkDensity(0.1, 1, x, new double[]{0.000000000e+00, 2.640334143e+04, 1.189704437e-01, 3.866916944e-02, 7.623306235e-03, 1.663849010e-04});
     }
 
-    private void checkDensity(double alpha, double rate, double[] x, double[] expected) {
+    public void checkDensity(double alpha, double rate, double[] x, double[] expected) {
         GammaDistribution d = new GammaDistributionImpl(alpha, 1 / rate);
         for (int i = 0; i < x.length; i++) {
             assertEquals(expected[i], d.density(x[i]), 1e-5);

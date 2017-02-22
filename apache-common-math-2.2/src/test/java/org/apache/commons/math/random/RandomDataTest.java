@@ -704,7 +704,7 @@ public class RandomDataTest extends RetryTestCase {
     }
 
     @SuppressWarnings("unchecked")
-    private int findSample(Object[] u, Object[] samp) {
+    public int findSample(Object[] u, Object[] samp) {
         for (int i = 0; i < u.length; i++) {
             HashSet<Object> set = (HashSet<Object>) u[i];
             HashSet<Object> sampSet = new HashSet<Object>();
@@ -775,7 +775,7 @@ public class RandomDataTest extends RetryTestCase {
     //    assertEquals(randomData, TestUtils.serializeAndRecover(randomData));
     //}
 
-    private int findPerm(int[][] p, int[] samp) {
+    public int findPerm(int[][] p, int[] samp) {
         for (int i = 0; i < p.length; i++) {
             boolean good = true;
             for (int j = 0; j < samp.length; j++) {

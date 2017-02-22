@@ -166,7 +166,7 @@ public class PoissonDistributionImpl extends AbstractIntegerDistribution
      * @param p the Poisson mean value
      * @throws IllegalArgumentException if p &le; 0
      */
-    private void setNormalAndMeanInternal(NormalDistribution z,
+    public void setNormalAndMeanInternal(NormalDistribution z,
                                           double p) {
         if (p <= 0) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -270,7 +270,7 @@ public class PoissonDistributionImpl extends AbstractIntegerDistribution
      * @return domain lower bound
      */
     @Override
-    protected int getDomainLowerBound(double p) {
+    public int getDomainLowerBound(double p) {
         return 0;
     }
 
@@ -283,7 +283,7 @@ public class PoissonDistributionImpl extends AbstractIntegerDistribution
      * @return domain upper bound
      */
     @Override
-    protected int getDomainUpperBound(double p) {
+    public int getDomainUpperBound(double p) {
         return Integer.MAX_VALUE;
     }
 

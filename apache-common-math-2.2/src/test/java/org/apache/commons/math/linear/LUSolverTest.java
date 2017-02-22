@@ -172,7 +172,7 @@ public class LUSolverTest extends TestCase {
         assertEquals(  0, getDeterminant(MatrixUtils.createRealMatrix(bigSingular)), 1.0e-10);
     }
 
-    private double getDeterminant(RealMatrix m) {
+    public double getDeterminant(RealMatrix m) {
         return new LUDecompositionImpl(m).getDeterminant();
     }
 

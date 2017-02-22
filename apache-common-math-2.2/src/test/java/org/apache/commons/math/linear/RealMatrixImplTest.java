@@ -387,7 +387,7 @@ public final class RealMatrixImplTest extends TestCase {
         checkGetSubMatrix(m, null, new int[] { 0 }, new int[] { 4 }, true);
     }
 
-    private void checkGetSubMatrix(RealMatrix m, double[][] reference,
+    public void checkGetSubMatrix(RealMatrix m, double[][] reference,
                                    int startRow, int endRow, int startColumn, int endColumn,
                                    boolean mustFail) {
         try {
@@ -403,7 +403,7 @@ public final class RealMatrixImplTest extends TestCase {
         }
     }
 
-    private void checkGetSubMatrix(RealMatrix m, double[][] reference,
+    public void checkGetSubMatrix(RealMatrix m, double[][] reference,
                                    int[] selectedRows, int[] selectedColumns,
                                    boolean mustFail) {
         try {
@@ -439,7 +439,7 @@ public final class RealMatrixImplTest extends TestCase {
         checkCopy(m, null, new int[] { 0 }, new int[] { 4 }, true);
     }
 
-    private void checkCopy(RealMatrix m, double[][] reference,
+    public void checkCopy(RealMatrix m, double[][] reference,
                            int startRow, int endRow, int startColumn, int endColumn,
                            boolean mustFail) {
         try {
@@ -458,7 +458,7 @@ public final class RealMatrixImplTest extends TestCase {
         }
     }
 
-    private void checkCopy(RealMatrix m, double[][] reference,
+    public void checkCopy(RealMatrix m, double[][] reference,
                            int[] selectedRows, int[] selectedColumns,
                            boolean mustFail) {
         try {
@@ -641,7 +641,7 @@ public final class RealMatrixImplTest extends TestCase {
         }
     }
 
-    private RealVector columnToVector(double[][] column) {
+    public RealVector columnToVector(double[][] column) {
         double[] data = new double[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -726,7 +726,7 @@ public final class RealMatrixImplTest extends TestCase {
         }
     }
 
-    private double[] columnToArray(double[][] column) {
+    public double[] columnToArray(double[][] column) {
         double[] data = new double[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -734,7 +734,7 @@ public final class RealMatrixImplTest extends TestCase {
         return data;
     }
 
-    private void checkArrays(double[] expected, double[] actual) {
+    public void checkArrays(double[] expected, double[] actual) {
         assertEquals(expected.length, actual.length);
         for (int i = 0; i < expected.length; ++i) {
             assertEquals(expected[i], actual[i]);
@@ -954,7 +954,7 @@ public final class RealMatrixImplTest extends TestCase {
     //--------------- -----------------Protected methods
 
     /** extracts the l  and u matrices from compact lu representation */
-    protected void splitLU(RealMatrix lu, double[][] lowerData, double[][] upperData) throws InvalidMatrixException {
+    public void splitLU(RealMatrix lu, double[][] lowerData, double[][] upperData) throws InvalidMatrixException {
         if (!lu.isSquare() || lowerData.length != lowerData[0].length || upperData.length != upperData[0].length ||
                 lowerData.length != upperData.length
                 || lowerData.length != lu.getRowDimension()) {
@@ -978,7 +978,7 @@ public final class RealMatrixImplTest extends TestCase {
     }
 
     /** Returns the result of applying the given row permutation to the matrix */
-    protected RealMatrix permuteRows(RealMatrix matrix, int[] permutation) {
+    public RealMatrix permuteRows(RealMatrix matrix, int[] permutation) {
         if (!matrix.isSquare() || matrix.getRowDimension() != permutation.length) {
             throw new IllegalArgumentException("dimension mismatch");
         }

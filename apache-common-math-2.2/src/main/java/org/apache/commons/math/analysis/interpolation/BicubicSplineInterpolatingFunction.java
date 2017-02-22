@@ -229,7 +229,7 @@ public class BicubicSplineInterpolatingFunction
      * @return the value at point (x, y) of the selected partial derivative.
      * @throws FunctionEvaluationException
      */
-    private double partialDerivative(int which, double x, double y) {
+    public double partialDerivative(int which, double x, double y) {
         if (partialDerivatives == null) {
             computePartialDerivatives();
         }
@@ -258,7 +258,7 @@ public class BicubicSplineInterpolatingFunction
     /**
      * Compute all partial derivatives.
      */
-    private void computePartialDerivatives() {
+    public void computePartialDerivatives() {
         final int lastI = xval.length - 1;
         final int lastJ = yval.length - 1;
         partialDerivatives = new BivariateRealFunction[5][lastI][lastJ];
@@ -282,7 +282,7 @@ public class BicubicSplineInterpolatingFunction
      * containing {@code c}, or {@code -1} if {@code c} is out of the
      * range defined by the end values of {@code val}.
      */
-    private int searchIndex(double c, double[] val) {
+    public int searchIndex(double c, double[] val) {
         if (c < val[0]) {
             return -1;
         }
@@ -326,7 +326,7 @@ public class BicubicSplineInterpolatingFunction
      * values.
      * @return the spline coefficients.
      */
-    private double[] computeSplineCoefficients(double[] beta) {
+    public double[] computeSplineCoefficients(double[] beta) {
         final double[] a = new double[16];
 
         for (int i = 0; i < 16; i++) {
@@ -414,7 +414,7 @@ class BicubicSplineFunction
      * @param coeff Spline coefficients.
      * @return the interpolated value.
      */
-    private double apply(double[] pX, double[] pY, double[][] coeff) {
+    public double apply(double[] pX, double[] pY, double[][] coeff) {
         double result = 0;
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
@@ -479,7 +479,7 @@ class BicubicSplineFunction
     /**
      * Compute all partial derivatives functions.
      */
-    private void computePartialDerivatives() {
+    public void computePartialDerivatives() {
         final double[][] aX = new double[N][N];
         final double[][] aY = new double[N][N];
         final double[][] aXX = new double[N][N];

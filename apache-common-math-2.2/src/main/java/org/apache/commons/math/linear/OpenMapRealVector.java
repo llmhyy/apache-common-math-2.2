@@ -83,7 +83,7 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
      * @param v The original vector
      * @param resize The amount to resize it
      */
-    protected OpenMapRealVector(OpenMapRealVector v, int resize) {
+    public OpenMapRealVector(OpenMapRealVector v, int resize) {
         virtualSize = v.getDimension() + resize;
         entries = new OpenIntToDoubleHashMap(v.entries);
         epsilon = v.epsilon;
@@ -194,7 +194,7 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
      * Get the entries of this instance.
      * @return entries of this instance
      */
-    private OpenIntToDoubleHashMap getEntries() {
+    public OpenIntToDoubleHashMap getEntries() {
         return entries;
     }
 
@@ -204,7 +204,7 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
      * @return <code>true</code> if this value is within epsilon to zero, <code>false</code> otherwise
      * @since 2.1
      */
-    protected boolean isDefaultValue(double value) {
+    public boolean isDefaultValue(double value) {
         return FastMath.abs(value) < epsilon;
     }
 
@@ -516,7 +516,7 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
      * @param v The vector to compute from
      * @return the LInfDistance
      */
-    private double getLInfDistance(OpenMapRealVector v) {
+    public double getLInfDistance(OpenMapRealVector v) {
         double max = 0;
         Iterator iter = entries.iterator();
         while (iter.hasNext()) {
@@ -852,7 +852,7 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
         /** Build an entry from an iterator point to an element.
          * @param iter iterator pointing to the entry
          */
-        protected OpenMapEntry(Iterator iter) {
+        public OpenMapEntry(Iterator iter) {
             this.iter = iter;
         }
 
@@ -890,7 +890,7 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
         private final Entry current;
 
         /** Simple constructor. */
-        protected OpenMapSparseIterator() {
+        public OpenMapSparseIterator() {
             iter = entries.iterator();
             current = new OpenMapEntry(iter);
         }

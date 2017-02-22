@@ -48,7 +48,7 @@ public class SummaryStatisticsTest extends TestCase {
         super(name);
     }
 
-    protected SummaryStatistics createSummaryStatistics() {
+    public SummaryStatistics createSummaryStatistics() {
         return new SummaryStatistics();
     }
 
@@ -258,7 +258,7 @@ public class SummaryStatisticsTest extends TestCase {
 
     }
 
-    private void verifySummary(SummaryStatistics u, StatisticalSummary s) {
+    public void verifySummary(SummaryStatistics u, StatisticalSummary s) {
         assertEquals("N",s.getN(),u.getN());
         TestUtils.assertEquals("sum",s.getSum(),u.getSum(),tolerance);
         TestUtils.assertEquals("var",s.getVariance(),u.getVariance(),tolerance);

@@ -32,12 +32,12 @@ public abstract class ComplexFormatAbstractTest extends TestCase {
     CompositeFormat complexFormat = null;
     ComplexFormat complexFormatJ = null;
 
-    protected abstract Locale getLocale();
+    public abstract Locale getLocale();
 
-    protected abstract char getDecimalCharacter();
+    public abstract char getDecimalCharacter();
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         complexFormat = ComplexFormat.getInstance(getLocale());
         complexFormatJ = ComplexFormat.getInstance(getLocale());
         complexFormatJ.setImaginaryCharacter("j");

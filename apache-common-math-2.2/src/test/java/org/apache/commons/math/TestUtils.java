@@ -43,7 +43,7 @@ public class TestUtils {
     /**
      * Collection of static methods used in math unit tests.
      */
-    private TestUtils() {
+    public TestUtils() {
         super();
     }
 

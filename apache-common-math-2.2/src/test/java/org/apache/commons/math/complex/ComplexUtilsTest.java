@@ -67,7 +67,7 @@ public class ComplexUtilsTest extends TestCase {
         }
     }
 
-    protected Complex altPolar(double r, double theta) {
+    public Complex altPolar(double r, double theta) {
         return Complex.I.multiply(new Complex(theta, 0)).exp().multiply(new Complex(r, 0));
     }
 

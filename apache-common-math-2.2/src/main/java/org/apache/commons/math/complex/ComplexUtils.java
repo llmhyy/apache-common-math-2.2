@@ -32,7 +32,7 @@ public class ComplexUtils {
     /**
      * Default constructor.
      */
-    private ComplexUtils() {
+    public ComplexUtils() {
         super();
     }
 

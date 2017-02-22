@@ -75,13 +75,13 @@ class ClassicalRungeKuttaStepInterpolator
 
     /** {@inheritDoc} */
     @Override
-    protected StepInterpolator doCopy() {
+    public StepInterpolator doCopy() {
         return new ClassicalRungeKuttaStepInterpolator(this);
     }
 
     /** {@inheritDoc} */
     @Override
-    protected void computeInterpolatedStateAndDerivatives(final double theta,
+    public void computeInterpolatedStateAndDerivatives(final double theta,
                                             final double oneMinusThetaH)
         throws DerivativeException {
 

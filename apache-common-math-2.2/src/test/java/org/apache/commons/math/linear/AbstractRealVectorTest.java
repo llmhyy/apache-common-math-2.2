@@ -181,7 +181,7 @@ public class AbstractRealVectorTest extends TestCase {
         }
     }
 
-    private static void assertEquals(double[] d1, double[] d2) {
+    public static void assertEquals(double[] d1, double[] d2) {
         assertEquals(d1.length, d2.length);
         for(int i=0; i<d1.length; i++) assertEquals(d1[i], d2[i]);
     }

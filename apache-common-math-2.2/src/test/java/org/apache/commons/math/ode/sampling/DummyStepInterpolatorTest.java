@@ -136,7 +136,7 @@ public class DummyStepInterpolatorTest {
           super(y, new double[y.length], forward);
       }
       @Override
-      protected void doFinalize() throws DerivativeException {
+      public void doFinalize() throws DerivativeException {
           throw new DerivativeException((Localizable) null, LocalizedFormats.SIMPLE_MESSAGE, "");
       }
   }

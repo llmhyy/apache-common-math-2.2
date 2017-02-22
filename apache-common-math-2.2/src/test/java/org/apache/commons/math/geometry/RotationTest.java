@@ -473,15 +473,15 @@ public class RotationTest
 
   }
 
-  private void checkVector(Vector3D v1, Vector3D v2) {
+  public void checkVector(Vector3D v1, Vector3D v2) {
     assertTrue(v1.subtract(v2).getNorm() < 1.0e-10);
   }
 
-  private void checkAngle(double a1, double a2) {
+  public void checkAngle(double a1, double a2) {
     assertEquals(a1, MathUtils.normalizeAngle(a2, a1), 1.0e-10);
   }
 
-  private void checkRotation(Rotation r, double q0, double q1, double q2, double q3) {
+  public void checkRotation(Rotation r, double q0, double q1, double q2, double q3) {
     assertEquals(0, Rotation.distance(r, new Rotation(q0, q1, q2, q3, false)), 1.0e-12);
   }
 

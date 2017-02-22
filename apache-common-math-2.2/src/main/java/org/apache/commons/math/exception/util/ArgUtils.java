@@ -30,7 +30,7 @@ public class ArgUtils {
     /**
      * Private constructor
      */
-    private ArgUtils() {
+    public ArgUtils() {
     }
 
     /**

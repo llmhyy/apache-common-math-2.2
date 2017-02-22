@@ -300,7 +300,7 @@ public class BrentSolver extends UnivariateRealSolverImpl {
      * @throws MaxIterationsExceededException if the maximum iteration count is exceeded
      * @throws FunctionEvaluationException if an error occurs evaluating the function
      */
-    private double solve(final UnivariateRealFunction f,
+    public double solve(final UnivariateRealFunction f,
                          double x0, double y0,
                          double x1, double y1,
                          double x2, double y2)

@@ -34,7 +34,7 @@ public class Beta {
     /**
      * Default constructor.  Prohibit instantiation.
      */
-    private Beta() {
+    public Beta() {
         super();
     }
 
@@ -129,7 +129,7 @@ public class Beta {
             ContinuedFraction fraction = new ContinuedFraction() {
 
                 @Override
-                protected double getB(int n, double x) {
+                public double getB(int n, double x) {
                     double ret;
                     double m;
                     if (n % 2 == 0) { // even
@@ -145,7 +145,7 @@ public class Beta {
                 }
 
                 @Override
-                protected double getA(int n, double x) {
+                public double getA(int n, double x) {
                     return 1.0;
                 }
             };

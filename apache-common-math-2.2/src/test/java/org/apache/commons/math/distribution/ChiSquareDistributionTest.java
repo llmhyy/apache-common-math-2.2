@@ -80,7 +80,7 @@ public class ChiSquareDistributionTest extends ContinuousDistributionAbstractTes
 
  // --------------------- Override tolerance  --------------
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         super.setUp();
         setTolerance(1e-9);
     }
@@ -125,7 +125,7 @@ public class ChiSquareDistributionTest extends ContinuousDistributionAbstractTes
         checkDensity(10, x, new double[]{0.000000000e+00, 1.302082682e-27, 6.337896998e-05, 7.897534632e-04, 7.664155024e-03, 6.680094289e-02});
     }
 
-    private void checkDensity(double df, double[] x, double[] expected) {
+    public void checkDensity(double df, double[] x, double[] expected) {
         ChiSquaredDistribution d = new ChiSquaredDistributionImpl(df);
         for (int i = 0; i < x.length; i++) {
             assertEquals(expected[i], d.density(x[i]), 1e-5);

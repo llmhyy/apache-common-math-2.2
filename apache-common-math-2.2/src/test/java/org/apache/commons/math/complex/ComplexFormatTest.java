@@ -22,12 +22,12 @@ import java.util.Locale;
 
 public class ComplexFormatTest extends ComplexFormatAbstractTest {
     @Override
-    protected char getDecimalCharacter() {
+    public char getDecimalCharacter() {
         return '.';
     }
 
     @Override
-    protected Locale getLocale() {
+    public Locale getLocale() {
         return Locale.US;
     }
 }

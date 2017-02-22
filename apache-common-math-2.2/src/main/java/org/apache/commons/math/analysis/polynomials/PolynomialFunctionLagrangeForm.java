@@ -218,7 +218,7 @@ public class PolynomialFunctionLagrangeForm implements UnivariateRealFunction {
      *
      * @throws ArithmeticException if any abscissas coincide
      */
-    protected void computeCoefficients() throws ArithmeticException {
+    public void computeCoefficients() throws ArithmeticException {
 
         final int n = degree() + 1;
         coefficients = new double[n];

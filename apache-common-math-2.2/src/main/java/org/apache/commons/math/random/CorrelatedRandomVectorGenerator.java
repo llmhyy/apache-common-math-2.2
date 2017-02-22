@@ -185,7 +185,7 @@ public class CorrelatedRandomVectorGenerator
      * @exception NotPositiveDefiniteMatrixException if the
      * covariance matrix is not strictly positive definite
      */
-    private void decompose(RealMatrix covariance, double small)
+    public void decompose(RealMatrix covariance, double small)
     throws NotPositiveDefiniteMatrixException {
 
         int order = covariance.getRowDimension();

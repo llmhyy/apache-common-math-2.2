@@ -627,7 +627,7 @@ public class SummaryStatistics implements StatisticalSummary, Serializable {
     /**
      * Throws IllegalStateException if n > 0.
      */
-    private void checkEmpty() {
+    public void checkEmpty() {
         if (n > 0) {
             throw MathRuntimeException.createIllegalStateException(
                     LocalizedFormats.VALUES_ADDED_BEFORE_CONFIGURING_STATISTIC,

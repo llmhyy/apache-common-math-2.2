@@ -66,7 +66,7 @@ public class GLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      *
      * @param omega the [n,n] array representing the covariance
      */
-    protected void newCovarianceData(double[][] omega){
+    public void newCovarianceData(double[][] omega){
         this.Omega = new Array2DRowRealMatrix(omega);
         this.OmegaInverse = null;
     }
@@ -76,7 +76,7 @@ public class GLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * <p>The inverse of the covariance matrix is lazily evaluated and cached.</p>
      * @return inverse of the covariance
      */
-    protected RealMatrix getOmegaInverse() {
+    public RealMatrix getOmegaInverse() {
         if (OmegaInverse == null) {
             OmegaInverse = new LUDecompositionImpl(Omega).getSolver().getInverse();
         }
@@ -91,7 +91,7 @@ public class GLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * @return beta
      */
     @Override
-    protected RealVector calculateBeta() {
+    public RealVector calculateBeta() {
         RealMatrix OI = getOmegaInverse();
         RealMatrix XT = X.transpose();
         RealMatrix XTOIX = XT.multiply(OI).multiply(X);
@@ -107,7 +107,7 @@ public class GLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * @return The beta variance matrix
      */
     @Override
-    protected RealMatrix calculateBetaVariance() {
+    public RealMatrix calculateBetaVariance() {
         RealMatrix OI = getOmegaInverse();
         RealMatrix XTOIX = X.transpose().multiply(OI).multiply(X);
         return new LUDecompositionImpl(XTOIX).getSolver().getInverse();
@@ -126,7 +126,7 @@ public class GLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
      * @since 2.2
      */
     @Override
-    protected double calculateErrorVariance() {
+    public double calculateErrorVariance() {
         RealVector residuals = calculateResiduals();
         double t = residuals.dotProduct(getOmegaInverse().operate(residuals));
         return t / (X.getRowDimension() - X.getColumnDimension());

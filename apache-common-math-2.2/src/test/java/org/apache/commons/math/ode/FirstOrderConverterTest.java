@@ -97,7 +97,7 @@ public class FirstOrderConverterTest
 
   }
 
-  private double integrateWithSpecifiedStep(double omega,
+  public double integrateWithSpecifiedStep(double omega,
                                             double t0, double t,
                                             double step)
   throws DerivativeException, IntegratorException {

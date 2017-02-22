@@ -210,7 +210,7 @@ public class FastSineTransformer implements RealTransformer {
      * @return the real transformed array
      * @throws IllegalArgumentException if any parameters are invalid
      */
-    protected double[] fst(double f[]) throws IllegalArgumentException {
+    public double[] fst(double f[]) throws IllegalArgumentException {
 
         final double transformed[] = new double[f.length];
 

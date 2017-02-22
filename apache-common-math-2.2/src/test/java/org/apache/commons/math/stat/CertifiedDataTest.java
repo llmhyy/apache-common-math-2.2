@@ -103,7 +103,7 @@ public class CertifiedDataTest extends TestCase  {
      * @param file
      * @param statistical summary
      */
-    private void loadStats(String resource, Object u) throws Exception {
+    public void loadStats(String resource, Object u) throws Exception {
 
         DescriptiveStatistics d = null;
         SummaryStatistics s = null;

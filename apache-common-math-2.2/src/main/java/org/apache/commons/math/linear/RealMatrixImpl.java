@@ -602,7 +602,7 @@ public class RealMatrixImpl extends AbstractRealMatrix implements Serializable {
      *
      * @return a copy of the underlying data array.
      */
-    private double[][] copyOut() {
+    public double[][] copyOut() {
         final int nRows = this.getRowDimension();
         final double[][] out = new double[nRows][this.getColumnDimension()];
         // can't copy 2-d array in one shot, otherwise get row references
@@ -622,7 +622,7 @@ public class RealMatrixImpl extends AbstractRealMatrix implements Serializable {
      *    rectangular
      * @throws NullPointerException if input array is null
      */
-    private void copyIn(final double[][] in) {
+    public void copyIn(final double[][] in) {
         setSubMatrix(in, 0, 0);
     }
 

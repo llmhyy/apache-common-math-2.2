@@ -38,7 +38,7 @@ public abstract class CompositeFormat extends Format {
      * maximum number of fraction digits is set to 2.
      * @return the default number format.
      */
-    protected static NumberFormat getDefaultNumberFormat() {
+    public static NumberFormat getDefaultNumberFormat() {
         return getDefaultNumberFormat(Locale.getDefault());
     }
 
@@ -49,7 +49,7 @@ public abstract class CompositeFormat extends Format {
      * @param locale the specific locale used by the format.
      * @return the default number format specific to the given locale.
      */
-    protected static NumberFormat getDefaultNumberFormat(final Locale locale) {
+    public static NumberFormat getDefaultNumberFormat(final Locale locale) {
         final NumberFormat nf = NumberFormat.getInstance(locale);
         nf.setMaximumFractionDigits(2);
         return nf;
@@ -62,7 +62,7 @@ public abstract class CompositeFormat extends Format {
      * @param pos input/ouput parsing parameter.  On output, <code>pos</code>
      *        holds the index of the next non-whitespace character.
      */
-    protected void parseAndIgnoreWhitespace(final String source,
+    public void parseAndIgnoreWhitespace(final String source,
                                             final ParsePosition pos) {
         parseNextCharacter(source, pos);
         pos.setIndex(pos.getIndex() - 1);
@@ -75,7 +75,7 @@ public abstract class CompositeFormat extends Format {
      * @param pos input/ouput parsing parameter.
      * @return the first non-whitespace character.
      */
-    protected char parseNextCharacter(final String source,
+    public char parseNextCharacter(final String source,
                                       final ParsePosition pos) {
          int index = pos.getIndex();
          final int n = source.length();
@@ -105,7 +105,7 @@ public abstract class CompositeFormat extends Format {
      * @param pos input/ouput parsing parameter.
      * @return the special number.
      */
-    private Number parseNumber(final String source, final double value,
+    public Number parseNumber(final String source, final double value,
                                final ParsePosition pos) {
         Number ret = null;
 
@@ -137,7 +137,7 @@ public abstract class CompositeFormat extends Format {
      * @param pos input/ouput parsing parameter.
      * @return the parsed number.
      */
-    protected Number parseNumber(final String source, final NumberFormat format,
+    public Number parseNumber(final String source, final NumberFormat format,
                                  final ParsePosition pos) {
         final int startIndex = pos.getIndex();
         Number number = format.parse(source, pos);
@@ -167,7 +167,7 @@ public abstract class CompositeFormat extends Format {
      * @param pos input/ouput parsing parameter.
      * @return true if the expected string was there
      */
-    protected boolean parseFixedstring(final String source, final String expected,
+    public boolean parseFixedstring(final String source, final String expected,
                                        final ParsePosition pos) {
 
         final int startIndex = pos.getIndex();
@@ -204,7 +204,7 @@ public abstract class CompositeFormat extends Format {
      *            offsets of the alignment field
      * @return the value passed in as toAppendTo.
      */
-    protected StringBuffer formatDouble(final double value, final NumberFormat format,
+    public StringBuffer formatDouble(final double value, final NumberFormat format,
                                         final StringBuffer toAppendTo,
                                         final FieldPosition pos) {
         if( Double.isNaN(value) || Double.isInfinite(value) ) {

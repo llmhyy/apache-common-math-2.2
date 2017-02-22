@@ -131,7 +131,7 @@ public class DormandPrince54Integrator extends EmbeddedRungeKuttaIntegrator {
 
   /** {@inheritDoc} */
   @Override
-  protected double estimateError(final double[][] yDotK,
+  public double estimateError(final double[][] yDotK,
                                  final double[] y0, final double[] y1,
                                  final double h) {
 

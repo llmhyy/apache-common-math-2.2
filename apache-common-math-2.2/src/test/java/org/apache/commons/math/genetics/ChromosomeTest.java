@@ -56,7 +56,7 @@ public class ChromosomeTest {
             this.repr = repr;
         }
         @Override
-        protected boolean isSame(Chromosome another) {
+        public boolean isSame(Chromosome another) {
             return ((DummyChromosome) another).repr == repr;
         }
     }

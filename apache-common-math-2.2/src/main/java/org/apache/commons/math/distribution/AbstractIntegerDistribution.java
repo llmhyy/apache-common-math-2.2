@@ -47,7 +47,7 @@ public abstract class AbstractIntegerDistribution extends AbstractDistribution
     /**
      * Default constructor.
      */
-    protected AbstractIntegerDistribution() {
+    public AbstractIntegerDistribution() {
         super();
     }
 
@@ -262,7 +262,7 @@ public abstract class AbstractIntegerDistribution extends AbstractDistribution
      * @return cumulative probability
      * @throws MathException if the cumulative probability is NaN
      */
-    private double checkedCumulativeProbability(int argument) throws MathException {
+    public double checkedCumulativeProbability(int argument) throws MathException {
         double result = Double.NaN;
             result = cumulativeProbability(argument);
         if (Double.isNaN(result)) {
@@ -280,7 +280,7 @@ public abstract class AbstractIntegerDistribution extends AbstractDistribution
      * @return domain value lower bound, i.e.
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
-    protected abstract int getDomainLowerBound(double p);
+    public abstract int getDomainLowerBound(double p);
 
     /**
      * Access the domain value upper bound, based on <code>p</code>, used to
@@ -291,7 +291,7 @@ public abstract class AbstractIntegerDistribution extends AbstractDistribution
      * @return domain value upper bound, i.e.
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
-    protected abstract int getDomainUpperBound(double p);
+    public abstract int getDomainUpperBound(double p);
 
     /**
      * Use this method to get information about whether the lower bound

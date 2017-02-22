@@ -90,7 +90,7 @@ public class DividedDifferenceInterpolator implements UnivariateRealInterpolator
      * @return a fresh copy of the divided difference array
      * @throws DuplicateSampleAbscissaException if any abscissas coincide
      */
-    protected static double[] computeDividedDifference(final double x[], final double y[])
+    public static double[] computeDividedDifference(final double x[], final double y[])
         throws DuplicateSampleAbscissaException {
 
         PolynomialFunctionLagrangeForm.verifyInterpolationArray(x, y);

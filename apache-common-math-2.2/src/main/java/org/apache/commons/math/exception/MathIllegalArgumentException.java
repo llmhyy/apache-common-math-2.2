@@ -56,7 +56,7 @@ public class MathIllegalArgumentException extends IllegalArgumentException imple
      * @param general Message pattern explaining the cause of the error.
      * @param args Arguments.
      */
-    protected MathIllegalArgumentException(Localizable specific,
+    public MathIllegalArgumentException(Localizable specific,
                                            Localizable general,
                                            Object ... args) {
         this.specific = specific;
@@ -67,7 +67,7 @@ public class MathIllegalArgumentException extends IllegalArgumentException imple
      * @param general Message pattern explaining the cause of the error.
      * @param args Arguments.
      */
-    protected MathIllegalArgumentException(Localizable general,
+    public MathIllegalArgumentException(Localizable general,
                                            Object ... args) {
         this(null, general, args);
     }

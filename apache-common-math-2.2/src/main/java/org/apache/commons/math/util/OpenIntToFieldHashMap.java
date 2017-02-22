@@ -161,7 +161,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param expectedSize expected size of the map
      * @return capacity to use for the specified size
      */
-    private static int computeCapacity(final int expectedSize) {
+    public static int computeCapacity(final int expectedSize) {
         if (expectedSize == 0) {
             return 1;
         }
@@ -178,7 +178,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param i input value
      * @return smallest power of two greater than the input value
      */
-    private static int nextPowerOfTwo(final int i) {
+    public static int nextPowerOfTwo(final int i) {
         return Integer.highestOneBit(i) << 1;
     }
 
@@ -258,7 +258,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param hash initial hash
      * @return perturbed hash
      */
-    private static int perturb(final int hash) {
+    public static int perturb(final int hash) {
         return hash & 0x7fffffff;
     }
 
@@ -267,7 +267,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param key key to lookup
      * @return index at which key should be inserted
      */
-    private int findInsertionIndex(final int key) {
+    public int findInsertionIndex(final int key) {
         return findInsertionIndex(keys, states, key, mask);
     }
 
@@ -279,7 +279,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param mask bit mask for hash values
      * @return index at which key should be inserted
      */
-    private static int findInsertionIndex(final int[] keys, final byte[] states,
+    public static int findInsertionIndex(final int[] keys, final byte[] states,
                                           final int key, final int mask) {
         final int hash = hashOf(key);
         int index = hash & mask;
@@ -334,7 +334,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param j previous probe
      * @return next probe
      */
-    private static int probe(final int perturb, final int j) {
+    public static int probe(final int perturb, final int j) {
         return (j << 2) + j + perturb + 1;
     }
 
@@ -343,7 +343,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param index initial index
      * @return changed index
      */
-    private static int changeIndexSign(final int index) {
+    public static int changeIndexSign(final int index) {
         return -index - 1;
     }
 
@@ -393,7 +393,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param index index to check
      * @return true if an element is associated with key at index
      */
-    private boolean containsKey(final int key, final int index) {
+    public boolean containsKey(final int key, final int index) {
         return (key != 0 || states[index] == FULL) && keys[index] == key;
     }
 
@@ -402,7 +402,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param index index of the element to remove
      * @return removed value
      */
-    private T doRemove(int index) {
+    public T doRemove(int index) {
         keys[index]   = 0;
         states[index] = REMOVED;
         final T previous = values[index];
@@ -444,7 +444,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
     /**
      * Grow the tables.
      */
-    private void growTable() {
+    public void growTable() {
 
         final int oldLength      = states.length;
         final int[] oldKeys      = keys;
@@ -477,7 +477,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * Check if tables should grow due to increased size.
      * @return true if  tables should grow
      */
-    private boolean shouldGrowTable() {
+    public boolean shouldGrowTable() {
         return size > (mask + 1) * LOAD_FACTOR;
     }
 
@@ -486,7 +486,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @param key key to hash
      * @return hash value of the key
      */
-    private static int hashOf(final int key) {
+    public static int hashOf(final int key) {
         final int h = key ^ ((key >>> 20) ^ (key >>> 12));
         return h ^ (h >>> 7) ^ (h >>> 4);
     }
@@ -507,7 +507,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
         /**
          * Simple constructor.
          */
-        private Iterator() {
+        public Iterator() {
 
             // preserve the modification count of the map to detect concurrent modifications later
             referenceCount = count;
@@ -602,7 +602,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @throws ClassNotFoundException if the class corresponding
      * to the serialized object cannot be found
      */
-    private void readObject(final ObjectInputStream stream)
+    public void readObject(final ObjectInputStream stream)
         throws IOException, ClassNotFoundException {
         stream.defaultReadObject();
         count = 0;
@@ -613,7 +613,7 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
      * @return a new array
      */
     @SuppressWarnings("unchecked") // field is of type T
-    private T[] buildArray(final int length) {
+    public T[] buildArray(final int length) {
         return (T[]) Array.newInstance(field.getZero().getClass(), length);
     }
 

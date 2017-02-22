@@ -488,7 +488,7 @@ public class MinpackTest
                                      }), false);
   }
 
-  private void minpackTest(MinpackFunction function, boolean exceptionExpected) {
+  public void minpackTest(MinpackFunction function, boolean exceptionExpected) {
     LevenbergMarquardtEstimator estimator = new LevenbergMarquardtEstimator();
     estimator.setMaxCostEval(100 * (function.getN() + 1));
     estimator.setCostRelativeTolerance(FastMath.sqrt(2.22044604926e-16));
@@ -507,7 +507,7 @@ public class MinpackTest
 
   private static abstract class MinpackFunction implements EstimationProblem {
 
-    protected MinpackFunction(int m,
+    public MinpackFunction(int m,
                               double[] startParams,
                               double   theoreticalStartCost,
                               double   theoreticalMinCost,
@@ -525,17 +525,17 @@ public class MinpackTest
       this.paramsAccuracy       = 1.0e-5;
     }
 
-    protected static double[] buildArray(int n, double x) {
+    public static double[] buildArray(int n, double x) {
       double[] array = new double[n];
       Arrays.fill(array, x);
       return array;
     }
 
-    protected void setCostAccuracy(double costAccuracy) {
+    public void setCostAccuracy(double costAccuracy) {
       this.costAccuracy = costAccuracy;
     }
 
-    protected void setParamsAccuracy(double paramsAccuracy) {
+    public void setParamsAccuracy(double paramsAccuracy) {
       this.paramsAccuracy = paramsAccuracy;
     }
 
@@ -582,9 +582,9 @@ public class MinpackTest
       return parameters;
     }
 
-    protected abstract double[][] getJacobian();
+    public abstract double[][] getJacobian();
 
-    protected abstract double[] getResiduals();
+    public abstract double[] getResiduals();
 
     private static class MinpackMeasurement extends WeightedMeasurement {
 
@@ -644,7 +644,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double t = 2.0 / m;
       double[][] jacobian = new double[m][];
       for (int i = 0; i < m; ++i) {
@@ -657,7 +657,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double sum = 0;
       for (int i = 0; i < n; ++i) {
         sum += parameters[i].getEstimate();
@@ -682,7 +682,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double[][] jacobian = new double[m][];
       for (int i = 0; i < m; ++i) {
         jacobian[i] = new double[n];
@@ -694,7 +694,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double[] f = new double[m];
       double sum = 0;
       for (int i = 0; i < n; ++i) {
@@ -718,7 +718,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double[][] jacobian = new double[m][];
       for (int i = 0; i < m; ++i) {
         jacobian[i] = new double[n];
@@ -738,7 +738,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double[] f = new double[m];
       double sum = 0;
       for (int i = 1; i < (n - 1); ++i) {
@@ -760,13 +760,13 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double x1 = parameters[0].getEstimate();
       return new double[][] { { -20 * x1, 10 }, { -1, 0 } };
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       return new double[] { 10 * (x2 - x1 * x1), 1 - x1 };
@@ -783,7 +783,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double tmpSquare = x1 * x1 + x2 * x2;
@@ -797,7 +797,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -830,7 +830,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -844,7 +844,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -873,7 +873,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double x2 = parameters[1].getEstimate();
       return new double[][] {
         { 1, x2 * (10 - 3 * x2) -  2 },
@@ -882,7 +882,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       return new double[] {
@@ -904,7 +904,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x2 = parameters[1].getEstimate();
       double   x3 = parameters[2].getEstimate();
       double[][] jacobian = new double[m][];
@@ -920,7 +920,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double   x1 = parameters[0].getEstimate();
       double   x2 = parameters[1].getEstimate();
       double   x3 = parameters[2].getEstimate();
@@ -957,7 +957,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x1 = parameters[0].getEstimate();
       double   x2 = parameters[1].getEstimate();
       double   x3 = parameters[2].getEstimate();
@@ -975,7 +975,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -1013,7 +1013,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x1 = parameters[0].getEstimate();
       double   x2 = parameters[1].getEstimate();
       double   x3 = parameters[2].getEstimate();
@@ -1029,7 +1029,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -1060,7 +1060,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
 
       double[][] jacobian = new double[m][];
 
@@ -1093,7 +1093,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
      double[] f = new double[m];
      for (int i = 0; i < (m - 2); ++i) {
        double div = (i + 1) / 29.0;
@@ -1132,7 +1132,7 @@ public class MinpackTest
    }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x1 = parameters[0].getEstimate();
       double   x2 = parameters[1].getEstimate();
       double[][] jacobian = new double[m][];
@@ -1148,7 +1148,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -1174,7 +1174,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x1 = parameters[0].getEstimate();
       double   x2 = parameters[1].getEstimate();
       double[][] jacobian = new double[m][];
@@ -1186,7 +1186,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double[] f = new double[m];
@@ -1211,7 +1211,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x1 = parameters[0].getEstimate();
       double   x2 = parameters[1].getEstimate();
       double   x3 = parameters[2].getEstimate();
@@ -1230,7 +1230,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -1249,7 +1249,7 @@ public class MinpackTest
 
   private static class ChebyquadFunction extends MinpackFunction {
 
-    private static double[] buildChebyquadArray(int n, double factor) {
+    public static double[] buildChebyquadArray(int n, double factor) {
       double[] array = new double[n];
       double inv = factor / (n + 1);
       for (int i = 0; i < n; ++i) {
@@ -1267,7 +1267,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
 
       double[][] jacobian = new double[m][];
       for (int i = 0; i < m; ++i) {
@@ -1297,7 +1297,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
 
       double[] f = new double[m];
 
@@ -1340,7 +1340,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double[][] jacobian = new double[m][];
       for (int i = 0; i < m; ++i) {
         jacobian[i] = new double[n];
@@ -1375,7 +1375,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double[] f = new double[m];
       double sum  = -(n + 1);
       double prod = 1;
@@ -1403,7 +1403,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x2 = parameters[1].getEstimate();
       double   x3 = parameters[2].getEstimate();
       double   x4 = parameters[3].getEstimate();
@@ -1421,7 +1421,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x1 = parameters[0].getEstimate();
       double x2 = parameters[1].getEstimate();
       double x3 = parameters[2].getEstimate();
@@ -1456,7 +1456,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[][] getJacobian() {
+    public double[][] getJacobian() {
       double   x01 = parameters[0].getEstimate();
       double   x02 = parameters[1].getEstimate();
       double   x03 = parameters[2].getEstimate();
@@ -1493,7 +1493,7 @@ public class MinpackTest
     }
 
     @Override
-    protected double[] getResiduals() {
+    public double[] getResiduals() {
       double x01 = parameters[0].getEstimate();
       double x02 = parameters[1].getEstimate();
       double x03 = parameters[2].getEstimate();

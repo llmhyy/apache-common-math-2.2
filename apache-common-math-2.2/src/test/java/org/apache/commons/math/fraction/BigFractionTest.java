@@ -27,12 +27,12 @@ import junit.framework.TestCase;
 
 public class BigFractionTest extends TestCase {
 
-    private void assertFraction(int expectedNumerator, int expectedDenominator, BigFraction actual) {
+    public void assertFraction(int expectedNumerator, int expectedDenominator, BigFraction actual) {
         assertEquals(expectedNumerator, actual.getNumeratorAsInt());
         assertEquals(expectedDenominator, actual.getDenominatorAsInt());
     }
 
-    private void assertFraction(long expectedNumerator, long expectedDenominator, BigFraction actual) {
+    public void assertFraction(long expectedNumerator, long expectedDenominator, BigFraction actual) {
         assertEquals(expectedNumerator, actual.getNumeratorAsLong());
         assertEquals(expectedDenominator, actual.getDenominatorAsLong());
     }

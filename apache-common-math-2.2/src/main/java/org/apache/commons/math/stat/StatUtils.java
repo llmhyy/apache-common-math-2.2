@@ -72,7 +72,7 @@ public final class StatUtils {
     /**
      * Private Constructor
      */
-    private StatUtils() {
+    public StatUtils() {
     }
 
     /**

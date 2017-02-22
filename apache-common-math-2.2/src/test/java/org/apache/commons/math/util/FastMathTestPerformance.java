@@ -47,7 +47,7 @@ public class FastMathTestPerformance {
                 ));
     }
 
-    private static void report(String name, long strictMathTime, long fastMathTime, long mathTime) {
+    public static void report(String name, long strictMathTime, long fastMathTime, long mathTime) {
         long unitTime = strictMathTime;
         System.out.println(String.format(FMT_DTL,
                 name,

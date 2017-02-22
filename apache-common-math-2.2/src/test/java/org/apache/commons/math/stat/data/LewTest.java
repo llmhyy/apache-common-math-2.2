@@ -23,7 +23,7 @@ package org.apache.commons.math.stat.data;
 public class LewTest extends CertifiedDataAbstractTest {
 
     @Override
-    protected String getResourceName() {
+    public String getResourceName() {
         return "org/apache/commons/math/stat/data/Lew.txt";
     }
 }

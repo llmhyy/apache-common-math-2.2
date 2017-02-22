@@ -121,7 +121,7 @@ public class PolynomialFunction implements DifferentiableUnivariateRealFunction,
      * @throws NoDataException if coefficients is empty
      * @throws NullPointerException if coefficients is null
      */
-    protected static double evaluate(double[] coefficients, double argument) {
+    public static double evaluate(double[] coefficients, double argument) {
         int n = coefficients.length;
         if (n == 0) {
             throw new NoDataException(LocalizedFormats.EMPTY_POLYNOMIALS_COEFFICIENTS_ARRAY);
@@ -230,7 +230,7 @@ public class PolynomialFunction implements DifferentiableUnivariateRealFunction,
      * @throws NoDataException if coefficients is empty
      * @throws NullPointerException if coefficients is null
      */
-    protected static double[] differentiate(double[] coefficients) {
+    public static double[] differentiate(double[] coefficients) {
         int n = coefficients.length;
         if (n == 0) {
             throw new NoDataException(LocalizedFormats.EMPTY_POLYNOMIALS_COEFFICIENTS_ARRAY);

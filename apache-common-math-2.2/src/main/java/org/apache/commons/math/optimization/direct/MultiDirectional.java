@@ -58,7 +58,7 @@ public class MultiDirectional extends DirectSearchOptimizer {
 
     /** {@inheritDoc} */
     @Override
-    protected void iterateSimplex(final Comparator<RealPointValuePair> comparator)
+    public void iterateSimplex(final Comparator<RealPointValuePair> comparator)
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException {
 
         final RealConvergenceChecker checker = getConvergenceChecker();
@@ -115,7 +115,7 @@ public class MultiDirectional extends DirectSearchOptimizer {
      * @exception FunctionEvaluationException if the function cannot be evaluated at some point
      * @exception OptimizationException if the maximal number of evaluations is exceeded
      */
-    private RealPointValuePair evaluateNewSimplex(final RealPointValuePair[] original,
+    public RealPointValuePair evaluateNewSimplex(final RealPointValuePair[] original,
                                               final double coeff,
                                               final Comparator<RealPointValuePair> comparator)
         throws FunctionEvaluationException, OptimizationException {

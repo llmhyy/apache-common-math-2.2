@@ -365,7 +365,7 @@ public class LevenbergMarquardtOptimizerTest
         checkEstimate(circle, 0.1, 20, 1.0e-18, 1.0e-16, 1.0e-10, true);
     }
 
-    private void checkEstimate(DifferentiableMultivariateVectorialFunction problem,
+    public void checkEstimate(DifferentiableMultivariateVectorialFunction problem,
                                double initialStepBoundFactor, int maxCostEval,
                                double costRelativeTolerance, double parRelativeTolerance,
                                double orthoTolerance, boolean shouldFail) {
@@ -560,7 +560,7 @@ public class LevenbergMarquardtOptimizerTest
             return r / points.size();
         }
 
-        private double[][] jacobian(double[] point) {
+        public double[][] jacobian(double[] point) {
 
             int n = points.size();
             Point2D.Double center = new Point2D.Double(point[0], point[1]);
@@ -631,7 +631,7 @@ public class LevenbergMarquardtOptimizerTest
             this.y.add(y);
         }
 
-        private double[][] jacobian(double[] variables) {
+        public double[][] jacobian(double[] variables) {
             double[][] jacobian = new double[x.size()][3];
             for (int i = 0; i < jacobian.length; ++i) {
                 jacobian[i][0] = x.get(i) * x.get(i);

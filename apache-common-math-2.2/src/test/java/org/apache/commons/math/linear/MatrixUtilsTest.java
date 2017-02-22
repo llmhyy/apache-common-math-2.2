@@ -267,7 +267,7 @@ public final class MatrixUtilsTest extends TestCase {
     /**
      * Verifies that the matrix is an identity matrix
      */
-    protected void checkIdentityMatrix(RealMatrix m) {
+    public void checkIdentityMatrix(RealMatrix m) {
         for (int i = 0; i < m.getRowDimension(); i++) {
             for (int j =0; j < m.getColumnDimension(); j++) {
                 if (i == j) {
@@ -294,7 +294,7 @@ public final class MatrixUtilsTest extends TestCase {
     /**
      * Verifies that the matrix is an identity matrix
      */
-    protected void checkIdentityFieldMatrix(FieldMatrix<Fraction> m) {
+    public void checkIdentityFieldMatrix(FieldMatrix<Fraction> m) {
         for (int i = 0; i < m.getRowDimension(); i++) {
             for (int j =0; j < m.getColumnDimension(); j++) {
                 if (i == j) {
@@ -375,7 +375,7 @@ public final class MatrixUtilsTest extends TestCase {
      * Verifies that the matrix is an identity matrix
      */
     @Deprecated
-    protected void checkIdentityBigMatrix(BigMatrix m) {
+    public void checkIdentityBigMatrix(BigMatrix m) {
         for (int i = 0; i < m.getRowDimension(); i++) {
             for (int j =0; j < m.getColumnDimension(); j++) {
                 if (i == j) {

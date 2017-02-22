@@ -46,7 +46,7 @@ public abstract class AbstractFormat extends NumberFormat implements Serializabl
      * Create an improper formatting instance with the default number format
      * for the numerator and denominator.
      */
-    protected AbstractFormat() {
+    public AbstractFormat() {
         this(getDefaultNumberFormat());
     }
 
@@ -55,7 +55,7 @@ public abstract class AbstractFormat extends NumberFormat implements Serializabl
      * both the numerator and denominator.
      * @param format the custom format for both the numerator and denominator.
      */
-    protected AbstractFormat(final NumberFormat format) {
+    public AbstractFormat(final NumberFormat format) {
         this(format, (NumberFormat) format.clone());
     }
 
@@ -65,7 +65,7 @@ public abstract class AbstractFormat extends NumberFormat implements Serializabl
      * @param numeratorFormat the custom format for the numerator.
      * @param denominatorFormat the custom format for the denominator.
      */
-    protected AbstractFormat(final NumberFormat numeratorFormat,
+    public AbstractFormat(final NumberFormat numeratorFormat,
                              final NumberFormat denominatorFormat) {
         this.numeratorFormat   = numeratorFormat;
         this.denominatorFormat = denominatorFormat;
@@ -77,7 +77,7 @@ public abstract class AbstractFormat extends NumberFormat implements Serializabl
      * customizing is the maximum number of BigFraction digits, which is set to 0.
      * @return the default number format.
      */
-    protected static NumberFormat getDefaultNumberFormat() {
+    public static NumberFormat getDefaultNumberFormat() {
         return getDefaultNumberFormat(Locale.getDefault());
     }
 
@@ -88,7 +88,7 @@ public abstract class AbstractFormat extends NumberFormat implements Serializabl
      * @param locale the specific locale used by the format.
      * @return the default number format specific to the given locale.
      */
-    protected static NumberFormat getDefaultNumberFormat(final Locale locale) {
+    public static NumberFormat getDefaultNumberFormat(final Locale locale) {
         final NumberFormat nf = NumberFormat.getNumberInstance(locale);
         nf.setMaximumFractionDigits(0);
         nf.setParseIntegerOnly(true);
@@ -141,7 +141,7 @@ public abstract class AbstractFormat extends NumberFormat implements Serializabl
      * @param pos input/ouput parsing parameter.  On output, <code>pos</code>
      *        holds the index of the next non-whitespace character.
      */
-    protected static void parseAndIgnoreWhitespace(final String source,
+    public static void parseAndIgnoreWhitespace(final String source,
                                                    final ParsePosition pos) {
         parseNextCharacter(source, pos);
         pos.setIndex(pos.getIndex() - 1);
@@ -153,7 +153,7 @@ public abstract class AbstractFormat extends NumberFormat implements Serializabl
      * @param pos input/ouput parsing parameter.
      * @return the first non-whitespace character.
      */
-    protected static char parseNextCharacter(final String source,
+    public static char parseNextCharacter(final String source,
                                              final ParsePosition pos) {
          int index = pos.getIndex();
          final int n = source.length();

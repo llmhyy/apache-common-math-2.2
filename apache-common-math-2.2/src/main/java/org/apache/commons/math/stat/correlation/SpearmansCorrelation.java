@@ -164,7 +164,7 @@ public class SpearmansCorrelation {
      *
      * @param matrix matrix to transform
      */
-    private void rankTransform(RealMatrix matrix) {
+    public void rankTransform(RealMatrix matrix) {
         for (int i = 0; i < matrix.getColumnDimension(); i++) {
             matrix.setColumn(i, rankingAlgorithm.rank(matrix.getColumn(i)));
         }

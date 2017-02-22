@@ -211,7 +211,7 @@ public class LegendreGaussIntegrator extends UnivariateRealIntegratorImpl {
      * @throws FunctionEvaluationException if an error occurs evaluating the
      * function
      */
-    private double stage(final UnivariateRealFunction f,
+    public double stage(final UnivariateRealFunction f,
                          final double min, final double max, final int n)
         throws FunctionEvaluationException {
 

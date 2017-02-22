@@ -100,7 +100,7 @@ extends TestCase {
         }
     }
 
-    private double exactIntegration(PolynomialFunction p, double a, double b) {
+    public double exactIntegration(PolynomialFunction p, double a, double b) {
         final double[] coeffs = p.getCoefficients();
         double yb = coeffs[coeffs.length - 1] / coeffs.length;
         double ya = yb;

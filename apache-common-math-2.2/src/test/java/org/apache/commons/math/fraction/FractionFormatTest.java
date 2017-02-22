@@ -30,12 +30,12 @@ public class FractionFormatTest extends TestCase {
     FractionFormat properFormat = null;
     FractionFormat improperFormat = null;
 
-    protected Locale getLocale() {
+    public Locale getLocale() {
         return Locale.getDefault();
     }
 
     @Override
-    protected void setUp() throws Exception {
+    public void setUp() throws Exception {
         properFormat = FractionFormat.getProperInstance(getLocale());
         improperFormat = FractionFormat.getImproperInstance(getLocale());
     }

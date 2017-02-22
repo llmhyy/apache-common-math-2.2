@@ -66,7 +66,7 @@ public abstract class UnivariateRealIntegratorImpl
      * to the {@link #integrate(UnivariateRealFunction, double, double)}method.
      */
     @Deprecated
-    protected UnivariateRealIntegratorImpl(final UnivariateRealFunction f,
+    public UnivariateRealIntegratorImpl(final UnivariateRealFunction f,
                                            final int defaultMaximalIterationCount)
         throws IllegalArgumentException {
         super(defaultMaximalIterationCount, 1.0e-15);
@@ -91,7 +91,7 @@ public abstract class UnivariateRealIntegratorImpl
      * @throws IllegalArgumentException if f is null or the iteration
      * limits are not valid
      */
-    protected UnivariateRealIntegratorImpl(final int defaultMaximalIterationCount)
+    public UnivariateRealIntegratorImpl(final int defaultMaximalIterationCount)
         throws IllegalArgumentException {
         super(defaultMaximalIterationCount, 1.0e-15);
 
@@ -123,7 +123,7 @@ public abstract class UnivariateRealIntegratorImpl
      * @param newResult the result to set
      * @param iterationCount the iteration count to set
      */
-    protected final void setResult(double newResult, int iterationCount) {
+    public final void setResult(double newResult, int iterationCount) {
         this.result         = newResult;
         this.iterationCount = iterationCount;
         this.resultComputed = true;
@@ -132,7 +132,7 @@ public abstract class UnivariateRealIntegratorImpl
     /**
      * Convenience function for implementations.
      */
-    protected final void clearResult() {
+    public final void clearResult() {
         this.iterationCount = 0;
         this.resultComputed = false;
     }
@@ -159,7 +159,7 @@ public abstract class UnivariateRealIntegratorImpl
      * @param upper upper endpoint
      * @throws IllegalArgumentException if not interval
      */
-    protected void verifyInterval(double lower, double upper) throws
+    public void verifyInterval(double lower, double upper) throws
         IllegalArgumentException {
         if (lower >= upper) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -173,7 +173,7 @@ public abstract class UnivariateRealIntegratorImpl
      *
      * @throws IllegalArgumentException if not valid
      */
-    protected void verifyIterationCount() throws IllegalArgumentException {
+    public void verifyIterationCount() throws IllegalArgumentException {
         if ((minimalIterationCount <= 0) || (maximalIterationCount <= minimalIterationCount)) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.INVALID_ITERATIONS_LIMITS,

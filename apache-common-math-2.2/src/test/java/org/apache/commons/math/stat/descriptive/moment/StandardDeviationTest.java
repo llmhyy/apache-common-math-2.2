@@ -87,7 +87,7 @@ public class StandardDeviationTest extends StorelessUnivariateStatisticAbstractT
     /**
      * Definitional formula for population standard deviation
      */
-    protected double populationStandardDeviation(double[] v) {
+    public double populationStandardDeviation(double[] v) {
         double mean = new Mean().evaluate(v);
         double sum = 0;
         for (int i = 0; i < v.length; i++) {

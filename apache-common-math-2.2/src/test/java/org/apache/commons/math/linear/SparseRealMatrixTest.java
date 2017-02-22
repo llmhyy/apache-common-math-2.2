@@ -524,7 +524,7 @@ public final class SparseRealMatrixTest extends TestCase {
         }
     }
 
-    private RealVector columnToVector(double[][] column) {
+    public RealVector columnToVector(double[][] column) {
         double[] data = new double[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -640,13 +640,13 @@ public final class SparseRealMatrixTest extends TestCase {
     // --------------- -----------------Protected methods
 
     /** verifies that two matrices are close (1-norm) */
-    protected void assertClose(String msg, RealMatrix m, RealMatrix n,
+    public void assertClose(String msg, RealMatrix m, RealMatrix n,
             double tolerance) {
         assertTrue(msg, m.subtract(n).getNorm() < tolerance);
     }
 
     /** verifies that two vectors are close (sup norm) */
-    protected void assertClose(String msg, double[] m, double[] n,
+    public void assertClose(String msg, double[] m, double[] n,
             double tolerance) {
         if (m.length != n.length) {
             fail("vectors not same length");
@@ -657,7 +657,7 @@ public final class SparseRealMatrixTest extends TestCase {
         }
     }
 
-    private OpenMapRealMatrix createSparseMatrix(double[][] data) {
+    public OpenMapRealMatrix createSparseMatrix(double[][] data) {
         OpenMapRealMatrix matrix = new OpenMapRealMatrix(data.length, data[0].length);
         for (int row = 0; row < data.length; row++) {
             for (int col = 0; col < data[row].length; col++) {

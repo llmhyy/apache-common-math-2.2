@@ -311,7 +311,7 @@ public class ValueServer {
      *
      * @return next random value from the empirical distribution digest
      */
-    private double getNextDigest() {
+    public double getNextDigest() {
         if ((empiricalDistribution == null) ||
             (empiricalDistribution.getBinStats().size() == 0)) {
             throw MathRuntimeException.createIllegalStateException(LocalizedFormats.DIGEST_NOT_INITIALIZED);
@@ -337,7 +337,7 @@ public class ValueServer {
      * @throws NumberFormatException if an invalid numeric string is
      *   encountered in the file
      */
-    private double getNextReplay() throws IOException {
+    public double getNextReplay() throws IOException {
         String str = null;
         if (filePointer == null) {
             resetReplayFile();
@@ -359,7 +359,7 @@ public class ValueServer {
      *
      * @return random uniform value
      */
-    private double getNextUniform() {
+    public double getNextUniform() {
         return randomData.nextUniform(0, 2 * mu);
     }
 
@@ -368,7 +368,7 @@ public class ValueServer {
      *
      * @return random exponential value
      */
-    private double getNextExponential() {
+    public double getNextExponential() {
         return randomData.nextExponential(mu);
     }
 
@@ -378,7 +378,7 @@ public class ValueServer {
      *
      * @return random Gaussian value
      */
-    private double getNextGaussian() {
+    public double getNextGaussian() {
         return randomData.nextGaussian(mu, sigma);
     }
 

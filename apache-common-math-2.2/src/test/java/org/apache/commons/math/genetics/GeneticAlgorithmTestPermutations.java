@@ -89,7 +89,7 @@ public class GeneticAlgorithmTestPermutations {
     /**
      * Initializes a random population
      */
-    private static ElitisticListPopulation randomPopulation() {
+    public static ElitisticListPopulation randomPopulation() {
         List<Chromosome> popList = new ArrayList<Chromosome>();
         for (int i=0; i<POPULATION_SIZE; i++) {
             Chromosome randChrom = new MinPermutations(RandomKey.randomPermutation(DIMENSION));

@@ -144,7 +144,7 @@ public class GammaDistributionImpl extends AbstractContinuousDistribution
      * @param newAlpha the new shape parameter.
      * @throws IllegalArgumentException if <code>newAlpha</code> is not positive.
      */
-    private void setAlphaInternal(double newAlpha) {
+    public void setAlphaInternal(double newAlpha) {
         if (newAlpha <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_ALPHA,
@@ -177,7 +177,7 @@ public class GammaDistributionImpl extends AbstractContinuousDistribution
      * @param newBeta the new scale parameter.
      * @throws IllegalArgumentException if <code>newBeta</code> is not positive.
      */
-    private void setBetaInternal(double newBeta) {
+    public void setBetaInternal(double newBeta) {
         if (newBeta <= 0.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NOT_POSITIVE_BETA,
@@ -228,7 +228,7 @@ public class GammaDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         // TODO: try to improve on this estimate
         return Double.MIN_VALUE;
     }
@@ -243,7 +243,7 @@ public class GammaDistributionImpl extends AbstractContinuousDistribution
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         // TODO: try to improve on this estimate
         // NOTE: gamma is skewed to the left
         // NOTE: therefore, P(X < &mu;) > .5
@@ -270,7 +270,7 @@ public class GammaDistributionImpl extends AbstractContinuousDistribution
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         // TODO: try to improve on this estimate
         // Gamma is skewed to the left, therefore, P(X < &mu;) > .5
 
@@ -295,7 +295,7 @@ public class GammaDistributionImpl extends AbstractContinuousDistribution
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

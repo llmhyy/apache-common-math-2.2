@@ -217,7 +217,7 @@ public class Vector3DTest
      }
   }
 
-  private void checkVector(Vector3D v, double x, double y, double z) {
+  public void checkVector(Vector3D v, double x, double y, double z) {
       assertEquals(x, v.getX(), 1.0e-12);
       assertEquals(y, v.getY(), 1.0e-12);
       assertEquals(z, v.getZ(), 1.0e-12);

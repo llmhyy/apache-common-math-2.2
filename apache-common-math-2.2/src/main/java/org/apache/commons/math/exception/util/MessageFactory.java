@@ -29,7 +29,7 @@ public class MessageFactory {
     /**
      * Class contains only static methods.
      */
-    private MessageFactory() {}
+    public MessageFactory() {}
 
     /**
      * Builds a message string by from a pattern and its arguments.

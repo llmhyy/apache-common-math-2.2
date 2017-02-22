@@ -139,7 +139,7 @@ public class BetaDistributionTest extends TestCase {
 
     }
 
-    private void checkCumulative(double alpha, double beta, double[] x, double[] cumes) throws MathException {
+    public void checkCumulative(double alpha, double beta, double[] x, double[] cumes) throws MathException {
         BetaDistribution d = new BetaDistributionImpl(alpha, beta);
         for (int i = 0; i < x.length; i++) {
             assertEquals(cumes[i], d.cumulativeProbability(x[i]), 1e-8);
@@ -280,7 +280,7 @@ public class BetaDistributionTest extends TestCase {
 
     }
 
-    private void checkDensity(double alpha, double beta, double[] x, double[] expected) throws MathException {
+    public void checkDensity(double alpha, double beta, double[] x, double[] expected) throws MathException {
         BetaDistribution d = new BetaDistributionImpl(alpha, beta);
         for (int i = 0; i < x.length; i++) {
             assertEquals(String.format("density at x=%.1f for alpha=%.1f, beta=%.1f", x[i], alpha, beta), expected[i], d.density(x[i]), 1e-5);

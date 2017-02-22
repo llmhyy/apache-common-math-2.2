@@ -106,7 +106,7 @@ public abstract class MultistepIntegrator extends AdaptiveStepsizeIntegrator {
      * @param scalAbsoluteTolerance allowed absolute error
      * @param scalRelativeTolerance allowed relative error
      */
-    protected MultistepIntegrator(final String name, final int nSteps,
+    public MultistepIntegrator(final String name, final int nSteps,
                                   final int order,
                                   final double minStep, final double maxStep,
                                   final double scalAbsoluteTolerance,
@@ -153,7 +153,7 @@ public abstract class MultistepIntegrator extends AdaptiveStepsizeIntegrator {
      * @param vecAbsoluteTolerance allowed absolute error
      * @param vecRelativeTolerance allowed relative error
      */
-    protected MultistepIntegrator(final String name, final int nSteps,
+    public MultistepIntegrator(final String name, final int nSteps,
                                   final int order,
                                   final double minStep, final double maxStep,
                                   final double[] vecAbsoluteTolerance,
@@ -209,7 +209,7 @@ public abstract class MultistepIntegrator extends AdaptiveStepsizeIntegrator {
      * @throws DerivativeException this exception is propagated to the caller if
      * the underlying user function triggers one
      */
-    protected void start(final double t0, final double[] y0, final double t)
+    public void start(final double t0, final double[] y0, final double t)
         throws DerivativeException, IntegratorException {
 
         // make sure NO user event nor user step handler is triggered,
@@ -243,7 +243,7 @@ public abstract class MultistepIntegrator extends AdaptiveStepsizeIntegrator {
      * will be modified
      * @return high order scaled derivatives at step start
      */
-    protected abstract Array2DRowRealMatrix initializeHighOrderDerivatives(final double[] first,
+    public abstract Array2DRowRealMatrix initializeHighOrderDerivatives(final double[] first,
                                                                            final double[][] multistep);
 
     /** Get the minimal reduction factor for stepsize control.
@@ -292,7 +292,7 @@ public abstract class MultistepIntegrator extends AdaptiveStepsizeIntegrator {
      * @param error normalized error of the current step
      * @return grow/shrink factor for next step
      */
-    protected double computeStepGrowShrinkFactor(final double error) {
+    public double computeStepGrowShrinkFactor(final double error) {
         return FastMath.min(maxGrowth, FastMath.max(minReduction, safety * FastMath.pow(error, exp)));
     }
 

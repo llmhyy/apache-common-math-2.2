@@ -25,7 +25,7 @@ public final class SynchronizedSummaryStatisticsTest extends SummaryStatisticsTe
     }
 
     @Override
-    protected SummaryStatistics createSummaryStatistics() {
+    public SummaryStatistics createSummaryStatistics() {
         return new SynchronizedSummaryStatistics();
     }
 }

@@ -215,7 +215,7 @@ public class FastCosineTransformer implements RealTransformer {
      * @return the real transformed array
      * @throws IllegalArgumentException if any parameters are invalid
      */
-    protected double[] fct(double f[])
+    public double[] fct(double f[])
         throws IllegalArgumentException {
 
         final double transformed[] = new double[f.length];

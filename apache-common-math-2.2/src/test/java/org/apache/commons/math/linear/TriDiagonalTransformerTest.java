@@ -57,7 +57,7 @@ public class TriDiagonalTransformerTest extends TestCase {
         checkAEqualQTQt(MatrixUtils.createRealMatrix(testSquare3));
     }
 
-    private void checkAEqualQTQt(RealMatrix matrix) {
+    public void checkAEqualQTQt(RealMatrix matrix) {
         TriDiagonalTransformer transformer = new TriDiagonalTransformer(matrix);
         RealMatrix q  = transformer.getQ();
         RealMatrix qT = transformer.getQT();
@@ -71,7 +71,7 @@ public class TriDiagonalTransformerTest extends TestCase {
         checkNoAccessBelowDiagonal(testSquare3);
     }
 
-    private void checkNoAccessBelowDiagonal(double[][] data) {
+    public void checkNoAccessBelowDiagonal(double[][] data) {
         double[][] modifiedData = new double[data.length][];
         for (int i = 0; i < data.length; ++i) {
             modifiedData[i] = data[i].clone();
@@ -96,7 +96,7 @@ public class TriDiagonalTransformerTest extends TestCase {
         checkOrthogonal(new TriDiagonalTransformer(MatrixUtils.createRealMatrix(testSquare3)).getQT());
     }
 
-    private void checkOrthogonal(RealMatrix m) {
+    public void checkOrthogonal(RealMatrix m) {
         RealMatrix mTm = m.transpose().multiply(m);
         RealMatrix id  = MatrixUtils.createRealIdentityMatrix(mTm.getRowDimension());
         assertEquals(0, mTm.subtract(id).getNorm(), 1.0e-15);
@@ -107,7 +107,7 @@ public class TriDiagonalTransformerTest extends TestCase {
         checkTriDiagonal(new TriDiagonalTransformer(MatrixUtils.createRealMatrix(testSquare3)).getT());
     }
 
-    private void checkTriDiagonal(RealMatrix m) {
+    public void checkTriDiagonal(RealMatrix m) {
         final int rows = m.getRowDimension();
         final int cols = m.getColumnDimension();
         for (int i = 0; i < rows; ++i) {
@@ -143,7 +143,7 @@ public class TriDiagonalTransformerTest extends TestCase {
                             new double[] { -5, -1.52 });
     }
 
-    private void checkMatricesValues(double[][] matrix, double[][] qRef,
+    public void checkMatricesValues(double[][] matrix, double[][] qRef,
                                      double[] mainDiagnonal,
                                      double[] secondaryDiagonal) {
         TriDiagonalTransformer transformer =

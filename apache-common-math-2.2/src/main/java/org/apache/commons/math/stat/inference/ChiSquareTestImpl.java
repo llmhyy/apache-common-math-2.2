@@ -325,7 +325,7 @@ public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
      * @param in input 2-way table to check
      * @throws IllegalArgumentException if the array is not valid
      */
-    private void checkArray(long[][] in) throws IllegalArgumentException {
+    public void checkArray(long[][] in) throws IllegalArgumentException {
 
         if (in.length < 2) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -351,7 +351,7 @@ public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
      * @throws NullPointerException if input array is null
      * @throws IllegalArgumentException if input array is not rectangular
      */
-    private void checkRectangular(long[][] in) {
+    public void checkRectangular(long[][] in) {
         for (int i = 1; i < in.length; i++) {
             if (in[i].length != in[0].length) {
                 throw MathRuntimeException.createIllegalArgumentException(
@@ -367,7 +367,7 @@ public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
      * @param in array to be tested
      * @exception IllegalArgumentException if one entry is not positive
      */
-    private void checkPositive(double[] in) throws IllegalArgumentException {
+    public void checkPositive(double[] in) throws IllegalArgumentException {
         for (int i = 0; i < in.length; i++) {
             if (in[i] <= 0) {
                 throw MathRuntimeException.createIllegalArgumentException(
@@ -383,7 +383,7 @@ public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
      * @param in array to be tested
      * @exception IllegalArgumentException if one entry is negative
      */
-    private void checkNonNegative(long[] in) throws IllegalArgumentException {
+    public void checkNonNegative(long[] in) throws IllegalArgumentException {
         for (int i = 0; i < in.length; i++) {
             if (in[i] < 0) {
                 throw MathRuntimeException.createIllegalArgumentException(
@@ -399,7 +399,7 @@ public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
      * @param in array to be tested
      * @exception IllegalArgumentException if one entry is negative
      */
-    private void checkNonNegative(long[][] in) throws IllegalArgumentException {
+    public void checkNonNegative(long[][] in) throws IllegalArgumentException {
         for (int i = 0; i < in.length; i ++) {
             for (int j = 0; j < in[i].length; j++) {
                 if (in[i][j] < 0) {

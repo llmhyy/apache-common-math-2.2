@@ -793,15 +793,15 @@ public class FastMathTest {
         Assert.assertTrue("acos() had errors in excess of " + MAX_ERROR_ULP + " ULP", maxerrulp < MAX_ERROR_ULP);
     }
 
-    private Dfp cosh(Dfp x) {
+    public Dfp cosh(Dfp x) {
       return DfpMath.exp(x).add(DfpMath.exp(x.negate())).divide(2);
     }
 
-    private Dfp sinh(Dfp x) {
+    public Dfp sinh(Dfp x) {
       return DfpMath.exp(x).subtract(DfpMath.exp(x.negate())).divide(2);
     }
 
-    private Dfp tanh(Dfp x) {
+    public Dfp tanh(Dfp x) {
       return sinh(x).divide(cosh(x));
     }
 
@@ -893,7 +893,7 @@ public class FastMathTest {
         Assert.assertTrue("cbrt() had errors in excess of " + MAX_ERROR_ULP + " ULP", maxerrulp < MAX_ERROR_ULP);
     }
 
-    private Dfp cbrt(Dfp x) {
+    public Dfp cbrt(Dfp x) {
       boolean negative=false;
 
       if (x.lessThan(field.getZero())) {
@@ -1087,7 +1087,7 @@ public class FastMathTest {
         Assert.assertEquals(Float.NEGATIVE_INFINITY,  FastMath.scalb2(-3.4028235E38f, 2147483647), 0F);
     }
 
-    private boolean compareClassMethods(Class<?> class1, Class<?> class2){
+    public boolean compareClassMethods(Class<?> class1, Class<?> class2){
         boolean allfound = true;
         for(Method method1 : class1.getDeclaredMethods()){
             if (Modifier.isPublic(method1.getModifiers())){

@@ -487,7 +487,7 @@ public final class BlockRealMatrixTest extends TestCase {
         checkGetSubMatrix(m, null, new int[] { 0 }, new int[] { 4 });
     }
 
-    private void checkGetSubMatrix(RealMatrix m, double[][] reference,
+    public void checkGetSubMatrix(RealMatrix m, double[][] reference,
                                    int startRow, int endRow, int startColumn, int endColumn) {
         try {
             RealMatrix sub = m.getSubMatrix(startRow, endRow, startColumn, endColumn);
@@ -503,7 +503,7 @@ public final class BlockRealMatrixTest extends TestCase {
         }
     }
 
-    private void checkGetSubMatrix(RealMatrix m, double[][] reference,
+    public void checkGetSubMatrix(RealMatrix m, double[][] reference,
                                    int[] selectedRows, int[] selectedColumns) {
         try {
             RealMatrix sub = m.getSubMatrix(selectedRows, selectedColumns);
@@ -558,7 +558,7 @@ public final class BlockRealMatrixTest extends TestCase {
         checkCopy(m, null, new int[] { 0 }, new int[] { 4 });
     }
 
-    private void checkCopy(RealMatrix m, double[][] reference,
+    public void checkCopy(RealMatrix m, double[][] reference,
                            int startRow, int endRow, int startColumn, int endColumn) {
         try {
             double[][] sub = (reference == null) ?
@@ -577,7 +577,7 @@ public final class BlockRealMatrixTest extends TestCase {
         }
     }
 
-    private void checkCopy(RealMatrix m, double[][] reference,
+    public void checkCopy(RealMatrix m, double[][] reference,
                            int[] selectedRows, int[] selectedColumns) {
         try {
             double[][] sub = (reference == null) ?
@@ -832,7 +832,7 @@ public final class BlockRealMatrixTest extends TestCase {
 
     }
 
-    private RealVector columnToVector(double[][] column) {
+    public RealVector columnToVector(double[][] column) {
         double[] data = new double[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -957,7 +957,7 @@ public final class BlockRealMatrixTest extends TestCase {
 
     }
 
-    private double[] columnToArray(double[][] column) {
+    public double[] columnToArray(double[][] column) {
         double[] data = new double[column.length];
         for (int i = 0; i < data.length; ++i) {
             data[i] = column[i][0];
@@ -965,7 +965,7 @@ public final class BlockRealMatrixTest extends TestCase {
         return data;
     }
 
-    private void checkArrays(double[] expected, double[] actual) {
+    public void checkArrays(double[] expected, double[] actual) {
         assertEquals(expected.length, actual.length);
         for (int i = 0; i < expected.length; ++i) {
             assertEquals(expected[i], actual[i]);
@@ -1176,12 +1176,12 @@ public final class BlockRealMatrixTest extends TestCase {
     //--------------- -----------------Protected methods
 
     /** verifies that two matrices are close (1-norm) */
-    protected void assertClose(RealMatrix m, RealMatrix n, double tolerance) {
+    public void assertClose(RealMatrix m, RealMatrix n, double tolerance) {
         assertTrue(m.subtract(n).getNorm() < tolerance);
     }
 
     /** verifies that two vectors are close (sup norm) */
-    protected void assertClose(double[] m, double[] n, double tolerance) {
+    public void assertClose(double[] m, double[] n, double tolerance) {
         if (m.length != n.length) {
             fail("vectors not same length");
         }
@@ -1190,7 +1190,7 @@ public final class BlockRealMatrixTest extends TestCase {
         }
     }
 
-    private BlockRealMatrix createRandomMatrix(Random r, int rows, int columns) {
+    public BlockRealMatrix createRandomMatrix(Random r, int rows, int columns) {
         BlockRealMatrix m = new BlockRealMatrix(rows, columns);
         for (int i = 0; i < rows; ++i) {
             for (int j = 0; j < columns; ++j) {

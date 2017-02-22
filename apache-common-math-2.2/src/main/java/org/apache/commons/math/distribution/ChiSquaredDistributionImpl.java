@@ -96,7 +96,7 @@ public class ChiSquaredDistributionImpl
      * Modify the degrees of freedom.
      * @param degreesOfFreedom the new degrees of freedom.
      */
-    private void setDegreesOfFreedomInternal(double degreesOfFreedom) {
+    public void setDegreesOfFreedomInternal(double degreesOfFreedom) {
         gamma.setAlpha(degreesOfFreedom / 2.0);
     }
 
@@ -178,7 +178,7 @@ public class ChiSquaredDistributionImpl
      *         P(X &lt; <i>lower bound</i>) &lt; <code>p</code>
      */
     @Override
-    protected double getDomainLowerBound(double p) {
+    public double getDomainLowerBound(double p) {
         return Double.MIN_VALUE * gamma.getBeta();
     }
 
@@ -192,7 +192,7 @@ public class ChiSquaredDistributionImpl
      *         P(X &lt; <i>upper bound</i>) &gt; <code>p</code>
      */
     @Override
-    protected double getDomainUpperBound(double p) {
+    public double getDomainUpperBound(double p) {
         // NOTE: chi squared is skewed to the left
         // NOTE: therefore, P(X < &mu;) > .5
 
@@ -218,7 +218,7 @@ public class ChiSquaredDistributionImpl
      * @return initial domain value
      */
     @Override
-    protected double getInitialDomain(double p) {
+    public double getInitialDomain(double p) {
         // NOTE: chi squared is skewed to the left
         // NOTE: therefore, P(X < &mu;) > .5
 
@@ -252,7 +252,7 @@ public class ChiSquaredDistributionImpl
      * @param g the new distribution.
      * @since 1.2 made public
      */
-    private void setGammaInternal(GammaDistribution g) {
+    public void setGammaInternal(GammaDistribution g) {
         this.gamma = g;
 
     }
@@ -266,7 +266,7 @@ public class ChiSquaredDistributionImpl
      * @since 2.1
      */
     @Override
-    protected double getSolverAbsoluteAccuracy() {
+    public double getSolverAbsoluteAccuracy() {
         return solverAbsoluteAccuracy;
     }
 

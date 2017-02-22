@@ -213,7 +213,7 @@ public class LinearConstraint implements Serializable {
      * @param oos stream where object should be written
      * @throws IOException if object cannot be written to stream
      */
-    private void writeObject(ObjectOutputStream oos)
+    public void writeObject(ObjectOutputStream oos)
         throws IOException {
         oos.defaultWriteObject();
         MatrixUtils.serializeRealVector(coefficients, oos);
@@ -224,7 +224,7 @@ public class LinearConstraint implements Serializable {
      * @throws ClassNotFoundException if a class in the stream cannot be found
      * @throws IOException if object cannot be read from the stream
      */
-    private void readObject(ObjectInputStream ois)
+    public void readObject(ObjectInputStream ois)
       throws ClassNotFoundException, IOException {
         ois.defaultReadObject();
         MatrixUtils.deserializeRealVector(this, "coefficients", ois);

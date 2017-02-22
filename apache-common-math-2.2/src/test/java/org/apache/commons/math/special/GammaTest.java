@@ -31,7 +31,7 @@ public class GammaTest extends TestCase {
         super(name);
     }
 
-    private void testRegularizedGamma(double expected, double a, double x) {
+    public void testRegularizedGamma(double expected, double a, double x) {
         try {
             double actualP = Gamma.regularizedGammaP(a, x);
             double actualQ = Gamma.regularizedGammaQ(a, x);
@@ -42,7 +42,7 @@ public class GammaTest extends TestCase {
         }
     }
 
-    private void testLogGamma(double expected, double x) {
+    public void testLogGamma(double expected, double x) {
         double actual = Gamma.logGamma(x);
         TestUtils.assertEquals(expected, actual, 10e-15);
     }
@@ -145,7 +145,7 @@ public class GammaTest extends TestCase {
         }
     }
 
-    private void checkRelativeError(String msg, double expected, double actual, double tolerance) {
+    public void checkRelativeError(String msg, double expected, double actual, double tolerance) {
         assertEquals(msg, expected, actual, FastMath.abs(tolerance * actual));
     }
 }

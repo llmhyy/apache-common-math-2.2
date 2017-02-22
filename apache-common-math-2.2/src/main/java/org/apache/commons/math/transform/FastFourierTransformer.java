@@ -298,7 +298,7 @@ public class FastFourierTransformer implements Serializable {
      * @return the complex transformed array
      * @throws IllegalArgumentException if any parameters are invalid
      */
-    protected Complex[] fft(double f[], boolean isInverse)
+    public Complex[] fft(double f[], boolean isInverse)
         throws IllegalArgumentException {
 
         verifyDataSet(f);
@@ -343,7 +343,7 @@ public class FastFourierTransformer implements Serializable {
      * @return the complex transformed array
      * @throws IllegalArgumentException if any parameters are invalid
      */
-    protected Complex[] fft(Complex data[])
+    public Complex[] fft(Complex data[])
         throws IllegalArgumentException {
 
         final int n = data.length;
@@ -563,7 +563,7 @@ public class FastFourierTransformer implements Serializable {
      * @param subVector recursion subvector
      * @throws IllegalArgumentException if any dimension is not a power of two
      */
-    private void mdfft(MultiDimensionalComplexMatrix mdcm, boolean forward,
+    public void mdfft(MultiDimensionalComplexMatrix mdcm, boolean forward,
                        int d, int[] subVector)
         throws IllegalArgumentException {
         int[] dimensionSize = mdcm.getDimensionSizes();
@@ -740,7 +740,7 @@ public class FastFourierTransformer implements Serializable {
          * Copy contents of current array into mdcm.
          * @param mdcm array where to copy data
          */
-        private void clone(MultiDimensionalComplexMatrix mdcm) {
+        public void clone(MultiDimensionalComplexMatrix mdcm) {
             int[] vector = new int[dimensionSize.length];
             int size = 1;
             for (int i = 0; i < dimensionSize.length; i++) {

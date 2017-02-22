@@ -111,7 +111,7 @@ public class NonLinearConjugateGradientOptimizer
 
     /** {@inheritDoc} */
     @Override
-    protected RealPointValuePair doOptimize()
+    public RealPointValuePair doOptimize()
         throws FunctionEvaluationException, OptimizationException, IllegalArgumentException {
         try {
 
@@ -221,7 +221,7 @@ public class NonLinearConjugateGradientOptimizer
      * @exception FunctionEvaluationException if the function cannot be computed
      * @exception OptimizationException if no bracket can be found
      */
-    private double findUpperBound(final UnivariateRealFunction f,
+    public double findUpperBound(final UnivariateRealFunction f,
                                   final double a, final double h)
         throws FunctionEvaluationException, OptimizationException {
         final double yA = f.value(a);

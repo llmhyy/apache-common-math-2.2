@@ -94,7 +94,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
 
     /** Build an instance with a null name.
      */
-    protected AbstractIntegrator() {
+    public AbstractIntegrator() {
         this(null);
     }
 
@@ -144,7 +144,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @return true if there is at least one event handler or if
      * one of the step handlers requires dense output
      */
-    protected boolean requiresDenseOutput() {
+    public boolean requiresDenseOutput() {
         if (!eventsStates.isEmpty()) {
             return true;
         }
@@ -183,7 +183,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
 
     /** Reset the number of evaluations to zero.
      */
-    protected void resetEvaluations() {
+    public void resetEvaluations() {
         evaluations = 0;
     }
 
@@ -191,7 +191,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @param equations differential equations to integrate
      * @see #computeDerivatives(double, double[], double[])
      */
-    protected void setEquations(final FirstOrderDifferentialEquations equations) {
+    public void setEquations(final FirstOrderDifferentialEquations equations) {
         this.equations = equations;
     }
 
@@ -217,7 +217,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @param stateInitialized new value for the flag
      * @since 2.2
      */
-    protected void setStateInitialized(final boolean stateInitialized) {
+    public void setStateInitialized(final boolean stateInitialized) {
         this.statesInitialized = stateInitialized;
     }
 
@@ -233,7 +233,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @exception IntegratorException if the value of one event state cannot be evaluated
      * @since 2.2
      */
-    protected double acceptStep(final AbstractStepInterpolator interpolator,
+    public double acceptStep(final AbstractStepInterpolator interpolator,
                                 final double[] y, final double[] yDot, final double tEnd)
         throws DerivativeException, IntegratorException {
 
@@ -353,7 +353,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @param y placeholder where to put the state vector
      * @exception IntegratorException if some inconsistency is detected
      */
-    protected void sanityChecks(final FirstOrderDifferentialEquations ode,
+    public void sanityChecks(final FirstOrderDifferentialEquations ode,
                                 final double t0, final double[] y0,
                                 final double t, final double[] y)
         throws IntegratorException {
@@ -388,7 +388,7 @@ public abstract class AbstractIntegrator implements FirstOrderIntegrator {
      * @deprecated as of 2.2, this method is not used any more
      */
     @Deprecated
-    protected CombinedEventsManager addEndTimeChecker(final double startTime,
+    public CombinedEventsManager addEndTimeChecker(final double startTime,
                                                       final double endTime,
                                                       final CombinedEventsManager manager) {
         CombinedEventsManager newManager = new CombinedEventsManager();

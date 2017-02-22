@@ -105,7 +105,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @return a two element array containing the lower and upper bounds of the
      *         hypergeometric distribution.
      */
-    private int[] getDomain(int n, int m, int k) {
+    public int[] getDomain(int n, int m, int k) {
         return new int[] { getLowerDomain(n, m, k), getUpperDomain(m, k) };
     }
 
@@ -118,7 +118,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      *         <code>p</code>
      */
     @Override
-    protected int getDomainLowerBound(double p) {
+    public int getDomainLowerBound(double p) {
         return getLowerDomain(populationSize, numberOfSuccesses, sampleSize);
     }
 
@@ -131,7 +131,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      *         <code>p</code>
      */
     @Override
-    protected int getDomainUpperBound(double p) {
+    public int getDomainUpperBound(double p) {
         return getUpperDomain(sampleSize, numberOfSuccesses);
     }
 
@@ -144,7 +144,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @param k the sample size.
      * @return the lowest domain value of the hypergeometric distribution.
      */
-    private int getLowerDomain(int n, int m, int k) {
+    public int getLowerDomain(int n, int m, int k) {
         return FastMath.max(0, m - (n - k));
     }
 
@@ -183,7 +183,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @param k the sample size.
      * @return the highest domain value of the hypergeometric distribution.
      */
-    private int getUpperDomain(int m, int k) {
+    public int getUpperDomain(int m, int k) {
         return FastMath.min(k, m);
     }
 
@@ -225,7 +225,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @param x the value at which the PMF is evaluated.
      * @return PMF for the distribution.
      */
-    private double probability(int n, int m, int k, int x) {
+    public double probability(int n, int m, int k, int x) {
         return FastMath.exp(MathUtils.binomialCoefficientLog(m, x) +
                MathUtils.binomialCoefficientLog(n - m, k - x) -
                MathUtils.binomialCoefficientLog(n, k));
@@ -249,7 +249,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @param num the new number of successes.
      * @throws IllegalArgumentException if <code>num</code> is negative.
      */
-    private void setNumberOfSuccessesInternal(int num) {
+    public void setNumberOfSuccessesInternal(int num) {
         if (num < 0) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.NEGATIVE_NUMBER_OF_SUCCESSES, num);
@@ -275,7 +275,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @param size the new population size.
      * @throws IllegalArgumentException if <code>size</code> is not positive.
      */
-    private void setPopulationSizeInternal(int size) {
+    public void setPopulationSizeInternal(int size) {
         if (size <= 0) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.NOT_POSITIVE_POPULATION_SIZE, size);
@@ -300,7 +300,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @param size the new sample size.
      * @throws IllegalArgumentException if <code>size</code> is negative.
      */
-    private void setSampleSizeInternal(int size) {
+    public void setSampleSizeInternal(int size) {
         if (size < 0) {
             throw MathRuntimeException.createIllegalArgumentException(
                     LocalizedFormats.NOT_POSITIVE_SAMPLE_SIZE, size);
@@ -344,7 +344,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @param k the sample size.
      * @return P(x0 &le; X &le; x1).
      */
-    private double innerCumulativeProbability(int x0, int x1, int dx, int n,
+    public double innerCumulativeProbability(int x0, int x1, int dx, int n,
             int m, int k) {
         double ret = probability(n, m, k, x0);
         while (x0 != x1) {
@@ -397,7 +397,7 @@ public class HypergeometricDistributionImpl extends AbstractIntegerDistribution
      * @return the mean
      * @since 2.2
      */
-    protected double getNumericalMean() {
+    public double getNumericalMean() {
         return (double)(getSampleSize() * getNumberOfSuccesses()) / (double)getPopulationSize();
     }
 

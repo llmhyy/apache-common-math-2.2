@@ -26,7 +26,7 @@ public final class SynchronizedMultivariateSummaryStatisticsTest extends Multiva
     }
 
     @Override
-    protected MultivariateSummaryStatistics createMultivariateSummaryStatistics(int k, boolean isCovarianceBiasCorrected) {
+    public MultivariateSummaryStatistics createMultivariateSummaryStatistics(int k, boolean isCovarianceBiasCorrected) {
         return new SynchronizedMultivariateSummaryStatistics(k, isCovarianceBiasCorrected);
     }
 

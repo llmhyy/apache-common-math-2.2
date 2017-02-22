@@ -48,19 +48,19 @@ public class OLSMultipleLinearRegressionTest extends MultipleLinearRegressionAbs
     }
 
     @Override
-    protected OLSMultipleLinearRegression createRegression() {
+    public OLSMultipleLinearRegression createRegression() {
         OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
         regression.newSampleData(y, x);
         return regression;
     }
 
     @Override
-    protected int getNumberOfRegressors() {
+    public int getNumberOfRegressors() {
         return x[0].length + 1;
     }
 
     @Override
-    protected int getSampleSize() {
+    public int getSampleSize() {
         return y.length;
     }
     
@@ -455,7 +455,7 @@ public class OLSMultipleLinearRegressionTest extends MultipleLinearRegressionAbs
      * Verifies that calculateYVariance and calculateResidualVariance return consistent
      * values with direct variance computation from Y, residuals, respectively.
      */
-    protected void checkVarianceConsistency(OLSMultipleLinearRegression model) throws Exception {
+    public void checkVarianceConsistency(OLSMultipleLinearRegression model) throws Exception {
         // Check Y variance consistency
         TestUtils.assertEquals(StatUtils.variance(model.Y.getData()), model.calculateYVariance(), 0);
         

@@ -65,7 +65,7 @@ public abstract class AbstractUnivariateStatistic
      * Get a reference to the stored data array.
      * @return reference to the stored data array (may be null)
      */
-    protected double[] getDataRef() {
+    public double[] getDataRef() {
         return storedData;
     }
 
@@ -129,7 +129,7 @@ public abstract class AbstractUnivariateStatistic
      * @return true if the parameters are valid and designate a subarray of positive length
      * @throws IllegalArgumentException if the indices are invalid or the array is null
      */
-    protected boolean test(
+    public boolean test(
         final double[] values,
         final int begin,
         final int length) {
@@ -188,7 +188,7 @@ public abstract class AbstractUnivariateStatistic
      * @throws IllegalArgumentException if the indices are invalid or the array is null
      * @since 2.1
      */
-    protected boolean test(
+    public boolean test(
         final double[] values,
         final double[] weights,
         final int begin,

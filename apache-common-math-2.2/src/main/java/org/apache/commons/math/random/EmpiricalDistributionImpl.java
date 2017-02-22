@@ -320,7 +320,7 @@ public class EmpiricalDistributionImpl implements Serializable, EmpiricalDistrib
      * @param in object providing access to the data
      * @throws IOException  if an IO error occurs
      */
-    private void fillBinStats(Object in) throws IOException {
+    public void fillBinStats(Object in) throws IOException {
         // Set up grid
         min = sampleStats.getMin();
         max = sampleStats.getMax();
@@ -357,7 +357,7 @@ public class EmpiricalDistributionImpl implements Serializable, EmpiricalDistrib
      * @param value  the value whose bin we are trying to find
      * @return the index of the bin containing the value
      */
-    private int findBin(double value) {
+    public int findBin(double value) {
         return FastMath.min(
                 FastMath.max((int) FastMath.ceil((value- min) / delta) - 1, 0),
                 binCount - 1);

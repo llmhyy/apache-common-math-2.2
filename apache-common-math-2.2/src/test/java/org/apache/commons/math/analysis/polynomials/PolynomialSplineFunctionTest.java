@@ -133,7 +133,7 @@ public class PolynomialSplineFunctionTest extends TestCase {
      *  Do linear search to find largest knot point less than or equal to x.
      *  Implementation does binary search.
      */
-     protected int findKnot(double[] knots, double x) {
+     public int findKnot(double[] knots, double x) {
          if (x < knots[0] || x >= knots[knots.length -1]) {
              throw new IllegalArgumentException("x is out of range");
          }

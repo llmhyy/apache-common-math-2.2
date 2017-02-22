@@ -88,7 +88,7 @@ public class PascalDistributionImpl extends AbstractIntegerDistribution
      * @throws IllegalArgumentException if <code>successes</code> is not
      *         positive.
      */
-    private void setNumberOfSuccessesInternal(int successes) {
+    public void setNumberOfSuccessesInternal(int successes) {
         if (successes < 0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.NEGATIVE_NUMBER_OF_SUCCESSES,
@@ -115,7 +115,7 @@ public class PascalDistributionImpl extends AbstractIntegerDistribution
      * @throws IllegalArgumentException if <code>p</code> is not a valid
      *         probability.
      */
-    private void setProbabilityOfSuccessInternal(double p) {
+    public void setProbabilityOfSuccessInternal(double p) {
         if (p < 0.0 || p > 1.0) {
             throw MathRuntimeException.createIllegalArgumentException(
                   LocalizedFormats.OUT_OF_RANGE_SIMPLE, p, 0.0, 1.0);
@@ -131,7 +131,7 @@ public class PascalDistributionImpl extends AbstractIntegerDistribution
      *         <code>p</code>
      */
     @Override
-    protected int getDomainLowerBound(double p) {
+    public int getDomainLowerBound(double p) {
         return -1;
     }
 
@@ -143,7 +143,7 @@ public class PascalDistributionImpl extends AbstractIntegerDistribution
      *         <code>p</code>
      */
     @Override
-    protected int getDomainUpperBound(double p) {
+    public int getDomainUpperBound(double p) {
         // use MAX - 1 because MAX causes loop
         return Integer.MAX_VALUE - 1;
     }

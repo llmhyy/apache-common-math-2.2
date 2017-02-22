@@ -85,7 +85,7 @@ public class DummyStepInterpolator
    * @return a copy of the finalized instance
    */
   @Override
-  protected StepInterpolator doCopy() {
+  public StepInterpolator doCopy() {
     return new DummyStepInterpolator(this);
   }
 
@@ -98,7 +98,7 @@ public class DummyStepInterpolator
    * the current time
    */
   @Override
-  protected void computeInterpolatedStateAndDerivatives(final double theta, final double oneMinusThetaH) {
+  public void computeInterpolatedStateAndDerivatives(final double theta, final double oneMinusThetaH) {
       System.arraycopy(currentState,      0, interpolatedState,       0, currentState.length);
       System.arraycopy(currentDerivative, 0, interpolatedDerivatives, 0, currentDerivative.length);
   }

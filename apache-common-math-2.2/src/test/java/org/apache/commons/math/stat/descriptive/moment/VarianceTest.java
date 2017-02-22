@@ -91,7 +91,7 @@ public class VarianceTest extends StorelessUnivariateStatisticAbstractTest{
     /**
      * Definitional formula for population variance
      */
-    protected double populationVariance(double[] v) {
+    public double populationVariance(double[] v) {
         double mean = new Mean().evaluate(v);
         double sum = 0;
         for (int i = 0; i < v.length; i++) {

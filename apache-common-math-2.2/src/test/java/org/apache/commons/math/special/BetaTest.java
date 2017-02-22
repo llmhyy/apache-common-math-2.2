@@ -33,7 +33,7 @@ public class BetaTest extends TestCase {
         super(name);
     }
 
-    private void testRegularizedBeta(double expected, double x, double a,
+    public void testRegularizedBeta(double expected, double x, double a,
         double b)
     {
         try {
@@ -44,7 +44,7 @@ public class BetaTest extends TestCase {
         }
     }
 
-    private void testLogBeta(double expected, double a, double b) {
+    public void testLogBeta(double expected, double a, double b) {
         double actual = Beta.logBeta(a, b);
         TestUtils.assertEquals(expected, actual, 10e-15);
     }
