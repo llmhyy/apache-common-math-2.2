@@ -125,4 +125,8 @@ public class BigRealTest {
         }
     }
 
+    public static void main(String[] args){
+    	BigRealTest test = new BigRealTest();
+    	test.testSerial();
+    }
 }
