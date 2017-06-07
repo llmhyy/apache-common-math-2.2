@@ -216,5 +216,20 @@ public class Sum extends AbstractStorelessUnivariateStatistic implements Seriali
         dest.n = source.n;
         dest.value = source.value;
     }
+    
+    public static void main(String[] args) {
+
+        double[] testArray =
+            { 12.5, 12.0, 11.8, 14.2, 14.9, 14.5, 21.0,  8.2, 10.3, 11.3,
+                    14.1,  9.9, 12.2, 12.0, 12.1, 11.0, 19.8, 11.0, 10.0,  8.8,
+                     9.0, 12.3 };
+        double[] testWeightsArray =
+            {  1.5,  0.8,  1.2,  0.4,  0.8,  1.8,  1.2,  1.1,  1.0,  0.7,
+                    1.3,  0.6,  0.7,  1.3,  0.7,  1.0,  0.4,  0.1,  1.4,  0.9,
+                    1.1,  0.3 };
+        Sum sum = new Sum();
+        sum.evaluate(testArray, 0, testArray.length);
+        System.out.println(251.05d +","+ sum.evaluate(testArray, testWeightsArray, 0, testArray.length) +","+ 10E-12);
+	}
 
 }

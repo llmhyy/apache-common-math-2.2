@@ -607,4 +607,28 @@ public class Variance extends AbstractStorelessUnivariateStatistic implements Se
         dest.isBiasCorrected = source.isBiasCorrected;
         dest.incMoment = source.incMoment;
     }
+    
+    public static void main(String[] args) {
+
+        double[] values = {-1.0d, 3.1d, 4.0d, -2.1d, 22d, 11.7d, 3d, 14d};
+        double[] weights = {-1.0d, 0.31d, 0.4d, -0.21d, 2.2d, 1.17d, 0.3d, 1.4d};
+        SecondMoment m = new SecondMoment();  // side effect is to add values
+        Variance v1 = new Variance();
+        v1.setBiasCorrected(false);
+        v1.evaluate(values, weights, 1.0, 2, 6);
+        System.out.println(populationVariance(values) == v1.evaluate(values));
+        System.out.println(v1.evaluate(values) == 1E-14);
+        v1.incrementAll(values);
+        System.out.println(populationVariance(values) == v1.evaluate(values));
+        System.out.println(v1.evaluate(values) == 1E-14);
+	}
+    
+    protected static double populationVariance(double[] v) {
+        double mean = new Mean().evaluate(v);
+        double sum = 0;
+        for (int i = 0; i < v.length; i++) {
+           sum += (v[i] - mean) * (v[i] - mean);
+        }
+        return sum / v.length;
+    }
 }

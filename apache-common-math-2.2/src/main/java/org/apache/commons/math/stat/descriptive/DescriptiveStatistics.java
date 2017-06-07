@@ -718,4 +718,9 @@ public class DescriptiveStatistics implements StatisticalSummary, Serializable {
         dest.skewnessImpl = source.skewnessImpl;
         dest.percentileImpl = source.percentileImpl;
     }
+    
+    public static void main(String[] args) {
+    	DescriptiveStatistics descriptiveStatistics = new DescriptiveStatistics();
+    	descriptiveStatistics.addValue(-1.0);
+	}
 }

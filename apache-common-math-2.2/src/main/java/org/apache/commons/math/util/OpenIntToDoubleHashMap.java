@@ -21,7 +21,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ConcurrentModificationException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import org.apache.commons.math.MathRuntimeException;
 import org.apache.commons.math.exception.util.LocalizedFormats;
@@ -595,6 +599,27 @@ public class OpenIntToDoubleHashMap implements Serializable {
         stream.defaultReadObject();
         count = 0;
     }
+    
+    public static void main(String[] args) {
+    	Map<Integer, Double> javaMap = new HashMap<Integer, Double>();
+        javaMap.put(50, 100.0);
+        javaMap.put(75, 75.0);
+        javaMap.put(25, 500.0);
+        javaMap.put(Integer.MAX_VALUE, Double.MAX_VALUE);
+        javaMap.put(0, -1.0);
+        javaMap.put(1, 0.0);
+        javaMap.put(33, -0.1);
+        javaMap.put(23234234, -242343.0);
+        javaMap.put(23321, Double.MIN_VALUE);
+        javaMap.put(-4444, 332.0);
+        javaMap.put(-1, -2323.0);
+        javaMap.put(Integer.MIN_VALUE, 44.0);
+        OpenIntToDoubleHashMap map = new OpenIntToDoubleHashMap();
+        for (Map.Entry<Integer, Double> mapEntry : javaMap.entrySet()) {
+            map.put(mapEntry.getKey(), mapEntry.getValue());
+        }
+
+	}
 
 
 }

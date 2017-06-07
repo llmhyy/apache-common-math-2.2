@@ -912,4 +912,10 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
        }
 
     }
+    
+    public static void main(String[] args) {
+		OpenMapRealVector vector = new OpenMapRealVector();
+        OpenMapRealVector v = new OpenMapRealVector(new double[] { 0, 1, 2 });
+		System.out.println(vector.getLInfDistance(v));
+	}
 }

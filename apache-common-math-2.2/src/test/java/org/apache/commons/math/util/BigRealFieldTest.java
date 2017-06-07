@@ -40,10 +40,5 @@ public class BigRealFieldTest {
         BigRealField field = BigRealField.getInstance();
         assertTrue(field == TestUtils.serializeAndRecover(field));
     }
-    
-    public static void main(String[] args){
-    	BigRealFieldTest test = new BigRealFieldTest();
-    	test.testSerial();
-    }
 
 }
