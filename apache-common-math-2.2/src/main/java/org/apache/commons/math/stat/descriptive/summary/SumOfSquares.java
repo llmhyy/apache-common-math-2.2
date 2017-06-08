@@ -150,5 +150,17 @@ public class SumOfSquares extends AbstractStorelessUnivariateStatistic implement
         dest.n = source.n;
         dest.value = source.value;
     }
+    
+    public static void main(String[] args) {
+
+        SumOfSquares sumSq = new SumOfSquares();
+
+        double[] testArray =
+            { 12.5, 12.0, 11.8, 14.2, 14.9, 14.5, 21.0,  8.2, 10.3, 11.3,
+                    14.1,  9.9, 12.2, 12.0, 12.1, 11.0, 19.8, 11.0, 10.0,  8.8,
+                     9.0, 12.3 };
+        
+        System.out.println(sumSq.evaluate(testArray, 0, testArray.length));
+	}
 
 }

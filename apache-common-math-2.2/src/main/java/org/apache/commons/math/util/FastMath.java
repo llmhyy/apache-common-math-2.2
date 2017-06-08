@@ -16,6 +16,11 @@
  */
 package org.apache.commons.math.util;
 
+import org.apache.commons.math.dfp.DfpMath;
+import org.apache.commons.math.random.MersenneTwister;
+import org.apache.commons.math.random.RandomGenerator;
+import org.junit.Assert;
+
 /**
  * Faster, more accurate, portable alternative to {@link StrictMath}.
  * <p>
@@ -4044,4 +4049,78 @@ public class FastMath {
         return ((Float.floatToIntBits(f) >>> 23) & 0xff) - 127;
     }
 
+    public static void main(String[] args) {
+
+        double maxErr = 0;
+        for (double x = -30; x < 30; x += 0.01) {
+            maxErr = FastMath.max(maxErr, FastMath.abs(x - FastMath.sinh(FastMath.asinh(x))) / (2 * FastMath.ulp(x)));
+        }
+        
+        double y1 = 1.2713504628280707e10;
+        double x1 = -5.674940885228782e-10;
+        System.out.println(FastMath.atan2(y1, x1));
+        double y2 = 0.0;
+        double x2 = Double.POSITIVE_INFINITY;
+        System.out.println(FastMath.atan2(y2, x2));
+
+        for (double x = -30; x < 30; x += 0.01) {
+            maxErr = FastMath.max(maxErr, FastMath.abs(x - FastMath.cos(FastMath.asinh(x))) / (2 * FastMath.ulp(x)));
+        }
+        
+        for (double x = -1; x < 30; x += 5) {
+            FastMath.hypot(x, 20);
+        }
+        
+        int NUMBER_OF_TRIALS = 1000;
+        RandomGenerator generator = new MersenneTwister(6176597458463500194l);
+        for (int i = 0; i < NUMBER_OF_TRIALS; i++) {
+            double x = Math.exp(generator.nextDouble() * 10.0 - 5.0) * generator.nextDouble();
+            // double x = generator.nextDouble()*2.0;
+            double tst = FastMath.log1p(x);
+        }
+        
+
+        System.out.format("%s,%s,%s %n",16.0, FastMath.nextAfter1(15.999999999999998, 34.27555555555555), 0.0);
+        System.out.format("%s,%s,%s %n",-15.999999999999996, FastMath.nextAfter1(-15.999999999999998, 34.27555555555555), 0.0);
+        System.out.format("%s,%s,%s %n",-2.3089223996676606E-4, FastMath.nextAfter1(-2.3089223996676606E-4, -2.3089223996676606E-4), 0.0);
+        System.out.format("%s,%s,%s %n",-2.3089223996676603E-4, FastMath.nextAfter1(-2.3089223996676606E-4, -2.3089223996676603E-4), 0.0);
+        
+
+        System.out.format("%s,%s,%s %n",-Float.MAX_VALUE,FastMath.nextAfter2(Float.NEGATIVE_INFINITY, 0F), 0F);
+        System.out.format("%s,%s,%s %n",Float.MAX_VALUE,FastMath.nextAfter2(Float.POSITIVE_INFINITY, 0F), 0F);
+        System.out.format("%s,%s,%s %n",0F, FastMath.nextAfter2(Float.MIN_VALUE, -1F), 0F);
+        System.out.format("%s,%s,%s %n",0F, FastMath.nextAfter2(-Float.MIN_VALUE, 1F), 0F);
+        
+
+        double x;
+        x = FastMath.pow(-1.0, 0.0);
+        x = FastMath.pow(Math.PI, 1.0);
+        x = FastMath.pow(0.0, 0.5);
+        
+
+        System.out.format("%s,%s,%s %n",2.5269841324701218E-175,  FastMath.scalb1(2.2250738585072014E-308, 442), 0D);
+        System.out.format("%s,%s,%s %n",1.307993905256674E297,    FastMath.scalb1(1.1102230246251565E-16, 1040), 0D);
+        System.out.format("%s,%s,%s %n",Double.POSITIVE_INFINITY, FastMath.scalb1( 1.1102230246251565E-16,  2147483647), 0D);
+        System.out.format("%s,%s,%s %n",Double.NEGATIVE_INFINITY, FastMath.scalb1(-2.2250738585072014E-308, 2147483647), 0D);
+        
+
+        System.out.format("%s,%s,%s %n",0f,                       FastMath.scalb2(Float.MIN_VALUE,  -30), 0F);
+        System.out.format("%s,%s,%s %n",2 * Float.MIN_VALUE,      FastMath.scalb2(Float.MIN_VALUE,    1), 0F);
+        System.out.format("%s,%s,%s %n",7.555786e22f,             FastMath.scalb2(Float.MAX_VALUE,  -52), 0F);
+        System.out.format("%s,%s,%s %n",Float.POSITIVE_INFINITY,  FastMath.scalb2(3.4028235E38f,  2147483647), 0F);
+        
+        for (int i = 0; i < NUMBER_OF_TRIALS; i++) {
+            /* double x = 1.0 + i/1024.0/2.0; */
+            // double x = ((generator.nextDouble() * 1416.0) - 708.0) * generator.nextDouble();
+            x = ((generator.nextDouble() * Math.PI) - Math.PI / 2.0) *
+                       Math.pow(2, 21) * generator.nextDouble();
+            System.out.println(FastMath.sin(x));
+        }
+        
+        for (int i = 0; i < NUMBER_OF_TRIALS; i++) {
+        	x = ((generator.nextDouble() * Math.PI) - Math.PI / 2.0) *
+                       Math.pow(2, 12) * generator.nextDouble();
+        	System.out.println(FastMath.tan(x));
+        }
+	}
 }

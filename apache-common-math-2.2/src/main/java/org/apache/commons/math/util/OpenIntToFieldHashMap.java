@@ -21,12 +21,19 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ConcurrentModificationException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Set;
 
 import org.apache.commons.math.Field;
 import org.apache.commons.math.FieldElement;
 import org.apache.commons.math.MathRuntimeException;
 import org.apache.commons.math.exception.util.LocalizedFormats;
+import org.apache.commons.math.fraction.Fraction;
+import org.apache.commons.math.fraction.FractionConversionException;
+import org.apache.commons.math.fraction.FractionField;
 
 /**
  * Open addressed map from int to FieldElement.
@@ -616,5 +623,26 @@ public class OpenIntToFieldHashMap<T extends FieldElement<T>> implements Seriali
     public T[] buildArray(final int length) {
         return (T[]) Array.newInstance(field.getZero().getClass(), length);
     }
+    
+    public static void main(String[] args) throws FractionConversionException {
+    	Map<Integer, Fraction> javaMap = new HashMap<Integer, Fraction>();
+    	javaMap.put(50, new Fraction(100.0));
+    	javaMap.put(75, new Fraction(75.0));
+    	javaMap.put(25, new Fraction(500.0));
+    	javaMap.put(Integer.MAX_VALUE, new Fraction(Integer.MAX_VALUE));
+    	javaMap.put(0, new Fraction(-1.0));
+    	javaMap.put(1, new Fraction(0.0));
+    	javaMap.put(33, new Fraction(-0.1));
+    	javaMap.put(23234234, new Fraction(-242343.0));
+    	javaMap.put(23321, new Fraction (Integer.MIN_VALUE));
+    	javaMap.put(-4444, new Fraction(332.0));
+    	javaMap.put(-1, new Fraction(-2323.0));
+    	javaMap.put(Integer.MIN_VALUE, new Fraction(44.0));
+    	FractionField field = FractionField.getInstance();
+        OpenIntToFieldHashMap<Fraction> map = new OpenIntToFieldHashMap<Fraction>(field);
+        for (Map.Entry<Integer, Fraction> mapEntry : javaMap.entrySet()) {
+            map.put(mapEntry.getKey(), mapEntry.getValue());        }
+	        
+	}
 
 }

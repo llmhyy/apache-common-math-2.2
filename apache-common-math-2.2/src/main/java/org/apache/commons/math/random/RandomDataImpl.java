@@ -17,6 +17,7 @@
 
 package org.apache.commons.math.random;
 
+import java.awt.image.renderable.RenderContext;
 import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -44,6 +45,8 @@ import org.apache.commons.math.exception.NumberIsTooLargeException;
 import org.apache.commons.math.exception.util.LocalizedFormats;
 import org.apache.commons.math.util.FastMath;
 import org.apache.commons.math.util.MathUtils;
+
+import sun.applet.Main;
 
 /**
  * Implements the {@link RandomData} interface using a {@link RandomGenerator}
@@ -961,6 +964,12 @@ public class RandomDataImpl implements RandomData, Serializable {
             natural[i] = i;
         }
         return natural;
+    }
+    
+    public static void main(String[] args){
+    	RandomDataImpl impl = new RandomDataImpl();
+    	int[] list = new int[]{1,2,3,4,5,6};
+    	impl.shuffle(list, 0);
     }
 
 }

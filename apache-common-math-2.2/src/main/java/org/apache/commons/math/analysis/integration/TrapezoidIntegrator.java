@@ -16,9 +16,12 @@
  */
 package org.apache.commons.math.analysis.integration;
 
+import org.apache.commons.math.ConvergenceException;
 import org.apache.commons.math.FunctionEvaluationException;
 import org.apache.commons.math.MathRuntimeException;
 import org.apache.commons.math.MaxIterationsExceededException;
+import org.apache.commons.math.analysis.MonitoredFunction;
+import org.apache.commons.math.analysis.SinFunction;
 import org.apache.commons.math.analysis.UnivariateRealFunction;
 import org.apache.commons.math.exception.util.LocalizedFormats;
 import org.apache.commons.math.util.FastMath;
@@ -138,5 +141,17 @@ public class TrapezoidIntegrator extends UnivariateRealIntegratorImpl {
                     LocalizedFormats.INVALID_ITERATIONS_LIMITS,
                     0, 64);
         }
+    }
+    public static void main(String[] args) throws ConvergenceException, FunctionEvaluationException, IllegalArgumentException{
+
+        UnivariateRealFunction f = new SinFunction();
+        UnivariateRealIntegrator integrator = new TrapezoidIntegrator();
+        double min, max, result;
+
+        min = 0; max = FastMath.PI; 
+        System.out.println(integrator.integrate(f, min, max));
+
+        min = -FastMath.PI/3; max = 0;
+        System.out.println(integrator.integrate(f, min, max));
     }
 }

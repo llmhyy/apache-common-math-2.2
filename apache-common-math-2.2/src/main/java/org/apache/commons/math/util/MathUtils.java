@@ -2261,5 +2261,81 @@ public final class MathUtils {
     }
     return norm;
 }
+    public static void main(String[] args) {
+
+        long[] bcoef5 = {
+            1,
+            5,
+            10,
+            10,
+            5,
+            1 };
+        long[] bcoef6 = {
+            1,
+            6,
+            15,
+            20,
+            15,
+            6,
+            1 };
+        for (int i = 0; i < 6; i++) {
+        	System.out.format("%s,%s %n", bcoef5[i], MathUtils.binomialCoefficient(5, i));
+        }
+        for (int i = 0; i < 7; i++) {
+        	System.out.format("%s,%s %n", bcoef6[i], MathUtils.binomialCoefficient(6, i));
+        }        
+
+        System.out.format("%s,%s%n", 0, MathUtils.compareTo(152.33, 152.32, .011));
+        System.out.format("%s%n", MathUtils.compareTo(152.308, 152.32, .011) < 0);
+        System.out.format("%s%n", MathUtils.compareTo(152.33, 152.318, .011) > 0);
+        
+
+        double[] testArray = {
+            Double.NaN,
+            Double.POSITIVE_INFINITY,
+            Double.NEGATIVE_INFINITY,
+            1d,
+            0d };
+        for (int i = 0; i < testArray.length; i++) {
+            for (int j = 0; j < testArray.length; j++) {
+                if (i == j) {
+                	System.out.format("%s%n", MathUtils.equals(testArray[i], testArray[j]));
+                	System.out.format("%s%n", MathUtils.equals(testArray[j], testArray[i]));
+                } else {
+                	System.out.format("%s%n", !MathUtils.equals(testArray[i], testArray[j]));
+                	System.out.format("%s%n", !MathUtils.equals(testArray[j], testArray[i]));
+                }
+            }
+        }
+        
+
+        double[] testArray1 = {
+            Double.NaN,
+            Double.POSITIVE_INFINITY,
+            Double.NEGATIVE_INFINITY,
+            1d,
+            0d };
+        for (int i = 0; i < testArray1.length; i++) {
+            for (int j = 0; j < testArray1.length; j++) {
+                if (i == j) {
+                	System.out.format("%s%n", MathUtils.equalsIncludingNaN(testArray1[i], testArray1[j]));
+                	System.out.format("%s%n", MathUtils.equalsIncludingNaN(testArray1[j], testArray1[i]));
+                } else {
+                	System.out.format("%s%n", !MathUtils.equalsIncludingNaN(testArray1[i], testArray1[j]));
+                	System.out.format("%s%n", !MathUtils.equalsIncludingNaN(testArray1[j], testArray1[i]));
+                }
+            }
+        }
+        
+        int big = Integer.MAX_VALUE;
+        System.out.format("%s%s%n", big, MathUtils.mulAndCheck(big, 1));
+        
+
+        System.out.format("%s,%s,%s %n", 16.0, MathUtils.nextAfter(15.999999999999998, 34.27555555555555), 0.0);
+        System.out.format("%s,%s,%s %n",-15.999999999999996, MathUtils.nextAfter(-15.999999999999998, 34.27555555555555), 0.0);
+        System.out.format("%s,%s,%s %n",-2.308922399667661E-4, MathUtils.nextAfter(-2.3089223996676606E-4, -2.3089223996676606E-4), 0.0);
+        System.out.format("%s,%s,%s %n",-2.3089223996676603E-4, MathUtils.nextAfter(-2.3089223996676606E-4, -2.3089223996676603E-4), 0.0);
+
+	}
 
 }

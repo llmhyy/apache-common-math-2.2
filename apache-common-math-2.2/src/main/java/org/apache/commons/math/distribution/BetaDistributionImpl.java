@@ -281,4 +281,19 @@ public class BetaDistributionImpl
         return (a * b) / ((alphabetasum * alphabetasum) * (alphabetasum + 1));
     }
 
+    public static void main(String[] args) throws MathException {
+
+        double[] x = new double[]{-0.1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1};
+        double alpha = 0.1, beta = 0.1;
+        double[] cumes = new double[]{
+                0.0000000000, 0.0000000000, 0.4063850939, 0.4397091902, 0.4628041861,
+                0.4821200456, 0.5000000000, 0.5178799544, 0.5371958139, 0.5602908098,
+                0.5936149061, 1.0000000000, 1.0000000000};
+        BetaDistribution d = new BetaDistributionImpl(alpha, beta);
+        for (int i = 0; i < x.length; i++) {
+            System.out.println(cumes[i]==d.cumulativeProbability(x[i]));
+            System.out.println(cumes[i]==1e-8);
+        }
+
+	}
 }

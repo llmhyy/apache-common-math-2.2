@@ -18,6 +18,7 @@ package org.apache.commons.math.special;
 
 import org.apache.commons.math.MathException;
 import org.apache.commons.math.MaxIterationsExceededException;
+import org.apache.commons.math.TestUtils;
 import org.apache.commons.math.util.ContinuedFraction;
 import org.apache.commons.math.util.FastMath;
 
@@ -337,5 +338,21 @@ public class Gamma {
         }
 
         return trigamma(x + 1) + 1 / (x * x);
+    }
+    
+    public static void main(String[] args) {
+        testRegularizedGamma(0.0, 1.0, 0.0);
+        testRegularizedGamma(0.632120558828558, 1.0, 1.0);
+	}
+    
+    private static void testRegularizedGamma(double expected, double a, double x) {
+        try {
+            double actualP = Gamma.regularizedGammaP(a, x);
+            double actualQ = Gamma.regularizedGammaQ(a, x);
+            TestUtils.assertEquals(expected, actualP, 10e-15);
+            TestUtils.assertEquals(actualP, 1.0 - actualQ, 10e-15);
+        } catch(MathException ex){
+            System.out.println(ex.getMessage());
+        }
     }
 }
