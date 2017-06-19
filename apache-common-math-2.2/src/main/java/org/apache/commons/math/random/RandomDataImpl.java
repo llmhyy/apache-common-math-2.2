@@ -46,8 +46,6 @@ import org.apache.commons.math.exception.util.LocalizedFormats;
 import org.apache.commons.math.util.FastMath;
 import org.apache.commons.math.util.MathUtils;
 
-import sun.applet.Main;
-
 /**
  * Implements the {@link RandomData} interface using a {@link RandomGenerator}
  * instance to generate non-secure data and a {@link java.security.SecureRandom}
