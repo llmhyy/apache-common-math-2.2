@@ -63,14 +63,14 @@ public class UnitSphereRandomVectorGenerator
         final double[] v = new double[dimension];
 
         double normSq;
-        do {
+        //do {
             normSq = 0;
             for (int i = 0; i < dimension; i++) {
                 final double comp = 2 * rand.nextDouble() - 1;
                 v[i] = comp;
                 normSq += comp * comp;
             }
-        } while (normSq > 1);
+        //} while (normSq > 1);
 
         final double f = 1 / FastMath.sqrt(normSq);
         for (int i = 0; i < dimension; i++) {
@@ -79,6 +79,14 @@ public class UnitSphereRandomVectorGenerator
 
         return v;
 
+    }
+    
+    public static void main(String[] args){
+    	UnitSphereRandomVectorGenerator g = new UnitSphereRandomVectorGenerator(70);
+    	g.nextVector();
+    	
+    	System.out.print("done");
+    	
     }
 
 }
