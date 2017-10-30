@@ -315,4 +315,32 @@ public class MultiStartUnivariateRealOptimizer implements UnivariateRealOptimize
             throws ConvergenceException, FunctionEvaluationException {
         return optimize(f, goalType, min, max);
     }
+
+	public void setOptimaValues(double[] optimaValues) {
+		this.optimaValues = optimaValues;
+	}
+
+	public void setOptima(double[] optima) {
+		this.optima = optima;
+	}
+
+	public void setGenerator(RandomGenerator generator) {
+		this.generator = generator;
+	}
+
+	public void setStarts(int starts) {
+		this.starts = starts;
+	}
+
+	public void setTotalEvaluations(int totalEvaluations) {
+		this.totalEvaluations = totalEvaluations;
+	}
+
+	public void setTotalIterations(int totalIterations) {
+		this.totalIterations = totalIterations;
+	}
+
+	public void setMaxIterations(int maxIterations) {
+		this.maxIterations = maxIterations;
+	}
 }

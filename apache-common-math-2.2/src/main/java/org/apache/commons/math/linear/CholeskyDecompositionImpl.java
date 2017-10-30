@@ -353,4 +353,16 @@ public class CholeskyDecompositionImpl implements CholeskyDecomposition {
 
     }
 
+	public void setCachedLT(RealMatrix cachedLT) {
+		this.cachedLT = cachedLT;
+	}
+
+	public void setCachedL(RealMatrix cachedL) {
+		this.cachedL = cachedL;
+	}
+
+	public void setLTData(double[][] lTData) {
+		this.lTData = lTData;
+	}
+
 }

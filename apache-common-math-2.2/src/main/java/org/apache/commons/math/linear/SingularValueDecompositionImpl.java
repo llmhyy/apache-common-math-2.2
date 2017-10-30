@@ -376,4 +376,40 @@ public class SingularValueDecompositionImpl implements
 
     }
 
+	public void setCachedVt(RealMatrix cachedVt) {
+		this.cachedVt = cachedVt;
+	}
+
+	public void setCachedV(RealMatrix cachedV) {
+		this.cachedV = cachedV;
+	}
+
+	public void setCachedS(RealMatrix cachedS) {
+		this.cachedS = cachedS;
+	}
+
+	public void setCachedUt(RealMatrix cachedUt) {
+		this.cachedUt = cachedUt;
+	}
+
+	public void setCachedU(RealMatrix cachedU) {
+		this.cachedU = cachedU;
+	}
+
+	public void setSingularValues(double[] singularValues) {
+		this.singularValues = singularValues;
+	}
+
+	public void setEigenDecomposition(EigenDecomposition eigenDecomposition) {
+		this.eigenDecomposition = eigenDecomposition;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
+
+	public void setM(int m) {
+		this.m = m;
+	}
+
 }

@@ -149,4 +149,8 @@ public class VectorialCovariance implements Serializable {
         return true;
     }
 
+	public void setN(long n) {
+		this.n = n;
+	}
+
 }

@@ -81,7 +81,7 @@ import org.apache.commons.math.util.FastMath;
  */
 public class Percentile extends AbstractUnivariateStatistic implements Serializable {
 
-    /** Serializable version identifier */
+	/** Serializable version identifier */
     private static final long serialVersionUID = -8091216485095130416L;
 
     /** Minimum size under which we use a simple insertion sort rather than Hoare's select. */
@@ -493,5 +493,9 @@ public class Percentile extends AbstractUnivariateStatistic implements Serializa
         }
         dest.quantile = source.quantile;
     }
+
+	public void setCachedPivots(int[] cachedPivots) {
+		this.cachedPivots = cachedPivots;
+	}
 
 }

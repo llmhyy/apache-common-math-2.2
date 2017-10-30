@@ -126,4 +126,8 @@ public class CauchyDistributionTest extends ContinuousDistributionAbstractTest  
         assertTrue(Double.isNaN(dist.getNumericalMean()));
         assertTrue(Double.isNaN(dist.getNumericalVariance()));
     }
+
+	public void setDefaultTolerance(double defaultTolerance) {
+		this.defaultTolerance = defaultTolerance;
+	}
 }

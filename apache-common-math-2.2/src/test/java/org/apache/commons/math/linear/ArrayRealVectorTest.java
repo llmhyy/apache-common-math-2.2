@@ -1307,4 +1307,48 @@ public class ArrayRealVectorTest extends TestCase {
         }
     }
 
+	public void setNormTolerance(double normTolerance) {
+		this.normTolerance = normTolerance;
+	}
+
+	public void setEntryTolerance(double entryTolerance) {
+		this.entryTolerance = entryTolerance;
+	}
+
+	public void setMat1(double[][] mat1) {
+		this.mat1 = mat1;
+	}
+
+	public void setDvec1(Double[] dvec1) {
+		this.dvec1 = dvec1;
+	}
+
+	public void setVec_null(double[] vec_null) {
+		this.vec_null = vec_null;
+	}
+
+	public void setVec5(double[] vec5) {
+		this.vec5 = vec5;
+	}
+
+	public void setVec4(double[] vec4) {
+		this.vec4 = vec4;
+	}
+
+	public void setVec3(double[] vec3) {
+		this.vec3 = vec3;
+	}
+
+	public void setVec2(double[] vec2) {
+		this.vec2 = vec2;
+	}
+
+	public void setVec1(double[] vec1) {
+		this.vec1 = vec1;
+	}
+
+	public void setMa1(double[][] ma1) {
+		this.ma1 = ma1;
+	}
+
 }

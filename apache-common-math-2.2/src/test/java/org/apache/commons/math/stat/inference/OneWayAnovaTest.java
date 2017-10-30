@@ -117,4 +117,24 @@ public class OneWayAnovaTest extends TestCase {
         assertFalse("ANOVA Test P>0.01", testStatistic.anovaTest(twoClasses, 0.01));
     }
 
+	public void setClassC(double[] classC) {
+		this.classC = classC;
+	}
+
+	public void setClassB(double[] classB) {
+		this.classB = classB;
+	}
+
+	public void setClassA(double[] classA) {
+		this.classA = classA;
+	}
+
+	public void setEmptyArray(double[] emptyArray) {
+		this.emptyArray = emptyArray;
+	}
+
+	public void setTestStatistic(OneWayAnova testStatistic) {
+		this.testStatistic = testStatistic;
+	}
+
 }

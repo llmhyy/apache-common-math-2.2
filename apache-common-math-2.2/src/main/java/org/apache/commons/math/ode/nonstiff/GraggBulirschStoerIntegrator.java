@@ -960,4 +960,76 @@ public class GraggBulirschStoerIntegrator extends AdaptiveStepsizeIntegrator {
 
   }
 
+public void setMudif(int mudif) {
+	this.mudif = mudif;
+}
+
+public void setUseInterpolationError(boolean useInterpolationError) {
+	this.useInterpolationError = useInterpolationError;
+}
+
+public void setOrderControl2(double orderControl2) {
+	this.orderControl2 = orderControl2;
+}
+
+public void setOrderControl1(double orderControl1) {
+	this.orderControl1 = orderControl1;
+}
+
+public void setStepControl4(double stepControl4) {
+	this.stepControl4 = stepControl4;
+}
+
+public void setStepControl3(double stepControl3) {
+	this.stepControl3 = stepControl3;
+}
+
+public void setStepControl2(double stepControl2) {
+	this.stepControl2 = stepControl2;
+}
+
+public void setStepControl1(double stepControl1) {
+	this.stepControl1 = stepControl1;
+}
+
+public void setStabilityReduction(double stabilityReduction) {
+	this.stabilityReduction = stabilityReduction;
+}
+
+public void setMaxIter(int maxIter) {
+	this.maxIter = maxIter;
+}
+
+public void setMaxChecks(int maxChecks) {
+	this.maxChecks = maxChecks;
+}
+
+public void setPerformTest(boolean performTest) {
+	this.performTest = performTest;
+}
+
+public void setCoeff(double[][] coeff) {
+	this.coeff = coeff;
+}
+
+public void setOptimalStep(double[] optimalStep) {
+	this.optimalStep = optimalStep;
+}
+
+public void setCostPerTimeUnit(double[] costPerTimeUnit) {
+	this.costPerTimeUnit = costPerTimeUnit;
+}
+
+public void setCostPerStep(int[] costPerStep) {
+	this.costPerStep = costPerStep;
+}
+
+public void setSequence(int[] sequence) {
+	this.sequence = sequence;
+}
+
+public void setMaxOrder(int maxOrder) {
+	this.maxOrder = maxOrder;
+}
+
 }

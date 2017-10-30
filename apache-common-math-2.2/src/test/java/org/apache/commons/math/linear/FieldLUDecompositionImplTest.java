@@ -294,4 +294,24 @@ public class FieldLUDecompositionImplTest extends TestCase {
 
     }
 
+	public void setBigSingular(Fraction[][] bigSingular) {
+		this.bigSingular = bigSingular;
+	}
+
+	public void setSingular(Fraction[][] singular) {
+		this.singular = singular;
+	}
+
+	public void setLuData(Fraction[][] luData) {
+		this.luData = luData;
+	}
+
+	public void setTestDataMinus(Fraction[][] testDataMinus) {
+		this.testDataMinus = testDataMinus;
+	}
+
+	public void setTestData(Fraction[][] testData) {
+		this.testData = testData;
+	}
+
 }

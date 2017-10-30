@@ -230,4 +230,8 @@ public class OLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
         return Rinv.multiply(Rinv.transpose());
     }
 
+	public void setQr(QRDecomposition qr) {
+		this.qr = qr;
+	}
+
 }

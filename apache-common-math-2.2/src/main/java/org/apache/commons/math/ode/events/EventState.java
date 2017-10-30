@@ -428,4 +428,40 @@ public class EventState {
         }
 
     }
+
+	public void setNextAction(int nextAction) {
+		this.nextAction = nextAction;
+	}
+
+	public void setIncreasing(boolean increasing) {
+		this.increasing = increasing;
+	}
+
+	public void setForward(boolean forward) {
+		this.forward = forward;
+	}
+
+	public void setPreviousEventTime(double previousEventTime) {
+		this.previousEventTime = previousEventTime;
+	}
+
+	public void setPendingEventTime(double pendingEventTime) {
+		this.pendingEventTime = pendingEventTime;
+	}
+
+	public void setPendingEvent(boolean pendingEvent) {
+		this.pendingEvent = pendingEvent;
+	}
+
+	public void setG0Positive(boolean g0Positive) {
+		this.g0Positive = g0Positive;
+	}
+
+	public void setG0(double g0) {
+		this.g0 = g0;
+	}
+
+	public void setT0(double t0) {
+		this.t0 = t0;
+	}
 }

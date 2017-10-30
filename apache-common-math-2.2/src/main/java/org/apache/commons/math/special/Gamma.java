@@ -345,7 +345,7 @@ public class Gamma {
         testRegularizedGamma(0.632120558828558, 1.0, 1.0);
 	}
     
-    private static void testRegularizedGamma(double expected, double a, double x) {
+    public static void testRegularizedGamma(double expected, double a, double x) {
         try {
             double actualP = Gamma.regularizedGammaP(a, x);
             double actualQ = Gamma.regularizedGammaQ(a, x);

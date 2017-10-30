@@ -47,7 +47,7 @@ import org.apache.commons.math.util.FastMath;
  */
 public class Complex implements FieldElement<Complex>, Serializable  {
 
-    /** The square root of -1. A number representing "0.0 + 1.0i" */
+	/** The square root of -1. A number representing "0.0 + 1.0i" */
     public static final Complex I = new Complex(0.0, 1.0);
 
     // CHECKSTYLE: stop ConstantName
@@ -1004,4 +1004,27 @@ public class Complex implements FieldElement<Complex>, Serializable  {
         return ComplexField.getInstance();
     }
 
+    public static Complex getI() {
+		return I;
+	}
+
+	public static Complex getNan() {
+		return NaN;
+	}
+
+	public static Complex getInf() {
+		return INF;
+	}
+
+	public static Complex getOne() {
+		return ONE;
+	}
+
+	public static Complex getZero() {
+		return ZERO;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }

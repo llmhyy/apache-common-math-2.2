@@ -285,4 +285,24 @@ public class LUDecompositionImplTest extends TestCase {
 
     }
 
+	public void setBigSingular(double[][] bigSingular) {
+		this.bigSingular = bigSingular;
+	}
+
+	public void setSingular(double[][] singular) {
+		this.singular = singular;
+	}
+
+	public void setLuData(double[][] luData) {
+		this.luData = luData;
+	}
+
+	public void setTestDataMinus(double[][] testDataMinus) {
+		this.testDataMinus = testDataMinus;
+	}
+
+	public void setTestData(double[][] testData) {
+		this.testData = testData;
+	}
+
 }

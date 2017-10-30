@@ -115,4 +115,8 @@ public class MicrosphereInterpolator
         }
         microsphereElements = elements;
     }
+
+	public void setMicrosphereElements(int microsphereElements) {
+		this.microsphereElements = microsphereElements;
+	}
 }

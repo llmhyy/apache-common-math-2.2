@@ -248,4 +248,8 @@ public class ChiSquareTestTest extends TestCase {
             // expected
         }
     }
+
+	public void setTestStatistic(UnknownDistributionChiSquareTest testStatistic) {
+		this.testStatistic = testStatistic;
+	}
 }

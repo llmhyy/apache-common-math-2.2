@@ -378,4 +378,16 @@ class BiDiagonalTransformer {
         }
     }
 
+	public void setCachedV(RealMatrix cachedV) {
+		this.cachedV = cachedV;
+	}
+
+	public void setCachedB(RealMatrix cachedB) {
+		this.cachedB = cachedB;
+	}
+
+	public void setCachedU(RealMatrix cachedU) {
+		this.cachedU = cachedU;
+	}
+
 }

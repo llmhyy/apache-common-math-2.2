@@ -714,4 +714,44 @@ public class SummaryStatistics implements StatisticalSummary, Serializable {
             SumOfSquares.copy(source.sumsq, dest.sumsq);
         }
     }
+
+	public void setVariance(Variance variance) {
+		this.variance = variance;
+	}
+
+	public void setMean(Mean mean) {
+		this.mean = mean;
+	}
+
+	public void setGeoMean(GeometricMean geoMean) {
+		this.geoMean = geoMean;
+	}
+
+	public void setSumLog(SumOfLogs sumLog) {
+		this.sumLog = sumLog;
+	}
+
+	public void setMax(Max max) {
+		this.max = max;
+	}
+
+	public void setMin(Min min) {
+		this.min = min;
+	}
+
+	public void setSumsq(SumOfSquares sumsq) {
+		this.sumsq = sumsq;
+	}
+
+	public void setSum(Sum sum) {
+		this.sum = sum;
+	}
+
+	public void setSecondMoment(SecondMoment secondMoment) {
+		this.secondMoment = secondMoment;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
 }

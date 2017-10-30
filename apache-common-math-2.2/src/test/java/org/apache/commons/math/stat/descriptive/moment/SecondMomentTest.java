@@ -51,4 +51,8 @@ public class SecondMomentTest extends StorelessUnivariateStatisticAbstractTest {
         return this.secondMoment;
     }
 
+	public void setStat(SecondMoment stat) {
+		this.stat = stat;
+	}
+
 }

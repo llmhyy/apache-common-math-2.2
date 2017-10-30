@@ -44,5 +44,8 @@ public class MonitoredFunction implements UnivariateRealFunction {
 
     private int callsCount;
     private UnivariateRealFunction f;
+	public void setF(UnivariateRealFunction f) {
+		this.f = f;
+	}
 
 }

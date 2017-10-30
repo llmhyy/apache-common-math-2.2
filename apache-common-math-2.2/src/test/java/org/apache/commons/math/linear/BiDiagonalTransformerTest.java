@@ -201,4 +201,12 @@ public class BiDiagonalTransformerTest {
         Assert.assertFalse(new BiDiagonalTransformer(MatrixUtils.createRealMatrix(testNonSquare).transpose()).isUpperBiDiagonal());
     }
 
+	public void setTestNonSquare(double[][] testNonSquare) {
+		this.testNonSquare = testNonSquare;
+	}
+
+	public void setTestSquare(double[][] testSquare) {
+		this.testSquare = testSquare;
+	}
+
 }

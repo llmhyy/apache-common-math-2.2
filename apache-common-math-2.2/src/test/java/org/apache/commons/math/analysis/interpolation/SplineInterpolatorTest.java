@@ -227,4 +227,16 @@ public class SplineInterpolatorTest {
 		}
     }
 
+	public void setInterpolationTolerance(double interpolationTolerance) {
+		this.interpolationTolerance = interpolationTolerance;
+	}
+
+	public void setCoefficientTolerance(double coefficientTolerance) {
+		this.coefficientTolerance = coefficientTolerance;
+	}
+
+	public void setKnotTolerance(double knotTolerance) {
+		this.knotTolerance = knotTolerance;
+	}
+
 }

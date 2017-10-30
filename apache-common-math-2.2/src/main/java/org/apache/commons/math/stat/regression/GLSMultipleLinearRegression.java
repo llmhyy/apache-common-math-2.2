@@ -133,4 +133,12 @@ public class GLSMultipleLinearRegression extends AbstractMultipleLinearRegressio
 
     }
 
+	public void setOmegaInverse(RealMatrix OmegaInverse) {
+		this.OmegaInverse = OmegaInverse;
+	}
+
+	public void setOmega(RealMatrix Omega) {
+		this.Omega = Omega;
+	}
+
 }

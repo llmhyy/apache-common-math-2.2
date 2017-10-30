@@ -90,4 +90,8 @@ public class TestProblem6
         return y;
     }
 
+	public void setY(double[] y) {
+		this.y = y;
+	}
+
 }

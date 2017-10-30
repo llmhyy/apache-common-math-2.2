@@ -154,4 +154,32 @@ public class TestProblemHandler
     return lastTime;
   }
 
+public void setExpectedStepStart(double expectedStepStart) {
+	this.expectedStepStart = expectedStepStart;
+}
+
+public void setIntegrator(ODEIntegrator integrator) {
+	this.integrator = integrator;
+}
+
+public void setLastTime(double lastTime) {
+	this.lastTime = lastTime;
+}
+
+public void setLastError(double lastError) {
+	this.lastError = lastError;
+}
+
+public void setMaxTimeError(double maxTimeError) {
+	this.maxTimeError = maxTimeError;
+}
+
+public void setMaxValueError(double maxValueError) {
+	this.maxValueError = maxValueError;
+}
+
+public void setProblem(TestProblemAbstract problem) {
+	this.problem = problem;
+}
+
 }

@@ -616,4 +616,44 @@ public class EigenDecompositionImpl implements EigenDecomposition {
             eigenvectors[i] = new ArrayRealVector(tmp);
         }
     }
+
+	public void setCachedVt(RealMatrix cachedVt) {
+		this.cachedVt = cachedVt;
+	}
+
+	public void setCachedD(RealMatrix cachedD) {
+		this.cachedD = cachedD;
+	}
+
+	public void setCachedV(RealMatrix cachedV) {
+		this.cachedV = cachedV;
+	}
+
+	public void setEigenvectors(ArrayRealVector[] eigenvectors) {
+		this.eigenvectors = eigenvectors;
+	}
+
+	public void setImagEigenvalues(double[] imagEigenvalues) {
+		this.imagEigenvalues = imagEigenvalues;
+	}
+
+	public void setRealEigenvalues(double[] realEigenvalues) {
+		this.realEigenvalues = realEigenvalues;
+	}
+
+	public void setTransformer(TriDiagonalTransformer transformer) {
+		this.transformer = transformer;
+	}
+
+	public void setSecondary(double[] secondary) {
+		this.secondary = secondary;
+	}
+
+	public void setMain(double[] main) {
+		this.main = main;
+	}
+
+	public void setMaxIter(byte maxIter) {
+		this.maxIter = maxIter;
+	}
 }

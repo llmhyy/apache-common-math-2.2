@@ -85,4 +85,34 @@ public class InteractionTest extends TestCase {
 
     }
 
+
+	public void setTestArray(double[] testArray) {
+		this.testArray = testArray;
+	}
+
+
+	public void setTolerance(double tolerance) {
+		this.tolerance = tolerance;
+	}
+
+
+	public void setKurt(double kurt) {
+		this.kurt = kurt;
+	}
+
+
+	public void setSkew(double skew) {
+		this.skew = skew;
+	}
+
+
+	public void setVar(double var) {
+		this.var = var;
+	}
+
+
+	public void setMean(double mean) {
+		this.mean = mean;
+	}
+
 }

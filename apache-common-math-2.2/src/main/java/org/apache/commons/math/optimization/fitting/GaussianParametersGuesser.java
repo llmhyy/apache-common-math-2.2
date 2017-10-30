@@ -39,7 +39,7 @@ public class GaussianParametersGuesser {
     /** Observed points. */
     private final WeightedObservedPoint[] observations;
 
-    /** Resulting guessed parameters. */
+	/** Resulting guessed parameters. */
     private double[] parameters;
 
     /**
@@ -268,4 +268,17 @@ public class GaussianParametersGuesser {
             }
         };
     }
+
+	public void setParameters(double[] parameters) {
+		this.parameters = parameters;
+	}
+
+    public WeightedObservedPoint[] getObservations() {
+		return observations;
+	}
+
+	public double[] getParameters() {
+		return parameters;
+	}
+
 }

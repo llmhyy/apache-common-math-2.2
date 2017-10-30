@@ -121,4 +121,8 @@ public class SecondMoment extends FirstMoment implements Serializable {
         dest.m2 = source.m2;
     }
 
+	public void setM2(double m2) {
+		this.m2 = m2;
+	}
+
 }

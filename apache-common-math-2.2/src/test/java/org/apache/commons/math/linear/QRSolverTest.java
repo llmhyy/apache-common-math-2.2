@@ -210,4 +210,20 @@ public class QRSolverTest extends TestCase {
         });
         return m;
     }
+
+	public void setTestData4x3(double[][] testData4x3) {
+		this.testData4x3 = testData4x3;
+	}
+
+	public void setTestData3x4(double[][] testData3x4) {
+		this.testData3x4 = testData3x4;
+	}
+
+	public void setTestData3x3Singular(double[][] testData3x3Singular) {
+		this.testData3x3Singular = testData3x3Singular;
+	}
+
+	public void setTestData3x3NonSingular(double[][] testData3x3NonSingular) {
+		this.testData3x3NonSingular = testData3x3NonSingular;
+	}
 }

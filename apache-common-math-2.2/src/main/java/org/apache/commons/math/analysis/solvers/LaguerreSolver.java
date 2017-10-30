@@ -40,7 +40,11 @@ import org.apache.commons.math.util.FastMath;
  */
 public class LaguerreSolver extends UnivariateRealSolverImpl {
 
-    /** polynomial function to solve.
+    public PolynomialFunction getP() {
+		return p;
+	}
+
+	/** polynomial function to solve.
      * @deprecated as of 2.0 the function is not stored anymore in the instance
      */
     @Deprecated
@@ -226,7 +230,7 @@ public class LaguerreSolver extends UnivariateRealSolverImpl {
         // check for zeros before verifying bracketing
         if (f.value(min) == 0.0) { return min; }
         if (f.value(max) == 0.0) { return max; }
-        verifyBracketing(min, max, f);
+//        verifyBracketing(min, max, f);
 
         double coefficients[] = ((PolynomialFunction) f).getCoefficients();
         Complex c[] = new Complex[coefficients.length];

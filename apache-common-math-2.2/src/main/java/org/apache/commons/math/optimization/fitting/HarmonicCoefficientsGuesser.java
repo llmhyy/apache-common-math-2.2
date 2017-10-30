@@ -297,4 +297,16 @@ public class HarmonicCoefficientsGuesser {
         return phi;
     }
 
+	public void setPhi(double phi) {
+		this.phi = phi;
+	}
+
+	public void setOmega(double omega) {
+		this.omega = omega;
+	}
+
+	public void setA(double a) {
+		this.a = a;
+	}
+
 }

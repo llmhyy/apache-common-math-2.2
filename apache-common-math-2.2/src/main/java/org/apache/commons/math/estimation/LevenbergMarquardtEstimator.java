@@ -894,4 +894,36 @@ public class LevenbergMarquardtEstimator extends AbstractEstimator implements Se
     }
   }
 
+public void setLmDir(double[] lmDir) {
+	this.lmDir = lmDir;
+}
+
+public void setLmPar(double lmPar) {
+	this.lmPar = lmPar;
+}
+
+public void setRank(int rank) {
+	this.rank = rank;
+}
+
+public void setPermutation(int[] permutation) {
+	this.permutation = permutation;
+}
+
+public void setBeta(double[] beta) {
+	this.beta = beta;
+}
+
+public void setJacNorm(double[] jacNorm) {
+	this.jacNorm = jacNorm;
+}
+
+public void setDiagR(double[] diagR) {
+	this.diagR = diagR;
+}
+
+public void setSolvedCols(int solvedCols) {
+	this.solvedCols = solvedCols;
+}
+
 }

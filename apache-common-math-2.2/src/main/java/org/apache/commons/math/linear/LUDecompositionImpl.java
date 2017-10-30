@@ -420,4 +420,32 @@ public class LUDecompositionImpl implements LUDecomposition {
 
     }
 
+	public void setCachedP(RealMatrix cachedP) {
+		this.cachedP = cachedP;
+	}
+
+	public void setCachedU(RealMatrix cachedU) {
+		this.cachedU = cachedU;
+	}
+
+	public void setCachedL(RealMatrix cachedL) {
+		this.cachedL = cachedL;
+	}
+
+	public void setSingular(boolean singular) {
+		this.singular = singular;
+	}
+
+	public void setEven(boolean even) {
+		this.even = even;
+	}
+
+	public void setPivot(int[] pivot) {
+		this.pivot = pivot;
+	}
+
+	public void setLu(double[][] lu) {
+		this.lu = lu;
+	}
+
 }

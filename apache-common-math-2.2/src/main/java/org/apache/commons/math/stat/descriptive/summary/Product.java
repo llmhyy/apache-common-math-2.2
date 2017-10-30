@@ -37,7 +37,7 @@ import org.apache.commons.math.util.FastMath;
  */
 public class Product extends AbstractStorelessUnivariateStatistic implements Serializable, WeightedEvaluation {
 
-    /** Serializable version identifier */
+	/** Serializable version identifier */
     private static final long serialVersionUID = 2824226005990582538L;
 
     /**The number of values that have been added */
@@ -220,5 +220,13 @@ public class Product extends AbstractStorelessUnivariateStatistic implements Ser
         dest.n = source.n;
         dest.value = source.value;
     }
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
 
 }

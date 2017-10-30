@@ -530,4 +530,12 @@ public class EigenDecompositionImplTest extends TestCase {
         return MatrixUtils.createRealMatrix(dData);
     }
 
+	public void setMatrix(RealMatrix matrix) {
+		this.matrix = matrix;
+	}
+
+	public void setRefValues(double[] refValues) {
+		this.refValues = refValues;
+	}
+
 }

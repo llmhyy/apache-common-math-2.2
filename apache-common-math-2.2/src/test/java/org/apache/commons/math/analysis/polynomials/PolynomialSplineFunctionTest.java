@@ -144,5 +144,21 @@ public class PolynomialSplineFunctionTest extends TestCase {
          }
          throw new IllegalArgumentException("x is out of range");
      }
+
+	public void setDp(PolynomialFunction dp) {
+		this.dp = dp;
+	}
+
+	public void setKnots(double[] knots) {
+		this.knots = knots;
+	}
+
+	public void setPolynomials(PolynomialFunction[] polynomials) {
+		this.polynomials = polynomials;
+	}
+
+	public void setTolerance(double tolerance) {
+		this.tolerance = tolerance;
+	}
 }
 

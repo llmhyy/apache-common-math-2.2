@@ -116,4 +116,8 @@ public class CholeskySolverTest extends TestCase {
         return new CholeskyDecompositionImpl(m).getDeterminant();
     }
 
+	public void setTestData(double[][] testData) {
+		this.testData = testData;
+	}
+
 }

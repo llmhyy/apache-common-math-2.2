@@ -50,4 +50,8 @@ public class MedianTest extends UnivariateStatisticAbstractTest{
         return this.median;
     }
 
+	public void setStat(Median stat) {
+		this.stat = stat;
+	}
+
 }

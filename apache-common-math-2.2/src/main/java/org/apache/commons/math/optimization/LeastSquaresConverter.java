@@ -57,7 +57,7 @@ import org.apache.commons.math.linear.RealMatrix;
 
 public class LeastSquaresConverter implements MultivariateRealFunction {
 
-    /** Underlying vectorial function. */
+	/** Underlying vectorial function. */
     private final MultivariateVectorialFunction function;
 
     /** Observations to be compared to objective function to compute residuals. */
@@ -189,5 +189,21 @@ public class LeastSquaresConverter implements MultivariateRealFunction {
         return sumSquares;
 
     }
+
+    public MultivariateVectorialFunction getFunction() {
+		return function;
+	}
+
+	public double[] getObservations() {
+		return observations;
+	}
+
+	public double[] getWeights() {
+		return weights;
+	}
+
+	public RealMatrix getScale() {
+		return scale;
+	}
 
 }

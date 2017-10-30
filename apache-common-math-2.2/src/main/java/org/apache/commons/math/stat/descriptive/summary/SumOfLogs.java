@@ -162,4 +162,12 @@ public class SumOfLogs extends AbstractStorelessUnivariateStatistic implements S
         dest.n = source.n;
         dest.value = source.value;
     }
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public void setN(int n) {
+		this.n = n;
+	}
 }

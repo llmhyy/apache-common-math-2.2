@@ -129,4 +129,12 @@ public TestProblem3 copy() {
     return y;
   }
 
+public void setY(double[] y) {
+	this.y = y;
+}
+
+public void setE(double e) {
+	this.e = e;
+}
+
 }

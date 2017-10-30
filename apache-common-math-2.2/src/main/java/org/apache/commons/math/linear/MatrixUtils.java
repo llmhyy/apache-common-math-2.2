@@ -599,7 +599,7 @@ public class MatrixUtils {
         }
 
         for (final int row : selectedRows) {
-            checkRowIndex(m, row);
+//            checkRowIndex(m, row);
         }
         for (final int column : selectedColumns) {
             checkColumnIndex(m, column);

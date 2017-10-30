@@ -158,4 +158,24 @@ public class StepNormalizer implements StepHandler {
 
     }
 
+	public void setForward(boolean forward) {
+		this.forward = forward;
+	}
+
+	public void setLastDerivatives(double[] lastDerivatives) {
+		this.lastDerivatives = lastDerivatives;
+	}
+
+	public void setLastState(double[] lastState) {
+		this.lastState = lastState;
+	}
+
+	public void setLastTime(double lastTime) {
+		this.lastTime = lastTime;
+	}
+
+	public void setH(double h) {
+		this.h = h;
+	}
+
 }

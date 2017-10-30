@@ -186,4 +186,8 @@ public class TransformerMap implements NumberTransformer, Serializable {
         return hash;
     }
 
+	public void setDefaultTransformer(NumberTransformer defaultTransformer) {
+		this.defaultTransformer = defaultTransformer;
+	}
+
 }

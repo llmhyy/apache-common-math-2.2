@@ -431,6 +431,10 @@ public class TestUtils  {
         return oneWayAnova.anovaTest(categoryData, alpha);
     }
 
+	public void setTTest(TTest tTest) {
+		this.tTest = tTest;
+	}
+
     // CHECKSTYLE: resume JavadocMethodCheck
 
 }

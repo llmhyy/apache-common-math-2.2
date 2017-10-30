@@ -986,5 +986,9 @@ public class RandomDataTest extends RetryTestCase {
         }
         TestUtils.assertChiSquareAccept(densityPoints, expectedCounts, observedCounts, .001);
     }
+
+	public void setRandomData(RandomDataImpl randomData) {
+		this.randomData = randomData;
+	}
     
 }

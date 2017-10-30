@@ -59,7 +59,7 @@ import org.apache.commons.math.stat.descriptive.summary.Sum;
 public class Mean extends AbstractStorelessUnivariateStatistic
     implements Serializable, WeightedEvaluation {
 
-    /** Serializable version identifier */
+	/** Serializable version identifier */
     private static final long serialVersionUID = -1296043746617791564L;
 
     /** First moment on which this statistic is based. */
@@ -269,4 +269,25 @@ public class Mean extends AbstractStorelessUnivariateStatistic
         dest.incMoment = source.incMoment;
         dest.moment = source.moment.copy();
     }
+
+	public void setIncMoment(boolean incMoment) {
+		this.incMoment = incMoment;
+	}
+
+	public void setMoment(FirstMoment moment) {
+		this.moment = moment;
+	}
+
+    public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public FirstMoment getMoment() {
+		return moment;
+	}
+
+	public boolean isIncMoment() {
+		return incMoment;
+	}
+
 }

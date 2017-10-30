@@ -66,7 +66,7 @@ import org.apache.commons.math.util.FastMath;
  */
 public class BlockRealMatrix extends AbstractRealMatrix implements Serializable {
 
-    /** Block size. */
+	/** Block size. */
     public static final int BLOCK_SIZE = 52;
 
     /** Serializable version identifier */
@@ -842,7 +842,7 @@ public class BlockRealMatrix extends AbstractRealMatrix implements Serializable 
         }
         final int endRow    = row + subMatrix.length - 1;
         final int endColumn = column + refLength - 1;
-        MatrixUtils.checkSubMatrixIndex(this, row, endRow, column, endColumn);
+//        MatrixUtils.checkSubMatrixIndex(this, row, endRow, column, endColumn);
         for (final double[] subRow : subMatrix) {
             if (subRow.length != refLength) {
                 throw MathRuntimeException.createIllegalArgumentException(
@@ -941,7 +941,7 @@ public class BlockRealMatrix extends AbstractRealMatrix implements Serializable 
     public void setRowMatrix(final int row, final BlockRealMatrix matrix)
         throws MatrixIndexException, InvalidMatrixException {
 
-        MatrixUtils.checkRowIndex(this, row);
+//        MatrixUtils.checkRowIndex(this, row);
         final int nCols = getColumnDimension();
         if ((matrix.getRowDimension() != 1) ||
             (matrix.getColumnDimension() != nCols)) {
@@ -979,7 +979,7 @@ public class BlockRealMatrix extends AbstractRealMatrix implements Serializable 
     public BlockRealMatrix getColumnMatrix(final int column)
         throws MatrixIndexException {
 
-        MatrixUtils.checkColumnIndex(this, column);
+//        MatrixUtils.checkColumnIndex(this, column);
         final BlockRealMatrix out = new BlockRealMatrix(rows, 1);
 
         // perform copy block-wise, to ensure good cache behavior
@@ -1686,5 +1686,33 @@ public class BlockRealMatrix extends AbstractRealMatrix implements Serializable 
     public int blockWidth(final int blockColumn) {
         return (blockColumn == blockColumns - 1) ? columns - blockColumn * BLOCK_SIZE : BLOCK_SIZE;
     }
+
+    public static int getBlockSize() {
+		return BLOCK_SIZE;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public double[][] getBlocks() {
+		return blocks;
+	}
+
+	public int getRows() {
+		return rows;
+	}
+
+	public int getColumns() {
+		return columns;
+	}
+
+	public int getBlockRows() {
+		return blockRows;
+	}
+
+	public int getBlockColumns() {
+		return blockColumns;
+	}
 
 }

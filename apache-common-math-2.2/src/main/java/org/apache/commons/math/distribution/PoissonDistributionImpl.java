@@ -340,4 +340,12 @@ public class PoissonDistributionImpl extends AbstractIntegerDistribution
         return getMean();
     }
 
+	public void setEpsilon(double epsilon) {
+		this.epsilon = epsilon;
+	}
+
+	public void setMaxIterations(int maxIterations) {
+		this.maxIterations = maxIterations;
+	}
+
 }

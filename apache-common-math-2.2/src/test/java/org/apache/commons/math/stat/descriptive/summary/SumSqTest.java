@@ -66,4 +66,8 @@ public class SumSqTest extends StorelessUnivariateStatisticAbstractTest{
         assertTrue(Double.isNaN(sumSq.getResult()));
     }
 
+	public void setStat(SumOfSquares stat) {
+		this.stat = stat;
+	}
+
 }

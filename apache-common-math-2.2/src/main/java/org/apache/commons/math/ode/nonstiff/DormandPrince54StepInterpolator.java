@@ -211,4 +211,24 @@ class DormandPrince54StepInterpolator
 
   }
 
+public void setVectorsInitialized(boolean vectorsInitialized) {
+	this.vectorsInitialized = vectorsInitialized;
+}
+
+public void setV4(double[] v4) {
+	this.v4 = v4;
+}
+
+public void setV3(double[] v3) {
+	this.v3 = v3;
+}
+
+public void setV2(double[] v2) {
+	this.v2 = v2;
+}
+
+public void setV1(double[] v1) {
+	this.v1 = v1;
+}
+
 }

@@ -29,7 +29,7 @@ import org.apache.commons.math.util.MathUtils;
  */
 public class EuclideanIntegerPoint implements Clusterable<EuclideanIntegerPoint>, Serializable {
 
-    /** Serializable version identifier. */
+	/** Serializable version identifier. */
     private static final long serialVersionUID = 3946024775784901369L;
 
     /** Point coordinates. */
@@ -116,5 +116,9 @@ public class EuclideanIntegerPoint implements Clusterable<EuclideanIntegerPoint>
         buff.append(")");
         return buff.toString();
     }
+
+    public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }

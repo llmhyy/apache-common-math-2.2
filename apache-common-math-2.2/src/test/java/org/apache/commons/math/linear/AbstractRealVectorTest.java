@@ -241,4 +241,12 @@ public class AbstractRealVectorTest extends TestCase {
           if(i > 4) setAndAddTime += System.nanoTime() - start;
         }
     }
+
+	public void setVec2(double[] vec2) {
+		this.vec2 = vec2;
+	}
+
+	public void setVec1(double[] vec1) {
+		this.vec1 = vec1;
+	}
 }

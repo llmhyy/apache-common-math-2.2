@@ -45,7 +45,7 @@ import org.apache.commons.math.util.FastMath;
  */
 public class PearsonsCorrelation {
 
-    /** correlation matrix */
+	/** correlation matrix */
     private final RealMatrix correlationMatrix;
 
     /** number of observations */
@@ -282,4 +282,9 @@ public class PearsonsCorrelation {
                     nRows, nCols);
         }
     }
+    
+    public int getnObs() {
+		return nObs;
+	}
+
 }

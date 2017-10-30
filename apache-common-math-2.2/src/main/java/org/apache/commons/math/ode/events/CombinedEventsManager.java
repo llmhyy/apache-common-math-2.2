@@ -246,4 +246,12 @@ public class CombinedEventsManager {
         }
     }
 
+	public void setInitialized(boolean initialized) {
+		this.initialized = initialized;
+	}
+
+	public void setFirst(EventState first) {
+		this.first = first;
+	}
+
 }

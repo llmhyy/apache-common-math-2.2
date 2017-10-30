@@ -302,4 +302,12 @@ public class PolynomialFunctionLagrangeForm implements UnivariateRealFunction {
         }
 
     }
+
+	public void setCoefficientsComputed(boolean coefficientsComputed) {
+		this.coefficientsComputed = coefficientsComputed;
+	}
+
+	public void setCoefficients(double[] coefficients) {
+		this.coefficients = coefficients;
+	}
 }

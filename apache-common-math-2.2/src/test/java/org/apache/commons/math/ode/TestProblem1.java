@@ -88,4 +88,8 @@ public TestProblem1 copy() {
     return y;
   }
 
+public void setY(double[] y) {
+	this.y = y;
+}
+
 }

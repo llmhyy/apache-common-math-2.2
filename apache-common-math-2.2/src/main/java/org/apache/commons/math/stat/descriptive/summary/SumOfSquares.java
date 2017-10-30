@@ -163,4 +163,12 @@ public class SumOfSquares extends AbstractStorelessUnivariateStatistic implement
         System.out.println(sumSq.evaluate(testArray, 0, testArray.length));
 	}
 
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
+
 }

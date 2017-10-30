@@ -157,4 +157,20 @@ public class FirstMoment extends AbstractStorelessUnivariateStatistic
         dest.dev = source.dev;
         dest.nDev = source.nDev;
     }
+
+	public void setNDev(double nDev) {
+		this.nDev = nDev;
+	}
+
+	public void setDev(double dev) {
+		this.dev = dev;
+	}
+
+	public void setM1(double m1) {
+		this.m1 = m1;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
 }

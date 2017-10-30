@@ -464,5 +464,49 @@ public final class StatUtilsTest extends TestCase {
         assertEquals(1.0, stats.getStandardDeviation(), distance);
 
     }
+
+	public void setNan(double nan) {
+		this.nan = nan;
+	}
+
+	public void setTolerance(double tolerance) {
+		this.tolerance = tolerance;
+	}
+
+	public void setMax(double max) {
+		this.max = max;
+	}
+
+	public void setMin(double min) {
+		this.min = min;
+	}
+
+	public void setVar(double var) {
+		this.var = var;
+	}
+
+	public void setSum(double sum) {
+		this.sum = sum;
+	}
+
+	public void setSumSq(double sumSq) {
+		this.sumSq = sumSq;
+	}
+
+	public void setMean(double mean) {
+		this.mean = mean;
+	}
+
+	public void setThree(int three) {
+		this.three = three;
+	}
+
+	public void setTwo(float two) {
+		this.two = two;
+	}
+
+	public void setOne(double one) {
+		this.one = one;
+	}
     
 }

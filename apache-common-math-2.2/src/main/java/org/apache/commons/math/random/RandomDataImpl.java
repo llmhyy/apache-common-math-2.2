@@ -970,4 +970,12 @@ public class RandomDataImpl implements RandomData, Serializable {
     	impl.shuffle(list, 0);
     }
 
+	public void setSecRand(SecureRandom secRand) {
+		this.secRand = secRand;
+	}
+
+	public void setRand(RandomGenerator rand) {
+		this.rand = rand;
+	}
+
 }

@@ -38,7 +38,7 @@ import org.apache.commons.math.util.FastMath;
 public class BetaDistributionImpl
     extends AbstractContinuousDistribution implements BetaDistribution {
 
-    /**
+	/**
      * Default inverse cumulative probability accuracy
      * @since 2.1
      */
@@ -295,5 +295,21 @@ public class BetaDistributionImpl
             System.out.println(cumes[i]==1e-8);
         }
 
+	}
+
+	public void setZ(double z) {
+		this.z = z;
+	}
+
+    public static double getDefaultInverseAbsoluteAccuracy() {
+		return DEFAULT_INVERSE_ABSOLUTE_ACCURACY;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public double getZ() {
+		return z;
 	}
 }

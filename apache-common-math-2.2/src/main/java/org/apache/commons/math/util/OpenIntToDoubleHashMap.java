@@ -621,5 +621,29 @@ public class OpenIntToDoubleHashMap implements Serializable {
 
 	}
 
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public void setMask(int mask) {
+		this.mask = mask;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public void setStates(byte[] states) {
+		this.states = states;
+	}
+
+	public void setValues(double[] values) {
+		this.values = values;
+	}
+
+	public void setKeys(int[] keys) {
+		this.keys = keys;
+	}
+
 
 }

@@ -256,4 +256,12 @@ public class MersenneTwister extends BitsStreamGenerator implements Serializable
 
     }
 
+	public void setMti(int mti) {
+		this.mti = mti;
+	}
+
+	public void setMt(int[] mt) {
+		this.mt = mt;
+	}
+
 }

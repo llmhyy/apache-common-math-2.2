@@ -454,7 +454,8 @@ public class LoessInterpolator
     public static void checkStrictlyIncreasing(final double[] xval)
         throws MathException {
         for (int i = 0; i < xval.length; ++i) {
-            if (i >= 1 && xval[i - 1] >= xval[i]) {
+            if (i >= 1 && 
+            		xval[i - 1] >= xval[i]) {
                 throw new MathException(LocalizedFormats.OUT_OF_ORDER_ABSCISSA_ARRAY,
                                         i - 1, xval[i - 1], i, xval[i]);
             }

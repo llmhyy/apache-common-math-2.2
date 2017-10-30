@@ -101,4 +101,40 @@ public class ComplexUtilsTest extends TestCase {
         TestUtils.assertSame(negInfNegInf, ComplexUtils.polar2Complex(inf, 5*pi/4));
     }
 
+	public void setInfNaN(Complex infNaN) {
+		this.infNaN = infNaN;
+	}
+
+	public void setNegInfNegInf(Complex negInfNegInf) {
+		this.negInfNegInf = negInfNegInf;
+	}
+
+	public void setInfInf(Complex infInf) {
+		this.infInf = infInf;
+	}
+
+	public void setInfNegInf(Complex infNegInf) {
+		this.infNegInf = infNegInf;
+	}
+
+	public void setNegInfInf(Complex negInfInf) {
+		this.negInfInf = negInfInf;
+	}
+
+	public void setPi(double pi) {
+		this.pi = pi;
+	}
+
+	public void setNan(double nan) {
+		this.nan = nan;
+	}
+
+	public void setNegInf(double negInf) {
+		this.negInf = negInf;
+	}
+
+	public void setInf(double inf) {
+		this.inf = inf;
+	}
+
 }

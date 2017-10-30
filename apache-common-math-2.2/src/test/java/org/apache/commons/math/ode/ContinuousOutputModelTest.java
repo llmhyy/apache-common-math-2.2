@@ -193,5 +193,11 @@ public class ContinuousOutputModelTest
 
   TestProblem3 pb;
   FirstOrderIntegrator integ;
+public void setInteg(FirstOrderIntegrator integ) {
+	this.integ = integ;
+}
+public void setPb(TestProblem3 pb) {
+	this.pb = pb;
+}
 
 }

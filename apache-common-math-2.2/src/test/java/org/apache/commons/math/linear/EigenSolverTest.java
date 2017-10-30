@@ -155,4 +155,12 @@ public class EigenSolverTest extends TestCase {
         matrix    = null;
     }
 
+	public void setMatrix(RealMatrix matrix) {
+		this.matrix = matrix;
+	}
+
+	public void setRefValues(double[] refValues) {
+		this.refValues = refValues;
+	}
+
 }

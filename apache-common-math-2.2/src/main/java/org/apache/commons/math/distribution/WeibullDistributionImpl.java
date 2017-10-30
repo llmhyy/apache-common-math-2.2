@@ -375,4 +375,20 @@ public class WeibullDistributionImpl extends AbstractContinuousDistribution
         numericalMeanIsCalculated = false;
         numericalVarianceIsCalculated = false;
     }
+
+	public void setNumericalVarianceIsCalculated(boolean numericalVarianceIsCalculated) {
+		this.numericalVarianceIsCalculated = numericalVarianceIsCalculated;
+	}
+
+	public void setNumericalVariance(double numericalVariance) {
+		this.numericalVariance = numericalVariance;
+	}
+
+	public void setNumericalMeanIsCalculated(boolean numericalMeanIsCalculated) {
+		this.numericalMeanIsCalculated = numericalMeanIsCalculated;
+	}
+
+	public void setNumericalMean(double numericalMean) {
+		this.numericalMean = numericalMean;
+	}
 }

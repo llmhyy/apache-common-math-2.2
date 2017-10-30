@@ -626,4 +626,8 @@ public class RealMatrixImpl extends AbstractRealMatrix implements Serializable {
         setSubMatrix(in, 0, 0);
     }
 
+	public void setData(double[][] data) {
+		this.data = data;
+	}
+
 }

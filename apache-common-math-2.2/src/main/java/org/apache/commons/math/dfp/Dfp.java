@@ -2396,4 +2396,20 @@ public class Dfp implements FieldElement<Dfp> {
         return split;
     }
 
+	public void setNans(byte nans) {
+		this.nans = nans;
+	}
+
+	public void setExp(int exp) {
+		this.exp = exp;
+	}
+
+	public void setSign(byte sign) {
+		this.sign = sign;
+	}
+
+	public void setMant(int[] mant) {
+		this.mant = mant;
+	}
+
 }

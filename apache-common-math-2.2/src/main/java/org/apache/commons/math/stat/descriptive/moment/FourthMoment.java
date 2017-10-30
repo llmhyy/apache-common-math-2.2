@@ -139,4 +139,8 @@ public class FourthMoment extends ThirdMoment implements Serializable{
         ThirdMoment.copy(source, dest);
         dest.m4 = source.m4;
     }
+
+	public void setM4(double m4) {
+		this.m4 = m4;
+	}
 }

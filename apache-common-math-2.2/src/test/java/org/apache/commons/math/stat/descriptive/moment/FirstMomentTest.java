@@ -51,4 +51,8 @@ public class FirstMomentTest extends StorelessUnivariateStatisticAbstractTest{
         return this.mean;
     }
 
+	public void setStat(FirstMoment stat) {
+		this.stat = stat;
+	}
+
 }

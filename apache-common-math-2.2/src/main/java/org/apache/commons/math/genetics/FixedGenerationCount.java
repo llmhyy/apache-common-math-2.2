@@ -67,4 +67,8 @@ public class FixedGenerationCount implements StoppingCondition {
         return numGenerations;
     }
 
+	public void setNumGenerations(int numGenerations) {
+		this.numGenerations = numGenerations;
+	}
+
 }

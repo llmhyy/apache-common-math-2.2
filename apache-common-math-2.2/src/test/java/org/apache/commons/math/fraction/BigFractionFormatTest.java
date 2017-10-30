@@ -320,4 +320,12 @@ public class BigFractionFormatTest extends TestCase {
     public void testDoubleFormat() {
         assertEquals("1 / 16", improperFormat.format(0.0625));
     }
+
+	public void setImproperFormat(BigFractionFormat improperFormat) {
+		this.improperFormat = improperFormat;
+	}
+
+	public void setProperFormat(BigFractionFormat properFormat) {
+		this.properFormat = properFormat;
+	}
 }

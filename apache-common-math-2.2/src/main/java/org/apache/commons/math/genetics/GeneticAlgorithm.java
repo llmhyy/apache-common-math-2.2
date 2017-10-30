@@ -225,4 +225,8 @@ public class GeneticAlgorithm {
         return generationsEvolved;
     }
 
+	public void setGenerationsEvolved(int generationsEvolved) {
+		this.generationsEvolved = generationsEvolved;
+	}
+
 }

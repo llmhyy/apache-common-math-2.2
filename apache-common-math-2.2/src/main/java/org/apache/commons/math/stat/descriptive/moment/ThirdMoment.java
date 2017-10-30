@@ -136,4 +136,12 @@ public class ThirdMoment extends SecondMoment implements Serializable {
         dest.nDevSq = source.nDevSq;
     }
 
+	public void setNDevSq(double nDevSq) {
+		this.nDevSq = nDevSq;
+	}
+
+	public void setM3(double m3) {
+		this.m3 = m3;
+	}
+
 }

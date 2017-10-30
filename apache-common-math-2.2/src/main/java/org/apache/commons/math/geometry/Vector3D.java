@@ -34,7 +34,7 @@ import org.apache.commons.math.util.FastMath;
 public class Vector3D
   implements Serializable {
 
-  /** Null vector (coordinates: 0, 0, 0). */
+/** Null vector (coordinates: 0, 0, 0). */
   public static final Vector3D ZERO   = new Vector3D(0, 0, 0);
 
   /** First canonical vector (coordinates: 1, 0, 0). */
@@ -530,5 +530,53 @@ public class Vector3D
   public String toString() {
       return DEFAULT_FORMAT.format(this);
   }
+
+  public static Vector3D getZero() {
+		return ZERO;
+	}
+
+	public static Vector3D getPlusI() {
+		return PLUS_I;
+	}
+
+	public static Vector3D getMinusI() {
+		return MINUS_I;
+	}
+
+	public static Vector3D getPlusJ() {
+		return PLUS_J;
+	}
+
+	public static Vector3D getMinusJ() {
+		return MINUS_J;
+	}
+
+	public static Vector3D getPlusK() {
+		return PLUS_K;
+	}
+
+	public static Vector3D getMinusK() {
+		return MINUS_K;
+	}
+
+	public static Vector3D getNan() {
+		return NaN;
+	}
+
+	public static Vector3D getPositiveInfinity() {
+		return POSITIVE_INFINITY;
+	}
+
+	public static Vector3D getNegativeInfinity() {
+		return NEGATIVE_INFINITY;
+	}
+
+	public static Vector3DFormat getDefaultFormat() {
+		return DEFAULT_FORMAT;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 }

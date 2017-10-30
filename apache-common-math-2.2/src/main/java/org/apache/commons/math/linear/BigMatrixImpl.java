@@ -1502,4 +1502,20 @@ public class BigMatrixImpl implements BigMatrix, Serializable {
         lu = null;
     }
 
+	public void setParity(int parity) {
+		this.parity = parity;
+	}
+
+	public void setPermutation(int[] permutation) {
+		this.permutation = permutation;
+	}
+
+	public void setLu(BigDecimal[][] lu) {
+		this.lu = lu;
+	}
+
+	public void setData(BigDecimal[][] data) {
+		this.data = data;
+	}
+
 }

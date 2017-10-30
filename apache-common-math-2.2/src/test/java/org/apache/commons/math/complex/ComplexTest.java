@@ -993,4 +993,92 @@ public class ComplexTest extends TestCase {
 
     }
 
+	public void setNanZero(Complex nanZero) {
+		this.nanZero = nanZero;
+	}
+
+	public void setNanNegInf(Complex nanNegInf) {
+		this.nanNegInf = nanNegInf;
+	}
+
+	public void setNanInf(Complex nanInf) {
+		this.nanInf = nanInf;
+	}
+
+	public void setZeroNaN(Complex zeroNaN) {
+		this.zeroNaN = zeroNaN;
+	}
+
+	public void setZeroInf(Complex zeroInf) {
+		this.zeroInf = zeroInf;
+	}
+
+	public void setOneNaN(Complex oneNaN) {
+		this.oneNaN = oneNaN;
+	}
+
+	public void setNegInfNegInf(Complex negInfNegInf) {
+		this.negInfNegInf = negInfNegInf;
+	}
+
+	public void setNegInfNaN(Complex negInfNaN) {
+		this.negInfNaN = negInfNaN;
+	}
+
+	public void setNegInfOne(Complex negInfOne) {
+		this.negInfOne = negInfOne;
+	}
+
+	public void setNegInfZero(Complex negInfZero) {
+		this.negInfZero = negInfZero;
+	}
+
+	public void setNegInfInf(Complex negInfInf) {
+		this.negInfInf = negInfInf;
+	}
+
+	public void setInfInf(Complex infInf) {
+		this.infInf = infInf;
+	}
+
+	public void setInfNegInf(Complex infNegInf) {
+		this.infNegInf = infNegInf;
+	}
+
+	public void setInfNaN(Complex infNaN) {
+		this.infNaN = infNaN;
+	}
+
+	public void setInfZero(Complex infZero) {
+		this.infZero = infZero;
+	}
+
+	public void setInfOne(Complex infOne) {
+		this.infOne = infOne;
+	}
+
+	public void setOneNegInf(Complex oneNegInf) {
+		this.oneNegInf = oneNegInf;
+	}
+
+	public void setOneInf(Complex oneInf) {
+		this.oneInf = oneInf;
+	}
+
+	public void setPi(double pi) {
+		this.pi = pi;
+	}
+
+	public void setNan(double nan) {
+		this.nan = nan;
+	}
+
+	public void setNeginf(double neginf) {
+		this.neginf = neginf;
+	}
+
+	public void setInf(double inf) {
+		this.inf = inf;
+	}
+
 }

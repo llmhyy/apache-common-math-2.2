@@ -291,4 +291,8 @@ public class NonLinearConjugateGradientOptimizer
 
     }
 
+	public void setSolver(UnivariateRealSolver solver) {
+		this.solver = solver;
+	}
+
 }

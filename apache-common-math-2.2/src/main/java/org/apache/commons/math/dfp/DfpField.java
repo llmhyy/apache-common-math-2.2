@@ -747,4 +747,48 @@ public class DfpField implements Field<Dfp> {
 
     }
 
+	public void setIeeeFlags(int ieeeFlags) {
+		this.ieeeFlags = ieeeFlags;
+	}
+
+	public void setRMode(RoundingMode rMode) {
+		this.rMode = rMode;
+	}
+
+	public void setLn10String(String ln10String) {
+		this.ln10String = ln10String;
+	}
+
+	public void setLn5String(String ln5String) {
+		this.ln5String = ln5String;
+	}
+
+	public void setLn2String(String ln2String) {
+		this.ln2String = ln2String;
+	}
+
+	public void setEString(String eString) {
+		this.eString = eString;
+	}
+
+	public void setPiString(String piString) {
+		this.piString = piString;
+	}
+
+	public void setSqr3ReciprocalString(String sqr3ReciprocalString) {
+		this.sqr3ReciprocalString = sqr3ReciprocalString;
+	}
+
+	public void setSqr3String(String sqr3String) {
+		this.sqr3String = sqr3String;
+	}
+
+	public void setSqr2ReciprocalString(String sqr2ReciprocalString) {
+		this.sqr2ReciprocalString = sqr2ReciprocalString;
+	}
+
+	public void setSqr2String(String sqr2String) {
+		this.sqr2String = sqr2String;
+	}
+
 }

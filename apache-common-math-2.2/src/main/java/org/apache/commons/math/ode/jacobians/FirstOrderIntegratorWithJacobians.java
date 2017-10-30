@@ -896,4 +896,8 @@ public class FirstOrderIntegratorWithJacobians {
 
     }
 
+	public void setEvaluations(int evaluations) {
+		this.evaluations = evaluations;
+	}
+
 }

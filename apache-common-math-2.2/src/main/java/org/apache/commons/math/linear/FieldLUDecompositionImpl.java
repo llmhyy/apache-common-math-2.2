@@ -431,4 +431,20 @@ public class FieldLUDecompositionImpl<T extends FieldElement<T>> implements Fiel
 
     }
 
+	public void setSingular(boolean singular) {
+		this.singular = singular;
+	}
+
+	public void setEven(boolean even) {
+		this.even = even;
+	}
+
+	public void setPivot(int[] pivot) {
+		this.pivot = pivot;
+	}
+
+	public void setLu(T[][] lu) {
+		this.lu = lu;
+	}
+
 }

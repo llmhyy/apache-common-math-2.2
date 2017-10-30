@@ -993,6 +993,158 @@ public final class Array2DRowRealMatrixTest extends TestCase {
         return new Array2DRowRealMatrix(out);
     }
 
+	public void setD5(double[][] d5) {
+		this.d5 = d5;
+	}
+
+	public void setD4(double[][] d4) {
+		this.d4 = d4;
+	}
+
+	public void setD3(double[][] d3) {
+		this.d3 = d3;
+	}
+
+	public void setNormTolerance(double normTolerance) {
+		this.normTolerance = normTolerance;
+	}
+
+	public void setEntryTolerance(double entryTolerance) {
+		this.entryTolerance = entryTolerance;
+	}
+
+	public void setSubColumn3(double[][] subColumn3) {
+		this.subColumn3 = subColumn3;
+	}
+
+	public void setSubColumn1(double[][] subColumn1) {
+		this.subColumn1 = subColumn1;
+	}
+
+	public void setSubRow3(double[][] subRow3) {
+		this.subRow3 = subRow3;
+	}
+
+	public void setSubRow0(double[][] subRow0) {
+		this.subRow0 = subRow0;
+	}
+
+	public void setSubRows00Cols33(double[][] subRows00Cols33) {
+		this.subRows00Cols33 = subRows00Cols33;
+	}
+
+	public void setSubRows23Cols00(double[][] subRows23Cols00) {
+		this.subRows23Cols00 = subRows23Cols00;
+	}
+
+	public void setSubRows01Cols23(double[][] subRows01Cols23) {
+		this.subRows01Cols23 = subRows01Cols23;
+	}
+
+	public void setSubRows31Cols31(double[][] subRows31Cols31) {
+		this.subRows31Cols31 = subRows31Cols31;
+	}
+
+	public void setSubRows20Cols123(double[][] subRows20Cols123) {
+		this.subRows20Cols123 = subRows20Cols123;
+	}
+
+	public void setSubRows03Cols123(double[][] subRows03Cols123) {
+		this.subRows03Cols123 = subRows03Cols123;
+	}
+
+	public void setSubRows03Cols12(double[][] subRows03Cols12) {
+		this.subRows03Cols12 = subRows03Cols12;
+	}
+
+	public void setSubRows02Cols13(double[][] subRows02Cols13) {
+		this.subRows02Cols13 = subRows02Cols13;
+	}
+
+	public void setSubTestData(double[][] subTestData) {
+		this.subTestData = subTestData;
+	}
+
+	public void setTestVector2(double[] testVector2) {
+		this.testVector2 = testVector2;
+	}
+
+	public void setTestVector(double[] testVector) {
+		this.testVector = testVector;
+	}
+
+	public void setDetData2(double[][] detData2) {
+		this.detData2 = detData2;
+	}
+
+	public void setDetData(double[][] detData) {
+		this.detData = detData;
+	}
+
+	public void setBigSingular(double[][] bigSingular) {
+		this.bigSingular = bigSingular;
+	}
+
+	public void setSingular(double[][] singular) {
+		this.singular = singular;
+	}
+
+	public void setLuDataLUDecomposition(double[][] luDataLUDecomposition) {
+		this.luDataLUDecomposition = luDataLUDecomposition;
+	}
+
+	public void setLuData(double[][] luData) {
+		this.luData = luData;
+	}
+
+	public void setTestDataPlusInv(double[][] testDataPlusInv) {
+		this.testDataPlusInv = testDataPlusInv;
+	}
+
+	public void setTestData2T(double[][] testData2T) {
+		this.testData2T = testData2T;
+	}
+
+	public void setTestData2(double[][] testData2) {
+		this.testData2 = testData2;
+	}
+
+	public void setPreMultTest(double[] preMultTest) {
+		this.preMultTest = preMultTest;
+	}
+
+	public void setTestDataInv(double[][] testDataInv) {
+		this.testDataInv = testDataInv;
+	}
+
+	public void setTestDataCol3(double[] testDataCol3) {
+		this.testDataCol3 = testDataCol3;
+	}
+
+	public void setTestDataRow1(double[] testDataRow1) {
+		this.testDataRow1 = testDataRow1;
+	}
+
+	public void setTestDataMinus(double[][] testDataMinus) {
+		this.testDataMinus = testDataMinus;
+	}
+
+	public void setTestDataPlus2(double[][] testDataPlus2) {
+		this.testDataPlus2 = testDataPlus2;
+	}
+
+	public void setTestDataLU(double[][] testDataLU) {
+		this.testDataLU = testDataLU;
+	}
+
+	public void setTestData(double[][] testData) {
+		this.testData = testData;
+	}
+
+	public void setId(double[][] id) {
+		this.id = id;
+	}
+
 //    /** Useful for debugging */
 //    private void dumpMatrix(RealMatrix m) {
 //          for (int i = 0; i < m.getRowDimension(); i++) {

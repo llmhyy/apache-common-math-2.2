@@ -247,4 +247,12 @@ public class SingularValueDecompositionImplTest extends TestCase {
         return u.multiply(d).multiply(v);
     }
 
+	public void setTestNonSquare(double[][] testNonSquare) {
+		this.testNonSquare = testNonSquare;
+	}
+
+	public void setTestSquare(double[][] testSquare) {
+		this.testSquare = testSquare;
+	}
+
 }

@@ -80,4 +80,8 @@ public class GeometricMeanTest extends StorelessUnivariateStatisticAbstractTest{
         assertTrue(Double.isNaN(mean.getResult()));
     }
 
+	public void setStat(GeometricMean stat) {
+		this.stat = stat;
+	}
+
 }

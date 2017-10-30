@@ -38,7 +38,7 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
     private static final long serialVersionUID = 8772222695580707260L;
 
     /** Entries of the vector. */
-    private final OpenIntToDoubleHashMap entries;
+    private  OpenIntToDoubleHashMap entries;
 
     /** Dimension of the vector. */
     private final int virtualSize;
@@ -646,6 +646,10 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
             entries.remove(index);
         }
     }
+    
+    public void setEntry(OpenIntToDoubleHashMap entry) {
+        this.entries = entry;
+    }
 
     /** {@inheritDoc} */
     @Override
@@ -917,5 +921,21 @@ public class OpenMapRealVector extends AbstractRealVector implements SparseRealV
 		OpenMapRealVector vector = new OpenMapRealVector();
         OpenMapRealVector v = new OpenMapRealVector(new double[] { 0, 1, 2 });
 		System.out.println(vector.getLInfDistance(v));
+	}
+
+	public static double getDefaultZeroTolerance() {
+		return DEFAULT_ZERO_TOLERANCE;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public int getVirtualSize() {
+		return virtualSize;
+	}
+
+	public double getEpsilon() {
+		return epsilon;
 	}
 }

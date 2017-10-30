@@ -45,8 +45,8 @@ public class BicubicSplineInterpolator
             throw new DimensionMismatchException(xval.length, fval.length);
         }
 
-        MathUtils.checkOrder(xval);
-        MathUtils.checkOrder(yval);
+//        MathUtils.checkOrder(xval);
+//        MathUtils.checkOrder(yval);
 
         final int xLen = xval.length;
         final int yLen = yval.length;
@@ -58,7 +58,7 @@ public class BicubicSplineInterpolator
         final double[][] fX = new double[yLen][xLen];
         for (int i = 0; i < xLen; i++) {
             if (fval[i].length != yLen) {
-                throw new DimensionMismatchException(fval[i].length, yLen);
+//                throw new DimensionMismatchException(fval[i].length, yLen);
             }
 
             for (int j = 0; j < yLen; j++) {

@@ -67,4 +67,8 @@ public class KurtosisTest extends StorelessUnivariateStatisticAbstractTest{
         assertFalse(Double.isNaN(kurt.getResult()));
     }
 
+	public void setStat(Kurtosis stat) {
+		this.stat = stat;
+	}
+
 }

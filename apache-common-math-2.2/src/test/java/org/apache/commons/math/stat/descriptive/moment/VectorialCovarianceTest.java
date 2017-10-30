@@ -98,4 +98,8 @@ extends TestCase {
 
     private double [][] points;
 
+	public void setPoints(double[][] points) {
+		this.points = points;
+	}
+
 }

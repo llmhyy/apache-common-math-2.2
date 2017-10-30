@@ -636,4 +636,36 @@ public class SimpleRegression implements Serializable {
             distribution.setDegreesOfFreedom(n - 2);
         }
     }
+
+	public void setYbar(double ybar) {
+		this.ybar = ybar;
+	}
+
+	public void setXbar(double xbar) {
+		this.xbar = xbar;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
+
+	public void setSumXY(double sumXY) {
+		this.sumXY = sumXY;
+	}
+
+	public void setSumYY(double sumYY) {
+		this.sumYY = sumYY;
+	}
+
+	public void setSumY(double sumY) {
+		this.sumY = sumY;
+	}
+
+	public void setSumXX(double sumXX) {
+		this.sumXX = sumXX;
+	}
+
+	public void setSumX(double sumX) {
+		this.sumX = sumX;
+	}
 }

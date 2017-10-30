@@ -130,4 +130,8 @@ public class HarmonicFitter {
 
     }
 
+	public void setParameters(double[] parameters) {
+		this.parameters = parameters;
+	}
+
 }

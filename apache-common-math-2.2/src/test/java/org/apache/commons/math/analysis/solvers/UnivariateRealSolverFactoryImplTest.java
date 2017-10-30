@@ -72,4 +72,8 @@ public class UnivariateRealSolverFactoryImplTest extends TestCase {
         assertTrue(solver instanceof SecantSolver);
     }
 
+	public void setFactory(UnivariateRealSolverFactory factory) {
+		this.factory = factory;
+	}
+
 }

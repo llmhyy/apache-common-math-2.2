@@ -96,4 +96,8 @@ public class StandardDeviationTest extends StorelessUnivariateStatisticAbstractT
         return FastMath.sqrt(sum / v.length);
     }
 
+	public void setStat(StandardDeviation stat) {
+		this.stat = stat;
+	}
+
 }

@@ -144,4 +144,8 @@ public class SingularValueSolverTest {
         Assert.assertEquals(0.0, recomposed.subtract(rm).getNorm(), 2.0e-15);
     }
 
+	public void setTestSquare(double[][] testSquare) {
+		this.testSquare = testSquare;
+	}
+
 }

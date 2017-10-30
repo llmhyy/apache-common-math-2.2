@@ -66,4 +66,8 @@ public class SkewnessTest extends StorelessUnivariateStatisticAbstractTest{
         assertFalse(Double.isNaN(skew.getResult()));
     }
 
+	public void setStat(Skewness stat) {
+		this.stat = stat;
+	}
+
 }

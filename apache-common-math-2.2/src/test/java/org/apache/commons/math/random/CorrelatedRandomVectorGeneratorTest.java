@@ -144,5 +144,14 @@ extends TestCase {
     private double[] mean;
     private RealMatrix covariance;
     private CorrelatedRandomVectorGenerator generator;
+	public void setGenerator(CorrelatedRandomVectorGenerator generator) {
+		this.generator = generator;
+	}
+	public void setCovariance(RealMatrix covariance) {
+		this.covariance = covariance;
+	}
+	public void setMean(double[] mean) {
+		this.mean = mean;
+	}
 
 }

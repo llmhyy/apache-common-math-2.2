@@ -455,4 +455,32 @@ public class TestUtilsTest extends TestCase {
         assertEquals(oneWayAnova.anovaTest(classes, 0.01),
                 TestUtils.oneWayAnovaTest(classes, 0.01));
     }
+
+	public void setOneWayAnova(OneWayAnova oneWayAnova) {
+		this.oneWayAnova = oneWayAnova;
+	}
+
+	public void setClassC(double[] classC) {
+		this.classC = classC;
+	}
+
+	public void setClassB(double[] classB) {
+		this.classB = classB;
+	}
+
+	public void setClassA(double[] classA) {
+		this.classA = classA;
+	}
+
+	public void setEmptyStats(SummaryStatistics emptyStats) {
+		this.emptyStats = emptyStats;
+	}
+
+	public void setEmptyObs(double[] emptyObs) {
+		this.emptyObs = emptyObs;
+	}
+
+	public void setTooShortObs(double[] tooShortObs) {
+		this.tooShortObs = tooShortObs;
+	}
 }

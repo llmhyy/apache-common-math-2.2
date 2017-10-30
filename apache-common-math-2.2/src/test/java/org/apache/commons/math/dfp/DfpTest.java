@@ -1504,4 +1504,28 @@ public class DfpTest {
              DfpField.FLAG_INVALID, "Sqrt #9");
     }
 
+	public void setQnan(Dfp qnan) {
+		this.qnan = qnan;
+	}
+
+	public void setSnan(Dfp snan) {
+		this.snan = snan;
+	}
+
+	public void setNan(Dfp nan) {
+		this.nan = nan;
+	}
+
+	public void setNinf(Dfp ninf) {
+		this.ninf = ninf;
+	}
+
+	public void setPinf(Dfp pinf) {
+		this.pinf = pinf;
+	}
+
+	public void setField(DfpField field) {
+		this.field = field;
+	}
+
 }

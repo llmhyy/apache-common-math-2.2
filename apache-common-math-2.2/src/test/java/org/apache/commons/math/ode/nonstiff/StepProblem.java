@@ -61,4 +61,12 @@ public class StepProblem
 
   private static final long serialVersionUID = 7590601995477504318L;
 
+public void setSwitchTime(double switchTime) {
+	this.switchTime = switchTime;
+}
+
+public void setRateAfter(double rateAfter) {
+	this.rateAfter = rateAfter;
+}
+
 }

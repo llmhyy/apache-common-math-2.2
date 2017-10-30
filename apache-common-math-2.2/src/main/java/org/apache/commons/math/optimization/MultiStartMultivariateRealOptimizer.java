@@ -40,7 +40,7 @@ import org.apache.commons.math.random.RandomVectorGenerator;
 public class MultiStartMultivariateRealOptimizer
     implements MultivariateRealOptimizer {
 
-    /** Underlying classical optimizer. */
+	/** Underlying classical optimizer. */
     private final MultivariateRealOptimizer optimizer;
 
     /** Maximal number of iterations allowed. */
@@ -212,5 +212,45 @@ public class MultiStartMultivariateRealOptimizer
         return optima[0];
 
     }
+
+	public void setOptima(RealPointValuePair[] optima) {
+		this.optima = optima;
+	}
+
+	public void setGenerator(RandomVectorGenerator generator) {
+		this.generator = generator;
+	}
+
+	public void setStarts(int starts) {
+		this.starts = starts;
+	}
+
+	public void setTotalEvaluations(int totalEvaluations) {
+		this.totalEvaluations = totalEvaluations;
+	}
+
+	public void setTotalIterations(int totalIterations) {
+		this.totalIterations = totalIterations;
+	}
+
+    public MultivariateRealOptimizer getOptimizer() {
+		return optimizer;
+	}
+
+	public int getTotalIterations() {
+		return totalIterations;
+	}
+
+	public int getTotalEvaluations() {
+		return totalEvaluations;
+	}
+
+	public int getStarts() {
+		return starts;
+	}
+
+	public RandomVectorGenerator getGenerator() {
+		return generator;
+	}
 
 }

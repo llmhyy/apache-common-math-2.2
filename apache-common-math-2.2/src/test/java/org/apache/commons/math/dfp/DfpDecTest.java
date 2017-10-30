@@ -562,4 +562,16 @@ public class DfpDecTest {
              DfpField.FLAG_OVERFLOW|DfpField.FLAG_INEXACT, "Next After #14");
     }
 
+	public void setNinf(Dfp ninf) {
+		this.ninf = ninf;
+	}
+
+	public void setPinf(Dfp pinf) {
+		this.pinf = pinf;
+	}
+
+	public void setField(DfpField field) {
+		this.field = field;
+	}
+
 }

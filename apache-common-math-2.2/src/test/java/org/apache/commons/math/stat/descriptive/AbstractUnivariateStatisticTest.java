@@ -99,4 +99,28 @@ public class AbstractUnivariateStatisticTest extends TestCase {
             // expected
         }
     }
+
+	public void setTestStatistic(Mean testStatistic) {
+		this.testStatistic = testStatistic;
+	}
+
+	public void setSingletonArray(double[] singletonArray) {
+		this.singletonArray = singletonArray;
+	}
+
+	public void setNullArray(double[] nullArray) {
+		this.nullArray = nullArray;
+	}
+
+	public void setTestNegativeWeightsArray(double[] testNegativeWeightsArray) {
+		this.testNegativeWeightsArray = testNegativeWeightsArray;
+	}
+
+	public void setTestWeightsArray(double[] testWeightsArray) {
+		this.testWeightsArray = testWeightsArray;
+	}
+
+	public void setTestArray(double[] testArray) {
+		this.testArray = testArray;
+	}
 }

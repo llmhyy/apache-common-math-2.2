@@ -45,7 +45,7 @@ import org.apache.commons.math.util.CompositeFormat;
  */
 public class RealVectorFormat extends CompositeFormat {
 
-    /** Serializable version identifier */
+	/** Serializable version identifier */
     private static final long serialVersionUID = -708767813036157690L;
 
     /** The default prefix: "{". */
@@ -337,5 +337,33 @@ public class RealVectorFormat extends CompositeFormat {
     public Object parseObject(String source, ParsePosition pos) {
         return parse(source, pos);
     }
+
+    public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public static String getDefaultPrefix() {
+		return DEFAULT_PREFIX;
+	}
+
+	public static String getDefaultSuffix() {
+		return DEFAULT_SUFFIX;
+	}
+
+	public static String getDefaultSeparator() {
+		return DEFAULT_SEPARATOR;
+	}
+
+	public String getTrimmedPrefix() {
+		return trimmedPrefix;
+	}
+
+	public String getTrimmedSuffix() {
+		return trimmedSuffix;
+	}
+
+	public String getTrimmedSeparator() {
+		return trimmedSeparator;
+	}
 
 }

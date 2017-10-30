@@ -202,4 +202,8 @@ public class GeometricMean extends AbstractStorelessUnivariateStatistic implemen
         }
     }
 
+	public void setSumOfLogs(StorelessUnivariateStatistic sumOfLogs) {
+		this.sumOfLogs = sumOfLogs;
+	}
+
 }

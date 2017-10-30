@@ -477,4 +477,16 @@ class DormandPrince853StepInterpolator
 
   }
 
+public void setVectorsInitialized(boolean vectorsInitialized) {
+	this.vectorsInitialized = vectorsInitialized;
+}
+
+public void setV(double[][] v) {
+	this.v = v;
+}
+
+public void setYDotKLast(double[][] yDotKLast) {
+	this.yDotKLast = yDotKLast;
+}
+
 }

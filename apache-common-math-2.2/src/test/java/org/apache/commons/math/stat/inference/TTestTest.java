@@ -288,4 +288,24 @@ public class TTestTest extends TestCase {
         assertFalse(testStatistic.pairedTTest(sample1, sample3, .001));
         assertTrue(testStatistic.pairedTTest(sample1, sample3, .002));
     }
+
+	public void setTooShortStats(SummaryStatistics tooShortStats) {
+		this.tooShortStats = tooShortStats;
+	}
+
+	public void setEmptyStats(SummaryStatistics emptyStats) {
+		this.emptyStats = emptyStats;
+	}
+
+	public void setEmptyObs(double[] emptyObs) {
+		this.emptyObs = emptyObs;
+	}
+
+	public void setTooShortObs(double[] tooShortObs) {
+		this.tooShortObs = tooShortObs;
+	}
+
+	public void setTestStatistic(TTest testStatistic) {
+		this.testStatistic = testStatistic;
+	}
 }

@@ -32,7 +32,7 @@ import org.apache.commons.math.util.FastMath;
  * @since 2.0
  */
 public class BrentOptimizer extends AbstractUnivariateRealOptimizer {
-    /**
+	/**
      * Golden section.
      */
     private static final double GOLDEN_SECTION = 0.5 * (3 - FastMath.sqrt(5));
@@ -224,4 +224,9 @@ public class BrentOptimizer extends AbstractUnivariateRealOptimizer {
             incrementIterationsCounter();
         }
     }
+    
+    public static double getGoldenSection() {
+		return GOLDEN_SECTION;
+	}
+
 }

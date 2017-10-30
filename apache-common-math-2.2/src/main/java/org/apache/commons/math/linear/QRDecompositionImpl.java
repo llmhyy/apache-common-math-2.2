@@ -450,4 +450,28 @@ public class QRDecompositionImpl implements QRDecomposition {
 
     }
 
+	public void setCachedH(RealMatrix cachedH) {
+		this.cachedH = cachedH;
+	}
+
+	public void setCachedR(RealMatrix cachedR) {
+		this.cachedR = cachedR;
+	}
+
+	public void setCachedQT(RealMatrix cachedQT) {
+		this.cachedQT = cachedQT;
+	}
+
+	public void setCachedQ(RealMatrix cachedQ) {
+		this.cachedQ = cachedQ;
+	}
+
+	public void setRDiag(double[] rDiag) {
+		this.rDiag = rDiag;
+	}
+
+	public void setQrt(double[][] qrt) {
+		this.qrt = qrt;
+	}
+
 }

@@ -909,4 +909,9 @@ public class FastFourierTransformer implements Serializable {
 
     }
 
+
+	public void setRoots(RootsOfUnity roots) {
+		this.roots = roots;
+	}
+
 }

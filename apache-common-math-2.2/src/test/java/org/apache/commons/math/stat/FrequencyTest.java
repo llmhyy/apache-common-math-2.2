@@ -283,5 +283,37 @@ public final class FrequencyTest extends TestCase {
         f.addValue(twoI);
         assertEquals(2, f.getUniqueCount());
     }
+
+	public void setF(Frequency f) {
+		this.f = f;
+	}
+
+	public void setTolerance(double tolerance) {
+		this.tolerance = tolerance;
+	}
+
+	public void setThreeI(int threeI) {
+		this.threeI = threeI;
+	}
+
+	public void setTwoI(int twoI) {
+		this.twoI = twoI;
+	}
+
+	public void setOneI(int oneI) {
+		this.oneI = oneI;
+	}
+
+	public void setThreeL(long threeL) {
+		this.threeL = threeL;
+	}
+
+	public void setTwoL(long twoL) {
+		this.twoL = twoL;
+	}
+
+	public void setOneL(long oneL) {
+		this.oneL = oneL;
+	}
 }
 

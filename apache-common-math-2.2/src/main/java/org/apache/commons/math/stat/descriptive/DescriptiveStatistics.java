@@ -723,4 +723,8 @@ public class DescriptiveStatistics implements StatisticalSummary, Serializable {
     	DescriptiveStatistics descriptiveStatistics = new DescriptiveStatistics();
     	descriptiveStatistics.addValue(-1.0);
 	}
+
+	public void setEDA(ResizableDoubleArray eDA) {
+		this.eDA = eDA;
+	}
 }

@@ -53,4 +53,8 @@ public class TournamentSelectionTest {
         }
     }
 
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+
 }

@@ -232,4 +232,12 @@ public class Sum extends AbstractStorelessUnivariateStatistic implements Seriali
         System.out.println(251.05d +","+ sum.evaluate(testArray, testWeightsArray, 0, testArray.length) +","+ 10E-12);
 	}
 
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
+
 }

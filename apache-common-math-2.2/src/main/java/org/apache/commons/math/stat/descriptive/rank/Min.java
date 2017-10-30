@@ -39,7 +39,7 @@ import org.apache.commons.math.stat.descriptive.AbstractStorelessUnivariateStati
  */
 public class Min extends AbstractStorelessUnivariateStatistic implements Serializable {
 
-    /** Serializable version identifier */
+	/** Serializable version identifier */
     private static final long serialVersionUID = -2941995784909003131L;
 
     /**Number of values that have been added */
@@ -160,4 +160,13 @@ public class Min extends AbstractStorelessUnivariateStatistic implements Seriali
         dest.n = source.n;
         dest.value = source.value;
     }
+
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
+
 }

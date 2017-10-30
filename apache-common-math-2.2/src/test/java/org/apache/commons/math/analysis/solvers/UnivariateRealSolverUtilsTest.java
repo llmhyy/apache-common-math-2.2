@@ -138,4 +138,8 @@ public class UnivariateRealSolverUtilsTest extends TestCase {
         }
     }
 
+	public void setSin(UnivariateRealFunction sin) {
+		this.sin = sin;
+	}
+
 }

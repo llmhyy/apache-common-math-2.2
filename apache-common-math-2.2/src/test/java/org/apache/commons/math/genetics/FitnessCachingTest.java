@@ -91,4 +91,8 @@ public class FitnessCachingTest {
             return 0;
         }
     }
+
+	public void setFitnessCalls(int fitnessCalls) {
+		this.fitnessCalls = fitnessCalls;
+	}
 }

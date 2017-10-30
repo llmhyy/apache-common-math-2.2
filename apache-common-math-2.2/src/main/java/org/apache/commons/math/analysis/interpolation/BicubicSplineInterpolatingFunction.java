@@ -340,6 +340,10 @@ public class BicubicSplineInterpolatingFunction
 
         return a;
     }
+
+	public void setPartialDerivatives(BivariateRealFunction[][][] partialDerivatives) {
+		this.partialDerivatives = partialDerivatives;
+	}
 }
 
 /**

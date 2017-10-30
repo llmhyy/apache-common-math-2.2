@@ -301,4 +301,12 @@ public class CorrelatedRandomVectorGenerator
 
     }
 
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public void setRoot(RealMatrix root) {
+		this.root = root;
+	}
+
 }

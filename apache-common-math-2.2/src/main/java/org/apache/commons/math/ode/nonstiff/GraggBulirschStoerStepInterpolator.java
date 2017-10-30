@@ -398,4 +398,32 @@ class GraggBulirschStoerStepInterpolator
 
   }
 
+public void setCurrentDegree(int currentDegree) {
+	this.currentDegree = currentDegree;
+}
+
+public void setErrfac(double[] errfac) {
+	this.errfac = errfac;
+}
+
+public void setPolynoms(double[][] polynoms) {
+	this.polynoms = polynoms;
+}
+
+public void setYMidDots(double[][] yMidDots) {
+	this.yMidDots = yMidDots;
+}
+
+public void setY1Dot(double[] y1Dot) {
+	this.y1Dot = y1Dot;
+}
+
+public void setY1(double[] y1) {
+	this.y1 = y1;
+}
+
+public void setY0Dot(double[] y0Dot) {
+	this.y0Dot = y0Dot;
+}
+
 }

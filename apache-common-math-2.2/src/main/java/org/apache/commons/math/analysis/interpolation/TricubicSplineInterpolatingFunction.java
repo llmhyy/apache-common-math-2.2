@@ -37,7 +37,7 @@ import org.apache.commons.math.util.MathUtils;
  */
 public class TricubicSplineInterpolatingFunction
     implements TrivariateRealFunction {
-    /**
+	/**
      * Matrix to compute the spline coefficients from the function values
      * and function derivatives values
      */
@@ -413,6 +413,25 @@ public class TricubicSplineInterpolatingFunction
 
         return a;
     }
+    public static double[][] getAinv() {
+		return AINV;
+	}
+
+	public double[] getXval() {
+		return xval;
+	}
+
+	public double[] getYval() {
+		return yval;
+	}
+
+	public double[] getZval() {
+		return zval;
+	}
+
+	public TricubicSplineFunction[][][] getSplines() {
+		return splines;
+	}
 }
 
 /**
@@ -480,4 +499,5 @@ class TricubicSplineFunction
 
         return result;
     }
+
 }

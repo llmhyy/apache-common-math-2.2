@@ -610,4 +610,8 @@ public class Array2DRowFieldMatrix<T extends FieldElement<T>> extends AbstractFi
         setSubMatrix(in, 0, 0);
     }
 
+	public void setData(T[][] data) {
+		this.data = data;
+	}
+
 }

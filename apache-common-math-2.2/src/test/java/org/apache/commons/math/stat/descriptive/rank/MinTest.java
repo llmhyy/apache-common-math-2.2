@@ -75,4 +75,8 @@ public class MinTest extends StorelessUnivariateStatisticAbstractTest{
         assertTrue(Double.isNaN(min.evaluate(new double[]{nan, nan, nan})));
     }
 
+	public void setStat(Min stat) {
+		this.stat = stat;
+	}
+
 }

@@ -933,4 +933,12 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
         return Arrays.hashCode(hashData);
     }
 
+	public void setStartIndex(int startIndex) {
+		this.startIndex = startIndex;
+	}
+
+	public void setInternalArray(double[] internalArray) {
+		this.internalArray = internalArray;
+	}
+
 }

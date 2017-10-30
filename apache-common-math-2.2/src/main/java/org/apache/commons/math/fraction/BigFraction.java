@@ -37,7 +37,7 @@ public class BigFraction
     extends Number
     implements FieldElement<BigFraction>, Comparable<BigFraction>, Serializable {
 
-    /** A fraction representing "2 / 1". */
+	/** A fraction representing "2 / 1". */
     public static final BigFraction TWO = new BigFraction(2);
 
     /** A fraction representing "1". */
@@ -1125,5 +1125,69 @@ public class BigFraction
     public BigFractionField getField() {
         return BigFractionField.getInstance();
     }
+
+    public static BigFraction getTwo() {
+		return TWO;
+	}
+
+	public static BigFraction getOne() {
+		return ONE;
+	}
+
+	public static BigFraction getZero() {
+		return ZERO;
+	}
+
+	public static BigFraction getMinusOne() {
+		return MINUS_ONE;
+	}
+
+	public static BigFraction getFourFifths() {
+		return FOUR_FIFTHS;
+	}
+
+	public static BigFraction getOneFifth() {
+		return ONE_FIFTH;
+	}
+
+	public static BigFraction getOneHalf() {
+		return ONE_HALF;
+	}
+
+	public static BigFraction getOneQuarter() {
+		return ONE_QUARTER;
+	}
+
+	public static BigFraction getOneThird() {
+		return ONE_THIRD;
+	}
+
+	public static BigFraction getThreeFifths() {
+		return THREE_FIFTHS;
+	}
+
+	public static BigFraction getThreeQuarters() {
+		return THREE_QUARTERS;
+	}
+
+	public static BigFraction getTwoFifths() {
+		return TWO_FIFTHS;
+	}
+
+	public static BigFraction getTwoQuarters() {
+		return TWO_QUARTERS;
+	}
+
+	public static BigFraction getTwoThirds() {
+		return TWO_THIRDS;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public static BigInteger getOneHundredDouble() {
+		return ONE_HUNDRED_DOUBLE;
+	}
 
 }

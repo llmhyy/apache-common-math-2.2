@@ -172,4 +172,12 @@ public class TriDiagonalTransformerTest extends TestCase {
 
     }
 
+	public void setTestSquare3(double[][] testSquare3) {
+		this.testSquare3 = testSquare3;
+	}
+
+	public void setTestSquare5(double[][] testSquare5) {
+		this.testSquare5 = testSquare5;
+	}
+
 }

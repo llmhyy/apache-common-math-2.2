@@ -256,4 +256,24 @@ public final class EmpiricalDistributionTest extends RetryTestCase {
         assertEquals
          ("std dev", stats.getStandardDeviation(),1.0173699343977738,tolerance);
     }
+
+	public void setDataArray(double[] dataArray) {
+		this.dataArray = dataArray;
+	}
+
+	public void setUrl(URL url) {
+		this.url = url;
+	}
+
+	public void setFile(File file) {
+		this.file = file;
+	}
+
+	public void setEmpiricalDistribution2(EmpiricalDistribution empiricalDistribution2) {
+		this.empiricalDistribution2 = empiricalDistribution2;
+	}
+
+	public void setEmpiricalDistribution(EmpiricalDistribution empiricalDistribution) {
+		this.empiricalDistribution = empiricalDistribution;
+	}
 }

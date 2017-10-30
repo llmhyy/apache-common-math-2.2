@@ -31,7 +31,7 @@ import org.apache.commons.math.util.FastMath;
  */
 public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
 
-    /** Distribution used to compute inference statistics. */
+	/** Distribution used to compute inference statistics. */
     private ChiSquaredDistribution distribution;
 
     /**
@@ -233,8 +233,8 @@ public class ChiSquareTestImpl implements UnknownDistributionChiSquareTest {
         }
 
         // Ensure non-negative counts
-        checkNonNegative(observed1);
-        checkNonNegative(observed2);
+//        checkNonNegative(observed1);
+//        checkNonNegative(observed2);
 
         // Compute and compare count sums
         long countSum1 = 0;

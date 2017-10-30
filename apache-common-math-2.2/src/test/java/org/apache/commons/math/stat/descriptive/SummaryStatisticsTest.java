@@ -296,4 +296,56 @@ public class SummaryStatisticsTest extends TestCase {
             // expected
         }
     }
+
+	public void setTolerance(double tolerance) {
+		this.tolerance = tolerance;
+	}
+
+	public void setMax(double max) {
+		this.max = max;
+	}
+
+	public void setMin(double min) {
+		this.min = min;
+	}
+
+	public void setN(double n) {
+		this.n = n;
+	}
+
+	public void setStd(double std) {
+		this.std = std;
+	}
+
+	public void setVar(double var) {
+		this.var = var;
+	}
+
+	public void setSum(double sum) {
+		this.sum = sum;
+	}
+
+	public void setSumSq(double sumSq) {
+		this.sumSq = sumSq;
+	}
+
+	public void setMean(double mean) {
+		this.mean = mean;
+	}
+
+	public void setThree(int three) {
+		this.three = three;
+	}
+
+	public void setTwoL(long twoL) {
+		this.twoL = twoL;
+	}
+
+	public void setTwoF(float twoF) {
+		this.twoF = twoF;
+	}
+
+	public void setOne(double one) {
+		this.one = one;
+	}
 }

@@ -376,4 +376,20 @@ public class ContinuousOutputModel
     }
   }
 
+public void setIndex(int index) {
+	this.index = index;
+}
+
+public void setForward(boolean forward) {
+	this.forward = forward;
+}
+
+public void setFinalTime(double finalTime) {
+	this.finalTime = finalTime;
+}
+
+public void setInitialTime(double initialTime) {
+	this.initialTime = initialTime;
+}
+
 }

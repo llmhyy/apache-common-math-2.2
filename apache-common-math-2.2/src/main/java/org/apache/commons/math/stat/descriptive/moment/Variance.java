@@ -623,7 +623,7 @@ public class Variance extends AbstractStorelessUnivariateStatistic implements Se
         System.out.println(v1.evaluate(values) == 1E-14);
 	}
     
-    protected static double populationVariance(double[] v) {
+    public static double populationVariance(double[] v) {
         double mean = new Mean().evaluate(v);
         double sum = 0;
         for (int i = 0; i < v.length; i++) {
@@ -631,4 +631,16 @@ public class Variance extends AbstractStorelessUnivariateStatistic implements Se
         }
         return sum / v.length;
     }
+
+	public void setIsBiasCorrected(boolean isBiasCorrected) {
+		this.isBiasCorrected = isBiasCorrected;
+	}
+
+	public void setIncMoment(boolean incMoment) {
+		this.incMoment = incMoment;
+	}
+
+	public void setMoment(SecondMoment moment) {
+		this.moment = moment;
+	}
 }

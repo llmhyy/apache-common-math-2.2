@@ -293,5 +293,21 @@ public class GLSMultipleLinearRegressionTest extends MultipleLinearRegressionAbs
         assert(olsBetaStats.getMean() > 1.5 * glsBetaStats.getMean());
         assert(olsBetaStats.getStandardDeviation() > glsBetaStats.getStandardDeviation());  
     }
+
+	public void setLongley(double[] longley) {
+		this.longley = longley;
+	}
+
+	public void setOmega(double[][] omega) {
+		this.omega = omega;
+	}
+
+	public void setX(double[][] x) {
+		this.x = x;
+	}
+
+	public void setY(double[] y) {
+		this.y = y;
+	}
     
 }

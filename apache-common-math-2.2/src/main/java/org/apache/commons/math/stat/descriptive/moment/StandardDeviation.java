@@ -268,4 +268,8 @@ public class StandardDeviation extends AbstractStorelessUnivariateStatistic
         dest.variance = source.variance.copy();
     }
 
+	public void setVariance(Variance variance) {
+		this.variance = variance;
+	}
+
 }

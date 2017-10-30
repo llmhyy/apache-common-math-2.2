@@ -154,4 +154,8 @@ public class TrapezoidIntegrator extends UnivariateRealIntegratorImpl {
         min = -FastMath.PI/3; max = 0;
         System.out.println(integrator.integrate(f, min, max));
     }
+
+	public void setS(double s) {
+		this.s = s;
+	}
 }

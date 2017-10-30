@@ -219,4 +219,12 @@ public class Kurtosis extends AbstractStorelessUnivariateStatistic  implements S
         dest.incMoment = source.incMoment;
     }
 
+	public void setIncMoment(boolean incMoment) {
+		this.incMoment = incMoment;
+	}
+
+	public void setMoment(FourthMoment moment) {
+		this.moment = moment;
+	}
+
 }

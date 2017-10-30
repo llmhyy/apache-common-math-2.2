@@ -84,4 +84,8 @@ public class ProductTest extends StorelessUnivariateStatisticAbstractTest{
         assertEquals(expectedValue(), product.evaluate(testArray, unitWeightsArray, 0, testArray.length), getTolerance());
     }
 
+	public void setStat(Product stat) {
+		this.stat = stat;
+	}
+
 }

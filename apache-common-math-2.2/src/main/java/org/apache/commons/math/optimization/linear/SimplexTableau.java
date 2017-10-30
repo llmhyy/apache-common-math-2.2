@@ -586,4 +586,12 @@ class SimplexTableau implements Serializable {
         MatrixUtils.deserializeRealMatrix(this, "tableau", ois);
     }
 
+	public void setNumArtificialVariables(int numArtificialVariables) {
+		this.numArtificialVariables = numArtificialVariables;
+	}
+
+	public void setTableau(RealMatrix tableau) {
+		this.tableau = tableau;
+	}
+
 }

@@ -618,4 +618,8 @@ public class Array2DRowRealMatrix extends AbstractRealMatrix implements Serializ
         setSubMatrix(in, 0, 0);
     }
 
+	public void setData(double[][] data) {
+		this.data = data;
+	}
+
 }

@@ -151,4 +151,12 @@ public class CertifiedDataTest extends TestCase  {
 
         in.close();
     }
+
+	public void setStd(double std) {
+		this.std = std;
+	}
+
+	public void setMean(double mean) {
+		this.mean = mean;
+	}
 }

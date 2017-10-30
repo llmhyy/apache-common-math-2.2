@@ -634,4 +634,20 @@ public class MultivariateSummaryStatistics
         }
     }
 
+	public void setCovarianceImpl(VectorialCovariance covarianceImpl) {
+		this.covarianceImpl = covarianceImpl;
+	}
+
+	public void setSumSqImpl(StorelessUnivariateStatistic[] sumSqImpl) {
+		this.sumSqImpl = sumSqImpl;
+	}
+
+	public void setN(long n) {
+		this.n = n;
+	}
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
 }

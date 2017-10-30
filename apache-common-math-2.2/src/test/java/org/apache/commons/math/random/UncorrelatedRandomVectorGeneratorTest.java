@@ -80,5 +80,14 @@ extends TestCase {
     private double[] mean;
     private double[] standardDeviation;
     private UncorrelatedRandomVectorGenerator generator;
+	public void setGenerator(UncorrelatedRandomVectorGenerator generator) {
+		this.generator = generator;
+	}
+	public void setStandardDeviation(double[] standardDeviation) {
+		this.standardDeviation = standardDeviation;
+	}
+	public void setMean(double[] mean) {
+		this.mean = mean;
+	}
 
 }

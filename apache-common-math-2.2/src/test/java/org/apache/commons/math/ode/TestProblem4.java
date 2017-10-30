@@ -156,4 +156,12 @@ public TestProblem4 copy() {
 
   }
 
+public void setY(double[] y) {
+	this.y = y;
+}
+
+public void setA(double a) {
+	this.a = a;
+}
+
 }

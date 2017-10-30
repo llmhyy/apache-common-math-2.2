@@ -176,4 +176,20 @@ public class LUSolverTest extends TestCase {
         return new LUDecompositionImpl(m).getDeterminant();
     }
 
+	public void setBigSingular(double[][] bigSingular) {
+		this.bigSingular = bigSingular;
+	}
+
+	public void setSingular(double[][] singular) {
+		this.singular = singular;
+	}
+
+	public void setLuData(double[][] luData) {
+		this.luData = luData;
+	}
+
+	public void setTestData(double[][] testData) {
+		this.testData = testData;
+	}
+
 }

@@ -866,4 +866,8 @@ public class ArrayFieldVector<T extends FieldElement<T>> implements FieldVector<
         }
     }
 
+	public void setData(T[] data) {
+		this.data = data;
+	}
+
 }

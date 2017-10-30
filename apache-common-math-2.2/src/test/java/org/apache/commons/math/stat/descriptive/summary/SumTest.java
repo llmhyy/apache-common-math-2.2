@@ -74,4 +74,8 @@ public class SumTest extends StorelessUnivariateStatisticAbstractTest{
         assertEquals(expectedValue(), sum.evaluate(testArray, unitWeightsArray, 0, testArray.length), getTolerance());
     }
 
+	public void setStat(Sum stat) {
+		this.stat = stat;
+	}
+
 }

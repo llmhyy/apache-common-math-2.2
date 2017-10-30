@@ -288,4 +288,24 @@ public class NordsieckStepInterpolator extends AbstractStepInterpolator {
 
     }
 
+	public void setNordsieck(Array2DRowRealMatrix nordsieck) {
+		this.nordsieck = nordsieck;
+	}
+
+	public void setScaled(double[] scaled) {
+		this.scaled = scaled;
+	}
+
+	public void setReferenceTime(double referenceTime) {
+		this.referenceTime = referenceTime;
+	}
+
+	public void setScalingH(double scalingH) {
+		this.scalingH = scalingH;
+	}
+
+	public void setStateVariation(double[] stateVariation) {
+		this.stateVariation = stateVariation;
+	}
+
 }

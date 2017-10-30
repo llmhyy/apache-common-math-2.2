@@ -292,4 +292,36 @@ public class BracketFinder {
         iterations = 0;
         evaluations = 0;
     }
+
+	public void setFMid(double fMid) {
+		this.fMid = fMid;
+	}
+
+	public void setFHi(double fHi) {
+		this.fHi = fHi;
+	}
+
+	public void setFLo(double fLo) {
+		this.fLo = fLo;
+	}
+
+	public void setMid(double mid) {
+		this.mid = mid;
+	}
+
+	public void setHi(double hi) {
+		this.hi = hi;
+	}
+
+	public void setLo(double lo) {
+		this.lo = lo;
+	}
+
+	public void setEvaluations(int evaluations) {
+		this.evaluations = evaluations;
+	}
+
+	public void setIterations(int iterations) {
+		this.iterations = iterations;
+	}
 }

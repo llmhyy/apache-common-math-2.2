@@ -39,4 +39,8 @@ public class TestRandomGenerator extends AbstractRandomGenerator {
         return random.nextDouble();
     }
 
+	public void setRandom(Random random) {
+		this.random = random;
+	}
+
 }

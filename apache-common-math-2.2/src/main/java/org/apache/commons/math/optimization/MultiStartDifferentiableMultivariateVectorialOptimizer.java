@@ -235,4 +235,28 @@ public class MultiStartDifferentiableMultivariateVectorialOptimizer
 
     }
 
+	public void setOptima(VectorialPointValuePair[] optima) {
+		this.optima = optima;
+	}
+
+	public void setGenerator(RandomVectorGenerator generator) {
+		this.generator = generator;
+	}
+
+	public void setStarts(int starts) {
+		this.starts = starts;
+	}
+
+	public void setTotalJacobianEvaluations(int totalJacobianEvaluations) {
+		this.totalJacobianEvaluations = totalJacobianEvaluations;
+	}
+
+	public void setTotalEvaluations(int totalEvaluations) {
+		this.totalEvaluations = totalEvaluations;
+	}
+
+	public void setTotalIterations(int totalIterations) {
+		this.totalIterations = totalIterations;
+	}
+
 }

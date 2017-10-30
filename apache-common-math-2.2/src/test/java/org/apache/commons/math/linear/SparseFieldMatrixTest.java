@@ -685,4 +685,156 @@ public class SparseFieldMatrixTest extends TestCase {
     	SparseFieldMatrixTest test = new SparseFieldMatrixTest("t");
     	test.testScalarAdd();
     }
+
+	public void setD5(Fraction[][] d5) {
+		this.d5 = d5;
+	}
+
+	public void setD4(Fraction[][] d4) {
+		this.d4 = d4;
+	}
+
+	public void setD3(Fraction[][] d3) {
+		this.d3 = d3;
+	}
+
+	public void setNormTolerance(double normTolerance) {
+		this.normTolerance = normTolerance;
+	}
+
+	public void setEntryTolerance(double entryTolerance) {
+		this.entryTolerance = entryTolerance;
+	}
+
+	public void setSubColumn3(Fraction[][] subColumn3) {
+		this.subColumn3 = subColumn3;
+	}
+
+	public void setSubColumn1(Fraction[][] subColumn1) {
+		this.subColumn1 = subColumn1;
+	}
+
+	public void setSubRow3(Fraction[][] subRow3) {
+		this.subRow3 = subRow3;
+	}
+
+	public void setSubRow0(Fraction[][] subRow0) {
+		this.subRow0 = subRow0;
+	}
+
+	public void setSubRows00Cols33(Fraction[][] subRows00Cols33) {
+		this.subRows00Cols33 = subRows00Cols33;
+	}
+
+	public void setSubRows23Cols00(Fraction[][] subRows23Cols00) {
+		this.subRows23Cols00 = subRows23Cols00;
+	}
+
+	public void setSubRows01Cols23(Fraction[][] subRows01Cols23) {
+		this.subRows01Cols23 = subRows01Cols23;
+	}
+
+	public void setSubRows31Cols31(Fraction[][] subRows31Cols31) {
+		this.subRows31Cols31 = subRows31Cols31;
+	}
+
+	public void setSubRows20Cols123(Fraction[][] subRows20Cols123) {
+		this.subRows20Cols123 = subRows20Cols123;
+	}
+
+	public void setSubRows03Cols123(Fraction[][] subRows03Cols123) {
+		this.subRows03Cols123 = subRows03Cols123;
+	}
+
+	public void setSubRows03Cols12(Fraction[][] subRows03Cols12) {
+		this.subRows03Cols12 = subRows03Cols12;
+	}
+
+	public void setSubRows02Cols13(Fraction[][] subRows02Cols13) {
+		this.subRows02Cols13 = subRows02Cols13;
+	}
+
+	public void setSubTestData(Fraction[][] subTestData) {
+		this.subTestData = subTestData;
+	}
+
+	public void setTestVector2(Fraction[] testVector2) {
+		this.testVector2 = testVector2;
+	}
+
+	public void setTestVector(Fraction[] testVector) {
+		this.testVector = testVector;
+	}
+
+	public void setDetData2(Fraction[][] detData2) {
+		this.detData2 = detData2;
+	}
+
+	public void setDetData(Fraction[][] detData) {
+		this.detData = detData;
+	}
+
+	public void setBigSingular(Fraction[][] bigSingular) {
+		this.bigSingular = bigSingular;
+	}
+
+	public void setSingular(Fraction[][] singular) {
+		this.singular = singular;
+	}
+
+	public void setLuDataLUDecomposition(Fraction[][] luDataLUDecomposition) {
+		this.luDataLUDecomposition = luDataLUDecomposition;
+	}
+
+	public void setLuData(Fraction[][] luData) {
+		this.luData = luData;
+	}
+
+	public void setTestDataPlusInv(Fraction[][] testDataPlusInv) {
+		this.testDataPlusInv = testDataPlusInv;
+	}
+
+	public void setTestData2T(Fraction[][] testData2T) {
+		this.testData2T = testData2T;
+	}
+
+	public void setTestData2(Fraction[][] testData2) {
+		this.testData2 = testData2;
+	}
+
+	public void setPreMultTest(Fraction[] preMultTest) {
+		this.preMultTest = preMultTest;
+	}
+
+	public void setTestDataInv(Fraction[][] testDataInv) {
+		this.testDataInv = testDataInv;
+	}
+
+	public void setTestDataCol3(Fraction[] testDataCol3) {
+		this.testDataCol3 = testDataCol3;
+	}
+
+	public void setTestDataRow1(Fraction[] testDataRow1) {
+		this.testDataRow1 = testDataRow1;
+	}
+
+	public void setTestDataMinus(Fraction[][] testDataMinus) {
+		this.testDataMinus = testDataMinus;
+	}
+
+	public void setTestDataPlus2(Fraction[][] testDataPlus2) {
+		this.testDataPlus2 = testDataPlus2;
+	}
+
+	public void setTestDataLU(Fraction[][] testDataLU) {
+		this.testDataLU = testDataLU;
+	}
+
+	public void setTestData(Fraction[][] testData) {
+		this.testData = testData;
+	}
+
+	public void setId(Fraction[][] id) {
+		this.id = id;
+	}
 }

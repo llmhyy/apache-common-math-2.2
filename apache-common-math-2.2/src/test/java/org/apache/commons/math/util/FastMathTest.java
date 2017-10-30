@@ -1115,4 +1115,12 @@ public class FastMathTest {
         compareClassMethods( FastMath.class, StrictMath.class);
     }
 
+	public void setGenerator(RandomGenerator generator) {
+		this.generator = generator;
+	}
+
+	public void setField(DfpField field) {
+		this.field = field;
+	}
+
 }

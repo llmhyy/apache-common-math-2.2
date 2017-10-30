@@ -90,4 +90,8 @@ public TestProblem2 copy() {
     return y;
   }
 
+public void setY(double[] y) {
+	this.y = y;
+}
+
 }

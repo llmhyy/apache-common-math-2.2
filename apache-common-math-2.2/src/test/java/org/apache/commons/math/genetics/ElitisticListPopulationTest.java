@@ -50,4 +50,8 @@ public class ElitisticListPopulationTest {
         }
     }
 
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+
 }

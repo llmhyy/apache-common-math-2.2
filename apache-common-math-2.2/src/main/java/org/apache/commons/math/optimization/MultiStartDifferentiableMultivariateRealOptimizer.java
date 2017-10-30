@@ -225,4 +225,28 @@ public class MultiStartDifferentiableMultivariateRealOptimizer
 
     }
 
+	public void setOptima(RealPointValuePair[] optima) {
+		this.optima = optima;
+	}
+
+	public void setGenerator(RandomVectorGenerator generator) {
+		this.generator = generator;
+	}
+
+	public void setStarts(int starts) {
+		this.starts = starts;
+	}
+
+	public void setTotalGradientEvaluations(int totalGradientEvaluations) {
+		this.totalGradientEvaluations = totalGradientEvaluations;
+	}
+
+	public void setTotalEvaluations(int totalEvaluations) {
+		this.totalEvaluations = totalEvaluations;
+	}
+
+	public void setTotalIterations(int totalIterations) {
+		this.totalIterations = totalIterations;
+	}
+
 }

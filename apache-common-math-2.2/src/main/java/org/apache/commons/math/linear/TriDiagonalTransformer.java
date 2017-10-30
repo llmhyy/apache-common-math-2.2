@@ -267,4 +267,16 @@ class TriDiagonalTransformer {
         main[m - 1] = householderVectors[m - 1][m - 1];
     }
 
+	public void setCachedT(RealMatrix cachedT) {
+		this.cachedT = cachedT;
+	}
+
+	public void setCachedQt(RealMatrix cachedQt) {
+		this.cachedQt = cachedQt;
+	}
+
+	public void setCachedQ(RealMatrix cachedQ) {
+		this.cachedQ = cachedQ;
+	}
+
 }

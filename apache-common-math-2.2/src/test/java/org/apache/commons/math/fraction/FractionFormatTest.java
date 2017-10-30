@@ -300,4 +300,12 @@ public class FractionFormatTest extends TestCase {
     public void testDoubleFormat() {
         assertEquals("355 / 113", improperFormat.format(FastMath.PI));
     }
+
+	public void setImproperFormat(FractionFormat improperFormat) {
+		this.improperFormat = improperFormat;
+	}
+
+	public void setProperFormat(FractionFormat properFormat) {
+		this.properFormat = properFormat;
+	}
 }

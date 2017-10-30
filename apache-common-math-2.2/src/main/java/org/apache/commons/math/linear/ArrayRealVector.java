@@ -1225,4 +1225,8 @@ public class ArrayRealVector extends AbstractRealVector implements Serializable 
         return MathUtils.hash(data);
     }
 
+	public void setData(double[] data) {
+		this.data = data;
+	}
+
 }

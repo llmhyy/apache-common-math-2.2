@@ -196,4 +196,8 @@ public final class ValueServerTest extends RetryTestCase {
         assertEquals("valuesFileURL test","http://www.apache.org",url.toString());
     }
 
+	public void setVs(ValueServer vs) {
+		this.vs = vs;
+	}
+
 }

@@ -115,5 +115,11 @@ public class StepNormalizerTest
   TestProblem3 pb;
   FirstOrderIntegrator integ;
   boolean lastSeen;
+public void setInteg(FirstOrderIntegrator integ) {
+	this.integ = integ;
+}
+public void setPb(TestProblem3 pb) {
+	this.pb = pb;
+}
 
 }

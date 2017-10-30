@@ -141,4 +141,8 @@ public class AbstractRandomGeneratorTest extends RandomDataTest {
         assertTrue("chi-square test -- will fail about 1 in 1000 times",
                 testStatistic.chiSquare(expected,observed) < 16.27);
     }
+
+	public void setTestGenerator(TestRandomGenerator testGenerator) {
+		this.testGenerator = testGenerator;
+	}
 }

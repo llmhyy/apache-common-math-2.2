@@ -156,4 +156,8 @@ public class PercentileTest extends UnivariateStatisticAbstractTest{
         }
     }
 
+	public void setStat(Percentile stat) {
+		this.stat = stat;
+	}
+
 }

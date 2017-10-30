@@ -268,4 +268,8 @@ public final class PolynomialFunctionTest extends TestCase {
         }
     }
 
+	public void setTolerance(double tolerance) {
+		this.tolerance = tolerance;
+	}
+
 }

@@ -218,4 +218,12 @@ public class PolynomialFunctionNewtonForm implements UnivariateRealFunction {
                   a.length, c.length);
         }
     }
+
+	public void setCoefficientsComputed(boolean coefficientsComputed) {
+		this.coefficientsComputed = coefficientsComputed;
+	}
+
+	public void setCoefficients(double[] coefficients) {
+		this.coefficients = coefficients;
+	}
 }

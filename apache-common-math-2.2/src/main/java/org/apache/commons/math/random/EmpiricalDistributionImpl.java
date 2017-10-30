@@ -476,4 +476,28 @@ public class EmpiricalDistributionImpl implements Serializable, EmpiricalDistrib
     public boolean isLoaded() {
         return loaded;
     }
+
+	public void setUpperBounds(double[] upperBounds) {
+		this.upperBounds = upperBounds;
+	}
+
+	public void setLoaded(boolean loaded) {
+		this.loaded = loaded;
+	}
+
+	public void setDelta(double delta) {
+		this.delta = delta;
+	}
+
+	public void setMin(double min) {
+		this.min = min;
+	}
+
+	public void setMax(double max) {
+		this.max = max;
+	}
+
+	public void setSampleStats(SummaryStatistics sampleStats) {
+		this.sampleStats = sampleStats;
+	}
 }

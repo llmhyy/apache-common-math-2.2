@@ -583,5 +583,25 @@ public class DfpMathTest {
              DfpField.FLAG_INEXACT, "sin #27");
     }
 
+	public void setQnan(Dfp qnan) {
+		this.qnan = qnan;
+	}
+
+	public void setNan(Dfp nan) {
+		this.nan = nan;
+	}
+
+	public void setNinf(Dfp ninf) {
+		this.ninf = ninf;
+	}
+
+	public void setPinf(Dfp pinf) {
+		this.pinf = pinf;
+	}
+
+	public void setFactory(DfpField factory) {
+		this.factory = factory;
+	}
+
 
 }

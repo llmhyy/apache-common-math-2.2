@@ -382,4 +382,12 @@ public class ValueServer {
         return randomData.nextGaussian(mu, sigma);
     }
 
+	public void setFilePointer(BufferedReader filePointer) {
+		this.filePointer = filePointer;
+	}
+
+	public void setEmpiricalDistribution(EmpiricalDistribution empiricalDistribution) {
+		this.empiricalDistribution = empiricalDistribution;
+	}
+
 }

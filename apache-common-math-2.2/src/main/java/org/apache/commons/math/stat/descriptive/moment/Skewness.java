@@ -210,4 +210,12 @@ public class Skewness extends AbstractStorelessUnivariateStatistic implements Se
         dest.moment = new ThirdMoment(source.moment.copy());
         dest.incMoment = source.incMoment;
     }
+
+	public void setIncMoment(boolean incMoment) {
+		this.incMoment = incMoment;
+	}
+
+	public void setMoment(ThirdMoment moment) {
+		this.moment = moment;
+	}
 }

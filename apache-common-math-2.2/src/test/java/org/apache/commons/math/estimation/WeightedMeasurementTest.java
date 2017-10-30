@@ -124,5 +124,11 @@ public class WeightedMeasurementTest
 
   private EstimatedParameter p1;
   private EstimatedParameter p2;
+public void setP2(EstimatedParameter p2) {
+	this.p2 = p2;
+}
+public void setP1(EstimatedParameter p1) {
+	this.p1 = p1;
+}
 
 }

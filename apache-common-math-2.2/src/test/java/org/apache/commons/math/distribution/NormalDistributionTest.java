@@ -231,4 +231,8 @@ public class NormalDistributionTest extends ContinuousDistributionAbstractTest  
 		}
     			
     }
+
+	public void setDefaultTolerance(double defaultTolerance) {
+		this.defaultTolerance = defaultTolerance;
+	}
 }

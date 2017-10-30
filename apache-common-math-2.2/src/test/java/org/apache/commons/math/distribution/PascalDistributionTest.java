@@ -133,4 +133,8 @@ public class PascalDistributionTest extends IntegerDistributionAbstractTest {
         assertEquals(dist.getNumericalMean(), ( 25d * 0.3d ) / 0.7d, tol);
         assertEquals(dist.getNumericalVariance(), ( 25d * 0.3d ) / (0.7d * 0.7d), tol);
     }
+
+	public void setDefaultTolerance(double defaultTolerance) {
+		this.defaultTolerance = defaultTolerance;
+	}
 }

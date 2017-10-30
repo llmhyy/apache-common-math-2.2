@@ -311,5 +311,9 @@ public class OpenIntToFieldTest extends TestCase {
         assertEquals(value2, map.get(key2));
     }
 
+	public void setField(FractionField field) {
+		this.field = field;
+	}
+
 
 }

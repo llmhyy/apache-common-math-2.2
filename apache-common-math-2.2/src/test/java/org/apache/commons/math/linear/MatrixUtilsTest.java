@@ -400,5 +400,100 @@ public final class MatrixUtilsTest extends TestCase {
         }
     }
 
+
+	public void setFractionColMatrix(Fraction[][] fractionColMatrix) {
+		this.fractionColMatrix = fractionColMatrix;
+	}
+
+
+	public void setStringColMatrix(String[][] stringColMatrix) {
+		this.stringColMatrix = stringColMatrix;
+	}
+
+
+	public void setBigColMatrix(BigDecimal[][] bigColMatrix) {
+		this.bigColMatrix = bigColMatrix;
+	}
+
+
+	public void setColMatrix(double[][] colMatrix) {
+		this.colMatrix = colMatrix;
+	}
+
+
+	public void setNullDoubleArray(double[] nullDoubleArray) {
+		this.nullDoubleArray = nullDoubleArray;
+	}
+
+
+	public void setFractionCol(Fraction[] fractionCol) {
+		this.fractionCol = fractionCol;
+	}
+
+
+	public void setStringCol(String[] stringCol) {
+		this.stringCol = stringCol;
+	}
+
+
+	public void setBigCol(BigDecimal[] bigCol) {
+		this.bigCol = bigCol;
+	}
+
+
+	public void setCol(double[] col) {
+		this.col = col;
+	}
+
+
+	public void setFractionRowMatrix(Fraction[][] fractionRowMatrix) {
+		this.fractionRowMatrix = fractionRowMatrix;
+	}
+
+
+	public void setStringRowMatrix(String[][] stringRowMatrix) {
+		this.stringRowMatrix = stringRowMatrix;
+	}
+
+
+	public void setBigRowMatrix(BigDecimal[][] bigRowMatrix) {
+		this.bigRowMatrix = bigRowMatrix;
+	}
+
+
+	public void setRowMatrix(double[][] rowMatrix) {
+		this.rowMatrix = rowMatrix;
+	}
+
+
+	public void setFractionRow(Fraction[] fractionRow) {
+		this.fractionRow = fractionRow;
+	}
+
+
+	public void setStringRow(String[] stringRow) {
+		this.stringRow = stringRow;
+	}
+
+
+	public void setBigRow(BigDecimal[] bigRow) {
+		this.bigRow = bigRow;
+	}
+
+
+	public void setRow(double[] row) {
+		this.row = row;
+	}
+
+
+	public void setNullMatrix(double[][] nullMatrix) {
+		this.nullMatrix = nullMatrix;
+	}
+
+
+	public void setTestData(double[][] testData) {
+		this.testData = testData;
+	}
+
 }
 

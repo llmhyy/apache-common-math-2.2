@@ -208,4 +208,8 @@ public class FunctionEvaluationException extends MathException  {
     public double[] getArgument() {
         return argument.clone();
     }
+
+	public void setArgument(double[] argument) {
+		this.argument = argument;
+	}
 }

@@ -117,4 +117,8 @@ public class VarianceTest extends StorelessUnivariateStatisticAbstractTest{
 
     }
 
+	public void setStat(Variance stat) {
+		this.stat = stat;
+	}
+
 }

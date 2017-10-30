@@ -80,4 +80,8 @@ public class SumLogTest extends StorelessUnivariateStatisticAbstractTest{
         assertTrue(Double.isNaN(sum.getResult()));
     }
 
+	public void setStat(SumOfLogs stat) {
+		this.stat = stat;
+	}
+
 }

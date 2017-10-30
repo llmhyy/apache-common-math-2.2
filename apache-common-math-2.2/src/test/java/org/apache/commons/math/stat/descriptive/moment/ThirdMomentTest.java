@@ -51,4 +51,8 @@ public class ThirdMomentTest extends StorelessUnivariateStatisticAbstractTest{
       return this.thirdMoment;
     }
 
+	public void setStat(ThirdMoment stat) {
+		this.stat = stat;
+	}
+
 }

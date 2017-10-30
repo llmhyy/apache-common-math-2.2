@@ -360,4 +360,36 @@ public final class SimpleRegressionTest extends TestCase {
         regression.removeData(removeMultiple);
         assertEquals(regression.getN(), 0);
     }
+
+	public void setInfData2(double[][] infData2) {
+		this.infData2 = infData2;
+	}
+
+	public void setRemoveY(double removeY) {
+		this.removeY = removeY;
+	}
+
+	public void setRemoveX(double removeX) {
+		this.removeX = removeX;
+	}
+
+	public void setRemoveMultiple(double[][] removeMultiple) {
+		this.removeMultiple = removeMultiple;
+	}
+
+	public void setRemoveSingle(double[][] removeSingle) {
+		this.removeSingle = removeSingle;
+	}
+
+	public void setInfData(double[][] infData) {
+		this.infData = infData;
+	}
+
+	public void setCorrData(double[][] corrData) {
+		this.corrData = corrData;
+	}
+
+	public void setData(double[][] data) {
+		this.data = data;
+	}
 }

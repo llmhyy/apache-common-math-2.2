@@ -147,4 +147,8 @@ public class CholeskyDecompositionImplTest {
 
     }
 
+	public void setTestData(double[][] testData) {
+		this.testData = testData;
+	}
+
 }

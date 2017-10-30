@@ -629,4 +629,36 @@ public class ArrayFieldVectorTest extends TestCase {
         }
     }
 
+	public void setMat1(Fraction[][] mat1) {
+		this.mat1 = mat1;
+	}
+
+	public void setDvec1(Fraction[] dvec1) {
+		this.dvec1 = dvec1;
+	}
+
+	public void setVec_null(Fraction[] vec_null) {
+		this.vec_null = vec_null;
+	}
+
+	public void setVec4(Fraction[] vec4) {
+		this.vec4 = vec4;
+	}
+
+	public void setVec3(Fraction[] vec3) {
+		this.vec3 = vec3;
+	}
+
+	public void setVec2(Fraction[] vec2) {
+		this.vec2 = vec2;
+	}
+
+	public void setVec1(Fraction[] vec1) {
+		this.vec1 = vec1;
+	}
+
+	public void setMa1(Fraction[][] ma1) {
+		this.ma1 = ma1;
+	}
+
 }
