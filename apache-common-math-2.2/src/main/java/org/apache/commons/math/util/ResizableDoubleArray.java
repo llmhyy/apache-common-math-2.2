@@ -486,6 +486,25 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
      * @throws IllegalArgumentException if i is greater than numElements.
      * @since 2.0
      */
+    public synchronized void discardExtremeElements(int i,boolean front, int numElements) {
+        if (i > numElements) {
+            throw MathRuntimeException.createIllegalArgumentException(
+                    LocalizedFormats.TOO_MANY_ELEMENTS_TO_DISCARD_FROM_ARRAY,
+                    i, numElements);
+       } else if (i < 0) {
+           throw MathRuntimeException.createIllegalArgumentException(
+                   LocalizedFormats.CANNOT_DISCARD_NEGATIVE_NUMBER_OF_ELEMENTS,
+                   i);
+        } else {
+            // "Subtract" this number of discarded from numElements
+            numElements -= i;
+            if (front) startIndex += i;
+        }
+        if (shouldContract()) {
+            contract();
+        }
+    }
+    
     public synchronized void discardExtremeElements(int i,boolean front) {
         if (i > numElements) {
             throw MathRuntimeException.createIllegalArgumentException(
@@ -504,7 +523,6 @@ public class ResizableDoubleArray implements DoubleArray, Serializable {
             contract();
         }
     }
-
     /**
      * Expands the internal storage array using the expansion factor.
      * <p>

@@ -38,10 +38,10 @@ public class BicubicSplineInterpolator
                                                           final double[] yval,
                                                           final double[][] fval)
         throws MathException, IllegalArgumentException {
-        if (xval.length == 0 || yval.length == 0 || fval.length == 0) {
-            throw new NoDataException();
-        }
-        if (xval.length != fval.length) {
+//        if (xval.length == 0 || yval.length == 0 || fval.length == 0) {
+//            throw new NoDataException();
+//        }
+        if (xval.length != fval.length && xval.length == yval.length) {
             throw new DimensionMismatchException(xval.length, fval.length);
         }
 

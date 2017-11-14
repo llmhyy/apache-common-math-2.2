@@ -216,7 +216,7 @@ public class MullerSolver extends UnivariateRealSolverImpl {
         if (y2 == 0.0) {
             return max;
         }
-        verifyBracketing(min, max, f);
+//        verifyBracketing(min, max, f);
 
         double oldx = Double.POSITIVE_INFINITY;
         for (int i = 1; i <= maximalIterationCount; ++i) {
