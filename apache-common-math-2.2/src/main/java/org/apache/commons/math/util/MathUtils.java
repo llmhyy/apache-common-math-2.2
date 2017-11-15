@@ -22,11 +22,9 @@ import java.math.BigInteger;
 import java.util.Arrays;
 
 import org.apache.commons.math.MathRuntimeException;
+import org.apache.commons.math.exception.NonMonotonousSequenceException;
 import org.apache.commons.math.exception.util.Localizable;
 import org.apache.commons.math.exception.util.LocalizedFormats;
-import org.evosuite.shaded.org.hibernate.loader.custom.EntityFetchReturn;
-
-import org.apache.commons.math.exception.NonMonotonousSequenceException;
 
 /**
  * Some useful additions to the built-in functions in {@link Math}.
